@@ -1,16 +1,16 @@
 import React from 'react';
-import Navbar from "./Navbar";
+import Navigation from "../Navigation/Navigation";
 
-export default class ViewCollege extends React.Component {
+export default class College extends React.Component {
     render() {
         return (
             <div>
                 <h2>This is the overall college view.</h2>
-            <Navbar />
+            <Navigation />
             </div>
         );
         /*
-        <Navbar />
+        <Navigation />
         return <h2>This is the overall college view.</h2>;
         */
     }
