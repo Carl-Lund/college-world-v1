@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../assets/images/logo.svg';
-import './App.css';
+//import logo from '../../assets/images/logo.svg';
+// import './App.css';
 import College from "../College/College";
 import Students from "../Students/Students";
 
