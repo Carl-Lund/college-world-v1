@@ -22,7 +22,7 @@ export default class College extends React.Component {
                 <h2>Start of college view...</h2>
                 <Navigation />
                 {this.state.data && (
-                    <h2>College balance= {this.state.data.availableCash}</h2>
+                    <h2>College balance = {this.state.data.availableCash}</h2>
                     )
                 }
 
