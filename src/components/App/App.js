@@ -3,6 +3,7 @@ import React from 'react';
 // import './App.css';
 import College from "../College/College";
 import Students from "../Students/Students";
+import Sports from "../Sports/Sports";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <header className="App-header">
         <College />
         <Students />
+        <Sports />
 
-{/*  Original default app code...
+          {/*  Original default app code...
         <a
           className="App-link"
           href="https://reactjs.org"

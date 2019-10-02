@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
 
-export default class College extends React.Component {
+export default class Sports extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,7 @@ export default class College extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn')
             .then(response => response.json())
             .then(data => {this.setState({ data });
                 console.log("Fetched college data " + data)
@@ -22,8 +22,12 @@ export default class College extends React.Component {
                 <h2>Start of college view...</h2>
                 <Navigation />
                 {this.state.data && (
-                    <h2>College balance= {this.state.data.availableCash}</h2>
-                    )
+                    <h2>Coach name = {this.state.data[0].coachName}</h2>
+                )
+                }
+                {this.state.data && (
+                    <h2>Hours until next game = {this.state.data[0].hoursUntilNextGame}</h2>
+                )
                 }
 
             </div>
