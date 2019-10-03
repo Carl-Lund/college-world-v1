@@ -3,6 +3,7 @@ import React from 'react';
 // import './App.css';
 import College from "../College/College";
 import Students from "../Students/Students";
+import Buildings from "../Buildings/Buildings";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <header className="App-header">
         <College />
         <Students />
+        <Buildings />
 
 {/*  Original default app code...
         <a
