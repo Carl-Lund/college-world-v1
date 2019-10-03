@@ -7,6 +7,7 @@ import App from "./components/App/App";
 import College from "./components/College/College";
 import Students from "./components/Students/Students";
 import Sports from "./components/Sports/Sports";
+import Store from "./components/Store/Store";
 import Objectives from "./components/Objectives/Objectives";
 
 ReactDOM.render(
@@ -16,6 +17,8 @@ ReactDOM.render(
         <Route path="/students" component={Students} />
         <Route path="/sports" component={Sports} />
         <Route path="/objectives" component={Objectives} />
+        <Route path="/store" component={Store} />
+
     </Router>,
     document.getElementById('root'));
 
