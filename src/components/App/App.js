@@ -4,6 +4,7 @@ import React from 'react';
 import College from "../College/College";
 import Students from "../Students/Students";
 import Sports from "../Sports/Sports";
+import Objectives from "../Objectives/Objectives";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <College />
         <Students />
         <Sports />
+        <Objectives />
 
           {/*  Original default app code...
         <a
