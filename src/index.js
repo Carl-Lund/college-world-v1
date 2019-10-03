@@ -1,9 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
 import App from "./components/App/App";
-ReactDOM.render(<App />, document.getElementById('root'));
+import College from "./components/College/College";
+import Students from "./components/Students/Students";
+import Sports from "./components/Sports/Sports";
+import Objectives from "./components/Objectives/Objectives";
+
+ReactDOM.render(
+    <Router>
+        <Route exact path="/" component={App} />
+        <Route path="/college" component={College} />
+        <Route path="/students" component={Students} />
+        <Route path="/sports" component={Sports} />
+        <Route path="/objectives" component={Objectives} />
+    </Router>,
+    document.getElementById('root'));
+
+//ReactDOM.render(<App />, document.getElementById('root'));
 
 // import College from "./components/college-view/college-view";
 // import Students from "./components/students-view/students-view";

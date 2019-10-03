@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
+import CollegeBanner from "../CollegeBanner/CollegeBanner";
 
 export default class College extends React.Component {
     constructor(props) {
@@ -19,13 +20,8 @@ export default class College extends React.Component {
     render() {
         return (
             <div>
-                <h2>Start of college view...</h2>
                 <Navigation />
-                {this.state.data && (
-                    <h2>College balance = {this.state.data.availableCash}</h2>
-                    )
-                }
-
+                <CollegeBanner />
             </div>
         );
         /*

@@ -14,14 +14,14 @@ export default class Navigation extends React.Component {
                     </div>
                     <div className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="viewCollege">
+                            <li className="active"><a href="College">
                                 Acorn</a></li>
-                            <li><a href="viewStudent">Students</a></li>
-                            <li><a href="viewBuilding">Buildings</a></li>
-                            <li><a href="viewSports">Sports</a></li>
-                            <li><a href="viewFaculty">Faculty</a></li>
-                            <li><a href="viewGates">Objectives</a></li>
-                            <li><a href="viewStore">Store</a></li>
+                            <li><a href="Students">Students</a></li>
+                            <li><a href="Building">Buildings</a></li>
+                            <li><a href="Sports">Sports</a></li>
+                            <li><a href="Faculty">Faculty</a></li>
+                            <li><a href="Objectives">Objectives</a></li>
+                            <li><a href="Store">Store</a></li>
                         </ul>
                     </div>
                 </div>

@@ -19,14 +19,14 @@ export default class Sports extends React.Component {
     render() {
         return (
             <div>
-                <h2>Start of college view...</h2>
                 <Navigation />
+                <h2>Sports</h2>
                 {this.state.data && (
-                    <h2>Coach name = {this.state.data[0].coachName}</h2>
+                    <h3>Coach name = {this.state.data[0].coachName}</h3>
                 )
                 }
                 {this.state.data && (
-                    <h2>Hours until next game = {this.state.data[0].hoursUntilNextGame}</h2>
+                    <h3>Hours until next game = {this.state.data[0].hoursUntilNextGame}</h3>
                 )
                 }
 
