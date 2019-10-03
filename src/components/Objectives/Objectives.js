@@ -1,8 +1,7 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
-import CollegeBanner from "../CollegeBanner/CollegeBanner";
 
-export default class College extends React.Component {
+export default class Objectives extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,23 +9,24 @@ export default class College extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/gates/acorn')
             .then(response => response.json())
             .then(data => {this.setState({ data });
-                console.log("Fetched college data " + data)
+                console.log("Fetched objectives/gates data " + data)
             });
     }
 
-    render() {
+    render(){
         return (
             <div>
+                <h2>Start of objectives view...</h2>
                 <Navigation />
-                <CollegeBanner />
+                {this.state.data && (
+                    <h2>Your current level is {this.state.data[0].level}</h2>
+                )}
             </div>
-        );
-        /*
-        <Navigation />
-        return <h2>This is the overall college view.</h2>;
-        */
+        )
+
+
     }
 }

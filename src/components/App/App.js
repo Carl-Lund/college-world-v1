@@ -3,6 +3,8 @@ import React from 'react';
 // import './App.css';
 import College from "../College/College";
 import Students from "../Students/Students";
+import Sports from "../Sports/Sports";
+import Objectives from "../Objectives/Objectives";
 import Buildings from "../Buildings/Buildings";
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       <header className="App-header">
         <College />
         <Students />
+        <Sports />
+        <Objectives />
         <Buildings />
 
 {/*  Original default app code...
