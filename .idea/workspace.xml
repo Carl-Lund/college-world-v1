@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Adds bootstrap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/College/College.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/College.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Students/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/Students.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,6 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1RcIe8siOkRjUpDRuaNEdrnPf3X" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -102,6 +102,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -112,6 +122,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.npm start" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -124,6 +138,10 @@
       <option name="presentableId" value="Default" />
       <updated>1569881819237</updated>
       <workItem from="1569881826057" duration="14193000" />
+      <workItem from="1569960052120" duration="1565000" />
+      <workItem from="1569962309437" duration="283000" />
+      <workItem from="1570039683262" duration="3716000" />
+      <workItem from="1570049938410" duration="3429000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -157,7 +175,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
