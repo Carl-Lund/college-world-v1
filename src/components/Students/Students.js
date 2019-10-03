@@ -38,7 +38,7 @@ export default class Students extends React.Component {
                 children.push(<td>{data[i].name}</td>)
                 children.push(<td>{data[i].idNumber}</td>)
                 children.push(<td>{data[i].happinessLevel}</td>)
-                children.push(<td>{data[i].athlete}</td>)
+                children.push(<td>{data[i].athlete.toString()}</td>)
                 children.push(<td>{data[i].athleticAbility}</td>)
                 // row by row
                 table.push(<tr>{children}</tr>)
