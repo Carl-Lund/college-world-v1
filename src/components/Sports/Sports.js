@@ -35,7 +35,6 @@ export default class Sports extends React.Component {
             );
         }catch(error) {
             return null
-            console.error(error);
             // expected output: ReferenceError: nonExistentFunction is not defined
             // Note - error messages will vary depending on browser
         }
