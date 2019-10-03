@@ -22,7 +22,7 @@ export default class Objectives extends React.Component {
                 <h2>Start of objectives view...</h2>
                 <Navigation />
                 {this.state.data && (
-                    <h2>Your current level is {this.state.data.level}</h2>
+                    <h2>Your current level is {this.state.data[0].level}</h2>
                 )}
             </div>
         )
