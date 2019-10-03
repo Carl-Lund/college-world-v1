@@ -17,21 +17,27 @@ export default class Sports extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                <h2>Start of college view...</h2>
-                <Navigation />
-                {this.state.data && (
-                    <h2>Coach name = {this.state.data[0].coachName}</h2>
-                )
-                }
-                {this.state.data && (
-                    <h2>Hours until next game = {this.state.data[0].hoursUntilNextGame}</h2>
-                )
-                }
+        try {
+            return (
+                <div>
+                    <h2>Start of college view...</h2>
+                    <Navigation/>
+                    {this.state.data && (
+                        <h2>Coach name = {this.state.data[0].coachName}</h2>
+                    )
+                    }
+                    {this.state.data && (
+                        <h2>Hours until next game = {this.state.data[0].hoursUntilNextGame}</h2>
+                    )
+                    }
 
-            </div>
-        );
+                </div>
+            );
+        }catch(error) {
+            console.error(error);
+            // expected output: ReferenceError: nonExistentFunction is not defined
+            // Note - error messages will vary depending on browser
+        }
         /*
         <Navigation />
         return <h2>This is the overall college view.</h2>;
