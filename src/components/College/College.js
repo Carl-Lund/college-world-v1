@@ -6,14 +6,14 @@ export default class College extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: null,
+            collegeData: null,
         };
     }
     componentDidMount() {
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
             .then(response => response.json())
-            .then(data => {this.setState({ data });
-                console.log("Fetched college data " + data)
+            .then(collegeData => {this.setState({ collegeData });
+                console.log("Fetched college data " + collegeData)
             });
     }
 

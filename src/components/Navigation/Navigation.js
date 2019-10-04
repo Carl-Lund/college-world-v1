@@ -22,6 +22,7 @@ export default class Navigation extends React.Component {
                             <li><a href="Faculty">Faculty</a></li>
                             <li><a href="Objectives">Objectives</a></li>
                             <li><a href="Store">Store</a></li>
+                            <li><a href="Building">Buildings</a></li>
                         </ul>
                     </div>
                 </div>

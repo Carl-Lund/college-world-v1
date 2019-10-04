@@ -8,6 +8,8 @@ import College from "./components/College/College";
 import Students from "./components/Students/Students";
 import Sports from "./components/Sports/Sports";
 import Objectives from "./components/Objectives/Objectives";
+import Faculty from "./components/Faculty/Faculty";
+//import Buildings from "./components/Buildings/Faculty";
 
 ReactDOM.render(
     <Router>
@@ -16,6 +18,7 @@ ReactDOM.render(
         <Route path="/students" component={Students} />
         <Route path="/sports" component={Sports} />
         <Route path="/objectives" component={Objectives} />
+        <Route path="/faculty" component={Faculty} />
     </Router>,
     document.getElementById('root'));
 
