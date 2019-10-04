@@ -19,6 +19,7 @@ ReactDOM.render(
         <Route path="/sports" component={Sports} />
         <Route path="/objectives" component={Objectives} />
         <Route path="/faculty" component={Faculty} />
+        <Route path="/store" component={Store} />
     </Router>,
     document.getElementById('root'));
 
