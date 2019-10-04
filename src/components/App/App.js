@@ -6,13 +6,14 @@ import Students from "../Students/Students";
 import Sports from "../Sports/Sports";
 import Objectives from "../Objectives/Objectives";
 
-function App() {
-  return (
+export default class App extends React.Component {
+
+  render () {
+      return(
     <div className="App">
       <header className="App-header">
         <College />
         <Students />
-        <Sports />
         <Objectives />
 
           {/*  Original default app code...
@@ -29,7 +30,7 @@ function App() {
 
       </header>
     </div>
-  );
+      );
+  }
 }
 
-export default App;

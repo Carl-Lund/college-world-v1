@@ -37,12 +37,6 @@ export default class College extends React.Component {
 
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Balance</h2>h
-                    </div>
-                </div>
             </div>
         );
     }
