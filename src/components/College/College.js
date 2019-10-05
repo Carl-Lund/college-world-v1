@@ -8,7 +8,7 @@ export default class College extends React.Component {
         return (
             <div>
                 <Navigation />
-                <CollegeBanner collegeData={this.props.collegeData} objectivesData={this.props.objectivesData}/>
+                <CollegeBanner everything={this.props.everything} collegeData={this.props.collegeData} objectivesData={this.props.objectivesData}/>
             </div>
         );
     }

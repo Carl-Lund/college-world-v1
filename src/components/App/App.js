@@ -4,48 +4,45 @@ import React from 'react';
 import College from "../College/College";
 import Students from "../Students/Students";
 import Sports from "../Sports/Sports";
+import Faculty from "../Faculty/Faculty";
 import Objectives from "../Objectives/Objectives";
+import Store from "../Store/Store";
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: false,
-            collegeData: null,
-            objectivesData: null
+            everything: null
         };
     }
 
     componentDidMount() {
         this.setState({ isLoading: true });
 
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
             .then(response => response.json())
-            .then(data => {this.setState({ isLoading:false, collegeData: data, objectivesData: null });
+            .then(data => {this.setState({ isLoading:false, everything: data });
                 console.log("Fetched college data " + data)
             });
-
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/gates/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ isLoading:false, collegeData:this.state.collegeData, objectivesData: data });
-                console.log("Fetched objectives/gates data " + data)
-            });
-
-
-
     }
 
     render() {
-        const { isLoading, collegeData, objectivesData } = this.state;
-        if (isLoading || !collegeData || !objectivesData) {
+        const { isLoading, everything} = this.state;
+        if (isLoading || !everything ) {
             return <p>Loading...</p>;
         }
         return (
+
             <div className="App">
                 <header className="App-header">
-                    <College collegeData={collegeData} objectivesData={objectivesData}/>
-                    <Students/>
-                    <Objectives/>
+                    <h2></h2>
+                    <College everything={everything} />
+                    <Store everything={everything} />
+                    <Students everything={everything}/>
+                    <Objectives everything={everything}/>
+                    <Sports everything={everything} />
+                    <Faculty everything={everything} />
                 </header>
             </div>
         );
