@@ -38,9 +38,5 @@ export default class Sports extends React.Component {
             // expected output: ReferenceError: nonExistentFunction is not defined
             // Note - error messages will vary depending on browser
         }
-        /*
-        <Navigation />
-        return <h2>This is the overall college view.</h2>;
-        */
     }
 }

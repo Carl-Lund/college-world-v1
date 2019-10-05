@@ -7,30 +7,48 @@ import Sports from "../Sports/Sports";
 import Objectives from "../Objectives/Objectives";
 
 export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoading: false,
+            collegeData: null,
+            objectivesData: null
+        };
+    }
 
-  render () {
-      return(
-    <div className="App">
-      <header className="App-header">
-        <College />
-        <Students />
-        <Objectives />
+    componentDidMount() {
+        this.setState({ isLoading: true });
 
-          {/*  Original default app code...
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React Link
-        </a>
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
+            .then(response => response.json())
+            .then(data => {this.setState({ isLoading:false, collegeData: data, objectivesData: null });
+                console.log("Fetched college data " + data)
+            });
 
-        <img src={logo} className="App-logo" alt="logo" />*/}
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/gates/acorn')
+            .then(response => response.json())
+            .then(data => {this.setState({ isLoading:false, collegeData:this.state.collegeData, objectivesData: data });
+                console.log("Fetched objectives/gates data " + data)
+            });
 
-      </header>
-    </div>
-      );
-  }
+
+
+    }
+
+    render() {
+        const { isLoading, collegeData, objectivesData } = this.state;
+        if (isLoading || !collegeData || !objectivesData) {
+            return <p>Loading...</p>;
+        }
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <College collegeData={collegeData} objectivesData={objectivesData}/>
+                    <Students/>
+                    <Objectives/>
+                </header>
+            </div>
+        );
+    }
 }
 
