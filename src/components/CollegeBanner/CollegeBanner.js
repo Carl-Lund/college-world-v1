@@ -13,8 +13,8 @@ export default class College extends React.Component {
                     <div className="row">
                         <h2>College balance = ${this.props.everything.college.availableCash}</h2>
                         <div className="col-md-12">
-                            <h2>You are on level {this.props.everything.objectives[0].level} </h2>
-                            <h3>You need [] students to get to the next level.</h3>
+                            <h2>You are on level {this.props.everything.objectives.currentLevel} </h2>
+                            <h3>You need {this.props.everything.objectives.studentsNeededForNextLevel} students to get to the next level.</h3>
                         </div>
                     </div>
                 </div>

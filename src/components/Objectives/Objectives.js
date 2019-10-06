@@ -6,7 +6,7 @@ export default class Objectives extends React.Component {
         return (
             <div>
                 {this.props.everything.objectives && (
-                    <h2>Your current level is {this.props.everything.objectives[0].level}</h2>
+                    <h2>Your current level is {this.props.everything.objectives.currentLevel}</h2>
                 )}
             </div>
         )
