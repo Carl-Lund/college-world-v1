@@ -6,6 +6,9 @@ export default class CurrentLevel extends React.Component {
         return (
             <div className="container">
                 <div className="jumbotron">
+                    <div className="col-md-2">
+                        <img className="img-responsive" src="resources/images/star.png"/>
+                    </div>
                     <div className="row">
                         <div className="col-md-12">
                             <h2>You are on level {this.props.everything.objectives.currentLevel} </h2>
