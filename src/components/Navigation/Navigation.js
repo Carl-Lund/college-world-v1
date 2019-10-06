@@ -16,13 +16,12 @@ export default class Navigation extends React.Component {
                         <ul className="nav navbar-nav">
                             <li className="active"><a href="College">
                                 Acorn</a></li>
-                            <li><a href="Students">Students</a></li>
-                            <li><a href="Building">Buildings</a></li>
-                            <li><a href="Sports">Sports</a></li>
-                            <li><a href="Faculty">Faculty</a></li>
-                            <li><a href="Objectives">Objectives</a></li>
-                            <li><a href="Store">Store</a></li>
-                            <li><a href="Building">Buildings</a></li>
+                            <li><a href="students">Students</a></li>
+                            <li><a href="building">Buildings</a></li>
+                            <li><a href="sports">Sports</a></li>
+                            <li><a href="faculty">Faculty</a></li>
+                            <li><a href="objectives">Objectives</a></li>
+                            <li><a href="store">Store</a></li>
                         </ul>
                     </div>
                 </div>

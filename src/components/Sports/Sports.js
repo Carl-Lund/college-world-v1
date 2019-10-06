@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
 
 export default class Sports extends React.Component {
 
@@ -7,8 +6,6 @@ export default class Sports extends React.Component {
         try {
             return (
                 <div>
-                    <h2>Start of college view...</h2>
-                    <Navigation/>
                     {this.props.everything.sports && (
                         <h2>Coach name = {this.props.everything.sports[0].coachName}</h2>
                     )

@@ -11,8 +11,8 @@ import Objectives from "./components/Objectives/Objectives";
 import Faculty from "./components/Faculty/Faculty";
 import Store from "./components/Store/Store";
 //import Buildings from "./components/Buildings/Faculty";
-
-ReactDOM.render(
+ReactDOM.render(<App />, document.getElementById('root'));
+/*ReactDOM.render(
     <Router>
         <Route exact path="/" component={App} />
         <Route path="/college" component={College} />
@@ -22,5 +22,5 @@ ReactDOM.render(
         <Route path="/faculty" component={Faculty} />
         <Route path="/store" component={Store} />
     </Router>,
-    document.getElementById('root'));
+    document.getElementById('root'));*/
 

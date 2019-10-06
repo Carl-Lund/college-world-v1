@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
 
 export default class Students extends React.Component {
 
@@ -29,8 +28,6 @@ export default class Students extends React.Component {
 
         return (
             <div>
-                <Navigation />
-                <h2>Start of student view...</h2>
                 <table>
                     {table}
                 </table>

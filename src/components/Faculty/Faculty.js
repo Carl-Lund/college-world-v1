@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
 
 export default class Faculty extends React.Component{
 
@@ -27,8 +26,6 @@ export default class Faculty extends React.Component{
 
         return (
             <div>
-                <h2>A look at some professors...</h2>
-                <Navigation />
                 <table>
                     {table}
                 </table>
