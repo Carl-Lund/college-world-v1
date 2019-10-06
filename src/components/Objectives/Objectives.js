@@ -1,15 +1,13 @@
 import React from 'react';
+import CurrentLevel from "../CurrentLevel/CurrentLevel";
 
 export default class Objectives extends React.Component {
 
     render(){
         return (
             <div>
-                {this.props.everything.objectives && (
-                    <h2>Your current level is {this.props.everything.objectives.currentLevel}</h2>
-                )}
+                <CurrentLevel everything={this.props.everything}/>
             </div>
         )
-
     }
 }

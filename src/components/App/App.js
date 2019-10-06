@@ -49,8 +49,7 @@ export default class App extends React.Component {
                             </div>
                             <div className="collapse navbar-collapse" id="myNavbar">
                                 <ul className="nav navbar-nav">
-                                    <li className="active"><a href="College">
-                                        Acorn</a></li>
+                                    <li ><a href="College">Acorn</a></li>
                                     <li><a href="students">Students</a></li>
                                     <li><a href="building">Buildings</a></li>
                                     <li><a href="sports">Sports</a></li>
