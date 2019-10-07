@@ -6,6 +6,7 @@ export default class Sports extends React.Component {
         try {
             return (
                 <div>
+                    <h2>Sports</h2>
                     {this.props.everything.sports && (
                         <h2>Coach name = {this.props.everything.sports[0].coachName}</h2>
                     )
@@ -18,7 +19,7 @@ export default class Sports extends React.Component {
                 </div>
             );
         }catch(error) {
-            return null
+            return (<div><h2>There are no sports.</h2></div>)
             // expected output: ReferenceError: nonExistentFunction is not defined
             // Note - error messages will vary depending on browser
         }
