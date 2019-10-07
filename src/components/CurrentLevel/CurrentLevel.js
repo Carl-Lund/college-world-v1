@@ -22,6 +22,7 @@ export default class CurrentLevel extends React.Component {
                                     this.props.everything.objectives.studentsNeededForNextLevel} students
                                 </div>
                             </div>
+                            <h3>Balance ${this.props.everything.college.availableCash}</h3>
                         </div>
                     </div>
                 </div>
