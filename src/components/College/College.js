@@ -1,32 +1,21 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
-import CollegeBanner from "../CollegeBanner/CollegeBanner";
+import CurrentLevel from "../CurrentLevel/CurrentLevel";
+import CollegeDashboard from "../CollegeDashboard/CollegeDashboard";
+import Day from "../Day/Day";
 
 export default class College extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: null,
-        };
-    }
-    componentDidMount() {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ data });
-                console.log("Fetched college data " + data)
-            });
-    }
 
     render() {
+        if (!this.props.everything) {
+            return <p>Loading...</p>;
+        }
+
         return (
             <div>
-                <Navigation />
-                <CollegeBanner />
+                <CurrentLevel everything={this.props.everything}/>
+                <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                <CollegeDashboard everything={this.props.everything}/>
             </div>
         );
-        /*
-        <Navigation />
-        return <h2>This is the overall college view.</h2>;
-        */
     }
 }
