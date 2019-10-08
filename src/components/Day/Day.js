@@ -5,7 +5,7 @@ export default class Day extends React.Component {
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn/nextDay')
             .then(response => response.json())
             .then(data => {this.setState({ isLoading:false, everything: data });
-                console.log("Fetched college data " + data)
+                this.props.replaceEverything(data)
             });
     }
 

@@ -17,6 +17,11 @@ export default class App extends React.Component {
             isLoading: false,
             everything: null
         };
+        this.replaceEverything = this.replaceEverything.bind(this)
+    }
+
+    replaceEverything(newEverything) {
+        this.setState({isLoading:false, everything: newEverything})
     }
 
     componentDidMount() {
@@ -49,7 +54,7 @@ export default class App extends React.Component {
                             </div>
                             <div className="collapse navbar-collapse" id="myNavbar">
                                 <ul className="nav navbar-nav">
-                                    <li ><a href="College">Acorn</a></li>
+                                    <li ><a href="college">Acorn</a></li>
                                     <li><a href="students">Students</a></li>
                                     <li><a href="building">Buildings</a></li>
                                     <li><a href="sports">Sports</a></li>
@@ -64,7 +69,7 @@ export default class App extends React.Component {
 
                 <main>
                     <Route path="/about" render={() => <About everything={everything} />} />
-                    <Route path="/college" render={() => <College everything={everything} />} />
+                    <Route path="/college" render={() => <College everything={everything} replaceEverything={this.replaceEverything}/>} />
                     <Route path="/students" render={() => <Students everything={everything} />} />
                     <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                     <Route path="/store" render={() => <Store everything={everything} />} />
