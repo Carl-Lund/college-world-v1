@@ -1,6 +1,6 @@
 import React from 'react';
-// import { CircularProgressbar } from 'react-circular-progressbar';
-// import 'react-circular-progressbar/dist/styles.css';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export default class CollegeHappiness extends React.Component {
 
@@ -11,7 +11,7 @@ export default class CollegeHappiness extends React.Component {
                 <div className="well well-sm">
                     <h3>Happiness</h3>
                     <h3>{this.props.everything.college.studentBodyHappiness}</h3>
-                    {/*<CircularProgressbar value={66} text={`66`} />*/}
+                    <CircularProgressbar value={66} text={`66`} />
                     <br/>
                     <button type="button" href="#happinessDetails" className="btn btn-light"
                             data-toggle="collapse">Details
