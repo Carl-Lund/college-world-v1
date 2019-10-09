@@ -1,4 +1,6 @@
 import React from 'react';
+import "./Students.css"
+import StudentBubble from './StudentBubble.js';
 import Navigation from "../Navigation/Navigation";
 
 export default class StudentsTable extends React.Component {
@@ -10,7 +12,16 @@ export default class StudentsTable extends React.Component {
      render() {
         return (
             <div>
-                {this.studentTable}
+                <div className="col-sm-8">
+                    <div className="well well-sm">
+                        <h4>{this.props.everything.students.length} Students</h4>
+                        <div className="pre-scrollable">
+                            <div className="studentContainer">
+                                {this.studentTable}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
         /*
@@ -22,27 +33,10 @@ export default class StudentsTable extends React.Component {
 
 function createTable(data) {
     let table = [];
-    console.log(data);
-
-    let children = [];
-    children.push(<td>NAME</td>)
-    children.push(<td>ID NUMBER</td>)
-    children.push(<td>HAPPINESS</td>)
-    children.push(<td>ATHLETE</td>)
-    children.push(<td>ATHLETIC ABILITY</td>)
-    table.push(<tr>{children}</tr>)
-
-
-    for (let i = 0; i < 5; i++) {
-        children = [];
-        // column by column
-        children.push(<td>{data[i].name}</td>)
-        children.push(<td>{data[i].idNumber}</td>)
-        children.push(<td>{data[i].happinessLevel}</td>)
-        children.push(<td>{data[i].athlete.toString()}</td>)
-        children.push(<td>{data[i].athleticAbility}</td>)
-        // row by row
-        table.push(<tr>{children}</tr>)
+    console.log(data[2]);
+    
+    for (let i = 0; i < data.length; i++) {
+        table.push(<StudentBubble student = {data[i]}/>)
     }
     return table
 }

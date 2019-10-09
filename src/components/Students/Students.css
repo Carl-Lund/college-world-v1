@@ -1,0 +1,56 @@
+.studentContainer {
+    display: grid;
+    margin-right: 20px;
+    grid-template-columns: repeat(10,10%);
+}
+
+.studentElement {
+    width: 55px;
+    height: 55px;
+    margin: 10px 15px 20px 15px;
+    border-radius: 50%;
+    background: #aaa;
+    white-space: nowrap;
+}
+
+.studentElement:hover {
+    background: #888;
+    width: 60px;
+    height: 60px;
+    margin: 7.5px 10px 17.5px 12px;
+}
+
+.studentElement img {
+    width:80%;
+    margin: 5px;
+}
+
+.studentElement p {
+    font-size: xx-small;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.speech-bubble {
+    position: relative;
+    background: #5bc0de;
+    border-radius: .4em;
+    margin: 15px;
+    color: white;
+    padding: 10px;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 70%;
+    width: 0;
+    height: 0;
+    border: 1.125em solid transparent;
+    border-right-color: #5bc0de;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -0.562em;
+    margin-left: -1.125em;
+}
