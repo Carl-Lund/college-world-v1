@@ -24,10 +24,6 @@ export default class StudentsTable extends React.Component {
                 </div>
             </div>
         );
-        /*
-        <Navigation />
-        return <h2>This is the overall college view.</h2>;
-        */
     }
 }
 
