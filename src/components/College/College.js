@@ -12,8 +12,7 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <CurrentLevel everything={this.props.everything}/>
-                <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 <CollegeDashboard everything={this.props.everything}/>
             </div>
         );

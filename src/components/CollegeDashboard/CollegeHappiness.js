@@ -10,8 +10,7 @@ export default class CollegeHappiness extends React.Component {
             <div className="col-sm-2">
                 <div className="well well-sm">
                     <h3>Happiness</h3>
-                    <h3>{this.props.everything.college.studentBodyHappiness}</h3>
-                    <CircularProgressbar value={66} text={`66`} />
+                    <CircularProgressbar value={this.props.everything.college.studentBodyHappiness} text={this.props.everything.college.studentBodyHappiness} strokeWidth={15} />
                     <br/>
                     <button type="button" href="#happinessDetails" className="btn btn-light"
                             data-toggle="collapse">Details
