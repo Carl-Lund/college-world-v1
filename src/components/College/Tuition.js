@@ -7,17 +7,6 @@ export default class Tuition extends React.Component {
         this.updateCollegeOnServer = this.updateCollegeOnServer.bind(this);
     }
 
-    componentDidMount() {
-        this.setState({ isLoading: true });
-
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ isLoading:false, everything: data });
-                console.log("Fetched college data " + data)
-            });
-
-    }
-
     handleOnChange(e) {
         this.props.everything.college.yearlyTuitionCost = e.target.value;
         this.props.replaceEverything(this.props.everything);
@@ -39,15 +28,16 @@ export default class Tuition extends React.Component {
     render() {
         const tuition = this.props.everything.college.yearlyTuitionCost;
         return (
-            <div className="container">
-                <fieldset>
+            <div className="col-sm-3">
+                <div className="well well-sm">
                     <legend>Tuition</legend>
                     <input
                         value={tuition}
                         onChange={this.handleOnChange}
                     />
-                </fieldset>
+                </div>
             </div>
+
         );
     }
 }
