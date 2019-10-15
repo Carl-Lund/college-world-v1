@@ -39,6 +39,22 @@ export default class Buildings extends React.Component {
             }
         }
 
+        let table = [];
+        for (let i = 0; i < this.props.everything.buildings.length; i++) {
+            let building = [];
+            building.push(
+                <tr>
+                    <td>{this.props.everything.buildings[i].name}</td>
+                    <td>{this.props.everything.buildings[i].kindOfBuilding}</td>
+                    <td>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>
+                    <td>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>
+                    <td><div className="progress"></div></td>
+                    <td>{this.props.everything.buildings[i].curDisaster}</td>
+                </tr>
+            )
+            table.push(<tr>{building}</tr>)
+        }
+
         return (
             <div>
             <div className="container">
@@ -104,6 +120,9 @@ export default class Buildings extends React.Component {
                             <th>Actions</th>
                         </tr>
                     </thread>
+                    <tbody>
+                        {table}
+                    </tbody>
                 </table>
             </div>
                 <div className="col-sm-4">
@@ -117,7 +136,7 @@ export default class Buildings extends React.Component {
                     <div className="col-sm-6" >
                         <div className="well well-sm">
                             <h3>
-                                <p >Resident News</p>
+                                <p>Resident News</p>
                             </h3>
                             <div className="pre-scrollable">
                                 <ul className="list-group">
@@ -139,13 +158,6 @@ export default class Buildings extends React.Component {
                                         <div className="progress">
                                         </div>
                                 </div>
-                            <div className="col-md-2" >
-                                <h4>Extra Large Size</h4>
-                                <img className="img-responsive" src="resources/images/EXTRA_LARGE_DORM_k.png"/>
-                                    <h5>Total progress:</h5>
-                                    <div className="progress">
-                                    </div>
-                            </div>
                             <div className="col-md-2" >
                                 <h4>Extra Large Size</h4>
                                 <img className="img-responsive" src="resources/images/EXTRA_LARGE_DORM_k.png"/>
