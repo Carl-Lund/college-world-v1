@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Students.css"
-import Navigation from "../Navigation/Navigation";
 
 export default class StudentsTable extends React.Component {
     constructor(props) {
@@ -67,7 +66,7 @@ export default class StudentsTable extends React.Component {
                             )}
 
                             <tr>
-                                <td><img class="img-responsive" src="resources/images/fun.png"></img></td>
+                                <img class="img-responsive" src="resources/images/fun.png" alt=""/>
                                 <td><b>Overall Happiness</b></td>
                                 <td>{this.props.student.happinessLevel}</td>
                             </tr>

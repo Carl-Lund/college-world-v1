@@ -1,5 +1,8 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
+import StudentFeedback from "../Students/Students";
+import SportsTop from "./SportsTop";
+import SportsRecordTable from "./SportsRecordTable";
 
 export default class Sports extends React.Component {
     //The json file: http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn
@@ -93,6 +96,9 @@ export default class Sports extends React.Component {
 
             return (
                 <div>
+                    <SportsTop sports = {this.props.everything.sports}/>
+                    <SportsRecordTable sports = {this.props.everything.sports}/>
+
                     <table>
                         <h3>COACHES:</h3>
                         {coachesTable}

@@ -29,7 +29,7 @@ export default class StudentsTable extends React.Component {
 
 function createTable(data) {
     let table = [];
-    console.log(data[2]);
+    console.log(data[0]);
     
     for (let i = 0; i < data.length; i++) {
         table.push(<StudentBubble student = {data[i]}/>)

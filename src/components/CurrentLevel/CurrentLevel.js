@@ -1,4 +1,5 @@
 import React from 'react';
+import Day from "../Day/Day";
 
 export default class CurrentLevel extends React.Component {
 
@@ -23,6 +24,9 @@ export default class CurrentLevel extends React.Component {
                                 </div>
                             </div>
                             <h3>Balance ${this.props.everything.college.availableCash}</h3>
+
+                            <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+
                         </div>
                     </div>
                 </div>
