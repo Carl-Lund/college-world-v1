@@ -5,22 +5,18 @@ export default class Buildings extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            data: null,
-        };
     }
-    componentDidMount() {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/building/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ data });
-                console.log("Fetched building data " + data)
-            });
-    }
+
     render() {
+        if (!this.props.everything) {
+            return <p>Loading...</p>;
+        }
+
         return (
             <div>
             <div className="container">
                 <div className="jumbotron" >
+                    <h3>Buildings:{this.props.everything.buildings.length}</h3>
                     <div className="row">
                         <div className="col-md-2">
                             <img className="img-responsive" src="resources/images/bed.png"/>
