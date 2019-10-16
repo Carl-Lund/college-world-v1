@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
+import News from "../News/News";
 
 export default class Buildings extends React.Component {
 
@@ -12,9 +13,9 @@ export default class Buildings extends React.Component {
             return <p>Loading...</p>;
         }
 
-/*        let tableStyle = {
-            vertical-align: 'middle'
-        };*/
+        let tableStyle = {
+            verticalAlign: 'middle'
+        };
 
         let availableBeds = 0;
         let takenBeds = 0;
@@ -217,6 +218,11 @@ export default class Buildings extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div row>
+                    <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
+                </div>
+
             </div>
 
 
