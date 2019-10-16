@@ -26,7 +26,7 @@ function createTable(data) {
         table.push(<h3>Level {i}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data.studentsNeededForLevel[i]} Students</h3>);
 
         for(let j =0; j<=data.gates.length; j++) {
-            if (i == data.gates[j].level) {
+            if (data.gates[j].level == i) {
                 table.push(<li className="list-group-item">
                     <div className="col-md-2" style={{width: '100px'}}>
                         <img className="img-responsive" style="" src="data.gates[j].iconPath"/>
