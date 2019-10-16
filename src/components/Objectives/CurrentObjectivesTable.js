@@ -18,21 +18,21 @@ export default class CurrentObjectivesTable extends React.Component {
     }
 }
 
-function createTable(data) {
+function createTable(objectives) {
     let table=[];
 
     for(let i =1; i <=5; i++) {
-        if (i <= data.currentLevel) continue;
-        table.push(<h3>Level {i}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data.studentsNeededForLevel[i]} Students</h3>);
+        if (i <= objectives.currentLevel) continue;
+        table.push(<h3>Level {i}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{objectives.studentsNeededForLevel[i]} Students</h3>);
 
-        for(let j =0; j<=data.gates.length; j++) {
-            if (data.gates[j].level == i) {
+        for(let j =0; j< objectives.gates.length; j++) {
+            if (objectives.gates[j].level == i) {
                 table.push(<li className="list-group-item">
                     <div className="col-md-2" style={{width: '100px'}}>
-                        <img className="img-responsive" style="" src="data.gates[j].iconPath"/>
+                        <img className="img-responsive" src="{objectives.gates[j].iconPath}"/>
                     </div>
-                    <h4><strong>data.gates[j].key</strong></h4>
-                    <p>data.gates[j].description</p>
+                    <h4><strong>{objectives.gates[j].key}</strong></h4>
+                    <p>objectives.gates[j].description</p>
                     </li>
                     );
             }
