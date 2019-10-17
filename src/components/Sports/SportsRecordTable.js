@@ -8,7 +8,7 @@ export default class SportsRecordTable extends React.Component {
         super(props);
 
         this.buildTable = buildTable(this.props.sports);
-        this.showTeam = showTeam()
+        //this.showTeam = showTeam()
         // this.sportsTeem = getSportsTeem(this.props.sports);
     }
 
@@ -43,11 +43,11 @@ export default class SportsRecordTable extends React.Component {
                                     <tbody>
                                     {this.buildTable}
                                     </tbody>
-                                    <div id="show" className="collapse">
-                                        <div className="jumbotronTransp">
-                                            {this.showTeam}
-                                        </div>
-                                    </div>
+                                    {/*<div id="show" className="collapse">*/}
+                                        {/*<div className="jumbotronTransp">*/}
+                                            {/*{this.showTeam}*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
                                 </table>
 
                         </div>
@@ -60,11 +60,14 @@ export default class SportsRecordTable extends React.Component {
 
         );
     }
+
 }
 
 function buildTable(sports) {
-    var sportsTeam = [];
+    var sportsTable = [];
     for (let i = 0; i < sports.length; i++) {
+        var sportsTeam = [];
+
         // column by column
         sportsTeam.push(<td>{sports[i].sportName}</td>)
         sportsTeam.push(<button type="button" onClick={showTeam} className="btn btn-info" data-toggle="collapse" data-target="#show">Details
@@ -74,9 +77,15 @@ function buildTable(sports) {
         sportsTeam.push(<td>{sports[i].overallRep}</td>)
         sportsTeam.push(<td>{sports[i].sportSeason}</td>)
         sportsTeam.push(<td>{sports[i].division}</td>)
+
+        sportsTable.push(<tr>{sportsTeam}</tr>)
+
+        sportsTeam = [];
+        sportsTeam.push(<div id="show" className="collapse"><div className="jumbotronTransp">{showTeam()}</div></div>)
+        sportsTable.push(<tr>{sportsTeam}</tr>)
     }
 
-    return sportsTeam
+    return sportsTable
 }
 
 function showTeam() {
