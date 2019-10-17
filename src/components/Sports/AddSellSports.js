@@ -105,17 +105,26 @@ export default class AddSellSports extends React.Component {
         //     .then(response => response.json())
         //     .then(data => d = data);
 
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn', {
-            method: 'POST',
-            body: JSON.stringify({addNewTeam}),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        }).then(response => {
-            return response.json()
-        }).then(json =>{
-            console.log('Selected: ' + this.props.everything)
-        });
+        // fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn', {
+        //     method: 'POST',
+        //     body: JSON.stringify({addNewTeam}),
+        //     headers: {
+        //         "Content-type": "application/json; charset=UTF-8"
+        //     }
+        // }).then(response => {
+        //     return response.json()
+        // }).then(json =>{
+        //     console.log('Selected: ' + this.props.everything)
+        // });
 
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn',
+            {
+                method: 'POST',
+                body: JSON.stringify(addNewTeam)
+            }
+        )
+            .then(response => response.json())
+            .then(data => {
+            });
     }
 }
