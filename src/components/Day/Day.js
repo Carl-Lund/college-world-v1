@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class Day extends React.Component {
     fetchData = () => {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn/nextDay')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/{this.props.everything.college.runId}/nextDay')
             .then(response => response.json())
             .then(data => {this.setState({ isLoading:false, everything: data });
                 this.props.replaceEverything(data)
