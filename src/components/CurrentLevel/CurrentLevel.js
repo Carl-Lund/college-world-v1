@@ -4,6 +4,10 @@ import Day from "../Day/Day";
 export default class CurrentLevel extends React.Component {
 
     render() {
+        if (!this.props.everything) {
+            return <p>Loading...</p>;
+        }
+
         return (
             <div className="container">
                 <div className="jumbotron">
