@@ -2,7 +2,7 @@ import React from 'react';
 //import logo from '../../assets/images/logo.svg';
 // import './App.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import College from "../College/College";
+import CollegeLaunchPad from "../College/CollegeLaunchPad";
 import Students from "../Students/Students";
 import Sports from "../Sports/Sports";
 import Faculty from "../Faculty/Faculty";
@@ -38,7 +38,7 @@ export default class App extends React.Component {
     render() {
         const { isLoading, everything} = this.state;
         if (isLoading || !everything ) {
-            return <p>Loading...</p>;
+            return (<div><CollegeLaunchPad isLoading={isLoading} everything={everything} replaceEverything={this.replaceEverything}/></div>);
         }
 
         return (
@@ -56,7 +56,7 @@ export default class App extends React.Component {
                             </div>
                             <div className="collapse navbar-collapse" id="myNavbar">
                                 <ul className="nav navbar-nav">
-                                    <li><a href="college">{this.state.everything.college.runId}</a></li>
+                                    <li><a href="college">Dashboard</a></li>
                                     <li><a href="students">Students</a></li>
                                     <li><a href="building">Buildings</a></li>
                                     <li><a href="sports">Sports</a></li>
@@ -71,7 +71,7 @@ export default class App extends React.Component {
 
                 <main>
                     <Route path="/about" render={() => <About everything={everything} />} />
-                    <Route path="/college" render={() => <College everything={everything} replaceEverything={this.replaceEverything}/>}/>
+                    <Route path="/college" render={() => <CollegeLaunchPad isLoading={isLoading} everything={everything} replaceEverything={this.replaceEverything}/>}/>
                     <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                     <Route path="/students" render={() => <Students everything={everything} />} />
                     <Route path="/objectives" render={() => <Objectives everything={everything} />} />
