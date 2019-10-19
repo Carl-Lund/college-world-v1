@@ -1,6 +1,4 @@
 import React from 'react';
-//import logo from '../../assets/images/logo.svg';
-// import './App.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import CollegeLaunchPad from "../College/CollegeLaunchPad";
 import Students from "../Students/Students";
@@ -15,30 +13,30 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false,
+            launchStatus: 'collegeNotChosen',
             everything: null
         };
         this.replaceEverything = this.replaceEverything.bind(this)
     }
 
     replaceEverything(newEverything) {
-        this.setState({isLoading:false, everything: newEverything})
+        this.setState({launchStatus:false, everything: newEverything})
     }
 
     componentDidMount() {
-        this.setState({ isLoading: true });
+        this.setState({ launchStatus: 'loadInProgress' });
 
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
             .then(response => response.json())
-            .then(data => {this.setState({ isLoading:false, everything: data });
+            .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
                 console.log("Fetched college data " + data)
             });
     }
 
     render() {
-        const { isLoading, everything} = this.state;
-        if (isLoading || !everything ) {
-            return (<div><CollegeLaunchPad isLoading={isLoading} everything={everything} replaceEverything={this.replaceEverything}/></div>);
+        const { launchStatus, everything} = this.state;
+        if (launchStatus || !everything ) {
+            return (<div><CollegeLaunchPad launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything}/></div>);
         }
 
         return (
@@ -71,7 +69,7 @@ export default class App extends React.Component {
 
                 <main>
                     <Route path="/about" render={() => <About everything={everything} />} />
-                    <Route path="/college" render={() => <CollegeLaunchPad isLoading={isLoading} everything={everything} replaceEverything={this.replaceEverything}/>}/>
+                    <Route path="/college" render={() => <CollegeLaunchPad launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything}/>}/>
                     <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                     <Route path="/students" render={() => <Students everything={everything} />} />
                     <Route path="/objectives" render={() => <Objectives everything={everything} />} />
