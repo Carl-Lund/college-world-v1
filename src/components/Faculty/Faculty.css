@@ -28,12 +28,12 @@
 }
 
 #salary{
-    padding-left: 5em;
+    margin-left: 5em;
     float: right;
 }
 
 #fire{
-    padding-left: 1em;
+    margin-left: 1em;
     float: right;
 }
 
