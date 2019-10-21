@@ -25,32 +25,18 @@ export default class CollegeOpenCreate extends React.Component {
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
-            });
+           });
     }
 
     render() {
-        //return(<h3>Open</h3>);
         const collegeName = this.props.collegeName;
         return (
             <div className="col-sm-3">
                 <div className="well well-sm">
-                    <form onSubmit={this.loadCollege}>
-                        <label>
-                            College:
-                            <input type="text" value={collegeName} onChange={this.handleOnChange} />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-
-                    {/*<legend>College</legend>*/}
-                    {/*<input*/}
-                    {/*    value={collegeName}*/}
-                    {/*    onChange={this.handleOnChange}*/}
-                    {/*/>*/}
+                    College
+                    <input type="text" value={collegeName} onChange={this.handleOnChange} />
+                    <button onClick={this.loadCollege}>Load</button>
                 </div>
-                {/*<div className="container">*/}
-                {/*    <button onClick={this.loadCollege()}>Load</button>*/}
-                {/*</div>*/}
             </div>
 
         );
