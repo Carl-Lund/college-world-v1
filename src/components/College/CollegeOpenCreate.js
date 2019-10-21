@@ -7,41 +7,52 @@ export default class CollegeOpenCreate extends React.Component {
     constructor(props) {
         super(props);
         this.handleOnChange = this.handleOnChange.bind(this);
-//        this.updateCollegeOnServer = this.updateCollegeOnServer.bind(this);
+        this.loadCollege = this.loadCollege.bind(this);
     }
 
-    handleOnChange(e) {
-        // this.props.everything.college.yearlyTuitionCost = e.target.value;
-        // this.props.replaceEverything(this.props.everything);
-//       this.updateCollegeOnServer(this.props.everything.college);
+    handleOnChange(e) {;
+        this.props.setCollegeName(e.target.value);
     }
 
-    // updateCollegeOnServer(college) {
-    //     fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/{this.props.everything.college.runId}',
-    //         {
-    //             method: 'POST',
-    //             body: JSON.stringify(college)
-    //         }
-    //     )
-    //         .then(response => response.json())
-    //         .then(data => {
-    //         });
-    // }
+    loadCollege() {
+        if (this.props.collegeName == "")
+            return;
+
+        console.log("Loading college");
+        //this.props.setLaunchStatus('loadInProgressxxxxxx');
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/'+ this.props.collegeName;
+        console.log(address);
+        fetch(address)
+            .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data);
+            });
+    }
 
     render() {
-        return(<h3>Open</h3>);
-        // const tuition = this.props.everything.college.yearlyTuitionCost;
-        // return (
-        //     <div className="col-sm-3">
-        //         <div className="well well-sm">
-        //             <legend>Tuition</legend>
-        //             <input
-        //                 value={tuition}
-        //                 onChange={this.handleOnChange}
-        //             />
-        //         </div>
-        //     </div>
-        //
-        // );
+        //return(<h3>Open</h3>);
+        const collegeName = this.props.collegeName;
+        return (
+            <div className="col-sm-3">
+                <div className="well well-sm">
+                    <form onSubmit={this.loadCollege}>
+                        <label>
+                            College:
+                            <input type="text" value={collegeName} onChange={this.handleOnChange} />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+
+                    {/*<legend>College</legend>*/}
+                    {/*<input*/}
+                    {/*    value={collegeName}*/}
+                    {/*    onChange={this.handleOnChange}*/}
+                    {/*/>*/}
+                </div>
+                {/*<div className="container">*/}
+                {/*    <button onClick={this.loadCollege()}>Load</button>*/}
+                {/*</div>*/}
+            </div>
+
+        );
     }
 }
