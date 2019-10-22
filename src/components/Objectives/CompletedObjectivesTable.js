@@ -24,6 +24,7 @@ function createTable(data) {
     for(let i =1; i <=5; i++) {
         if (i <= data.currentLevel) continue;
         table.push(<h3>Level {i}     {data.studentsNeededForLevel[i]} Students</h3>);
+
     }
 
 }
