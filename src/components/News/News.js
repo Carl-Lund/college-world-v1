@@ -31,7 +31,7 @@ function createTable(news, newsType) {
 
     for (let i = news.length-1; i >= 0; i--) {
         if (newsType == news[i].noteType)
-            table.push(<NewsItem newsItem = {news[i]}/>)
+            table.push(<NewsItem newsItem = {news[i]} newsItemNumber={i}/>)
     }
     return table
 }

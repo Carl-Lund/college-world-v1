@@ -8,12 +8,14 @@ import PlayMode from "./PlayMode";
 export default class College extends React.Component {
 
     render() {
-        if (!this.props.everything) {
+        const launchStatus = this.props.launchStatus;
+        if (!this.props.everything || launchStatus != 'loadingDone') {
             return <p>Loading...</p>;
         }
 
         return (
             <div>
+                <h1>{this.props.everything.college.runId}</h1>
                 <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 <CollegeDashboard everything={this.props.everything}/>
 
