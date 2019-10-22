@@ -1,12 +1,17 @@
 import React from 'react';
+import Select from "react-select";
 
 export default class Day extends React.Component {
-    fetchData = () => {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn/nextDay')
+    constructor(props) {
+        super(props);
+        this.fetchData = this.fetchData.bind(this);
+    }
+
+    fetchData() {
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
+        fetch(address)
             .then(response => response.json())
-            .then(data => {this.setState({ isLoading:false, everything: data });
-                this.props.replaceEverything(data)
-            });
+            .then(data => {this.props.replaceEverything(data)});
     }
 
     render() {

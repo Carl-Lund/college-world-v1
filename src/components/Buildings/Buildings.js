@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
+import News from "../News/News";
 
 export default class Buildings extends React.Component {
 
@@ -12,29 +13,33 @@ export default class Buildings extends React.Component {
             return <p>Loading...</p>;
         }
 
-        let avalibleBeds = 0;
+        let tableStyle = {
+            verticalAlign: 'middle'
+        };
+
+        let availableBeds = 0;
         let takenBeds = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
             if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
-                avalibleBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
+                availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
         }
 
-        let avaliblePlates = 0;
+        let availablePlates = 0;
         let takenPlates = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
             if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
-                avaliblePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
+                availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
         }
 
-        let avalibleDesks = 0;
+        let availableDesks = 0;
         let takenDesks = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
             if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
-                avalibleDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
+                availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }
         }
@@ -64,21 +69,21 @@ export default class Buildings extends React.Component {
                             <img className="img-responsive" src="resources/images/bed.png"/>
                         </div>
                         <div className="col-md-2">
-                            <h4>{avalibleBeds} Avalible Beds</h4>
+                            <h4>{availableBeds} Available Beds</h4>
                             <h4>{takenBeds} Taken Beds</h4>
                         </div>
                         <div className="col-md-2">
                             <img className="img-responsive" src="resources/images/plate.png"/>
                         </div>
                         <div className="col-md-2">
-                            <h4>{avaliblePlates} Avalible Plates</h4>
+                            <h4>{availablePlates} Available Plates</h4>
                             <h4>{takenPlates} Taken Plates</h4>
                         </div>
                         <div className="col-md-2">
                             <img className="img-responsive" src="resources/images/desk.png"/>
                         </div>
                         <div className="col-md-2">
-                            <h4>{avalibleDesks} Avalible Desks</h4>
+                            <h4>{availableDesks} Available Desks</h4>
                             <h4>{takenDesks} Taken Desks</h4>
                         </div>
                     </div>
@@ -213,6 +218,11 @@ export default class Buildings extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div row>
+                    <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
+                </div>
+
             </div>
 
 

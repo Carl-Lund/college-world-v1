@@ -15,7 +15,7 @@ export default class PlayMode extends React.Component {
     }
 
     updateCollegeOnServer(college) {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn',
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/{this.props.everything.college.runId}',
             {
                 method: 'POST',
                 body: JSON.stringify(college)

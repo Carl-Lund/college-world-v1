@@ -20,6 +20,10 @@ export default class Students extends React.Component {
 
     render() {
         console.log(this.props.everything);
+        if (this.props.everything ==null) {
+            return(<h4>No students.</h4>);
+        }
+
         return (
             <div className="container" style={{width: '95%'}}>
                 <div className="row">
