@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Added building view">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="displayed store info in React">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,18 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
+  <component name="ProjectId" id="1RcIe8siOkRjUpDRuaNEdrnPf3X" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../enccollegeworld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/students-view" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -143,11 +140,13 @@
       <option name="presentableId" value="Default" />
       <updated>1569881819237</updated>
       <workItem from="1569881826057" duration="14193000" />
-      <workItem from="1569960384328" duration="2795000" />
-      <workItem from="1570124850446" duration="4953000" />
-      <workItem from="1570563671015" duration="2661000" />
-      <workItem from="1570727480428" duration="5961000" />
-      <workItem from="1571155530984" duration="4636000" />
+      <workItem from="1569960052120" duration="1565000" />
+      <workItem from="1569962309437" duration="283000" />
+      <workItem from="1570039683262" duration="3716000" />
+      <workItem from="1570049938410" duration="3429000" />
+      <workItem from="1570130310705" duration="1243000" />
+      <workItem from="1570565002457" duration="6371000" />
+      <workItem from="1570735551119" duration="10420000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -170,28 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569941206234</updated>
     </task>
-    <task id="LOCAL-00004" summary="Added building view">
-      <created>1570127941616</created>
+    <task id="LOCAL-00004" summary="Added Store page">
+      <created>1570135098227</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1570127941616</updated>
+      <updated>1570135098227</updated>
     </task>
-    <task id="LOCAL-00005" summary="Partially ported building tab from college world">
-      <created>1570733363659</created>
+    <task id="LOCAL-00005" summary="buttons are disabled if user is unable to purchase">
+      <created>1571720121534</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1570733363659</updated>
+      <updated>1571720121534</updated>
     </task>
-    <task id="LOCAL-00006" summary="Added buildings">
-      <created>1571155725245</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1571155725245</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,9 +206,8 @@
     <MESSAGE value="Setting up the basic structure." />
     <MESSAGE value="More restructuring and name changes." />
     <MESSAGE value="Adds bootstrap" />
-    <MESSAGE value="Added building view" />
-    <MESSAGE value="Partially ported building tab from college world" />
-    <MESSAGE value="Added buildings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added buildings" />
+    <MESSAGE value="Added Store page" />
+    <MESSAGE value="buttons are disabled if user is unable to purchase" />
+    <option name="LAST_COMMIT_MESSAGE" value="buttons are disabled if user is unable to purchase" />
   </component>
 </project>
