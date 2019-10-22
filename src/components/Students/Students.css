@@ -54,3 +54,10 @@
     margin-top: -0.562em;
     margin-left: -1.125em;
 }
+
+.panel-image {
+    min-height: 64px;
+    min-width: 66px;
+    max-height: 64px;
+    max-width: 66px;
+}
