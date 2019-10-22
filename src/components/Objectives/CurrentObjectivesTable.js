@@ -29,10 +29,10 @@ function createTable(objectives) {
             if (objectives.gates[j].level == i) {
                 table.push(<li className="list-group-item">
                     <div className="col-md-2" style={{width: '100px'}}>
-                        <img className="img-responsive" src="{objectives.gates[j].iconPath}"/>
+                        <img className="img-responsive" src={objectives.gates[j].iconPath}/>
                     </div>
                     <h4><strong>{objectives.gates[j].key}</strong></h4>
-                    <p>objectives.gates[j].description</p>
+                    <p>{objectives.gates[j].description}</p>
                     </li>
                     );
             }
