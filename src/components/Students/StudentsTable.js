@@ -65,16 +65,16 @@ function createTable(students, sort, props) {
         studentsArray.sort(function(a, b) {
             var happyA = a.happinessLevel;
             var happyB = b.happinessLevel;
-            return b-a;
+            return happyA-happyB;
         });
+        studentsArray.reverse();
     }
     else if (sort === "overallHappinessLToH") {
         studentsArray.sort(function(a, b) {
             var happyA = a.happinessLevel;
             var happyB = b.happinessLevel;
-            return b-a;
+            return happyA-happyB;
         });
-        studentsArray.reverse();
     } else {
         console.log("invalid sort method");
     }
