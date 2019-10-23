@@ -14,7 +14,7 @@ export default class CollegeOpenCreate extends React.Component {
         this.props.setCollegeName(e.target.value);
     }
 
-    loadCollege() {
+    loadCollege(e) {
         if (this.props.collegeName == "")
             return;
 
