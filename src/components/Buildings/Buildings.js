@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
-import News from "../News/News";
+import ReactTable from "react-table";
 
 export default class Buildings extends React.Component {
 
@@ -14,8 +14,29 @@ export default class Buildings extends React.Component {
         }
 
         let tableStyle = {
+            border: '1px solid #ccc',
+            borderCollapse: 'collapse',
+            margin: '0',
+            padding: '0',
+            width: '100%',
+            tableLayout: 'fixed'
+        }
+        let trStyle = {
+            background: '#f8f8f8',
+            border: '1px solid #ddd',
+            padding: '.35em'
+        }
+        let thStyle = {
+            padding: '.625em',
+            textAlign: 'center',
+            fontSize: '.85em',
+            letterSpacing: '.1em'
+        }
+        let tdStyle = {
+            padding: '.625em',
+            textAlign: 'center',
             verticalAlign: 'middle'
-        };
+        }
 
         let availableBeds = 0;
         let takenBeds = 0;
@@ -48,16 +69,14 @@ export default class Buildings extends React.Component {
         for (let i = 0; i < this.props.everything.buildings.length; i++) {
             let building = [];
             building.push(
-                <tr>
-                    <td>{this.props.everything.buildings[i].name}</td>
-                    <td>{this.props.everything.buildings[i].kindOfBuilding}</td>
-                    <td>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>
-                    <td>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>
-                    <td><div className="progress"></div></td>
-                    <td>{this.props.everything.buildings[i].curDisaster}</td>
-                </tr>
+                    <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
+                    <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
+                    <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
+                    <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
+                    <td style={tdStyle}><div className="progress"></div></td>,
+                    <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>
             )
-            table.push(<tr>{building}</tr>)
+            table.push(<tr style={trStyle}>{building}</tr>)
         }
 
         return (
@@ -93,38 +112,38 @@ export default class Buildings extends React.Component {
                         <div className="form-group">
                             <label for="buildingType">Filter by Building Type
                         </label>
-                        {/*<select className="form-control" id="sortByBuildingType" name="sortByBuildingType"*/}
-                        {/*        style="width: 160px;">*/}
-                        {/*    <option value="All Buildings">All Buildings</option>*/}
-                        {/*    <option value="Administrative Building">Administrative Building</option>*/}
-                        {/*    <option value="Academic Center">Academic Center</option>*/}
-                        {/*    <option value="Baseball Diamond">Baseball Diamond</option>*/}
-                        {/*    <option value="Dining Hall">Dining Hall</option>*/}
-                        {/*    <option value="Dormitory">Dormitory</option>*/}
-                        {/*    <option value="Football Stadium">Football Stadium</option>*/}
-                        {/*    <option value="Hockey Rink">Hockey Rink</option>*/}
-                        {/*    <option value="Entertainment Center">Entertainment Center</option>*/}
-                        {/*    <option value="Health Center">Health Center</option>*/}
-                        {/*    <option value="Library">Library</option>*/}
-                        {/*</select>*/}
-                        {/*<input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Sort"*/}
-                        {/*       style="margin-top: 5px;">*/}
-                        {/*</input>*/}
+                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
+                                style={{width: '160px'}}>
+                            <option value="All Buildings">All Buildings</option>
+                            <option value="Administrative Building">Administrative Building</option>
+                            <option value="Academic Center">Academic Center</option>
+                            <option value="Baseball Diamond">Baseball Diamond</option>
+                            <option value="Dining Hall">Dining Hall</option>
+                            <option value="Dormitory">Dormitory</option>
+                            <option value="Football Stadium">Football Stadium</option>
+                            <option value="Hockey Rink">Hockey Rink</option>
+                            <option value="Entertainment Center">Entertainment Center</option>
+                            <option value="Health Center">Health Center</option>
+                            <option value="Library">Library</option>
+                        </select>
+                        <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Sort"
+                               style={{marginTop: '5px'}}>
+                        </input>
                     </div>
                 </div>
-                <table className="table table-condensed">
-                    <thread>
-                        <tr>
-                            <th>Building Name</th>
-                            <th>Building Type</th>
-                            <th>Size</th>
-                            <th>Open Spots</th>
-                            <th>Quality</th>
-                            <th>Current Disaster</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                <table className="table table-condensed" style={tableStyle}>
+                    <tbody>
+                        <tr style={trStyle}>
+                            <th style={thStyle}>Building Name</th>
+                            <th style={thStyle}>Building Type</th>
+                            <th style={thStyle}>Size</th>
+                            <th style={thStyle}>Open Spots</th>
+                            <th style={thStyle}>Quality</th>
+                            <th style={thStyle}>Current Disaster</th>
+                            <th style={thStyle}>Status</th>
+                            <th style={thStyle}>Actions</th>
                         </tr>
-                    </thread>
+                    </tbody>
                     <tbody>
                         {table}
                     </tbody>
@@ -218,11 +237,6 @@ export default class Buildings extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <div row>
-                    <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
-                </div>
-
             </div>
 
 
