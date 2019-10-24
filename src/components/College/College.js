@@ -15,7 +15,6 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <h1>{this.props.everything.college.runId}</h1>
                 <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
 

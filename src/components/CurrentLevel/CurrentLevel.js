@@ -13,7 +13,8 @@ export default class CurrentLevel extends React.Component {
                 <div className="well well-sm">
                     <div className="row">
                         <div className="col-md-12">
-                            <h3>You are on level {this.props.everything.objectives.currentLevel} </h3>
+                            <h2>{this.props.everything.college.runId}</h2>
+                            <h3>You are on level {this.props.everything.objectives.currentLevel}</h3>
                             <h4>You need {this.props.everything.objectives.studentsNeededForNextLevel} students to get
                                 to the next level.</h4>
                             <div className="progress">
