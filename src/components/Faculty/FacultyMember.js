@@ -4,23 +4,24 @@ import {Link} from "react-router-dom";
 export default class FacultyMember extends React.Component{
     render() {
         const facultyMember = this.props.faculty;
+        const facultyNumber = this.props.facultyNumber;
 
         return(
-            <li class = "list-item">
-                {facultyMember.facultyName}
+           <li class = "list-group-item">
+                {facultyMember[facultyNumber].facultyName}
                 <Link class = "btn btn-info" data-toggle = {"collapse"}>Details</Link>
 
                 <div className="collapse">
                     <div className="well well-sm">
-                        Title: {facultyMember.title}<br/>
-                        Faculty ID: {facultyMember.facultyID}<br/>
-                        Department: {facultyMember.departmentName}<br/>
-                        Happiness: {facultyMember.happiness}<br/>
-                        Performance: {facultyMember.performance}<br/>
+                        Title: {facultyMember[facultyNumber].title}<br/>
+                        Faculty ID: {facultyMember[facultyNumber].facultyID}<br/>
+                        Department: {facultyMember[facultyNumber].departmentName}<br/>
+                        Happiness: {facultyMember[facultyNumber].happiness}<br/>
+                        Performance: {facultyMember[facultyNumber].performance}<br/>
                     </div>
                 </div>
 
-                Salary: ${facultyMember.salary}
+                Salary: ${facultyMember[facultyNumber].salary}
 
                 <Link id="raise" class="btn btn-info" name="facultyRaise + {i}">Give Raise</Link>
                 <Link id="fire" class="btn btn-info" name="removeFaculty + {i}">Fire Faculty</Link>

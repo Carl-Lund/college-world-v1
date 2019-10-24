@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Adds bootstrap and also my faculty shenanz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Faculty/Faculty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Faculty/Faculty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Faculty/FacultyMember.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Faculty/FacultyMember.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -21,24 +25,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
+  <component name="ProjectId" id="1RcIe8siOkRjUpDRuaNEdrnPf3X" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../enccollegeworld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/students-view" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -141,11 +147,21 @@
       <option name="presentableId" value="Default" />
       <updated>1569881819237</updated>
       <workItem from="1569881826057" duration="14193000" />
-      <workItem from="1569960384328" duration="2795000" />
-      <workItem from="1570124850446" duration="4953000" />
-      <workItem from="1570563671015" duration="2661000" />
-      <workItem from="1570727480428" duration="5961000" />
-      <workItem from="1571155530984" duration="12801000" />
+      <workItem from="1569960052120" duration="1565000" />
+      <workItem from="1569962309437" duration="283000" />
+      <workItem from="1570039683262" duration="3716000" />
+      <workItem from="1570049938410" duration="3429000" />
+      <workItem from="1570130310705" duration="4083000" />
+      <workItem from="1570564729761" duration="2705000" />
+      <workItem from="1570587142343" duration="2181000" />
+      <workItem from="1570673843446" duration="3409000" />
+      <workItem from="1570731950467" duration="1915000" />
+      <workItem from="1570735071551" duration="2313000" />
+      <workItem from="1571167745323" duration="2234000" />
+      <workItem from="1571276971441" duration="1985000" />
+      <workItem from="1571696842383" duration="161000" />
+      <workItem from="1571772359643" duration="4088000" />
+      <workItem from="1571790669537" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -168,42 +184,28 @@
       <option name="project" value="LOCAL" />
       <updated>1569941206234</updated>
     </task>
-    <task id="LOCAL-00004" summary="Added building view">
-      <created>1570127941616</created>
+    <task id="LOCAL-00004" summary="Adds bootstrap and also my faculty shenanz">
+      <created>1570131610078</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1570127941616</updated>
+      <updated>1570131610078</updated>
     </task>
-    <task id="LOCAL-00005" summary="Partially ported building tab from college world">
-      <created>1570733363659</created>
+    <task id="LOCAL-00005" summary="Adds bootstrap and also my faculty shenanz">
+      <created>1570735088037</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1570733363659</updated>
+      <updated>1570735088037</updated>
     </task>
-    <task id="LOCAL-00006" summary="Added buildings">
-      <created>1571155725245</created>
+    <task id="LOCAL-00006" summary="look at that the table works(?)">
+      <created>1571696879392</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1571155725245</updated>
+      <updated>1571696879392</updated>
     </task>
-    <task id="LOCAL-00007" summary="Added bed, plate, and desk counts">
-      <created>1571162514476</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1571162514476</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Started work on table of buildings">
-      <created>1571167147099</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1571167147099</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,11 +228,8 @@
     <MESSAGE value="Setting up the basic structure." />
     <MESSAGE value="More restructuring and name changes." />
     <MESSAGE value="Adds bootstrap" />
-    <MESSAGE value="Added building view" />
-    <MESSAGE value="Partially ported building tab from college world" />
-    <MESSAGE value="Added buildings" />
-    <MESSAGE value="Added bed, plate, and desk counts" />
-    <MESSAGE value="Started work on table of buildings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on table of buildings" />
+    <MESSAGE value="Adds bootstrap and also my faculty shenanz" />
+    <MESSAGE value="look at that the table works(?)" />
+    <option name="LAST_COMMIT_MESSAGE" value="look at that the table works(?)" />
   </component>
 </project>

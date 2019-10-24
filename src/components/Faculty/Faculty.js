@@ -32,7 +32,7 @@ function createTable(faculty){
     let table = [];
 
     for(let i = 0; i < faculty.length - 1; i++){
-        table.push(<FacultyMember facMember = {faculty[i]}/>)
+        table.push(<FacultyMember facultyMember = {faculty[i]} facultyNumber={i}/>)
     }
 
     return table;
