@@ -1,40 +1,28 @@
 import React from 'react';
 import "./Sports.css"
-import Select from 'react-select';
+import ReactDOM from 'react-dom';
+import Swal from 'sweetalert2'
+import { withAlert } from 'react-alert'
+
+
 
 export default class AddSellSports extends React.Component {
+    addSportSelectOption = "womenBasketball"
+    sellSportSelectOption = ""
+
     constructor(props) {
         super(props);
 
-        this.addSportSelectOption = "womenBasketball";
+        this.teams = [];
+        this.updateCollegeOnServer = this.updateCollegeOnServer.bind(this);
+        this.afterUpdateCollegeOnServer = this.afterUpdateCollegeOnServer.bind(this);
+        this.loadCollege = this.loadCollege.bind(this);
+        this.updateTeamsOnServerForSell = this.updateTeamsOnServerForSell.bind(this);
+        this.afterUpdateCollegeOnServerForSell = this.afterUpdateCollegeOnServerForSell.bind(this);
+
     }
 
     render() {
-        const addNewTeam = [
-            {label: "minPlayers", value: 0},
-            {label: "gender", value: "Male"},
-            {label: "currentPlayers", value: 0},
-            {label: "maxPlayers", value: 0},
-            {label: "costPerDay", value: 0},
-            {label: "hourLastUpdated", value: 0},
-            {label: "reputation", value: 50},
-            {label: "overallRep", value: 50},
-            {label: "gamesWon", value: 50},
-            {label: "gamesLost", value: 0},
-            {label: "gamesTied", value: 0},
-            {label: "numGames", value: 0},
-            {label: "startupCost", value: 0},
-            {label: "runId", value: "acorn"},
-            {label: "sportName", value: "Men\u0027s Basketball"},
-            {label: "note", value: "no note"},
-            {label: "isActive", value: 0},
-            {label: "hoursUntilNextGame", value: 0},
-            {label: "hoursUntilNextGameReset", value: 72},
-            {label: "division", value: 3},
-            {label: "sportSeason", value: "Winter"},
-            {label: "championshipsWon", value: 0},
-            {label: "coachName", value: "Nathan Morris"},
-        ];
 
         return (
             <div>
@@ -47,14 +35,8 @@ export default class AddSellSports extends React.Component {
                                 </div>
                                 <div className="row">
                                     <div className="col-sm-4">
-                                        <select className="form-control" onChange={e => this.addSportSelectOption = e.target.value}>
-                                            <option value="womenBasketball">$50,000 - Women's Basketball</option>
-                                            <option value="baseball">$50,000 - Baseball</option>
-                                            <option value="softball">$50,000 - Softball</option>
-                                            <option value="womenSoccer">$50,000 - Women's Soccer</option>
-                                            <option value="menSoccer">$50,000 - Men's Soccer</option>
-                                            <option value="menFootball">$50,000 - Men's Football</option>
-                                            <option value="womenVolleyball">$50,000 - Women's Volleyball</option>
+                                        <select className="form-control" onChange={e => this.onChangeAddSport(e.target.value)}>
+                                            {this.showTeamAvailables()}
                                         </select>
                                     </div>
                                     </div>
@@ -72,50 +54,90 @@ export default class AddSellSports extends React.Component {
                                 <div className="row">
                                     <h5>Select Sport to sell</h5>
                                 </div>
+                                <div className="row">
+                                    <div className="col-sm-4">
+                                        <select className="form-control" onChange={s => this.onChangeSellSport(s.target.value)}>
+                                            {this.showTeamAvailablesForSell()}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-sm-4">
+                                        <button type="button" onClick={this.updateTeamsOnServerForSell} className="btn btn-primary">Sell Sport</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+
+                <div id={'dialog'}>
+                </div>
+
             </div>
 
+
         );
+
     }
 
+    onChangeAddSport= (value) => {
+        this.addSportSelectOption = value.toString()
+        console.log('onChangeAddSport new value: ' + value.toString())
+
+    }
     addSport = () => {
         console.log('Selected: ' + this.addSportSelectOption)
         console.log('Selected: ' + this.props.everything)
 
     }
 
+    buildTeamsArray= () => {
+        this.teams[0] = "Women's Basketball"
+        this.teams[1] = "Baseball"
+        this.teams[2] = "Softball"
+        this.teams[3] = "Women's Soccer"
+        this.teams[4] = "Men's Soccer"
+        this.teams[5] = "Men's Football"
+        this.teams[6] = "Women's Volleyball"
+    }
+
+
+    showAvailableTeams= () => {
+        this.buildTeamsArray()
+        var availableTeams = this.teams;
+        for (let i = 0; i < this.props.sports.length ; i++) {
+            for (let j = 0; j < this.teams.length; j++) {
+                if (this.props.sports[i].sportName === this.teams[j]){
+                    availableTeams.splice(j, 1);
+                }
+            }
+        }
+
+        return availableTeams
+    }
+
+    showTeamAvailables= () => {
+        var availableTeams = this.showAvailableTeams()
+
+        this.addSportSelectOption = "$50,000 - "+availableTeams[0]
+
+        var team = [];
+        for (let i = 0; i < availableTeams.length ; i++) {
+            team.push(<option value={"$50,000 - "+availableTeams[i]}>{"$50,000 - "+availableTeams[i]}</option>)
+        }
+
+        return team
+    }
+
 
     updateCollegeOnServer(){
-        var d
         const addNewTeam = [
-            {label: "username", value: "username"},
-            {label: "password", value: "password"}
+            {sportName: this.addSportSelectOption, collegeId: "acorn", actionId: "ADD"}
         ];
 
-        // fetch("http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn",
-        //     {
-        //         method: 'POST',
-        //         body: JSON.stringify(addNewTeam)
-        //     }
-        // )
-        //     .then(response => response.json())
-        //     .then(data => d = data);
-
-        // fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn', {
-        //     method: 'POST',
-        //     body: JSON.stringify({addNewTeam}),
-        //     headers: {
-        //         "Content-type": "application/json; charset=UTF-8"
-        //     }
-        // }).then(response => {
-        //     return response.json()
-        // }).then(json =>{
-        //     console.log('Selected: ' + this.props.everything)
-        // });
+        var responseFromServer
 
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn',
             {
@@ -125,6 +147,98 @@ export default class AddSellSports extends React.Component {
         )
             .then(response => response.json())
             .then(data => {
+                responseFromServer = data.title
+                this.afterUpdateCollegeOnServer(data.title)
+                console.log('Selected: ' + data.ok)
+                console.log('Sesdsdd: ' + data.title)
             });
     }
+
+    afterUpdateCollegeOnServer(response){
+        if (response === "successfull"){
+            {this.loadCollege()}
+            return
+        }
+
+        //On Error- show message
+        const Swal = require('sweetalert2')
+        Swal.fire(""+ response)
+    }
+
+    loadCollege(){
+        console.log("College Name: "+ this.props.collegeName);
+
+        if (this.props.collegeName == "")
+            return;
+
+        console.log("Loading college");
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn'
+        console.log(address);
+        fetch(address)
+            .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data);
+            });
+
+
+    }
+
+    //Sell Sports:
+    onChangeSellSport= (value) => {
+        this.sellSportSelectOption = value.toString()
+        console.log('onChangeSellSport new value: ' + value.toString())
+
+    }
+
+    showTeamAvailablesForSell= () => {
+        if (this.props.sports.length === 0){
+            return
+        }
+        this.addSportSelectOption = ""+ this.props.sports[0].sportName
+
+        var team = [];
+        for (let i = 0; i < this.props.sports.length ; i++) {
+            team.push(<option value={""+this.props.sports[0].sportName}>{"$50,000 - "+this.props.sports[0].sportName}</option>)
+        }
+
+
+        return team
+    }
+
+    updateTeamsOnServerForSell(){
+        console.log('Sell the team: ' + this.addSportSelectOption)
+        if (this.addSportSelectOption === ""){
+            return
+        }
+        const addNewTeam = [
+            {sportName: this.addSportSelectOption, collegeId: "acorn", actionId: "SELL"}
+        ];
+
+        var responseFromServer
+
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn',
+            {
+                method: 'POST',
+                body: JSON.stringify(addNewTeam)
+            }
+        )
+            .then(response => response.json())
+            .then(data => {
+                responseFromServer = data.title
+                this.afterUpdateCollegeOnServerForSell(data.title)
+                console.log('Selected: ' + data.ok)
+                console.log('Sesdsdd: ' + data.title)
+            });
+    }
+
+    afterUpdateCollegeOnServerForSell(response){
+        if (response === "successfull"){
+            {this.loadCollege()}
+            return
+        }
+
+        //On Error- show message
+        const Swal = require('sweetalert2')
+        Swal.fire(""+ response)
+    }
 }
+

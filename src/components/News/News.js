@@ -13,7 +13,7 @@ export default class CollegeRetention extends React.Component {
             <div>
                 <div className="col-sm-6">
                     <div className="well well-sm">
-                        <h3>{title}</h3>
+                        <h4>{title}</h4>
                         <div className="pre-scrollable">
                             <ul className="list-group">
                                     {this.newsTable}

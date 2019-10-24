@@ -30,7 +30,7 @@ export default class Tuition extends React.Component {
         return (
             <div className="col-sm-3">
                 <div className="well well-sm">
-                    <legend>Tuition</legend>
+                    <h4>Tuition</h4>
                     <input
                         value={tuition}
                         onChange={this.handleOnChange}

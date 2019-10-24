@@ -1,18 +1,46 @@
 import React from 'react';
 import "./Sports.css"
 
-import Navigation from "../Navigation/Navigation";
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 
 export default class SportsRecordTable extends React.Component {
     constructor(props) {
         super(props);
 
-        this.buildTable = buildTable(this.props.sports);
         //this.showTeam = showTeam()
+
         // this.sportsTeem = getSportsTeem(this.props.sports);
     }
 
     render() {
+        const columns = [{
+            Header: 'TEAM',
+            accessor: 'sportName' // String-based value accessors!
+        },{
+            Header: 'DETAILS',
+            Cell: props => <div><button type="button" onClick={showTeam} className="btn btn-info" data-toggle="collapse" data-target="#show">Details
+            </button>
+                <div id="show" className="collapse"><div className="jumbotronTransp">{showTeam()}</div></div>
+            </div>
+            // Custom cell components!
+        },{
+            Header: 'WINS',
+            accessor: 'gamesWon' // String-based value accessors!
+        },{
+            Header: 'LOSSES',
+            accessor: 'gamesLost' // String-based value accessors!
+        },{
+            Header: 'GAMES PLAYED',
+            accessor: 'overallRep' // String-based value accessors!
+        },{
+            Header: 'IN SEASON',
+            accessor: 'sportSeason' // String-based value accessors!
+        },{
+            Header: 'DIVISION',
+            accessor: 'division' // String-based value accessors!
+        }]
+
         return (
             <div>
                 <div className="jumbotron">
@@ -25,68 +53,27 @@ export default class SportsRecordTable extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-0"></div>
                             <div className="col-sm-10">
-                                <table className="table">
-                                    <thead>
-                                    <tr>
-                                        <th>TEAM</th>
-                                        <th>DETAILS</th>
-                                        <th>WINS</th>
-                                        <th>LOSSES</th>
-                                        <th>GAMES PLAYED</th>
-                                        <th>IN SEASON</th>
-                                        <th>DIVISION</th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {this.buildTable}
-                                    </tbody>
-                                    {/*<div id="show" className="collapse">*/}
-                                        {/*<div className="jumbotronTransp">*/}
-                                            {/*{this.showTeam}*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
-                                </table>
+                                <ReactTable
+                                    data={this.props.sports}
+                                    columns={columns}
+                                />
 
                         </div>
-                            <div className="col-sm-2"></div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
 
         );
+
     }
 
 }
 
-function buildTable(sports) {
-    var sportsTable = [];
-    for (let i = 0; i < sports.length; i++) {
-        var sportsTeam = [];
 
-        // column by column
-        sportsTeam.push(<td>{sports[i].sportName}</td>)
-        sportsTeam.push(<button type="button" onClick={showTeam} className="btn btn-info" data-toggle="collapse" data-target="#show">Details
-        </button>)
-        sportsTeam.push(<td>{sports[i].gamesWon}</td>)
-        sportsTeam.push(<td>{sports[i].gamesLost}</td>)
-        sportsTeam.push(<td>{sports[i].overallRep}</td>)
-        sportsTeam.push(<td>{sports[i].sportSeason}</td>)
-        sportsTeam.push(<td>{sports[i].division}</td>)
-
-        sportsTable.push(<tr>{sportsTeam}</tr>)
-
-        sportsTeam = [];
-        sportsTeam.push(<div id="show" className="collapse"><div className="jumbotronTransp">{showTeam()}</div></div>)
-        sportsTable.push(<tr>{sportsTeam}</tr>)
-    }
-
-    return sportsTable
-}
 
 function showTeam() {
     var team = [];

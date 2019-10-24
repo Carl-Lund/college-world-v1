@@ -14,7 +14,7 @@ export default class CollegeOpenCreate extends React.Component {
         this.props.setCollegeName(e.target.value);
     }
 
-    loadCollege() {
+    loadCollege(e) {
         if (this.props.collegeName == "")
             return;
 
@@ -31,11 +31,15 @@ export default class CollegeOpenCreate extends React.Component {
     render() {
         const collegeName = this.props.collegeName;
         return (
-            <div className="col-sm-3">
-                <div className="well well-sm">
-                    College
-                    <input type="text" value={collegeName} onChange={this.handleOnChange} />
-                    <button onClick={this.loadCollege}>Load</button>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-3">
+                        <div className="well well-sm">
+                            College
+                            <input type="text" value={collegeName} onChange={this.handleOnChange}/>
+                            <button onClick={this.loadCollege}>Load</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
