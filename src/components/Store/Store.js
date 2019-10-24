@@ -8,19 +8,21 @@ export default class Store extends React.Component {
     }
 
     buyItem(e) {
-        console.log("BUYING ITEM");
+        console.log("BUYING ITEM")
+        var item = e.target.value;
         //this.props.setLaunchStatus('loadInProgressxxxxxx');
-        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/store/' +e.target.value;
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/store/' +this.props.everything.college.runId + '/' +this.props.everything.store[item].name;
         console.log(address);
         fetch(address)
             .then(response => response.json())
             .then(data => {
             });
+        this.props.everything.store[item].isPurchased = true;
+        this.props.replaceEverything(this.props.everything);
     }
 
-
     render() {
-        //try{
+        try{
             let allItems = []
             let itemTile = []
             // add button functionality + disable if unable to purchase
@@ -62,7 +64,7 @@ export default class Store extends React.Component {
                             <h4>{this.props.everything.store[i].name}</h4>
                             <h5>{this.props.everything.store[i].description}</h5>
                             <p class="text-danger">${this.props.everything.store[i].cost}</p>
-                            <input type="submit" className="btn btn-info" name="buyItem" value="Already Purchased" disabled></input>
+                            <input type="submit" className="btn btn-info" name="buyItem" value="Purchased" disabled></input>
                         </div>
                     </div>)
                 }
@@ -73,7 +75,7 @@ export default class Store extends React.Component {
                             <h4>{this.props.everything.store[i].name}</h4>
                             <h5>{this.props.everything.store[i].description}</h5>
                             <p class="text-success">${this.props.everything.store[i].cost}</p>
-                            <button type="submit" className="btn btn-info" onClick={this.buyItem} name="buyItem" value={this.props.everything.store[i].name}>Buy</button>
+                            <button type="submit" className="btn btn-info" onClick={this.buyItem} name="buyItem" value={i}>Buy</button>
                         </div>
                     </div>)
                 }
@@ -85,14 +87,14 @@ export default class Store extends React.Component {
                 </div>
             );
 
-    //}catch(error)
-       // {
-            //return(
-              // <div>
-                //    IM BROKEN.
-                //</div>
-            //);
-        //}
+    }catch(error)
+       {
+            return(
+               <div>
+                    IM BROKEN.
+                </div>
+            );
+        }
 
     }
 }
