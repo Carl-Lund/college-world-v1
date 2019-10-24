@@ -39,11 +39,9 @@ export default class PlayMode extends React.Component {
             {label: "DEMO_ZOMBIE_MUTATION", value: "DEMO_ZOMBIE_MUTATION"},
         ];
         return (
-            <div className="container">
-                <div row>
-                    <div className="col-sm-3">
-                        <div className="well well-sm">
-                            <legend>Play Mode</legend>
+            <div className="col-sm-3">
+                <div className="well well-sm">
+                            <h4>Play Mode</h4>
                             <div className="form-group">
                                 <Select
                                     options={playModes}
@@ -54,8 +52,7 @@ export default class PlayMode extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
         );
     }
 }

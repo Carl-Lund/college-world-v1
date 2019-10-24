@@ -9,6 +9,7 @@ import Store from "../Store/Store";
 import About from "../About/About";
 import Buildings from "../Buildings/Buildings";
 
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -90,13 +91,12 @@ export default class App extends React.Component {
                         <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                         <Route path="/store" render={() => <Store everything={everything} />} />
                         <Route path="/faculty" render={() => <Faculty everything={everything} />} />
-                        <Route path="/sports" render={() => <Sports everything={everything} />} />
+                        <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                         <Route path="/about" render={() => <About everything={everything} />} />
                     </main>
                 </div>
             </Router>
         );
     }
-
 }
 

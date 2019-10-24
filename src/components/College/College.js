@@ -15,15 +15,10 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <h1>{this.props.everything.college.runId}</h1>
                 <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                <CollegeDashboard everything={this.props.everything}/>
+                <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
 
                 <div className="container">
-                    <div row>
-                        <Tuition everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                        <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                    </div>
                     <div row>
                         <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
                         <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>

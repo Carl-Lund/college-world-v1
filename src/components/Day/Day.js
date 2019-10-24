@@ -17,7 +17,7 @@ export default class Day extends React.Component {
     render() {
         return (
             <div className="container">
-                <h3>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h3>
+                <h4>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h4>
                 <button onClick={this.fetchData}>Next Day</button>
             </div>
         );

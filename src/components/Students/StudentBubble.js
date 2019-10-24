@@ -5,19 +5,22 @@ import Navigation from "../Navigation/Navigation";
 export default class StudentsTable extends React.Component {
     constructor(props) {
         super(props);
-        this.bubbleColoring = 'rgb(' + scale(this.props.student.happinessLevel, 50, 100, 255, 0) + ',' +  scale(this.props.student.happinessLevel, 0, 50, 0, 255) + ', 0)';
     }
 
 
 
     render() {
         return (
-            <div className="studentElement" id={this.props.student.idNumber} style={{boxShadow: "0 0 5px 3px " + this.bubbleColoring}}
+            <div className="studentElement" id={this.props.student.idNumber} style={{boxShadow: "0 0 5px 3px " + this.bubbleColoring(this.props.student.happinessLevel)}}
                 onClick = {() => this.props.studentSwitch(this.props.studentNumber)}>
                 <img src="resources/images/student.png"></img>
                 <p>{this.props.student.name.split(" ")[1] + ", " + this.props.student.name.split(" ")[0].charAt(0)}</p>
             </div>
         );
+    }
+
+    bubbleColoring(happinessLevel) {
+        return 'rgb(' + scale(happinessLevel, 50, 100, 255, 0) + ',' +  scale(happinessLevel, 0, 50, 0, 255) + ', 0)';
     }
 }
 
