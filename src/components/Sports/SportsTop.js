@@ -11,10 +11,11 @@ export default class SportsTop extends React.Component {
         this.isHide = true
         this.state = {
             tipsText: "Add more sports to make more money!",
-            hideShowTipsText : "Show Tips"
+            hideShowTipsText : "Show Tips",
         };
 
-        this.sportsTeem = getSportsTeem(this.props.sports);
+        this.getSportsTeem = this.getSportsTeem.bind(this);
+        // this.afterUpdateCollegeOnServerForSell = this.afterUpdateCollegeOnServerForSell.bind(this);
 
     }
 
@@ -34,7 +35,7 @@ export default class SportsTop extends React.Component {
 
 
                                 <div>
-                                    <strong>{this.sportsTeem}</strong>
+                                    <strong>{this.getSportsTeem()}</strong>
                                 </div>
 
                             </div>
@@ -103,11 +104,12 @@ export default class SportsTop extends React.Component {
 
         this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
-}
 
-function getSportsTeem(sports) {
-    var feedback = (sports.length + " sports")
+    getSportsTeem() {
+        var feedback = (this.props.sports.length + " sports")
 
-    return feedback
+        return feedback
+    }
+
 }
 
