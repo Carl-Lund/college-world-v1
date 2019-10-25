@@ -2,6 +2,7 @@ import React from 'react';
 import '../Faculty/Faculty.css';
 import {Link} from "react-router-dom";
 import FacultyMember from "./FacultyMember";
+import NewsItem from "../News/NewsItem";
 
 export default class Faculty extends React.Component{
     constructor(props){
@@ -10,12 +11,11 @@ export default class Faculty extends React.Component{
     }
 
     render() {
-        const title = this.props.title
         return (
             <div>
                 <div className="col-sm-6">
                     <div className="well well-sm">
-                        <h3>{title}</h3>
+                        <h3>Faculty</h3>
                         <div className="pre-scrollable">
                             <ul className="list-group">
                                 {this.facultyTable}
@@ -31,8 +31,11 @@ export default class Faculty extends React.Component{
 function createTable(faculty){
     let table = [];
 
-    for(let i = 0; i < faculty.length - 1; i++){
-        table.push(<FacultyMember facultyMember = {faculty[i]} facultyNumber={i}/>)
+    if (faculty === null)
+        return table;
+
+    for(let i = 0; i < faculty.length; i++){
+        table.push(<FacultyMember faculty = {faculty[i]} facultyNumber={i}/>)
     }
 
     return table;
