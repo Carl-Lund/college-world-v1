@@ -7,7 +7,7 @@ import NewsItem from "../News/NewsItem";
 export default class Faculty extends React.Component{
     constructor(props){
         super(props);
-        this.facultyTable = createTable(this.props.everything.faculty);
+        this.facultyTable = createTable(this.props.everything);
     }
 
     render() {
@@ -28,14 +28,14 @@ export default class Faculty extends React.Component{
     }
 }
 
-function createTable(faculty){
+function createTable(everything){
     let table = [];
 
-    if (faculty === null)
+    if (everything === null || everything.faculty === null)
         return table;
 
-    for(let i = 0; i < faculty.length; i++){
-        table.push(<FacultyMember faculty = {faculty[i]} facultyNumber={i}/>)
+    for(let i = 0; i < everything.faculty.length; i++){
+        table.push(<FacultyMember faculty = {everything.faculty[i]} facultyNumber={i}/>)
     }
 
     return table;
