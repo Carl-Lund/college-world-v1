@@ -40,13 +40,13 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ launchStatus: 'loadingInProgress' });
-
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
-                console.log("Fetched college data " + data)
-            });
+        // this.setState({ launchStatus: 'loadingInProgress' });
+        //
+        // fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
+        //     .then(response => response.json())
+        //     .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
+        //         console.log("Fetched college data " + data)
+        //     });
     }
 
     render() {
