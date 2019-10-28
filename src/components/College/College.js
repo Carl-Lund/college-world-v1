@@ -10,7 +10,7 @@ export default class College extends React.Component {
     render() {
         const launchStatus = this.props.launchStatus;
         if (!this.props.everything || launchStatus != 'loadingDone') {
-            return <p>Loading...</p>;
+            return <p></p>;
         }
 
         return (
