@@ -15,7 +15,7 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                <CurrentLevel everything={this.props.everything} pauseUnpause = {this.props.pauseUnpause} replaceEverything={this.props.replaceEverything}/>
                 <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
 
                 <div className="container">

@@ -21,6 +21,7 @@ export default class App extends React.Component {
         this.replaceEverything = this.replaceEverything.bind(this)
         this.setCollegeName = this.setCollegeName.bind(this)
         this.setLaunchStatus = this.setLaunchStatus.bind(this)
+
     }
 
     replaceEverything(newEverything) {
@@ -35,18 +36,37 @@ export default class App extends React.Component {
         this.setState({launchStatus:newLaunchStatus})
     }
 
+    pauseUnpause = () => {
+        console.log("ASD");
+    }
+
     componentWillUnmount() {
         console.log("App unmounting.");
+        clearInterval(this.timer);
+        this.timer = null;
     }
 
     componentDidMount() {
-        // this.setState({ launchStatus: 'loadingInProgress' });
-        //
-        // fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
-        //     .then(response => response.json())
-        //     .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
-        //         console.log("Fetched college data " + data)
-        //     });
+        this.setState({ launchStatus: 'loadingInProgress' });
+        clearInterval(this.timer);
+        this.timer = setInterval(() => this.advanceDay(), 10000);
+
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
+            .then(response => response.json())
+            .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
+                console.log("Fetched college data " + data)
+            });
+    }
+
+    advanceDay = () => {
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn/nextDay')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({isLoading: false, everything: data});
+                this.setState({isLoading: false, everything: data});
+                clearInterval(this.timer);
+                this.timer = setInterval(() => this.advanceDay(), 10000);
+            });
     }
 
     render() {
@@ -89,7 +109,7 @@ export default class App extends React.Component {
                         <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                         <Route path="/students" render={() => <Students everything={everything} />} />
                         <Route path="/objectives" render={() => <Objectives everything={everything} />} />
-                        <Route path="/store" render={() => <Store everything={everything} replaceEverything={this.replaceEverything} />} />
+                        <Route path="/store" render={() => <Store everything={everything} />} />
                         <Route path="/faculty" render={() => <Faculty everything={everything} />} />
                         <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                         <Route path="/about" render={() => <About everything={everything} />} />

@@ -27,7 +27,7 @@ export default class CurrentLevel extends React.Component {
                             </div>
                             <h4>Balance ${this.props.everything.college.availableCash}</h4>
 
-                            <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                            <Day everything={this.props.everything} pauseUnpause = {this.props.pauseUnpause } replaceEverything={this.props.replaceEverything}/>
 
                         </div>
                     </div>

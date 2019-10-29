@@ -14,11 +14,22 @@ export default class Day extends React.Component {
             .then(data => {this.props.replaceEverything(data)});
     }
 
+    pauseUnpause() {
+        this.props.everything.college.isTimePaused = !(this.props.everything.college.isTimePaused);
+        this.props.replaceEverything(this.props.everything);
+    }
+
     render() {
         return (
             <div className="container">
                 <h4>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h4>
-                <button onClick={this.fetchData}>Next Day</button>
+                <div id="day-timer" className="progress" style={{width: '30%'}}>
+                    <div className="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: '40%'}}>
+                        7 / 24 Hours
+                    </div>
+                </div>
+                <button onClick={this.props.pauseUnpause}>Pause Time</button>
             </div>
         );
     }
