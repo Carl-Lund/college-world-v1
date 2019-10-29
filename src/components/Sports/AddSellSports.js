@@ -197,7 +197,7 @@ export default class AddSellSports extends React.Component {
 
         var team = [];
         for (let i = 0; i < this.props.sports.length ; i++) {
-            team.push(<option value={""+this.props.sports[0].sportName}>{"$50,000 - "+this.props.sports[0].sportName}</option>)
+            team.push(<option value={""+this.props.sports[i].sportName}>{"$50,000 - "+this.props.sports[i].sportName}</option>)
         }
 
 

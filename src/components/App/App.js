@@ -40,13 +40,13 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ launchStatus: 'loadingInProgress' });
-
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
-            .then(response => response.json())
-            .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
-                console.log("Fetched college data " + data)
-            });
+        // this.setState({ launchStatus: 'loadingInProgress' });
+        //
+        // fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
+        //     .then(response => response.json())
+        //     .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
+        //         console.log("Fetched college data " + data)
+        //     });
     }
 
     render() {
@@ -89,7 +89,7 @@ export default class App extends React.Component {
                         <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                         <Route path="/students" render={() => <Students everything={everything} />} />
                         <Route path="/objectives" render={() => <Objectives everything={everything} />} />
-                        <Route path="/store" render={() => <Store everything={everything} />} />
+                        <Route path="/store" render={() => <Store everything={everything} replaceEverything={this.replaceEverything} />} />
                         <Route path="/faculty" render={() => <Faculty everything={everything} />} />
                         <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                         <Route path="/about" render={() => <About everything={everything} />} />

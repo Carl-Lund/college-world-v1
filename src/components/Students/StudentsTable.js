@@ -20,6 +20,7 @@ export default class StudentsTable extends React.Component {
      render() {
         return (
                 <div className="col-sm-8" style={{height: '80%'}}>
+                    <span className={"label label-info"}>Sort: </span>
                     <select ref={this.sort} onChange={this.updateTable}>
                         <option value={"aToZ"}>Alphabetical A-Z</option>
                         <option value={"zToA"}>Alphabetical Z-A</option>
