@@ -68,6 +68,14 @@ export default class Buildings extends React.Component {
         let table = [];
         for (let i = 0; i < this.props.everything.buildings.length; i++) {
             let building = [];
+
+            let status = "";
+            if (this.props.everything.buildings[i].hoursToComplete > 0) {
+                status = String((this.props.everything.buildings[i].hoursToComplete/24)) + "days remaining";
+            } else {
+                status = "Built";
+            }
+
             building.push(
                     <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
@@ -78,7 +86,8 @@ export default class Buildings extends React.Component {
                             {this.props.everything.buildings[i].shownQuality}%
                         </div>
                     </div></td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>
+                    <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
+                    <td style={tdStyle}>{status}</td>
             )
             table.push(<tr style={trStyle}>{building}</tr>)
         }
