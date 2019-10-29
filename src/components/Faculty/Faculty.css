@@ -7,8 +7,8 @@
 }
 
 .jumbotron{
-    margin-left: 6em;
-    margin-right: 6em;
+    margin-left: 16em;
+    margin-right: 16em;
 }
 
 #facultyMember{
@@ -23,22 +23,27 @@
 #facultyName{
     font-weight: bold;
     font-size: 1em;
-    padding-left: 10em;
-    padding-right: 20em;
+    margin-left: 10em;
+    margin-right: 20em;
+    text-align: center;
 }
 
 #salary{
     margin-left: 5em;
+    text-align: right;
     float: right;
 }
 
 #fire{
     margin-left: 1em;
-    float: right;
 }
 
 #raise{
-    padding-left: 3em;
+    margin-left: 0.5em;
+}
+
+.details{
+    margin-left: 5em;
     float: right;
 }
 

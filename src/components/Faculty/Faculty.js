@@ -13,14 +13,21 @@ export default class Faculty extends React.Component{
     render() {
         return (
             <div>
-                <div className="col-sm-6">
+                <div class="jumbotron">
+                    <div className="col-md-2">
+                        <img className="img-responsive" src="resources/images/student.png"></img>
+                    </div>
+                    <h2><b>Faculty</b></h2>
+                    <h3>{this.props.everything.faculty.length} faculty members</h3>
+                </div>
+                <div class="container">
                     <div className="well well-sm">
-                        <h3>Faculty</h3>
-                        <div className="pre-scrollable">
-                            <ul className="list-group">
-                                {this.facultyTable}
-                            </ul>
-                        </div>
+                        <h3>Faculty Members</h3>
+
+                        <ul className="list-group">
+                            {this.facultyTable}
+                        </ul>
+
                     </div>
                 </div>
             </div>
