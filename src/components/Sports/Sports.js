@@ -5,6 +5,7 @@ import SportsTop from "./SportsTop";
 import SportsRecordTable from "./SportsRecordTable";
 import AddSellSports from "./AddSellSports";
 import CollegeOpenCreate from "../College/CollegeLaunchPad";
+import CoachesTable from "./CoachesTable";
 
 export default class Sports extends React.Component {
     //The json file: http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn
@@ -56,6 +57,7 @@ export default class Sports extends React.Component {
             return (
                 <div>
                     <SportsTop sports = {this.props.everything.sports}/>
+                    <CoachesTable sports = {this.props.everything.sports} collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus} coaches={this.props.everything.coaches}/>
                     <SportsRecordTable sports = {this.props.everything.sports} students={this.props.everything.students}/>
                     <AddSellSports sports = {this.props.everything.sports} collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus}/>
                 </div>

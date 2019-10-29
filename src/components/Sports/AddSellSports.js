@@ -7,7 +7,7 @@ import { withAlert } from 'react-alert'
 
 
 export default class AddSellSports extends React.Component {
-    addSportSelectOption = "womenBasketball"
+    addSportSelectOption = ""
     sellSportSelectOption = ""
 
     constructor(props) {
@@ -122,6 +122,7 @@ export default class AddSellSports extends React.Component {
         var availableTeams = this.showAvailableTeams()
 
         this.addSportSelectOption = "$50,000 - "+availableTeams[0]
+        console.log('showTeamAvailables: ' + this.addSportSelectOption)
 
         var team = [];
         for (let i = 0; i < availableTeams.length ; i++) {
