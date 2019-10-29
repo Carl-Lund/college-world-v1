@@ -83,8 +83,8 @@ export default class AddSellSports extends React.Component {
     }
 
     onChangeAddSport= (value) => {
+        console.log('The value is: ' + value.toString())
         this.addSportSelectOption = value.toString()
-        console.log('onChangeAddSport new value: ' + value.toString())
 
     }
     addSport = () => {
@@ -122,6 +122,7 @@ export default class AddSellSports extends React.Component {
         var availableTeams = this.showAvailableTeams()
 
         this.addSportSelectOption = "$50,000 - "+availableTeams[0]
+
         console.log('showTeamAvailables: ' + this.addSportSelectOption)
 
         var team = [];
@@ -134,6 +135,7 @@ export default class AddSellSports extends React.Component {
 
 
     updateCollegeOnServer(){
+        console.log('Add to server: ' + this.addSportSelectOption)
         const addNewTeam = [
             {sportName: this.addSportSelectOption, collegeId: "acorn", actionId: "ADD"}
         ];
@@ -149,9 +151,9 @@ export default class AddSellSports extends React.Component {
             .then(response => response.json())
             .then(data => {
                 responseFromServer = data.title
-                this.afterUpdateCollegeOnServer(data.title)
                 console.log('Selected: ' + data.ok)
                 console.log('Sesdsdd: ' + data.title)
+                this.afterUpdateCollegeOnServer(data.title)
             });
     }
 
@@ -194,7 +196,7 @@ export default class AddSellSports extends React.Component {
         if (this.props.sports.length === 0){
             return
         }
-        this.addSportSelectOption = ""+ this.props.sports[0].sportName
+        this.sellSportSelectOption = ""+ this.props.sports[0].sportName
 
         var team = [];
         for (let i = 0; i < this.props.sports.length ; i++) {
@@ -206,12 +208,12 @@ export default class AddSellSports extends React.Component {
     }
 
     updateTeamsOnServerForSell(){
-        console.log('Sell the team: ' + this.addSportSelectOption)
-        if (this.addSportSelectOption === ""){
+        console.log('Sell the team: ' + this.sellSportSelectOption)
+        if (this.sellSportSelectOption === ""){
             return
         }
         const addNewTeam = [
-            {sportName: this.addSportSelectOption, collegeId: "acorn", actionId: "SELL"}
+            {sportName: this.sellSportSelectOption, collegeId: "acorn", actionId: "SELL"}
         ];
 
         var responseFromServer
