@@ -73,7 +73,11 @@ export default class Buildings extends React.Component {
                     <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
-                    <td style={tdStyle}><div className="progress"></div></td>,
+                    <td style={tdStyle}><div className="progress">
+                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: this.props.everything.buildings[i].shownQuality}}>
+                            {this.props.everything.buildings[i].shownQuality}%
+                        </div>
+                    </div></td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>
             )
             table.push(<tr style={trStyle}>{building}</tr>)
@@ -126,7 +130,7 @@ export default class Buildings extends React.Component {
                             <option value="Health Center">Health Center</option>
                             <option value="Library">Library</option>
                         </select>
-                        <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Sort"
+                        <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
                                style={{marginTop: '5px'}}>
                         </input>
                     </div>
