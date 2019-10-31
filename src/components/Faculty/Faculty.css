@@ -35,16 +35,24 @@
 }
 
 #fire{
-    margin-left: 1em;
+    margin-left: 0.5em;
+    float:right;
 }
 
 #raise{
-    margin-left: 0.5em;
+    margin-left: 35em;
 }
 
 .details{
-    margin-left: 5em;
-    float: right;
+    margin-left: 25em;
+}
+
+.tableContainer{
+    margin-left: 15em;
+}
+
+#col-sm-4{
+    margin-left: 15em;
 }
 
 table{
@@ -52,4 +60,8 @@ table{
     margin-right: 8em;
     border: 5px #000000;
     padding-bottom: 5em;
+}
+
+td{
+    text-align: center;
 }
