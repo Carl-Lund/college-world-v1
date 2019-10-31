@@ -79,6 +79,11 @@ export default class App extends React.Component {
                                         <li><Link to='/objectives'>Objectives</Link></li>
                                         <li><Link to='/store'>Store</Link></li>
                                     </ul>
+                                    <ul className="nav navbar-nav navbar-right">
+                                        <li><Link to='/money'>Balance</Link></li>
+                                        <li><Link to='/currentDay'>Current Day</Link></li>
+                                        <li><Link to='/about'>About</Link></li>
+                                    </ul>
                                 </div>
                             </div>
                         </nav>

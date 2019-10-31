@@ -2,7 +2,7 @@ import React from 'react';
 import CompletedObjectivesTable from "./CompletedObjectivesTable";
 import "./Objectives.css";
 
-export default class CompletedObjectives extends React.Component {
+export default class CurrentObjectives extends React.Component {
 
     render() {
         console.log(this.props.everything);
