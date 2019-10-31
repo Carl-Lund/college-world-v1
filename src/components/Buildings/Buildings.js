@@ -11,11 +11,32 @@ export default class Buildings extends React.Component {
     }
 
     upgradeBuilding(e) {
-
+        var building = e.target.value;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        fetch(address)
+            .then(response => response.json())
+        this.props.everything.buildings[building].hoursToComplete = 336;
+        this.props.everything.buildings[building].isUpgradeComplete = false;
+        this.props.everything.college.availableCash -= this.props.everything.buildings[building].upgradeCost;
+        this.props.replaceEverything(this.props.everything);
     }
 
     repairBuilding(e) {
-
+        var building = e.target.value;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        fetch(address)
+            .then(response => response.json())
+        var qualityDecayed = 100 - this.props.everything.buildings[building].shownQuality;
+        if (qualityDecayed > 10) {
+            this.props.everything.buildings[building].isRepairComplete = false;
+            this.props.everything.buildings[building].hoursToComplete = 24 * (qualityDecayed/10);
+        } else {
+            this.props.everything.buildings[building].isRepairComplete = true;
+            this.props.everything.buildings[building].hiddenQuality = 10.0;
+            this.props.everything.buildings[building].repairCost = ((100 - this.props.everything.buildings[building].shownQuality) * 300);
+        }
+        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
+        this.props.replaceEverything(this.props.everything);
     }
 
 
@@ -82,7 +103,7 @@ export default class Buildings extends React.Component {
 
             let status = "";
             if (this.props.everything.buildings[i].hoursToComplete > 0) {
-                status = String((this.props.everything.buildings[i].hoursToComplete/24)) + "days remaining";
+                status = String((this.props.everything.buildings[i].hoursToComplete/24)) + " days remaining";
             } else {
                 status = "Built";
             }
@@ -91,7 +112,7 @@ export default class Buildings extends React.Component {
             if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
             && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
-                    <input type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={"Upgrade ($" + this.props.everything.buildings[i].upgradeCost + ")"}></input>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
                 )
             }
 
@@ -99,7 +120,7 @@ export default class Buildings extends React.Component {
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
             && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
                 repairButton.push (
-                    <input type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={"Repair ($" + this.props.everything.buildings[i].repairCost + ")"}></input>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost}</button>
                 )
             }
 
