@@ -9,7 +9,7 @@ export default class CompletedObjectivesTable extends React.Component {
 
     render(){
         return(
-            <div className="pre-scrollable">
+            <div className="pre-scrollable" style={{maxheight: '750px'}}>
                 <ul className="list-group">
                     {this.completedObjectivesTable}
                 </ul>
@@ -18,13 +18,25 @@ export default class CompletedObjectivesTable extends React.Component {
     }
 }
 
-function createTable(data) {
+function createTable(objectives) {
     let table=[];
 
     for(let i =1; i <=5; i++) {
-        if (i <= data.currentLevel) continue;
-        table.push(<h3>Level {i}     {data.studentsNeededForLevel[i]} Students</h3>);
+        if (i >= objectives.currentLevel) continue;
 
+        for(let j =0; j< objectives.gates.length; j++) {
+            if (objectives.gates[j].level == i) {
+                table.push(<li className="list-group-item">
+                        <div className="col-md-2" style={{width: '100px'}}>
+                            <img className="img-responsive" src={objectives.gates[j].iconPath}/>
+                        </div>
+                        <h4><strong>{objectives.gates[j].key}</strong></h4>
+                    <p>{objectives.gates[j].description}<br></br></p>
+                    <h1>Completed!&nbsp;<span className="glyphicon glyphicon-ok"></span></h1>
+                    </li>
+                );
+            }
+        }
     }
-
+    return table
 }

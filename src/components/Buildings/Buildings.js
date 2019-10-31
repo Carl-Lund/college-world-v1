@@ -6,7 +6,18 @@ export default class Buildings extends React.Component {
 
     constructor(props) {
         super(props);
+        this.upgradeBuilding = this.upgradeBuilding.bind(this);
+        this.repairBuilding = this.repairBuilding.bind(this);
     }
+
+    upgradeBuilding(e) {
+
+    }
+
+    repairBuilding(e) {
+
+    }
+
 
     render() {
         if (!this.props.everything) {
@@ -76,6 +87,22 @@ export default class Buildings extends React.Component {
                 status = "Built";
             }
 
+            let upgradeButton = [];
+            if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
+            && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
+                upgradeButton.push (
+                    <input type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={"Upgrade ($" + this.props.everything.buildings[i].upgradeCost + ")"}></input>
+                )
+            }
+
+            let repairButton = [];
+            if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
+            && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
+                repairButton.push (
+                    <input type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={"Repair ($" + this.props.everything.buildings[i].repairCost + ")"}></input>
+                )
+            }
+
             building.push(
                     <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
@@ -87,7 +114,8 @@ export default class Buildings extends React.Component {
                         </div>
                     </div></td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
-                    <td style={tdStyle}>{status}</td>
+                    <td style={tdStyle}>{status}</td>,
+                    <td style={tdStyle}>{upgradeButton}{repairButton}</td>
             )
             table.push(<tr style={trStyle}>{building}</tr>)
         }
@@ -165,7 +193,7 @@ export default class Buildings extends React.Component {
                 <div className="col-sm-4">
                     <div className="well well-sm">
                         <div id="purchase">
-                            <h4></h4>
+                            <h4>Purchase Buildings</h4>
                         </div>
                     </div>
                 </div>
