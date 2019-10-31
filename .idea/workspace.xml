@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Added status column in building table">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
-    </list>
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +145,7 @@
       <workItem from="1571155530984" duration="13657000" />
       <workItem from="1571774108807" duration="6442000" />
       <workItem from="1571941881362" duration="4955000" />
-      <workItem from="1572366895978" duration="14764000" />
+      <workItem from="1572366895978" duration="14944000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -234,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572546134680</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added upgrade and repair buttons to building table">
+      <created>1572550465880</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572550465880</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +270,7 @@
     <MESSAGE value="Added progress bar for building quality" />
     <MESSAGE value="Added status column in building table" />
     <MESSAGE value="Added non-functioning buttons to building table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added non-functioning buttons to building table" />
+    <MESSAGE value="Added upgrade and repair buttons to building table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added upgrade and repair buttons to building table" />
   </component>
 </project>
