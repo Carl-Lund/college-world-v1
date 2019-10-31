@@ -22,7 +22,7 @@ export default class FacultyMember extends React.Component{
                     </div>
                 </div>
 
-               <div class = "salary">Salary: ${faculty.salary}</div>
+               Salary: ${faculty.salary}
 
                 <button id="raise" class="btn btn-info" name="facultyRaise + {i}">Give Raise</button>
                 <button id="fire" class="btn btn-info" name="removeFaculty + {i}">Fire Faculty</button>

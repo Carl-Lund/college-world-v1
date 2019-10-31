@@ -30,6 +30,26 @@ export default class Faculty extends React.Component{
 
                     </div>
                 </div>
+                <div class = "col-sm-4">
+                    <h3><b>Academic Department Ratings</b></h3>
+                    <table class = "table table-condensed" id = "tableContainer">
+                        <thread>
+                            <tr>
+                                <th>Department names</th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr><td>Nursing: 75</td></tr>
+                            <tr><td>Sports Science and Fitness: 75</td></tr>
+                            <tr><td>Arts and Sciences: 75</td></tr>
+                            <tr><td>Business: 75</td></tr>
+                            <tr><td>Overall Academic Rating: 75</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class = "container">
+
+                </div>
             </div>
         );
     }
