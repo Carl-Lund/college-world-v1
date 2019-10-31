@@ -12,7 +12,8 @@ export default class CoachesTable extends React.Component {
 
         this.getSalary = this.getSalary.bind(this);
         this.showCoachDetails = this.showCoachDetails.bind(this);
-
+        this.loadCollege = this.loadCollege.bind(this);
+        this.fireOrGiveRaise = this.fireOrGiveRaise.bind(this);
     }
 
     render() {
@@ -47,10 +48,10 @@ export default class CoachesTable extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-6">
-                            <button type="button" onClick={null} className="btn btn-info">Give Raise</button>
+                            <button onClick={() => this.fireOrGiveRaise(this.props.coaches[row.index], "GIVE_RAISE")} className="btn btn-info">Give Raise</button>
                         </div>
                         <div className="col-sm-6">
-                            <button type="button" onClick={null} className="btn btn-info">Fire Coach</button>
+                            <button onClick={() => this.fireOrGiveRaise(this.props.coaches[row.index], "FIRE_COACH")} className="btn btn-info">Fire Coach</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +97,43 @@ export default class CoachesTable extends React.Component {
         team.push(<h4>Sport: {this.props.coaches[coachId].sportName}</h4>)
         team.push(<h4>Performance: {this.props.coaches[coachId].performance}</h4>)
         return team
+    }
+
+    fireOrGiveRaise(coachModel, actionId){
+        const addNewTeam = [
+            {coachModel: coachModel, actionId: actionId, collegeId: this.props.collegeName}
+        ];
+
+        console.log('DATA: ' + JSON.stringify(addNewTeam))
+
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/coachesOptions/'+ this.props.collegeName,
+            {
+                method: 'POST',
+                body: JSON.stringify(addNewTeam)
+            }
+        )
+            .then(response => response.json())
+            .then(data => {
+                this.loadCollege()
+                console.log('Selected: ' + data.ok)
+                console.log('Sesdsdd: ' + data.title)
+            });
+    }
+
+
+    loadCollege(){
+        if (this.props.collegeName == "")
+            return;
+
+        console.log("Loading college");
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/'+ this.props.collegeName;
+        console.log(address);
+        fetch(address)
+            .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data);
+            });
+
+
     }
 }
 

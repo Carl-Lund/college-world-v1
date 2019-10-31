@@ -137,12 +137,12 @@ export default class AddSellSports extends React.Component {
     updateCollegeOnServer(){
         console.log('Add to server: ' + this.addSportSelectOption)
         const addNewTeam = [
-            {sportName: this.addSportSelectOption, collegeId: "acorn", actionId: "ADD"}
+            {sportName: this.addSportSelectOption, collegeId: this.props.collegeName, actionId: "ADD"}
         ];
 
         var responseFromServer
 
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn',
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/'+ this.props.collegeName,
             {
                 method: 'POST',
                 body: JSON.stringify(addNewTeam)
@@ -175,7 +175,7 @@ export default class AddSellSports extends React.Component {
             return;
 
         console.log("Loading college");
-        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn'
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/'+ this.props.collegeName;
         console.log(address);
         fetch(address)
             .then(response => response.json())
@@ -213,12 +213,12 @@ export default class AddSellSports extends React.Component {
             return
         }
         const addNewTeam = [
-            {sportName: this.sellSportSelectOption, collegeId: "acorn", actionId: "SELL"}
+            {sportName: this.sellSportSelectOption, collegeId: this.props.collegeName, actionId: "SELL"}
         ];
 
         var responseFromServer
 
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn',
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/'+ this.props.collegeName,
             {
                 method: 'POST',
                 body: JSON.stringify(addNewTeam)
