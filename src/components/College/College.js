@@ -15,15 +15,24 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-
                 <div className="container">
-                    <div row>
-                        <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
-                        <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
+                    <div className="row">
+                        <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                     </div>
                 </div>
+
+                {/*<div className="container">*/}
+                {/*    <div className="row">*/}
+                {/*        <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
+                {/*<div className="container">*/}
+                {/*    <div row>*/}
+                {/*        <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>*/}
+                {/*        <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         );
     }

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/custom-theme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/images/homepage-banner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Store/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/College/College.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/College.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Day/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Day/Day.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,11 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kena\IdeaProjects\college_world_react\public\resources\images" />
       <recent name="C:\Users\Kena\IdeaProjects\college_world_react\src" />
       <recent name="C:\Users\Kena\IdeaProjects\college_world_react\src\components" />
       <recent name="C:\Users\Kena\IdeaProjects\college_world_react\src\components\Students" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\college-view" />
-      <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
@@ -157,7 +158,8 @@
       <workItem from="1571946969547" duration="4321000" />
       <workItem from="1572370666611" duration="508000" />
       <workItem from="1572371250858" duration="5502000" />
-      <workItem from="1572543390129" duration="4432000" />
+      <workItem from="1572543390129" duration="7889000" />
+      <workItem from="1572979434777" duration="4979000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -208,11 +210,28 @@
       <option name="project" value="LOCAL" />
       <updated>1571950589463</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="small css changes">
+      <created>1572550554528</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572550554528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -234,6 +253,7 @@
     <MESSAGE value="Added Store page" />
     <MESSAGE value="buttons are disabled if user is unable to purchase" />
     <MESSAGE value="&quot;buy&quot; button works" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;buy&quot; button works" />
+    <MESSAGE value="small css changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small css changes" />
   </component>
 </project>
