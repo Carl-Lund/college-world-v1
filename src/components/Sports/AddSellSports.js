@@ -28,7 +28,7 @@ export default class AddSellSports extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-sm-6">
-                        <div className="jumbotronAddSell">
+                        <div className="jumbotronAdd">
                             <div className="container">
                                 <div className="row">
                                     <h5>Select Sport to Add</h5>
@@ -49,7 +49,7 @@ export default class AddSellSports extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-6">
-                        <div className="jumbotronAddSell">
+                        <div className="jumbotronSell">
                             <div className="container">
                                 <div className="row">
                                     <h5>Select Sport to sell</h5>
