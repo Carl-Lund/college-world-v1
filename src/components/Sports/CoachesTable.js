@@ -69,7 +69,7 @@ export default class CoachesTable extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-10">
+                            <div className="col-sm-12">
                                 <ReactTable
                                     data={this.props.coaches}
                                     columns={columns}

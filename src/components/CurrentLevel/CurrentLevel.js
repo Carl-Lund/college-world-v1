@@ -9,27 +9,40 @@ export default class CurrentLevel extends React.Component {
         }
 
         return (
-            <div className="container">
-                <div className="well well-sm">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h2>{this.props.everything.college.runId}</h2>
-                            <h3>You are on level {this.props.everything.objectives.currentLevel}</h3>
-                            <h4>You need {this.props.everything.objectives.studentsNeededForNextLevel} students to get
-                                to the next level.</h4>
-                            <div className="progress">
-                                <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
-                                     aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
-                                    {this.props.everything.objectives.studentCount} /
-                                    {this.props.everything.objectives.studentCount +
-                                    this.props.everything.objectives.studentsNeededForNextLevel} students
-                                </div>
-                            </div>
-                            <h4>Balance ${this.props.everything.college.availableCash}</h4>
+            <div className="container dash-banner">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h2>{this.props.everything.college.runId}</h2>
+                        <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/
+                            {this.props.everything.objectives.studentCount +
+                            this.props.everything.objectives.studentsNeededForNextLevel}</h3>
+
+                    </div>
+                    <div className="col-sm-3">
+                        <h5>{this.props.everything.college.numberStudentsAdmitted} Students</h5>
+                        <h5>{this.props.everything.college.studentFacultyRatioRating} Student to Faculty Ratio</h5>
+                        <h5>{this.props.everything.college.numberStudentsAccepted} Students Considering</h5>
+                    </div>
+                </div>
+
+                <div className="progress">
+                    <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
+                    </div>
+                </div>
+                    <img src="resources/images/homepage-banner.png"></img>
+
+                    <div className="img-wrapper">
+                    </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="container">
+                            <h4 className="white">Balance</h4>
+                            <h4 className="text-success">${this.props.everything.college.availableCash}</h4>
 
                             <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-
                         </div>
+
                     </div>
                 </div>
             </div>

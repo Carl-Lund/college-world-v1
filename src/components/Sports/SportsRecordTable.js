@@ -74,10 +74,11 @@ export default class SportsRecordTable extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-10">
+                            <div className="col-sm-12">
                                 <ReactTable
                                     data={this.props.sports}
                                     columns={columns}
+                                    minRows = {0}
                                 />
 
                             </div>
