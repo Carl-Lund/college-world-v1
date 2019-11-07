@@ -18,19 +18,9 @@ code {
     position: relative;
 }
 
-.dash-banner .img-wrapper{
-    background: #000;
-    position: absolute;
-    height: 350px;
-    opacity: .4;
-    width: inherit;
-    z-index: 0;
-}
-
 .dash-banner img{
-    position: absolute;
     width: inherit;
-    height: 350px;
+    margin: 2em 0;
     z-index: -1;
 }
 
@@ -59,6 +49,10 @@ code {
 
 .dash-banner .white{
     color: #fff;
+}
+
+.tuition{
+    height: auto
 }
 
 /* STORE STYLE */

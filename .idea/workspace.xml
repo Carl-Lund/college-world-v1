@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/resources/images/homepage-banner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/College/College.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/College.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/College/Tuition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/Tuition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Day/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Day/Day.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,7 +161,8 @@
       <workItem from="1572370666611" duration="508000" />
       <workItem from="1572371250858" duration="5502000" />
       <workItem from="1572543390129" duration="7889000" />
-      <workItem from="1572979434777" duration="4979000" />
+      <workItem from="1572979434777" duration="7330000" />
+      <workItem from="1573152840829" duration="4635000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -217,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572550554528</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made some progress on the dashboard mockup">
+      <created>1572985799204</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572985799204</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +264,7 @@
     <MESSAGE value="buttons are disabled if user is unable to purchase" />
     <MESSAGE value="&quot;buy&quot; button works" />
     <MESSAGE value="small css changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small css changes" />
+    <MESSAGE value="made some progress on the dashboard mockup" />
+    <option name="LAST_COMMIT_MESSAGE" value="made some progress on the dashboard mockup" />
   </component>
 </project>
