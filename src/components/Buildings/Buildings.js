@@ -1,4 +1,5 @@
 import React from 'react';
+import News from "../News/News";
 import Navigation from "../Navigation/Navigation";
 import ReactTable from "react-table";
 
@@ -26,6 +27,7 @@ export default class Buildings extends React.Component {
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
         fetch(address)
             .then(response => response.json())
+        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
         var qualityDecayed = 100 - this.props.everything.buildings[building].shownQuality;
         if (qualityDecayed > 10) {
             this.props.everything.buildings[building].isRepairComplete = false;
@@ -33,9 +35,9 @@ export default class Buildings extends React.Component {
         } else {
             this.props.everything.buildings[building].isRepairComplete = true;
             this.props.everything.buildings[building].hiddenQuality = 10.0;
+            this.props.everything.buildings[building].shownQuality = 100.0;
             this.props.everything.buildings[building].repairCost = ((100 - this.props.everything.buildings[building].shownQuality) * 300);
         }
-        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
         this.props.replaceEverything(this.props.everything);
     }
 
@@ -141,6 +143,8 @@ export default class Buildings extends React.Component {
             table.push(<tr style={trStyle}>{building}</tr>)
         }
 
+        let numStudents = this.props.everything.objectives.studentCount;
+
         return (
             <div>
             <div className="container">
@@ -172,8 +176,7 @@ export default class Buildings extends React.Component {
                 <div className="well well-sm" >
                     <div className="col-sm-5">
                         <div className="form-group">
-                            <label for="buildingType">Filter by Building Type
-                        </label>
+                            <label for="buildingType">Filter by Building Type</label>
                         <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
                                 style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
@@ -219,14 +222,13 @@ export default class Buildings extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-6" >
+                    <div className="col-sm-6" style={{marginLeft: '150px'}}>
                         <div className="well well-sm">
                             <h3>
                                 <p>Resident News</p>
                             </h3>
                             <div className="pre-scrollable">
-                                <ul className="list-group">
-                                </ul>
+                                    <News everything={this.props.everything} newsType={'RES_LIFE_NEWS'}/>
                             </div>
                         </div>
                     </div>
@@ -237,62 +239,86 @@ export default class Buildings extends React.Component {
                     <div className="jumbotron" >
                         <div className="row">
                             <div className="col-md-12">
-                                <div className="col-md-2" >
+                                <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Large Size</h4>
                                     <img className="img-responsive" src="resources/images/EXTRA_LARGE_DORM_k.png"/>
                                         <h5>Total progress:</h5>
                                         <div className="progress">
+                                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/150)))}}>
+                                                {Math.min(100, Math.floor(100*(numStudents/150)))}%
+                                            </div>
                                         </div>
                                 </div>
-                            <div className="col-md-2" >
+                            <div className="col-md-2" style={{marginRight: '3%'}}>
                                 <h4>Extra Large Size</h4>
                                 <img className="img-responsive" src="resources/images/EXTRA_LARGE_DORM_k.png"/>
                                     <h5>Total progress:</h5>
                                     <div className="progress">
+                                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/200)))}}>
+                                            {Math.min(100, Math.floor(100*(numStudents/200)))}%
+                                        </div>
                                     </div>
                             </div>
-                            <div className="col-md-2" >
+                            <div className="col-md-2" style={{marginRight: '3%'}}>
                                 <h4>Library</h4>
-                                <img className="img-responsive" src="resources/images/LIBRARY_k.png"/>
+                                <img className="img-responsive" src="resources/images/LIBRARY_k.png" style={{marginTop: '37px', marginBottom: '38px'}}/>
                                     <h5>Total progress:</h5>
                                     <div className="progress">
+                                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/300)))}}>
+                                            {Math.min(100, Math.floor(100*(numStudents/300)))}%
+                                        </div>
                                     </div>
                             </div>
-                            <div className="col-md-2" >
+                            <div className="col-md-2" style={{marginRight: '3%'}}>
                                 <h4>Health Center</h4>
-                                <img className="img-responsive" src="resources/images/HEALTH_k.png"/>
+                                <img className="img-responsive" src="resources/images/HEALTH_k.png" style={{marginTop: '37px', marginBottom: '38.5px'}}/>
                                     <h5>Total progress:</h5>
                                     <div className="progress">
+                                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/400)))}}>
+                                            {Math.min(100, Math.floor(100*(numStudents/400)))}%
+                                        </div>
                                     </div>
                             </div>
                             </div>
                             <div className="col-md-12">
-                                <div className="col-md-2" >
+                                <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Entertainment Center</h4>
-                                    <img className="img-responsive" src="resources/images/ENTERTAINMENT_k.png"/>
+                                    <img className="img-responsive" src="resources/images/ENTERTAINMENT_k.png" style={{marginBottom: '28px'}}/>
                                         <h5>Total progress:</h5>
                                         <div className="progress">
+                                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/500)))}}>
+                                                {Math.min(100, Math.floor(100*(numStudents/500)))}%
+                                            </div>
                                         </div>
                                 </div>
-                                <div className="col-md-2" >
+                                <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Football Stadium</h4>
                                     <img className="img-responsive" src="resources/images/FOOTBALL%20STADIUM_k.png"/>
                                         <h5>Total progress:</h5>
                                         <div className="progress">
+                                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/200)))}}>
+                                                {Math.min(100, Math.floor(100*(numStudents/200)))}%
+                                            </div>
                                         </div>
                                 </div>
-                                <div className="col-md-2" >
+                                <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Baseball Diamond</h4>
-                                    <img className="img-responsive" src="resources/images/BASEBALL%20DIAMOND_k.png"/>
+                                    <img className="img-responsive" src="resources/images/BASEBALL%20DIAMOND_k.png" style={{marginTop: '33px', marginBottom: '34px'}}/>
                                         <h5>Total progress:</h5>
                                         <div className="progress">
+                                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/300)))}}>
+                                                {Math.min(100, Math.floor(100*(numStudents/300)))}%
+                                            </div>
                                         </div>
                                 </div>
-                                <div className="col-md-2" >
+                                <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Hockey Rink</h4>
-                                    <img className="img-responsive" src="resources/images/HOCKEY%20RINK_k.png"/>
+                                    <img className="img-responsive" src="resources/images/HOCKEY%20RINK_k.png" style={{marginTop: '41px', marginBottom: '47px'}}/>
                                         <h5>Total progress:</h5>
                                         <div className="progress">
+                                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.min(100, Math.floor(100*(numStudents/400)))}}>
+                                                {Math.min(100, Math.floor(100*(numStudents/400)))}%
+                                            </div>
                                         </div>
                                 </div>
                             </div>
@@ -300,7 +326,6 @@ export default class Buildings extends React.Component {
                     </div>
                 </div>
             </div>
-
 
         )
     }
