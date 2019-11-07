@@ -20,17 +20,21 @@ export default class Faculty extends React.Component{
                     <h2><b>Faculty</b></h2>
                     <h3>{this.props.everything.faculty.length} faculty members</h3>
                 </div>
-                <div class="container">
+                <div class="col-md-4">
                     <div className="well well-sm">
                         <h3>Faculty Members</h3>
 
-                        <ul className="list-group">
-                            {this.facultyTable}
-                        </ul>
-
+                        <div class = "pre-scrollable">
+                            <ul className="list-group">
+                                {this.facultyTable}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class = "col-sm-4">
+                <div className="container">
+
+                </div>
+                <div class = "col-sm-6">
                     <h3><b>Academic Department Ratings</b></h3>
                     <table class = "table table-condensed" id = "tableContainer">
                         <thread>
@@ -47,9 +51,7 @@ export default class Faculty extends React.Component{
                         </tbody>
                     </table>
                 </div>
-                <div class = "container">
 
-                </div>
             </div>
         );
     }
