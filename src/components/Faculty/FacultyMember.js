@@ -8,11 +8,12 @@ export default class FacultyMember extends React.Component{
 
         return(
            <li class = "list-group-item">
-                {faculty.facultyName}
-                <Link class = "btn btn-info" data-toggle = {"collapse"}>Details</Link>
+               <b class = "facultyName">{faculty.facultyName}</b>
+                <button id = "details" className="btn btn-primary" type="button" data-toggle="collapse"
+                        data-target = "#collapseMenu" aria-expanded="false" aria-controls="collapseExample">Details</button>
 
-                <div className="collapse">
-                    <div className="well well-sm">
+                <div class="collapse" id = "collapseMenu">
+                    <div className="card card-body">
                         Title: {faculty.title}<br/>
                         Faculty ID: {faculty.facultyID}<br/>
                         Department: {faculty.departmentName}<br/>
@@ -21,10 +22,10 @@ export default class FacultyMember extends React.Component{
                     </div>
                 </div>
 
-                Salary: ${faculty.salary}
+               Salary: ${faculty.salary}
 
-                <Link id="raise" class="btn btn-info" name="facultyRaise + {i}">Give Raise</Link>
-                <Link id="fire" class="btn btn-info" name="removeFaculty + {i}">Fire Faculty</Link>
+                <button id="raise" class="btn btn-info" name="facultyRaise + {i}">Give Raise</button>
+                <button id="fire" class="btn btn-info" name="removeFaculty + {i}">Fire Faculty</button>
             </li>
         );
     }

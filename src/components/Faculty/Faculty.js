@@ -13,15 +13,42 @@ export default class Faculty extends React.Component{
     render() {
         return (
             <div>
-                <div className="col-sm-6">
-                    <div className="well well-sm">
-                        <h3>Faculty</h3>
-                        <div className="pre-scrollable">
-                            <ul className="list-group">
-                                {this.facultyTable}
-                            </ul>
-                        </div>
+                <div class="jumbotron">
+                    <div className="col-md-2">
+                        <img className="img-responsive" src="resources/images/student.png"></img>
                     </div>
+                    <h2><b>Faculty</b></h2>
+                    <h3>{this.props.everything.faculty.length} faculty members</h3>
+                </div>
+                <div class="container">
+                    <div className="well well-sm">
+                        <h3>Faculty Members</h3>
+
+                        <ul className="list-group">
+                            {this.facultyTable}
+                        </ul>
+
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <h3><b>Academic Department Ratings</b></h3>
+                    <table class = "table table-condensed" id = "tableContainer">
+                        <thread>
+                            <tr>
+                                <th>Department names</th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr><td>Nursing: 75</td></tr>
+                            <tr><td>Sports Science and Fitness: 75</td></tr>
+                            <tr><td>Arts and Sciences: 75</td></tr>
+                            <tr><td>Business: 75</td></tr>
+                            <tr><td>Overall Academic Rating: 75</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class = "container">
+
                 </div>
             </div>
         );

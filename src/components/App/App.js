@@ -8,6 +8,8 @@ import Objectives from "../Objectives/Objectives";
 import Store from "../Store/Store";
 import About from "../About/About";
 import Buildings from "../Buildings/Buildings";
+import CurrentDay from "../CurrentDay/CurrentDay";
+import CurrentBalance from "../CurrentBalance/CurrentBalance";
 
 
 export default class App extends React.Component {
@@ -99,6 +101,11 @@ export default class App extends React.Component {
                                         <li><Link to='/objectives'>Objectives</Link></li>
                                         <li><Link to='/store'>Store</Link></li>
                                     </ul>
+                                    <ul className="nav navbar-nav navbar-right">
+                                        <li><Link to='/currentBalance'>Balance</Link></li>
+                                        <li><Link to='/currentDay'>Current Day</Link></li>
+                                        <li><Link to='/about'>About</Link></li>
+                                    </ul>
                                 </div>
                             </div>
                         </nav>
@@ -113,6 +120,8 @@ export default class App extends React.Component {
                         <Route path="/faculty" render={() => <Faculty everything={everything} />} />
                         <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                         <Route path="/about" render={() => <About everything={everything} />} />
+                        <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
+                        <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
                     </main>
                 </div>
             </Router>

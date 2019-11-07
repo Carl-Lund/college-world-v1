@@ -22,9 +22,30 @@ export default class College extends React.Component {
                     <div row>
                         <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
                         <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
+                <div className="container">
+                    <div className="row">
+                        <CurrentLevel everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
+                        </div>
+                        <div className="col-sm-4">
+                            <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
+                        </div>
+                        <div className="col-sm-4">
+                            <Tuition everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h2 className="text-left">Metrics:</h2>
+                        </div>
+
+                        <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                     </div>
                 </div>
-            </div>
+
         );
     }
 }

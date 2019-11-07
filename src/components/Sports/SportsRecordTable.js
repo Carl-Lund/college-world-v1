@@ -5,18 +5,14 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 
 export default class SportsRecordTable extends React.Component {
-    nextIntForTable = 0
-    nextIntForTable2 = 0
-
     constructor(props) {
         super(props);
 
         //this.showTeam = showTeam()
 
         // this.sportsTeem = getSportsTeem(this.props.sports);
-        this.getTheNextIntForTable = this.getTheNextIntForTable.bind(this);
-        this.getTheNextIntForTable2 = this.getTheNextIntForTable2.bind(this);
-
+        this.showTeam = this.showTeam.bind(this);
+        this.showProgressBar = this.showProgressBar.bind(this);
     }
 
     render() {
@@ -25,13 +21,28 @@ export default class SportsRecordTable extends React.Component {
             accessor: 'sportName' // String-based value accessors!
         }, {
             Header: 'DETAILS',
-            Cell: props => <div>
-                <button type="button" onClick={showTeam} className="btn btn-info" data-toggle="collapse"
-                        data-target={"#show" + this.getTheNextIntForTable().toString()}>Details
+            Cell: (row) => <div>
+                <button type="button" className="btn btn-info" data-toggle="collapse"
+                        data-target={"#show" + row.index}>Details
                 </button>
-                <div id={"show"+this.getTheNextIntForTable2().toString()} className="collapse">
-                    <div className="jumbotronTransp">{showTeam()}</div>
-                </div>
+                <div className="container">
+                    <div id={"show"+row.index} className="collapse">
+                        <div className="row">
+                        <div className="jumbotronTransp">{this.showTeam(this.props.sports[row.index].sportName)}</div>
+                        </div>
+                        <div className="row">
+                            <h4>Reputation:</h4>
+                        </div>
+                        <div className="row">
+                            <div className="progress">
+                                <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+                                     aria-valuemin="50" aria-valuemax="100" style={{width: this.props.sports[row.index].reputation + '%'}}>
+                                    {this.props.sports[row.index].reputation}
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
             </div>
             // Custom cell components!
         }, {
@@ -63,10 +74,11 @@ export default class SportsRecordTable extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-10">
+                            <div className="col-sm-12">
                                 <ReactTable
                                     data={this.props.sports}
                                     columns={columns}
+                                    minRows = {0}
                                 />
 
                             </div>
@@ -81,39 +93,22 @@ export default class SportsRecordTable extends React.Component {
 
     }
 
-    getTheNextIntForTable() {
-        var intToReturn = this.nextIntForTable
-        if (this.nextIntForTable +1 === this.props.sports.length){
-            this.nextIntForTable = 0
-        }else {
-            this.nextIntForTable++
+    showTeam(sportTeamName) {
+        var team = [];
+        for (let i = 0; i <this.props.students.length; i++) {
+            if (this.props.students[i].team === sportTeamName){
+                team.push(<h4>{this.props.students[i].name}</h4>)
+            }
         }
-        return intToReturn
+        return team
     }
 
-    getTheNextIntForTable2() {
-        var intToReturn = this.nextIntForTable2
-        if (this.nextIntForTable2 +1 === this.props.sports.length){
-            this.nextIntForTable2 = 0
-        }else {
-            this.nextIntForTable2++
-        }
-        return intToReturn
+    showProgressBar(percentage){
+        var team = [];
+        team.push(<h4>{percentage}</h4>)
+        return team
     }
 }
 
 
 
-function showTeam() {
-    var team = [];
-    // team.push(<h4>{this.props.student[0].name}</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-    team.push(<h4>One</h4>)
-
-    return team
-}
