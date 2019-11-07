@@ -16,7 +16,6 @@ export default class CurrentLevel extends React.Component {
                         <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/
                             {this.props.everything.objectives.studentCount +
                             this.props.everything.objectives.studentsNeededForNextLevel}</h3>
-
                     </div>
                     <div className="col-sm-3">
                         <h5>{this.props.everything.college.numberStudentsAdmitted} Students</h5>
@@ -30,19 +29,18 @@ export default class CurrentLevel extends React.Component {
                          aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
                     </div>
                 </div>
-                    <img src="resources/images/homepage-banner.png"></img>
 
-                    <div className="img-wrapper">
-                    </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="container">
-                            <h4 className="white">Balance</h4>
-                            <h4 className="text-success">${this.props.everything.college.availableCash}</h4>
+                        <h4>Balance</h4>
+                        <h4>${this.props.everything.college.availableCash}</h4>
+                        <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                    </div>
+                </div>
 
-                            <Day everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                        </div>
-
+                <div className="row">
+                    <div className="col-md-12">
+                        <img src="resources/images/homepage-banner.png"></img>
                     </div>
                 </div>
             </div>
