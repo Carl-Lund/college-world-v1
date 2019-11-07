@@ -5,6 +5,9 @@ export default class Day extends React.Component {
     constructor(props) {
         super(props);
         this.fetchData = this.fetchData.bind(this);
+        this.playPressed = this.playPressed.bind(this);
+        this.pausePressed = this.pausePressed.bind(this);
+        this.ffPressed = this.ffPressed.bind(this);
     }
 
     fetchData() {
@@ -14,22 +17,39 @@ export default class Day extends React.Component {
             .then(data => {this.props.replaceEverything(data)});
     }
 
-    pauseUnpause() {
-        this.props.everything.college.isTimePaused = !(this.props.everything.college.isTimePaused);
-        this.props.replaceEverything(this.props.everything);
+    componentDidMount() {
+        document.getElementById("playButton").disabled = true;
+    }
+
+    playPressed() {
+        document.getElementById("playButton").disabled = true;
+        document.getElementById("pauseButton").disabled = false;
+        document.getElementById("ffButton").disabled = false;
+        this.props.changeTimeFunction(0);
+    }
+
+    pausePressed() {
+        document.getElementById("playButton").disabled = false;
+        document.getElementById("pauseButton").disabled = true;
+        document.getElementById("ffButton").disabled = false;
+        this.props.changeTimeFunction(1);
+    }
+
+    ffPressed() {
+        document.getElementById("playButton").disabled = false;
+        document.getElementById("pauseButton").disabled = false;
+        document.getElementById("ffButton").disabled = true;
+        this.props.changeTimeFunction(2);
     }
 
     render() {
         return (
             <div className="container">
                 <h4>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h4>
-                <div id="day-timer" className="progress" style={{width: '30%'}}>
-                    <div className="progress-bar progress-bar-striped active" role="progressbar"
-                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: '40%'}}>
-                        7 / 24 Hours
-                    </div>
-                </div>
-                <button onClick={this.props.pauseUnpause}>Pause Time</button>
+
+                <button id="playButton" onClick={this.playPressed}>Play <span className={"glyphicon glyphicon-play"}></span></button>
+                <button id="pauseButton" onClick={this.pausePressed}>Pause <span className={"glyphicon glyphicon-pause"}></span></button>
+                <button id="ffButton" onClick={this.ffPressed}>Fast Forward <span className={"glyphicon glyphicon-forward"}></span></button>
             </div>
         );
     }

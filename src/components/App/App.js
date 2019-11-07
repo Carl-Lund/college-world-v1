@@ -23,7 +23,10 @@ export default class App extends React.Component {
         this.replaceEverything = this.replaceEverything.bind(this)
         this.setCollegeName = this.setCollegeName.bind(this)
         this.setLaunchStatus = this.setLaunchStatus.bind(this)
+        this.changeTimeFunction = this.changeTimeFunction.bind(this);
 
+        this.timing = 10000;
+        this.debugDaySpeedRef = React.createRef();
     }
 
     replaceEverything(newEverything) {
@@ -38,8 +41,25 @@ export default class App extends React.Component {
         this.setState({launchStatus:newLaunchStatus})
     }
 
-    pauseUnpause = () => {
-        console.log("ASD");
+    changeTimeFunction = (f) => {
+        // debug
+        this.timing = this.debugDaySpeedRef.current.value;
+        if (this.timing < 2000) {
+            console.log("Timing less than 2000, resetting to 10000");
+            this.timing = 10000;
+        }
+        if (f === 0) {
+            console.log("PLAY");
+            clearInterval(this.timer);
+            this.timer = setInterval(() => this.advanceDay(), this.timing);
+        } else if (f === 1) {
+            console.log("PAUSE");
+            clearInterval(this.timer);
+        } else if (f === 2) {
+            console.log("FAST FORWARD");
+            clearInterval(this.timer);
+            this.timer = setInterval(() => this.advanceDay(), this.timing/2);
+        }
     }
 
     componentWillUnmount() {
@@ -51,9 +71,15 @@ export default class App extends React.Component {
     componentDidMount() {
         this.setState({ launchStatus: 'loadingInProgress' });
         clearInterval(this.timer);
-        this.timer = setInterval(() => this.advanceDay(), 10000);
+        // debug
+        this.timing = this.debugDaySpeedRef.current.value;
+        if (this.timing < 2000) {
+            console.log("Timing less than 2000, resetting to 10000");
+            this.timing = 10000;
+        }
+        this.timer = setInterval(() => this.advanceDay(), this.timing);
 
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/acorn')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/' + this.state.collegeName)
             .then(response => response.json())
             .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
                 console.log("Fetched college data " + data)
@@ -61,13 +87,19 @@ export default class App extends React.Component {
     }
 
     advanceDay = () => {
-        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/acorn/nextDay')
+        fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.state.collegeName + '/nextDay')
             .then(response => response.json())
             .then(data => {
                 this.setState({isLoading: false, everything: data});
                 this.setState({isLoading: false, everything: data});
                 clearInterval(this.timer);
-                this.timer = setInterval(() => this.advanceDay(), 10000);
+                // debug
+                this.timing = this.debugDaySpeedRef.current.value;
+                if (this.timing < 2000) {
+                    console.log("Timing less than 2000, resetting to 10000");
+                    this.timing = 10000;
+                }
+                this.timer = setInterval(() => this.advanceDay(), this.timing);
             });
     }
 
@@ -78,53 +110,56 @@ export default class App extends React.Component {
         // }
 
         return (
-            <Router>
-                <div>
-                    <aside>
-                        <nav className="navbar navbar-inverse">
-                            <div className="container-fluid">
-                                <div className="navbar-header">
-                                    <button type="button" className="navbar-toggle" data-toggle="collapse"
-                                            data-target="#myNavbar">
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                    </button>
+            <div>
+                <Router>
+                    <div>
+                        <aside>
+                            <nav className="navbar navbar-inverse">
+                                <div className="container-fluid">
+                                    <div className="navbar-header">
+                                        <button type="button" className="navbar-toggle" data-toggle="collapse"
+                                                data-target="#myNavbar">
+                                            <span className="icon-bar"></span>
+                                            <span className="icon-bar"></span>
+                                            <span className="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div className="collapse navbar-collapse" id="myNavbar">
+                                        <ul className="nav navbar-nav">
+                                            <li><Link to='/college'>Dashboard</Link></li>
+                                            <li><Link to='/students'>Students</Link></li>
+                                            <li><Link to='/building'>Building</Link></li>
+                                            <li><Link to='/sports'>Sports</Link></li>
+                                            <li><Link to='/faculty'>Faculty</Link></li>
+                                            <li><Link to='/objectives'>Objectives</Link></li>
+                                            <li><Link to='/store'>Store</Link></li>
+                                        </ul>
+                                        <ul className="nav navbar-nav navbar-right">
+                                            <li><Link to='/currentBalance'>Balance</Link></li>
+                                            <li><Link to='/currentDay'>Current Day</Link></li>
+                                            <li><Link to='/about'>About</Link></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div className="collapse navbar-collapse" id="myNavbar">
-                                    <ul className="nav navbar-nav">
-                                        <li><Link to='/college'>Dashboard</Link></li>
-                                        <li><Link to='/students'>Students</Link></li>
-                                        <li><Link to='/building'>Building</Link></li>
-                                        <li><Link to='/sports'>Sports</Link></li>
-                                        <li><Link to='/faculty'>Faculty</Link></li>
-                                        <li><Link to='/objectives'>Objectives</Link></li>
-                                        <li><Link to='/store'>Store</Link></li>
-                                    </ul>
-                                    <ul className="nav navbar-nav navbar-right">
-                                        <li><Link to='/currentBalance'>Balance</Link></li>
-                                        <li><Link to='/currentDay'>Current Day</Link></li>
-                                        <li><Link to='/about'>About</Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </aside>
-                    <main>
-                        <Route path="/about" render={() => <About everything={everything} />} />
-                        <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
-                        <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
-                        <Route path="/students" render={() => <Students everything={everything} />} />
-                        <Route path="/objectives" render={() => <Objectives everything={everything} />} />
-                        <Route path="/store" render={() => <Store everything={everything} />} />
-                        <Route path="/faculty" render={() => <Faculty everything={everything} />} />
-                        <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
-                        <Route path="/about" render={() => <About everything={everything} />} />
-                        <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
-                        <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
-                    </main>
-                </div>
-            </Router>
+                            </nav>
+                        </aside>
+                        <main>
+                            <Route path="/about" render={() => <About everything={everything} />} />
+                            <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
+                            <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
+                            <Route path="/students" render={() => <Students everything={everything} />} />
+                            <Route path="/objectives" render={() => <Objectives everything={everything} />} />
+                            <Route path="/store" render={() => <Store everything={everything} />} />
+                            <Route path="/faculty" render={() => <Faculty everything={everything} />} />
+                            <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
+                            <Route path="/about" render={() => <About everything={everything} />} />
+                            <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
+                            <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
+                        </main>
+                    </div>
+                </Router>
+                <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"10000 ms"} defaultValue={"10000"}/>
+            </div>
         );
     }
 }
