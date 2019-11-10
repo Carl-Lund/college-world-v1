@@ -10,8 +10,7 @@ export default class CollegeLaunchPad extends React.Component {
 
         return (
             <div>
-                <CollegeOpenCreate collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus}/>
-                <College launchStatus={this.props.launchStatus} everything={this.props.everything} replaceEverything={this.props.replaceEverything} changeTimeFunction = {this.props.changeTimeFunction}/>
+                 <College launchStatus={this.props.launchStatus} everything={this.props.everything} replaceEverything={this.props.replaceEverything} changeTimeFunction = {this.props.changeTimeFunction}/>
             </div>
         );
     }

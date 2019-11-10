@@ -10,6 +10,7 @@ import About from "../About/About";
 import Buildings from "../Buildings/Buildings";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
+import CollegeOpenCreate from "../College/CollegeOpenCreate";
 
 
 export default class App extends React.Component {
@@ -126,6 +127,7 @@ export default class App extends React.Component {
                                     </div>
                                     <div className="collapse navbar-collapse" id="myNavbar">
                                         <ul className="nav navbar-nav">
+                                            <li><Link to='/launch'>Launch</Link></li>
                                             <li><Link to='/college'>Dashboard</Link></li>
                                             <li><Link to='/students'>Students</Link></li>
                                             <li><Link to='/building'>Building</Link></li>
@@ -144,6 +146,7 @@ export default class App extends React.Component {
                             </nav>
                         </aside>
                         <main>
+                            <Route path="/launch" render={() => <CollegeOpenCreate collegeName={collegeName} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  setLaunchStatus={this.setLaunchStatus}/>} />
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
                             <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
@@ -158,7 +161,10 @@ export default class App extends React.Component {
                         </main>
                     </div>
                 </Router>
-                <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"10000 ms"} defaultValue={"10000"}/>
+                <div className="well well-sm">
+                    Refresh Speed (ms)
+                    <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"10000 ms"} defaultValue={"10000"}/>
+                </div>
             </div>
         );
     }

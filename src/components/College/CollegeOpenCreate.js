@@ -1,8 +1,7 @@
 import React from 'react';
-import College from "./College";
-import Tuition from "./Tuition";
+import { withRouter} from 'react-router-dom';
 
-export default class CollegeOpenCreate extends React.Component {
+class CollegeOpenCreate extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,13 +18,15 @@ export default class CollegeOpenCreate extends React.Component {
             return;
 
         console.log("Loading college");
-        //this.props.setLaunchStatus('loadInProgressxxxxxx');
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/'+ this.props.collegeName;
         console.log(address);
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
            });
+
+        const { history } = this.props;
+        if (history) history.push('/college');
     }
 
     render() {
@@ -46,3 +47,5 @@ export default class CollegeOpenCreate extends React.Component {
         );
     }
 }
+
+export default withRouter(CollegeOpenCreate);
