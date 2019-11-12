@@ -3,7 +3,18 @@
 }
 
 h3{
-    margin-left: 6em;
+
+}
+
+.facultyH3{
+    margin-left: 6.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.memberInfo{
+    text-align: right;
+    padding-top: 4em;
 }
 
 .pre-scrollable{
@@ -23,8 +34,8 @@ h3{
 }
 
 .jumbotron{
-    margin-left: 16em;
-    margin-right: 16em;
+    margin-left: 0em;
+    margin-right: 0em;
 }
 
 #facultyMember{
@@ -72,18 +83,15 @@ h3{
 }
 
 .col-sm-4{
-    margin-left: 15em;
+    margin-left: 0em;
 }
 
 .col-sm-6{
-    margin-left: 15em;
+    margin-left: 0em;
 }
 
 table{
-    margin-left: 8em;
-    margin-right: 8em;
-    border: 5px #000000;
-    padding-bottom: 5em;
+
 }
 
 td{
