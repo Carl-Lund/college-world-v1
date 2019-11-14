@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyTable from "./FacultyTable";
+import FacultyRatings from "./FacultyRatings";
 
 export default class Faculty extends React.Component{
     constructor(props){
@@ -34,35 +35,30 @@ export default class Faculty extends React.Component{
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
                         <h3>{this.props.everything.faculty[this.state.selectedFaculty].facultyName}</h3>
-                        <h3>Department</h3>
-                        <h3>Salary: </h3>
-                        <h3>ID: </h3>
-                        <h3>Happiness: </h3>
-                        <h3>Performance: </h3>
+                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].department}</h3>
+                        <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary}</h3>
+                        <h3>ID: {this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
+                        <h3>Happiness: {this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
+                        <h3>Performance: {this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>
+                    </div>
+                    <div class = "facultyButtons">
+                        <button type="submit" className="btn btn-info" onClick={fireFaculty()} name="fireFaculty">Fire Faculty</button>
+                        <button type="submit" className="btn btn-info" onClick={giveRaise()} name="giveRaise">Give Raise</button>
                     </div>
                 </div>
 
                 <div className="clearfix"></div>
-                <div class = "col-sm-6">
-                    <h3><b>Academic Department Ratings</b></h3>
-                    <table class = "table table-condensed" id = "tableContainer">
-                        <thread>
-                            <tr>
-                                <th>Department names</th>
-                            </tr>
-                        </thread>
-                        <tbody>
-                            <tr><td>Nursing: 75</td></tr>
-                            <tr><td>Sports Science and Fitness: 75</td></tr>
-                            <tr><td>Arts and Sciences: 75</td></tr>
-                            <tr><td>Business: 75</td></tr>
-                            <tr><td>Overall Academic Rating: 75</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <FacultyRatings everything = {this.props.everything}/>
 
             </div>
         );
     }
 }
 
+function fireFaculty(){
+
+}
+
+function giveRaise(){
+
+}
