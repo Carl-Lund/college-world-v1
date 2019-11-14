@@ -7,14 +7,18 @@ h3{
 }
 
 .facultyH3{
-    margin-left: 6.5em;
-    font-weight: bold;
-    text-transform: uppercase;
+    text-align: center;
 }
 
 .memberInfo{
     text-align: right;
-    padding-top: 4em;
+    padding-top: 0em;
+}
+
+.memberInfoTitle{
+    text-align: right;
+    font-weight: bold;
+    padding-top: 2em;
 }
 
 .pre-scrollable{

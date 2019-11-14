@@ -1,13 +1,19 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
-import {Link} from "react-router-dom";
-import FacultyMember from "./FacultyMember";
-import NewsItem from "../News/NewsItem";
+import FacultyTable from "./FacultyTable";
 
 export default class Faculty extends React.Component{
     constructor(props){
         super(props);
-        this.facultyTable = createTable(this.props.everything);
+        this.state = {
+            selectedFaculty: 0
+        }
+    }
+
+    facultySwitch = (s) => {
+        this.setState({
+            selectedFaculty: s
+        });
     }
 
     render() {
@@ -22,22 +28,12 @@ export default class Faculty extends React.Component{
                     <h3>{this.props.everything.faculty.length} faculty members</h3>
                 </div>
 
-                <div class="col-md-6">
-                    <div className="well well-sm">
-                        <h3 class = "facultyH3">Faculty Members</h3>
-
-                        <div class = "pre-scrollable">
-                            <ul className="list-group">
-                                {this.facultyTable}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                <FacultyTable everything = {this.props.everything} facultySwitch = {this.facultySwitch}/>
 
                 <div class = "col-md-6">
+                    <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
-                        <h3>Name of Member</h3>
+                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].facultyName}</h3>
                         <h3>Department</h3>
                         <h3>Salary: </h3>
                         <h3>ID: </h3>
@@ -70,15 +66,3 @@ export default class Faculty extends React.Component{
     }
 }
 
-function createTable(everything){
-    let table = [];
-
-    if (everything === null || everything.faculty === null)
-        return table;
-
-    for(let i = 0; i < everything.faculty.length; i++){
-        table.push(<FacultyMember faculty = {everything.faculty[i]} facultyNumber={i}/>)
-    }
-
-    return table;
-}
