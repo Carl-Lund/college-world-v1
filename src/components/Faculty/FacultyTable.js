@@ -13,8 +13,7 @@ export default class FacultyTable extends React.Component{
 
     render() {
         return(
-            <div className="col-md-6">
-                <div className="well well-sm">
+                <div className="well well-sm text-center">
                     <h3 className="facultyH3">Faculty Members</h3>
                     <div className="pre-scrollable">
                         <ul className="list-group">
@@ -22,7 +21,6 @@ export default class FacultyTable extends React.Component{
                         </ul>
                     </div>
                 </div>
-            </div>
         );
     }
 }

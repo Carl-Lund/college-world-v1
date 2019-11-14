@@ -10,7 +10,7 @@ export default class CollegeRetention extends React.Component {
     render() {
         const title = this.props.title
         return (
-            <div className="well well-sm">
+            <div className="well">
                 <h4>{title}</h4>
                 <div className="pre-scrollable">
                     <ul className="list-group">

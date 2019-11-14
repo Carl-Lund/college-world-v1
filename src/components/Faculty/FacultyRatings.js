@@ -9,7 +9,7 @@ export default class FacultyRatings extends React.Component{
 
     render() {
         return(
-            <div className="col-sm-6">
+            <div className="text-center">
                 <h3><b>Academic Department Ratings</b></h3>
                 <table className="table table-condensed" id="tableContainer">
                     <thread>

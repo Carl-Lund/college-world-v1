@@ -21,17 +21,25 @@ export default class Faculty extends React.Component{
         return (
             <div class = "container">
 
-                <div class="jumbotron">
-                    <div className="col-md-2">
+                <div class="jumbotron clearfix">
+                    <div className="img">
                         <img className="img-responsive" src="resources/images/student.png"></img>
                     </div>
-                    <h2><b>Faculty</b></h2>
-                    <h3>{this.props.everything.faculty.length} faculty members</h3>
+                    <div className="title">
+                        <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div className="col-md-2">
+                    </div>
+
+                <div className="col-md-4">
+                    <FacultyTable everything = {this.props.everything} facultySwitch = {this.facultySwitch}/>
                 </div>
 
-                <FacultyTable everything = {this.props.everything} facultySwitch = {this.facultySwitch}/>
 
-                <div class = "col-md-6">
+                <div class = "col-md-4 text-right">
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
                         <h3>{this.props.everything.faculty[this.state.selectedFaculty].facultyName}</h3>
@@ -44,8 +52,12 @@ export default class Faculty extends React.Component{
                     <div class = "facultyButtons">
                         <button type="submit" className="btn btn-info" onClick={fireFaculty()} name="fireFaculty">Fire Faculty</button>
                         <button type="submit" className="btn btn-info" onClick={giveRaise()} name="giveRaise">Give Raise</button>
+                        </div>
+                    </div>
+                    <div className="col-md-2">
                     </div>
                 </div>
+
 
                 <div className="clearfix"></div>
                 <FacultyRatings everything = {this.props.everything}/>
