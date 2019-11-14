@@ -6,7 +6,7 @@ export default class FacultyTable extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            facultyTable: createTable(this.props.everything.faculty)
+            facultyTable: createTable(this.props.everything.faculty, this.props)
         }
 
     }
@@ -27,22 +27,22 @@ export default class FacultyTable extends React.Component{
     }
 }
 
-function createTable(faculty){
+function createTable(faculty, props){
     let table = [];
 
     if (faculty === null || faculty === null)
         return table;
 
     for(let i = 0; i < faculty.length; i++){
-        table.push(handleMember(faculty, i))
+        table.push(handleMember(faculty, i, props))
     }
 
     return table;
 }
 
-function handleMember(facultyArray, index){
+function handleMember(facultyArray, index, props){
     return(
-        <li class = "list-group-item" onClick = {() => this.props.facultySwitch(index)}>
+        <li class = "list-group-item" onClick = {() => props.facultySwitch(index)}>
             <b class = "facultyName">{facultyArray[index].facultyName}</b>
         </li>
     );
