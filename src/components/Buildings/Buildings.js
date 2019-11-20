@@ -9,6 +9,7 @@ export default class Buildings extends React.Component {
         super(props);
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
         this.repairBuilding = this.repairBuilding.bind(this);
+        this.purchaseBuilding = this.purchaseBuilding.bind(this);
     }
 
     upgradeBuilding(e) {
@@ -25,9 +26,10 @@ export default class Buildings extends React.Component {
     repairBuilding(e) {
         var building = e.target.value;
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        console.log("test fetch" + address);
         fetch(address)
             .then(response => response.json())
-        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
+/*        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
         var qualityDecayed = 100 - this.props.everything.buildings[building].shownQuality;
         if (qualityDecayed > 10) {
             this.props.everything.buildings[building].isRepairComplete = false;
@@ -38,9 +40,15 @@ export default class Buildings extends React.Component {
             this.props.everything.buildings[building].shownQuality = 100.0;
             this.props.everything.buildings[building].repairCost = ((100 - this.props.everything.buildings[building].shownQuality) * 300);
         }
-        this.props.replaceEverything(this.props.everything);
+        this.props.replaceEverything(this.props.everything);*/
     }
 
+    purchaseBuilding() {
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        fetch(address)
+            .then(response => response.json())
+        this.props.replaceEverything(this.props.everything);
+    }
 
     render() {
         if (!this.props.everything) {
@@ -122,7 +130,7 @@ export default class Buildings extends React.Component {
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
             && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
                 repairButton.push (
-                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost}</button>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
                 )
             }
 
@@ -176,7 +184,7 @@ export default class Buildings extends React.Component {
                 <div className="well well-sm" >
                     <div className="col-sm-5">
                         <div className="form-group">
-                            <label for="buildingType">Filter by Building Type</label>
+                            <label>Filter by Building Type</label>
                         <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
                                 style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
@@ -218,6 +226,34 @@ export default class Buildings extends React.Component {
                     <div className="well well-sm">
                         <div id="purchase">
                             <h4>Purchase Buildings</h4>
+                            <div className="form-group">
+                                <label>Building Type</label>
+                                <select className="form-control" id="buildingType" name="buildingType">
+                                    <option value="Academic Center">Academic Center</option>
+                                    <option value="Dining Hall">Dining Hall</option>
+                                    <option value="Dormitory">Dormitory</option>
+                                    <option value="Baseball Diamond">Baseball Diamond</option>
+                                    <option value="Football Stadium">Football Stadium</option>
+                                    <option value="Hockey Rink">Hockey Rink</option>
+                                    <option value="Library">Library</option>
+                                    <option value="Health Center">Health Center</option>
+                                    <option value="Entertainment Center">Entertainment Center</option>
+                                </select>
+                            </div>
+{/*                            <div className="form-group">
+                                <label>Size</label>
+                                <select className="form-control" id="buildingSize" name="buildingSize">
+                                    <option value="Small">Small ($50,000)</option>
+                                    <option value="Medium">Medium ($150,000)</option>
+                                    <option value="Large">Large ($350,000)</option>
+                                    <option value="Extra Large">Extra Large ($650,000)</option>
+                                </select>
+                            </div>*/}
+                            <div className="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="buildingName" name="buildingName" placeholder="Enter Building Name"></input>
+                            </div>
+                            <button type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($)</button>
                         </div>
                     </div>
                 </div>
