@@ -8,8 +8,8 @@ export default class FacultyMember extends React.Component{
         const facultyNumber = this.props.facultyNumber;
 
         return(
-           <li class = "list-group-item" onClick="handleClick(facultyNumber)">
-               <b class = "facultyName">{faculty.facultyName}</b>
+           <li class = "list-group-item text-center" onClick="handleClick(facultyNumber)">
+               <b>{faculty.facultyName}</b>
             </li>
         );
     }

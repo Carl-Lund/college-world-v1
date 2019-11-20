@@ -11,13 +11,11 @@ export default class CollegeDashboard extends React.Component {
         return (
             <div className="container">
                 <CollegeHappiness everything={this.props.everything}/>
-                {/*<StudentStatistics everything={this.props.everything}/>*/}
                 <CollegeRetention everything={this.props.everything}/>
-                <div className="row">
-                    <div className="col-sm">
-                        <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                    </div>
-                </div>
+                <CollegeHappiness everything={this.props.everything}/>
+                <CollegeRetention everything={this.props.everything}/>
+                <CollegeHappiness everything={this.props.everything}/>
+                <CollegeRetention everything={this.props.everything}/>
             </div>
         );
     }
