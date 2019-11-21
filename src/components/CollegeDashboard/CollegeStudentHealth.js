@@ -25,12 +25,14 @@ export default class CollegeStudentHealth extends React.Component {
             <div className="col-sm-2">
                 <div>
                     <h3>Student Health</h3>
+                    <br></br>
                     <CircularProgressbar
                         value={25}
                         text={`25%`}
                         background
                         backgroundPadding={6}
                         styles={buildStyles({
+                            strokeLinecap: "butt",
                             backgroundColor: color,
                             textColor: "#fff",
                             pathColor: "#fff",

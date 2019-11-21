@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default class CollegeBuildings extends React.Component {
@@ -25,6 +25,7 @@ export default class CollegeBuildings extends React.Component {
             <div className="col-sm-2">
                 <div>
                     <h3>Buildings</h3>
+                    <br></br>
                     <CircularProgressbar value={50} text={50} strokeWidth={15} styles={buildStyles({pathColor: color, textColor: color})}/>
                     <br/>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}

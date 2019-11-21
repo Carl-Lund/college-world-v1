@@ -25,6 +25,7 @@ export default class CollegeRetention extends React.Component {
             <div className="col-sm-2">
                 <div>
                     <h3>Retention</h3>
+                    <br></br>
                     <CircularProgressbar value={this.props.everything.college.retentionRate} text={this.props.everything.college.retentionRate} strokeWidth={12} styles={buildStyles({pathColor: color, textColor: color})}/>
                     <br/>
                     {/*<button href="#retentionDetails" type="button" className="btn btn-light"*/}

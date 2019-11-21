@@ -25,8 +25,15 @@ export default class CollegeRecreationalHappiness extends React.Component {
             <div className="col-sm-2">
                 <div>
                     <h3>Recreational Happiness</h3>
-                    <CircularProgressbar value={33} text={33} strokeWidth={15} styles={buildStyles({pathColor: color, textColor: color})}/>
-                    <br/>
+                    <CircularProgressbar
+                        value={33}
+                        text={"33%"}
+                        strokeWidth={50}
+                        styles={buildStyles({
+                            strokeLinecap: "butt",
+                            textColor:"#61605d",
+                            pathColor:color,
+                    })}/>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
