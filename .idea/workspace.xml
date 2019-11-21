@@ -153,7 +153,7 @@
       <workItem from="1573585826040" duration="4599000" />
       <workItem from="1573754979631" duration="1505000" />
       <workItem from="1574105535340" duration="4012000" />
-      <workItem from="1574269921118" duration="836000" />
+      <workItem from="1574269921118" duration="6845000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -267,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573153270240</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Testing for Allen">
+      <created>1574271029981</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574271029981</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +309,7 @@
     <MESSAGE value="Added upgrade and repair buttons to building table" />
     <MESSAGE value="Added resident news to buildings tab" />
     <MESSAGE value="Added progress bars for locked buildings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added progress bars for locked buildings" />
+    <MESSAGE value="Testing for Allen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
   </component>
 </project>

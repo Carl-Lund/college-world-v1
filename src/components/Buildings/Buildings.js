@@ -14,19 +14,19 @@ export default class Buildings extends React.Component {
 
     upgradeBuilding(e) {
         var building = e.target.value;
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/upgrade/" + this.props.everything.buildings[building].name;
         fetch(address)
             .then(response => response.json())
-        this.props.everything.buildings[building].hoursToComplete = 336;
+/*        this.props.everything.buildings[building].hoursToComplete = 336;
         this.props.everything.buildings[building].isUpgradeComplete = false;
         this.props.everything.college.availableCash -= this.props.everything.buildings[building].upgradeCost;
-        this.props.replaceEverything(this.props.everything);
+        this.props.replaceEverything(this.props.everything);*/
     }
 
     repairBuilding(e) {
         var building = e.target.value;
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
-        console.log("test fetch" + address);
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/repair/" + this.props.everything.buildings[building].name;
+        console.log("test fetch " + address);
         fetch(address)
             .then(response => response.json())
 /*        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
@@ -44,10 +44,9 @@ export default class Buildings extends React.Component {
     }
 
     purchaseBuilding() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runID;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/purchase";
         fetch(address)
             .then(response => response.json())
-        this.props.replaceEverything(this.props.everything);
     }
 
     render() {
