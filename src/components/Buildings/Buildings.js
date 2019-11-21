@@ -14,7 +14,7 @@ export default class Buildings extends React.Component {
 
     upgradeBuilding(e) {
         var building = e.target.value;
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/upgrade/" + this.props.everything.buildings[building].name;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/upgrade/" + this.props.everything.buildings[building].name;
         fetch(address)
             .then(response => response.json())
 /*        this.props.everything.buildings[building].hoursToComplete = 336;
@@ -25,8 +25,10 @@ export default class Buildings extends React.Component {
 
     repairBuilding(e) {
         var building = e.target.value;
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/repair/" + this.props.everything.buildings[building].name;
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/repair/" + encodeURI(this.props.everything.buildings[building].name);
+        console.log("building index " + building);
         console.log("test fetch " + address);
+        console.log("building name " + this.props.everything.buildings[building].name);
         fetch(address)
             .then(response => response.json())
 /*        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
@@ -44,7 +46,7 @@ export default class Buildings extends React.Component {
     }
 
     purchaseBuilding() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/buildings/" + this.props.everything.college.runId + "/purchase";
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase";
         fetch(address)
             .then(response => response.json())
     }
