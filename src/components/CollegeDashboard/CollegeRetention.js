@@ -8,9 +8,9 @@ export default class CollegeRetention extends React.Component {
     render() {
 
         return (
-            <div className="col-sm-2">
-                <div>
-                    <h3>Retention</h3>
+            <div className="col-sm-4">
+                <div class="card card-body ">
+                    <h3 class="card-title">Retention</h3>
                     <CircularProgressbar value={this.props.everything.college.retentionRate} text={this.props.everything.college.retentionRate} strokeWidth={12} />
                     <br/>
                     {/*<button href="#retentionDetails" type="button" className="btn btn-light"*/}

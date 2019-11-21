@@ -9,11 +9,7 @@ export default class CollegeDashboard extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <CollegeHappiness everything={this.props.everything}/>
-                <CollegeRetention everything={this.props.everything}/>
-                <CollegeHappiness everything={this.props.everything}/>
-                <CollegeRetention everything={this.props.everything}/>
+            <div className="card-deck my-3">
                 <CollegeHappiness everything={this.props.everything}/>
                 <CollegeRetention everything={this.props.everything}/>
             </div>

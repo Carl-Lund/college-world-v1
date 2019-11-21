@@ -47,9 +47,9 @@ export default class Day extends React.Component {
             <div className="container">
                 <h4>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h4>
 
-                <button id="playButton" onClick={this.playPressed}>Play <span className={"glyphicon glyphicon-play"}></span></button>
-                <button id="pauseButton" onClick={this.pausePressed}>Pause <span className={"glyphicon glyphicon-pause"}></span></button>
-                <button id="ffButton" onClick={this.ffPressed}>Fast Forward <span className={"glyphicon glyphicon-forward"}></span></button>
+                <button className="btn btn-default" id="playButton" onClick={this.playPressed}><span class="sr-only">Play</span><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                <button className="btn btn-default" id="pauseButton" onClick={this.pausePressed}><span className="sr-only">Pause</span><span class="glyphicon glyphicon-pause" aria-hidden="true"></span></button>
+                <button className="btn btn-default" id="ffButton" onClick={this.ffPressed}><span className="sr-only">Fast Forward</span><span class="glyphicon glyphicon-forward" aria-hidden="true"></span></button>
             </div>
         );
     }

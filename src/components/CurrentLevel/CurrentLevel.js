@@ -11,56 +11,64 @@ export default class CurrentLevel extends React.Component {
         }
 
         return (
-            <div className="container dash-banner">
-                <div className="row">
-                    <div className="col-sm-9">
-                        <h1>{this.props.everything.college.runId}</h1>
-                        <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/
-                            {this.props.everything.objectives.studentCount +
-                            this.props.everything.objectives.studentsNeededForNextLevel}</h3>
+            <div className="container">
+                <div className="row m-2">
+                    <div className="col-sm text-center topbar">
+                        <img className="topbar-icon" src="resources/images/college_world_icons/dollar_character.png"></img>
+                        <div className="topbar-text">
+                            <h4><strong>{this.props.everything.college.availableCash}</strong></h4>
+                            <h6>Total Balance</h6>
+                        </div>
                     </div>
-                    <div className="col-sm-3">
-                        <h5>{this.props.everything.college.numberStudentsAdmitted} Students</h5>
-                        <h5>{this.props.everything.college.studentFacultyRatioRating} Student to Faculty Ratio</h5>
-                        <h5>{this.props.everything.college.numberStudentsAccepted} Students Considering</h5>
+                    <div className="col-sm text-center topbar">
+                        <img className="topbar-icon" src="resources/images/college_world_icons/current_date.png"></img>
+                        <div className="topbar-text">
+                            <h4><strong>Sept 13</strong></h4>
+                            <h6>Current Date</h6>
+                        </div>
                     </div>
-                </div>
-
-                <div className="progress">
-                    <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
-                         aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
+                    <div className="col-sm text-center topbar">
+                        <img className="topbar-icon" src="resources/images/college_world_icons/total_students.png"></img>
+                        <div className="topbar-text">
+                            <h4><strong>{this.props.everything.college.numberStudentsAdmitted}</strong></h4>
+                            <h6>Total Students</h6>
+                        </div>
                     </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="fake-navbar text-center">
-                            FAKE NAV BAR
+                    <div className="col-sm text-center topbar">
+                        <img className="topbar-icon" src="resources/images/college_world_icons/percentage.png"></img>
+                        <div className="topbar-text">
+                            <h4><strong>{this.props.everything.college.studentFacultyRatioRating}</strong></h4>
+                            <h6>Student/Faculty Ratio</h6>
+                        </div>
+                    </div>
+                    <div className="col-sm text-center topbar" id="last-bar">
+                        <img className="topbar-icon" src="resources/images/college_world_icons/question_mark.png"></img>
+                        <div className="topbar-text">
+                            <h4><strong>{this.props.everything.college.numberStudentsAccepted}</strong></h4>
+                            <h6>Students Considering</h6>
                         </div>
                     </div>
                 </div>
 
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="fake-tickertape text-center">
-                            FAKE NEWS BAR
-                        </div>
-                    </div>
-                </div>
 
-                <div className="row">
-                    <div className="col-sm-12 no-padding">
-                        <img src="resources/images/homepage-banner.png"></img>
-                        <div className="balance">
-                            <h4>Balance</h4>
-                            <h4>${this.props.everything.college.availableCash}</h4>
+                <div className="card-deck">
+                        <div className="card card-body col-sm-6">
+                            <h1 className="card-title">{this.props.everything.college.runId}</h1>
+                            <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/
+                                {this.props.everything.objectives.studentCount +
+                                this.props.everything.objectives.studentsNeededForNextLevel}</h3>
+                            <div className="progress">
+                                <div className="progress-bar progress-bar-success" role="progressbar"
+                                     // this.props.everything.objectives.studentCount / this.props.everything.objectives.studentsNeededForNextLevel * 100
+                                     aria-valuemin="0" aria-valuemax="100" style={{width: '100%'}}>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card card-body col-sm-6">
+                            <Tuition everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                             <Day everything={this.props.everything} changeTimeFunction = {this.props.changeTimeFunction } replaceEverything={this.props.replaceEverything}/>
                         </div>
-
-                        <Tuition everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                        <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                        <div className="overlay"></div>
-                    </div>
                 </div>
             </div>
         );
