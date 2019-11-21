@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="beautified student info panel, student bubbles now clickable,">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/College/College.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/College.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Day/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Day/Day.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,19 +21,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1RcIe8siOkRjUpDRuaNEdrnPf3X" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/students-view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -47,15 +41,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\college-view" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\assets" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\app" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\navigation" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -147,25 +141,19 @@
       <option name="presentableId" value="Default" />
       <updated>1569881819237</updated>
       <workItem from="1569881826057" duration="14193000" />
-      <workItem from="1569960052120" duration="1565000" />
-      <workItem from="1569962309437" duration="283000" />
-      <workItem from="1570039683262" duration="3716000" />
-      <workItem from="1570049938410" duration="3488000" />
-      <workItem from="1570130473964" duration="2560000" />
-      <workItem from="1570564821703" duration="2588000" />
-      <workItem from="1570644078476" duration="3896000" />
-      <workItem from="1570719583098" duration="2324000" />
-      <workItem from="1570729517313" duration="1915000" />
-      <workItem from="1570735816963" duration="3154000" />
-      <workItem from="1571083747892" duration="475000" />
-      <workItem from="1571106510327" duration="1072000" />
-      <workItem from="1571170022462" duration="1992000" />
-      <workItem from="1571246218168" duration="3667000" />
-      <workItem from="1571769126853" duration="2806000" />
-      <workItem from="1571772722856" duration="3204000" />
-      <workItem from="1571942231118" duration="1987000" />
-      <workItem from="1571945284501" duration="2734000" />
-      <workItem from="1572372485069" duration="152000" />
+      <workItem from="1569960384328" duration="2795000" />
+      <workItem from="1570124850446" duration="4953000" />
+      <workItem from="1570563671015" duration="2661000" />
+      <workItem from="1570727480428" duration="5961000" />
+      <workItem from="1571155530984" duration="13657000" />
+      <workItem from="1571774108807" duration="6442000" />
+      <workItem from="1571941881362" duration="4955000" />
+      <workItem from="1572366895978" duration="16956000" />
+      <workItem from="1572986709691" duration="10926000" />
+      <workItem from="1573585826040" duration="4599000" />
+      <workItem from="1573754979631" duration="1505000" />
+      <workItem from="1574105535340" duration="4012000" />
+      <workItem from="1574269921118" duration="6845000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -188,77 +176,105 @@
       <option name="project" value="LOCAL" />
       <updated>1569941206234</updated>
     </task>
-    <task id="LOCAL-00004" summary="Student view added">
-      <created>1570061736808</created>
+    <task id="LOCAL-00004" summary="Added building view">
+      <created>1570127941616</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1570061736808</updated>
+      <updated>1570127941616</updated>
     </task>
-    <task id="LOCAL-00005" summary="athlete column in students table now probably displays boolean value">
-      <created>1570131068080</created>
+    <task id="LOCAL-00005" summary="Partially ported building tab from college world">
+      <created>1570733363659</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1570131068080</updated>
+      <updated>1570733363659</updated>
     </task>
-    <task id="LOCAL-00006" summary="added students table component">
-      <created>1570566397166</created>
+    <task id="LOCAL-00006" summary="Added buildings">
+      <created>1571155725245</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1570566397166</updated>
+      <updated>1571155725245</updated>
     </task>
-    <task id="LOCAL-00007" summary="students page prototype complete">
-      <created>1570647967914</created>
+    <task id="LOCAL-00007" summary="Added bed, plate, and desk counts">
+      <created>1571162514476</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1570647967914</updated>
+      <updated>1571162514476</updated>
     </task>
-    <task id="LOCAL-00008" summary="converted Java getStudentFeedback() function to Javascript and implemented it into students page!">
-      <created>1570731491242</created>
+    <task id="LOCAL-00008" summary="Started work on table of buildings">
+      <created>1571167147099</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1570731491242</updated>
+      <updated>1571167147099</updated>
     </task>
-    <task id="LOCAL-00009" summary="Student Feedback component now utilizes newly-added feedback object of Student Model.">
-      <created>1571107589273</created>
+    <task id="LOCAL-00009" summary="Allen check out commented lines near top">
+      <created>1571267037755</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1571107589273</updated>
+      <updated>1571267037755</updated>
     </task>
-    <task id="LOCAL-00010" summary="Student Bubbles are now clickable and update the components">
-      <created>1571172609140</created>
+    <task id="LOCAL-00010" summary="Added progress bar for building quality">
+      <created>1572369300757</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1571172609140</updated>
+      <updated>1572369300757</updated>
     </task>
-    <task id="LOCAL-00011" summary="beautified student info panel, student bubbles now clickable, new sorting options">
-      <created>1571775740197</created>
+    <task id="LOCAL-00011" summary="Added status column in building table">
+      <created>1572370400065</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1571775740197</updated>
+      <updated>1572370400065</updated>
     </task>
-    <task id="LOCAL-00012" summary="sorting methods fixed and student bubble coloring now updates on sort">
-      <created>1571776890716</created>
+    <task id="LOCAL-00012" summary="Added non-functioning buttons to building table">
+      <created>1572546134680</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1571776890716</updated>
+      <updated>1572546134680</updated>
     </task>
-    <task id="LOCAL-00013" summary="students page bugfixes, sorting functional">
-      <created>1571945353713</created>
+    <task id="LOCAL-00013" summary="Added upgrade and repair buttons to building table">
+      <created>1572550465880</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1571945353713</updated>
+      <updated>1572550465880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added upgrade and repair buttons to building table">
+      <created>1572550652589</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572550652589</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added resident news to buildings tab">
+      <created>1573065537037</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573065537037</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added progress bars for locked buildings">
+      <created>1573153270240</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573153270240</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Testing for Allen">
+      <created>1574271029981</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574271029981</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,20 +294,22 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Setting up the basic structure." />
     <MESSAGE value="More restructuring and name changes." />
     <MESSAGE value="Adds bootstrap" />
-    <MESSAGE value="Student view added" />
-    <MESSAGE value="athlete column in students table now probably displays boolean value" />
-    <MESSAGE value="added students table component" />
-    <MESSAGE value="students page prototype complete" />
-    <MESSAGE value="converted Java getStudentFeedback() function to Javascript and implemented it into students page!" />
-    <MESSAGE value="Student Feedback component now utilizes newly-added feedback object of Student Model." />
-    <MESSAGE value="Student Bubbles are now clickable and update the components" />
-    <MESSAGE value="beautified student info panel, student bubbles now clickable, new sorting options" />
-    <MESSAGE value="sorting methods fixed and student bubble coloring now updates on sort" />
-    <MESSAGE value="students page bugfixes, sorting functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="students page bugfixes, sorting functional" />
+    <MESSAGE value="Added building view" />
+    <MESSAGE value="Partially ported building tab from college world" />
+    <MESSAGE value="Added buildings" />
+    <MESSAGE value="Added bed, plate, and desk counts" />
+    <MESSAGE value="Started work on table of buildings" />
+    <MESSAGE value="Allen check out commented lines near top" />
+    <MESSAGE value="Added progress bar for building quality" />
+    <MESSAGE value="Added status column in building table" />
+    <MESSAGE value="Added non-functioning buttons to building table" />
+    <MESSAGE value="Added upgrade and repair buttons to building table" />
+    <MESSAGE value="Added resident news to buildings tab" />
+    <MESSAGE value="Added progress bars for locked buildings" />
+    <MESSAGE value="Testing for Allen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
   </component>
 </project>

@@ -19,9 +19,17 @@ code {
 }
 
 .dash-banner img{
-    width: inherit;
-    margin: 2em 0;
     z-index: -1;
+    width: inherit;
+}
+
+.dash-banner .overlay{
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    background: #000;
+    opacity: .4;
+    bottom: 0px;
 }
 
 .dash-banner h2{
@@ -51,10 +59,38 @@ code {
     color: #fff;
 }
 
-.tuition{
-    height: auto
+.tuition, .playmode, .balance{
+    position: absolute;
+    z-index: 5;
+    bottom: 0px;
+    margin: 1em;
+    color: #fff;
 }
 
+.playmode {
+    left: 290%;
+    width: 100%;
+}
+
+.balance{
+    top: 0px;
+}
+
+.no-padding{
+    padding: 0px;
+    margin: 0px;
+}
+
+.dash-banner .fake-navbar{
+     background: #333;
+     padding: 1em;
+     color: #fff;
+ }
+
+.dash-banner .fake-tickertape {
+    background: #ddd;
+    padding: .5em;
+}
 /* STORE STYLE */
 .store-main{
     margin: 1rem;

@@ -28,12 +28,16 @@ export default class Tuition extends React.Component {
     render() {
         const tuition = this.props.everything.college.yearlyTuitionCost;
         return (
-            <div className="well well-sm tuition">
+            <div className="tuition">
                 <h4>Tuition</h4>
-                <input
-                    value={tuition}
-                    onChange={this.handleOnChange}
-                />
+                    <div className="form-group">
+                        <input
+                            class="form-control"
+                            value={tuition}
+                            onChange={this.handleOnChange}
+                        />
+                    </div>
+
             </div>
 
         );

@@ -40,7 +40,7 @@ export default class PlayMode extends React.Component {
         ];
         return (
             <div className="col-sm-3">
-                <div className="well well-sm">
+                <div className="playmode">
                             <h4>Play Mode</h4>
                             <div className="form-group">
                                 <Select
