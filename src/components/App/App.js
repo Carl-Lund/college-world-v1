@@ -11,6 +11,7 @@ import Buildings from "../Buildings/Buildings";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
+import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 
 
 export default class App extends React.Component {
@@ -101,6 +102,7 @@ export default class App extends React.Component {
                     this.timing = 10000;
                 }
                 this.timer = setInterval(() => this.advanceDay(), this.timing);
+                console.log(data);
             });
     }
 
