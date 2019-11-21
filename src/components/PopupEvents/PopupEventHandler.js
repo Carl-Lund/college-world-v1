@@ -7,8 +7,9 @@ export default class PopupEventHandler extends React.Component {
         console.log(this.props.everything);
 
         this.state = {
-            allEvents: groupEvents(this.props.everything.events)
+            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything)
         }
+
     }
 
     render() {
@@ -32,12 +33,12 @@ export default class PopupEventHandler extends React.Component {
     }
 }
 
-function groupEvents(events) {
+function groupEvents(events, everything, replaceEverything) {
     let group = [];
     var eventsArray = Object.keys(events).map(function (key) { return events[key]; });
 
     for (let i = 0; i < eventsArray.length; i++) {
-        group.push(<PopupEvent event = {eventsArray[i]}/>)
+        group.push(<PopupEvent event = {eventsArray[i]} everything={everything} replaceEverything = {replaceEverything} />)
     }
 
     return group;

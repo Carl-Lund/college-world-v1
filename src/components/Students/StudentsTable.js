@@ -83,5 +83,6 @@ function createTable(students, sort, props) {
     for (let i = 0; i < students.length; i++) {
         table.push(<StudentBubble student = {studentsArray[i]} studentNumber = {Object.keys(props.everything.students).find(key => props.everything.students[key] === studentsArray[i])} studentSwitch = {props.studentSwitch}/>)
     }
+
     return table
 }
