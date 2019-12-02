@@ -23,7 +23,7 @@ export default class CurrentLevel extends React.Component {
                     <div className="col-sm text-center topbar">
                         <img className="topbar-icon" src="resources/images/college_world_icons/current_date.png"></img>
                         <div className="topbar-text">
-                            <h4><strong>Sept 13</strong></h4>
+                            <h4><strong>{this.props.everything.college.currentDate}</strong></h4>
                             <h6>Current Date</h6>
                         </div>
                     </div>
