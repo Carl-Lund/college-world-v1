@@ -164,7 +164,12 @@ export default class App extends React.Component {
                                                     Sports
                                                 </Link>
                                             </li>
-                                            {/*<li className="nav-item"><Link to='/faculty'>Faculty</Link></li>*/}
+                                            <li className="nav-item">
+                                                <Link to='/faculty'>
+                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/sports_information_bar.png"></img>
+                                                    Faculty
+                                                </Link>
+                                            </li>
                                             <li className="nav-item">
                                                 <Link to='/objectives'>
                                                     <img className="nav-item-icons" src="resources/images/college_world_icons/objectives_information_bar.png"></img>
@@ -205,7 +210,7 @@ export default class App extends React.Component {
                             <Route path="/students" render={() => <Students everything={everything} />} />
                             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                             <Route path="/store" render={() => <Store everything={everything} />} />
-                            <Route path="/faculty" render={() => <Faculty everything={everything} />} />
+                            <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />
                             <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
