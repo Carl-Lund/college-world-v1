@@ -18,6 +18,3 @@ export default class FacultyMember extends React.Component{
 function handleClick(index) {
     const selectedItem = this.props.faculty[index];
 }
-
-//<button id = "details" className="btn btn-primary" type="button" data-toggle="collapse"
-//data-target = "#collapseMenu" aria-expanded="false" aria-controls="collapseExample">Details</button>
