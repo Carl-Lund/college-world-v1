@@ -29,8 +29,8 @@ export default class StudentsTable extends React.Component {
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.everything.popupEvent = data.slice(0);})
-            .then(this.props.replaceEverything(this.props.everything))
-            .then(this.props.eventHandler());
+            .then(this.props.replaceEverything(this.props.everything)
+            .then(this.props.eventHandler()));
     }
 
 
