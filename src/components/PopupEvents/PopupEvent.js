@@ -15,7 +15,7 @@ export default class StudentsTable extends React.Component {
 
         address += this.props.event.eventId + '/';
 
-        if (this.props.event.type === 1){
+        if (this.props.event.type === 1) {
             address += this.props.event.acknowledgeButtonCallback;
         } else {
             if (leftRightType === 0) {
@@ -28,10 +28,13 @@ export default class StudentsTable extends React.Component {
         console.log(address);
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.everything.popupEvent = data.slice(0);})
-            .then(this.props.replaceEverything(this.props.everything)
-            .then(this.props.eventHandler()));
+            .then(data => {
+                this.props.everything.popupEvent = data.slice(0);
+            })
+            .then(this.props.replaceEverything(this.props.everything))
+            .then(this.props.eventHandler());
     }
+
 
 
     render() {
@@ -59,11 +62,11 @@ export default class StudentsTable extends React.Component {
                         ) : (
                             <div>
                                 <p> {this.props.event.description} <br/>
-                                    <input onClick={this.eventAcknowledged(0)} type="submit" className="btn btn-info"
+                                    <input onClick={() => this.eventAcknowledged(0)} type="submit" className="btn btn-info"
                                            style={{position: "absolute", right: "1em", bottom: "1em"}}
                                            name={this.props.event.rightButtonCallback}
                                            value={this.props.event.rightButtonText}/>
-                                        <input onClick={this.eventAcknowledged(1)} type="submit" className="btn btn-info"
+                                        <input onClick={() => this.eventAcknowledged(1)} type="submit" className="btn btn-info"
                                                style={{position: "absolute", bottom: "1em", marginLeft: "1.5em"}}
                                                name={this.props.event.leftButtonCallback}
                                                value={this.props.event.leftButtonText}/>
