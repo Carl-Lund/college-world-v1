@@ -1,44 +1,57 @@
 import React from 'react';
 import PopupEvent from "./PopupEvent";
+import Modal from 'react-bootstrap/Modal'
 
 export default class PopupEventHandler extends React.Component {
     constructor(props) {
         super(props);
         console.log(this.props.everything);
 
-        this.state = {
-            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything)
-        }
+        this.eventHandler = this.eventHandler.bind(this);
 
+        this.state = {
+            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything, this.eventHandler)
+        }
+    }
+
+    eventHandler() {
+        this.setState({
+            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything, this.eventHandler)
+        });
     }
 
     render() {
         if (this.props.everything == null) {
             return;
         }
+        let noEvents = true;
+        if (this.props.everything.popupEvent.length >= 1) {
+            noEvents = false;
+        }
 
         return (
             <div>
-                <div className="modal fade" id="eventPopUp" role="dialog">
-                    <input type="submit" className="btn btn-info" style={{position: "absolute", right: "1em", bottom: "1em"}}
-                           name="readAll" value="Read All"/>
-                    <div className="modal-dialog">
-                        <div className="modal-content">
+                {noEvents ? (
+                    <div></div>
+                ) : (
+                    <Modal show={true} id="eventPopUp">
+                        <div className="modal-content" style={{maxHeight: "650px", overflow: "scroll"}}>
                             {this.state.allEvents}
                         </div>
-                    </div>
-                </div>
+                    </Modal>
+                )}
             </div>
         );
     }
 }
 
-function groupEvents(events, everything, replaceEverything) {
+function groupEvents(events, everything, replaceEverything, eventHandler) {
     let group = [];
     var eventsArray = Object.keys(events).map(function (key) { return events[key]; });
+    console.log(eventsArray);
 
     for (let i = 0; i < eventsArray.length; i++) {
-        group.push(<PopupEvent event = {eventsArray[i]} everything={everything} replaceEverything = {replaceEverything} />)
+        group.push(<PopupEvent event = {eventsArray[i]} everything={everything} replaceEverything = {replaceEverything} eventHandler = {eventHandler}/>)
     }
 
     return group;
