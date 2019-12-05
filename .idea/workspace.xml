@@ -53,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/students-view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -193,6 +193,7 @@
       <workItem from="1575437532505" duration="4335000" />
       <workItem from="1575501495197" duration="3653000" />
       <workItem from="1575505544845" duration="1520000" />
+      <workItem from="1575577683272" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -292,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575572557395</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed buildings progress bar">
+      <created>1575573966775</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1575573966775</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +344,7 @@
     <MESSAGE value="refactored some css pages" />
     <MESSAGE value="matched dashboard to rans mockup" />
     <MESSAGE value="Added fully functional progress bars" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fully functional progress bars" />
+    <MESSAGE value="Fixed buildings progress bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed buildings progress bar" />
   </component>
 </project>
