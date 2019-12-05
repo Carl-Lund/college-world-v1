@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +197,7 @@
       <workItem from="1575437532505" duration="4335000" />
       <workItem from="1575501495197" duration="3653000" />
       <workItem from="1575505544845" duration="1520000" />
-      <workItem from="1575577683272" duration="258000" />
+      <workItem from="1575577683272" duration="1113000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -300,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575573966775</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed buildings progress bar yet again">
+      <created>1575577970243</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1575577970243</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,6 +356,7 @@
     <MESSAGE value="matched dashboard to rans mockup" />
     <MESSAGE value="Added fully functional progress bars" />
     <MESSAGE value="Fixed buildings progress bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed buildings progress bar" />
+    <MESSAGE value="Fixed buildings progress bar yet again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed buildings progress bar yet again" />
   </component>
 </project>
