@@ -166,7 +166,7 @@ export default class App extends React.Component {
                                             </li>
                                             <li className="nav-item">
                                                 <Link to='/faculty'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/sports_information_bar.png"></img>
+                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
                                                     Faculty
                                                 </Link>
                                             </li>

@@ -3,21 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Day/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Day/Day.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Students/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/Students.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -299,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574368689703</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added fully functional progress bars">
+      <created>1575572557395</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575572557395</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +335,7 @@
     <MESSAGE value="dashboard mockup prototype (unfinished)" />
     <MESSAGE value="refactored some css pages" />
     <MESSAGE value="matched dashboard to rans mockup" />
-    <option name="LAST_COMMIT_MESSAGE" value="matched dashboard to rans mockup" />
+    <MESSAGE value="Added fully functional progress bars" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fully functional progress bars" />
   </component>
 </project>
