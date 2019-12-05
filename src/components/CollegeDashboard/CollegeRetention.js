@@ -10,7 +10,7 @@ export default class CollegeRetention extends React.Component {
         function getColor(value) {
             let temp;
             temp='#4287f5';
-            if (value>=79)
+            if (value>=70)
                 temp='#37db45';
             else if (value<=39)
                 temp='#fc3d17';
