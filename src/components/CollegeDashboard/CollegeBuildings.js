@@ -24,9 +24,18 @@ export default class CollegeBuildings extends React.Component {
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3>Buildings</h3>
+                    <h3 className="text-center">Buildings</h3>
                     <br></br>
-                    <CircularProgressbar value={50} text={50} strokeWidth={15} styles={buildStyles({pathColor: color, textColor: color})}/>
+                    <CircularProgressbarWithChildren value={50} styles={buildStyles({pathColor: color})}>
+                        {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                        <img
+                            style={{ width: 30, marginTop: -5 }}
+                            src="https://image.flaticon.com/icons/svg/188/188379.svg"
+                        />
+                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                            <strong>50%</strong>
+                        </div>
+                    </CircularProgressbarWithChildren>
                     <br/>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}

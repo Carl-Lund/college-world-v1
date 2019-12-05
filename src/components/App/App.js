@@ -124,11 +124,11 @@ export default class App extends React.Component {
                                 <div className="sidebar-sticky">
                                     <img id="logo" src="resources/images/college_world_icons/logo.png"></img>
 
-                                    <div className="balance">
-                                        <img id="dollar-sign" src="resources/images/college_world_icons/dollar_character.png"></img>
-                                        <h3><strong>420,420</strong></h3>
-                                        <h5>Total Balance</h5>
-                                    </div>
+                                    {/*<div className="balance">*/}
+                                    {/*    <img id="dollar-sign" src="resources/images/college_world_icons/dollar_character.png"></img>*/}
+                                    {/*    <h3><strong>420,420</strong></h3>*/}
+                                    {/*    <h5>Total Balance</h5>*/}
+                                    {/*</div>*/}
                                     {/*<div className="nav flex-column">*/}
                                     {/*    <button type="button" className="navbar-toggle" data-toggle="collapse"*/}
                                     {/*            data-target="#myNavbar">*/}

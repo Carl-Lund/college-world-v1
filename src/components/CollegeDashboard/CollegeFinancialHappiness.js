@@ -24,13 +24,12 @@ export default class CollegeFinancialHappiness extends React.Component {
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3>Financial Happiness</h3>
+                    <h3 className="text-center">Financial Satisfaction</h3>
                     <CircularProgressbarWithChildren value={66} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/189/189093.svg"
-                            alt="cash"
+                            src="https://image.flaticon.com/icons/svg/126/126157.svg"
                         />
                         <div style={{ fontSize: 12, marginTop: -5 }}>
                             <strong>66%</strong>

@@ -6,6 +6,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.10.1",
     "react-alert": "^6.0.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-circular-progressbar": "^2.0.2",
     "react-dom": "^16.10.1",
     "react-router-dom": "^5.1.2",
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-progressbar": "^15.4.1"
   }
 }

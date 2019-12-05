@@ -220,10 +220,11 @@ export default class Buildings extends React.Component {
                     </tbody>
                 </table>
             </div>
-                <div className="col-sm-4">
+                <div className="row">
+                <div className="col-sm-6">
                     <div className="well well-sm">
                         <div id="purchase">
-                            <h4>Purchase Buildings</h4>
+                            <h3>Purchase Buildings</h3>
                             <div className="form-group">
                                 <label>Building Type</label>
                                 <select className="form-control" id="buildingType" name="buildingType">
@@ -255,8 +256,8 @@ export default class Buildings extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-6" style={{marginLeft: '150px'}}>
+
+                    <div className="col-sm-6">
                         <div className="well well-sm">
                             <h3>
                                 <p>Resident News</p>
@@ -272,7 +273,7 @@ export default class Buildings extends React.Component {
                 <div className="container">
                     <div className="jumbotron" >
                         <div className="row">
-                            <div className="col-md-12">
+                            {/*<div className="col-md-12">*/}
                                 <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Large Size</h4>
                                     <img className="img-responsive" src="resources/images/EXTRA_LARGE_DORM_k.png"/>
@@ -313,8 +314,8 @@ export default class Buildings extends React.Component {
                                         </div>
                                     </div>
                             </div>
-                            </div>
-                            <div className="col-md-12">
+                            {/*</div>*/}
+                            {/*<div className="col-md-12">*/}
                                 <div className="col-md-2" style={{marginRight: '3%'}}>
                                     <h4>Entertainment Center</h4>
                                     <img className="img-responsive" src="resources/images/ENTERTAINMENT_k.png" style={{marginBottom: '28px'}}/>
@@ -355,7 +356,7 @@ export default class Buildings extends React.Component {
                                             </div>
                                         </div>
                                 </div>
-                            </div>
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

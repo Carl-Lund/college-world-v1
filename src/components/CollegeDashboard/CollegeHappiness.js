@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default class CollegeHappiness extends React.Component {
@@ -22,10 +22,20 @@ export default class CollegeHappiness extends React.Component {
         let color=getColor(this.props.everything.college.studentBodyHappiness);
 
         return (
-                <div className="col-sm-4">
-                    <div class="card card-body">
-                        <h3 class="card-title">Happiness</h3>
-                        <CircularProgressbar value={this.props.everything.college.studentBodyHappiness} text={this.props.everything.college.studentBodyHappiness} strokeWidth={15} styles={buildStyles({pathColor: color, textColor: color})}/>
+                <div className="col-sm-2">
+                    <div>
+                        <h3 className="text-center">Happiness</h3>
+                        <br></br>
+                        <CircularProgressbarWithChildren value={this.props.everything.college.studentBodyHappiness} styles={buildStyles({pathColor: color})}>
+                            {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                            <img
+                                style={{ width: 30, marginTop: -5 }}
+                                src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
+                            />
+                            <div style={{ fontSize: 12, marginTop: -5 }}>
+                                <strong>{this.props.everything.college.studentBodyHappiness}%</strong>
+                            </div>
+                        </CircularProgressbarWithChildren>
                         <br/>
                         {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                         {/*        data-toggle="collapse">Details*/}

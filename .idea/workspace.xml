@@ -1,62 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="refactored some css pages">
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/._college_world_icons" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._about__information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._about__information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._buildings_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._buildings_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._current_date.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._dashboard_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._dashboard_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._dollar_character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._exit_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._more_info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._objectives_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._percentage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._question_mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._sports_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._store_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._store_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._students_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._students_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/__MACOSX/college_world_icons/._total_students.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/about__information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/about__information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/buildings_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/buildings_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/current_date.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/dashboard_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/dashboard_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/dollar_character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/exit_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/more_info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/objectives_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/percentage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/question_mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/sports_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/store_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/store_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/students_information_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/students_information_bar_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/resources/images/college_world_icons/total_students.png" afterDir="false" />
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeBuildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeFinancialHappiness.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeHappiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRecreationalHappiness.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeRetention.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CollegeDashboard/CollegeStudentHealth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLevel/CurrentLevel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Day/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Day/Day.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Faculty/Faculty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Faculty/Faculty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Students/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/Students.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +201,12 @@
       <workItem from="1574133234865" duration="14074000" />
       <workItem from="1574194589409" duration="293000" />
       <workItem from="1574195812967" duration="7583000" />
-      <workItem from="1574360661088" duration="3638000" />
+      <workItem from="1574360661088" duration="4006000" />
+      <workItem from="1574369363612" duration="3552000" />
+      <workItem from="1574801919189" duration="1239000" />
+      <workItem from="1575437532505" duration="4335000" />
+      <workItem from="1575501495197" duration="3653000" />
+      <workItem from="1575505544845" duration="1520000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -326,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573764168743</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="matched dashboard to rans mockup">
+      <created>1574368689703</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574368689703</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +341,7 @@
     <MESSAGE value="ehhhhhhh matched it as close as i could" />
     <MESSAGE value="dashboard mockup prototype (unfinished)" />
     <MESSAGE value="refactored some css pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored some css pages" />
+    <MESSAGE value="matched dashboard to rans mockup" />
+    <option name="LAST_COMMIT_MESSAGE" value="matched dashboard to rans mockup" />
   </component>
 </project>

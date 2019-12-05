@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default class CollegeStudentHealth extends React.Component {
@@ -24,20 +24,17 @@ export default class CollegeStudentHealth extends React.Component {
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3>Student Health</h3>
-                    <br></br>
-                    <CircularProgressbar
-                        value={25}
-                        text={`25%`}
-                        background
-                        backgroundPadding={6}
-                        styles={buildStyles({
-                            strokeLinecap: "butt",
-                            backgroundColor: color,
-                            textColor: "#fff",
-                            pathColor: "#fff",
-                            trailColor: "transparent"
-                        })}/>
+                    <h3 className="text-center">Student Health</h3>
+                    <CircularProgressbarWithChildren value={25} styles={buildStyles({pathColor: color})}>
+                        {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                        <img
+                            style={{ width: 30, marginTop: -5 }}
+                            src="https://image.flaticon.com/icons/svg/883/883407.svg"
+                        />
+                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                            <strong>25%</strong>
+                        </div>
+                    </CircularProgressbarWithChildren>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}

@@ -24,13 +24,11 @@ export default class Students extends React.Component {
         }
 
         return (
-            <div className="container" style={{width: '95%'}}>
-                <div className="row">
-                    <div className="jumbotron" style={{height: '800px', paddingLeft: 0, paddingRight: 0}}>
-                        <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
-                        <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
-                        <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
-                    </div>
+            <div className="container">
+                <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
+                <div className="row px-0" style={{height: '800px'}}>
+                    <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
+                    <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
                 </div>
             </div>
         );

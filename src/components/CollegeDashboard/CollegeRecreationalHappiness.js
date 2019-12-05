@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default class CollegeRecreationalHappiness extends React.Component {
@@ -24,16 +24,17 @@ export default class CollegeRecreationalHappiness extends React.Component {
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3>Recreational Happiness</h3>
-                    <CircularProgressbar
-                        value={33}
-                        text={"33%"}
-                        strokeWidth={50}
-                        styles={buildStyles({
-                            strokeLinecap: "butt",
-                            textColor:"#61605d",
-                            pathColor:color,
-                    })}/>
+                    <h3 className="text-center">Recreational Satisfaction</h3>
+                    <CircularProgressbarWithChildren value={33} styles={buildStyles({pathColor: color})}>
+                        {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                        <img
+                            style={{ width: 30, marginTop: -5 }}
+                            src="https://image.flaticon.com/icons/svg/992/992604.svg"
+                        />
+                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                            <strong>33%</strong>
+                        </div>
+                    </CircularProgressbarWithChildren>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
