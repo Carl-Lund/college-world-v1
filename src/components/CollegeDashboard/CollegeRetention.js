@@ -10,12 +10,16 @@ export default class CollegeRetention extends React.Component {
         function getColor(value) {
             let temp;
             temp='#4287f5';
-            if (value>=60)
+            if (value>=79)
                 temp='#37db45';
-            else if (value<=49)
+            else if (value<=39)
                 temp='#fc3d17';
+            else if (value<=49)
+                temp='#ffae17';
             else if (value<=59)
                 temp='#fce517';
+            else if (value<=69)
+                temp='#d3ff21';
 
             return temp;
         }
@@ -32,7 +36,7 @@ export default class CollegeRetention extends React.Component {
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/538/538900.svg"
                         />
-                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                        <div style={{ fontSize: 12}}>
                             <strong>{this.props.everything.college.retentionRate}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>

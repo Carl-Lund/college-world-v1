@@ -9,30 +9,34 @@ export default class CollegeRecreationalHappiness extends React.Component {
         function getColor(value) {
             let temp;
             temp='#4287f5';
-            if (value>=60)
+            if (value>=79)
                 temp='#37db45';
-            else if (value<=49)
+            else if (value<=39)
                 temp='#fc3d17';
+            else if (value<=49)
+                temp='#ffae17';
             else if (value<=59)
                 temp='#fce517';
+            else if (value<=69)
+                temp='#d3ff21';
 
             return temp;
         }
 
-        let color=getColor(33);
+        let color=getColor(this.props.everything.college.studentRecreationalHappiness);
 
         return (
             <div className="col-sm-2">
                 <div>
                     <h3 className="text-center">Recreational Satisfaction</h3>
-                    <CircularProgressbarWithChildren value={33} styles={buildStyles({pathColor: color})}>
+                    <CircularProgressbarWithChildren value={this.props.everything.college.studentRecreationalHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/992/992604.svg"
                         />
-                        <div style={{ fontSize: 12, marginTop: -5 }}>
-                            <strong>33%</strong>
+                        <div style={{ fontSize: 12}}>
+                            <strong>{this.props.everything.college.studentRecreationalHappiness}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
