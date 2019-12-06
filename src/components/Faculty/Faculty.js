@@ -1,12 +1,13 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
-import FacultyTable from "./FacultyTable";
 import FacultyRatings from "./FacultyRatings";
 
 export default class Faculty extends React.Component{
+
     constructor(props){
         super(props);
         this.fireFaculty = this.fireFaculty.bind(this);
+        this.facultySwitch = this.facultySwitch.bind(this);
         this.state = {
             selectedFaculty: 0
         }
@@ -40,6 +41,8 @@ export default class Faculty extends React.Component{
     }
 
     render() {
+        this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch);
+
         return (
             <div class = "container">
 
@@ -57,7 +60,7 @@ export default class Faculty extends React.Component{
                     </div>
 
                 <div className="col-md-4">
-                    <FacultyTable everything = {this.props.everything} facultySwitch = {this.facultySwitch}/>
+                    {this.facultyTable}
                 </div>
 
 
@@ -87,4 +90,25 @@ export default class Faculty extends React.Component{
             </div>
         );
     }
+}
+
+function createTable(faculty, facultySwitch){
+    let table = [];
+
+    if (faculty === null || faculty === null)
+        return table;
+
+    for(let i = 0; i < faculty.length; i++){
+        table.push(handleMember(faculty, i, facultySwitch))
+    }
+
+    return table;
+}
+
+function handleMember(facultyArray, index, facultySwitch){
+    return(
+        <li class = "list-group-item" onClick = {() => facultySwitch(index)}>
+            <b class = "facultyName">{facultyArray[index].facultyName}</b>
+        </li>
+    );
 }
