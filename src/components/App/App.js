@@ -79,7 +79,8 @@ export default class App extends React.Component {
             console.log("Timing less than 2000, resetting to 10000");
             this.timing = 10000;
         }
-        this.timer = setInterval(() => this.advanceDay(), this.timing);
+        // By default, the play button is off.
+        //this.timer = setInterval(() => this.advanceDay(), this.timing);
 
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/' + this.state.collegeName)
             .then(response => response.json())
