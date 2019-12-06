@@ -11,6 +11,7 @@ import Buildings from "../Buildings/Buildings";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
+import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 
 
@@ -79,8 +80,8 @@ export default class App extends React.Component {
             console.log("Timing less than 2000, resetting to 10000");
             this.timing = 10000;
         }
-        // By default, the play button is off.
-        //this.timer = setInterval(() => this.advanceDay(), this.timing);
+        // Comment out the line below if you want to have
+        this.timer = setInterval(() => this.advanceDay(), this.timing);
 
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/' + this.state.collegeName)
             .then(response => response.json())
@@ -198,7 +199,7 @@ export default class App extends React.Component {
                                                 </Link>
                                             </li>
                                         </ul>
-                                    <button class="btn btn-success playmode">PLAY MODE</button>
+                                    {/*<button class="btn btn-success playmode">PLAY MODE</button>*/}
                                     {/*</div>*/}
                                 </div>
                             </nav>

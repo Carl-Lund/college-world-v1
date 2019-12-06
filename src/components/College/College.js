@@ -32,6 +32,8 @@ export default class College extends React.Component {
                         <div className="col-sm-6">
                             <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
                         </div>
+
+                        <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                     </div>
                 </div>
             </div>
