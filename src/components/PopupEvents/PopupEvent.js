@@ -26,13 +26,18 @@ export default class StudentsTable extends React.Component {
         }
 
         console.log(address);
+        // fetch(address)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         this.props.everything.popupEvent = data.slice(0);
+        //     })
+        //     .then(this.props.replaceEverything(this.props.everything))
+        //     .then(this.props.eventHandler());
+
         fetch(address)
             .then(response => response.json())
-            .then(data => {
-                this.props.everything.popupEvent = data.slice(0);
-            })
-            .then(this.props.replaceEverything(this.props.everything))
-            .then(this.props.eventHandler());
+            .then(data => {this.props.replaceEverything(data);
+            });
     }
 
 

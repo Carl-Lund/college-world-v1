@@ -8,19 +8,14 @@ export default class PopupEventHandler extends React.Component {
         console.log(this.props.everything);
 
         this.eventHandler = this.eventHandler.bind(this);
-
-        this.state = {
-            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything, this.eventHandler)
-        }
     }
 
     eventHandler() {
-        this.setState({
-            allEvents: groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything, this.eventHandler)
-        });
     }
 
     render() {
+        this.allEvents = groupEvents(this.props.everything.popupEvent, this.props.everything, this.props.replaceEverything, this.eventHandler);
+
         if (this.props.everything == null) {
             return;
         }
@@ -34,9 +29,9 @@ export default class PopupEventHandler extends React.Component {
                 {noEvents ? (
                     <div></div>
                 ) : (
-                    <Modal show={false} id="eventPopUp">
+                    <Modal show={true} id="eventPopUp">
                         <div className="modal-content" style={{maxHeight: "650px", overflow: "scroll"}}>
-                            {this.state.allEvents}
+                            {this.allEvents}
                         </div>
                     </Modal>
                 )}
