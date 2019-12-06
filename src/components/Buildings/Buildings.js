@@ -17,10 +17,8 @@ export default class Buildings extends React.Component {
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/upgrade/" + encodeURI(this.props.everything.buildings[building].name);
         fetch(address)
             .then(response => response.json())
-/*        this.props.everything.buildings[building].hoursToComplete = 336;
-        this.props.everything.buildings[building].isUpgradeComplete = false;
-        this.props.everything.college.availableCash -= this.props.everything.buildings[building].upgradeCost;
-        this.props.replaceEverything(this.props.everything);*/
+            .then(data => {this.props.replaceEverything(data);
+            });
     }
 
     repairBuilding(e) {
@@ -28,24 +26,16 @@ export default class Buildings extends React.Component {
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/repair/" + encodeURI(this.props.everything.buildings[building].name);
         fetch(address)
             .then(response => response.json())
-/*        this.props.everything.college.availableCash -= this.props.everything.buildings[building].repairCost;
-        var qualityDecayed = 100 - this.props.everything.buildings[building].shownQuality;
-        if (qualityDecayed > 10) {
-            this.props.everything.buildings[building].isRepairComplete = false;
-            this.props.everything.buildings[building].hoursToComplete = 24 * (qualityDecayed/10);
-        } else {
-            this.props.everything.buildings[building].isRepairComplete = true;
-            this.props.everything.buildings[building].hiddenQuality = 10.0;
-            this.props.everything.buildings[building].shownQuality = 100.0;
-            this.props.everything.buildings[building].repairCost = ((100 - this.props.everything.buildings[building].shownQuality) * 300);
-        }*/
-        this.props.replaceEverything(this.props.everything);
+            .then(data => {this.props.replaceEverything(data);
+            });
     }
 
     purchaseBuilding() {
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase";
         fetch(address)
             .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data);
+            });
     }
 
     render() {
