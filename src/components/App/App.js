@@ -28,7 +28,7 @@ export default class App extends React.Component {
         this.setLaunchStatus = this.setLaunchStatus.bind(this)
         this.changeTimeFunction = this.changeTimeFunction.bind(this);
 
-        this.timing = 10000;
+        this.timing = 5000;
         this.debugDaySpeedRef = React.createRef();
     }
 
@@ -48,8 +48,8 @@ export default class App extends React.Component {
         // debug
         this.timing = this.debugDaySpeedRef.current.value;
         if (this.timing < 2000) {
-            console.log("Timing less than 2000, resetting to 10000");
-            this.timing = 10000;
+            console.log("Timing less than 2000, resetting to 5000");
+            this.timing = 5000;
         }
         if (f === 0) {
             console.log("PLAY");
@@ -77,11 +77,11 @@ export default class App extends React.Component {
         // debug
         this.timing = this.debugDaySpeedRef.current.value;
         if (this.timing < 2000) {
-            console.log("Timing less than 2000, resetting to 10000");
-            this.timing = 10000;
+            console.log("Timing less than 2000, resetting to 5000");
+            this.timing = 5000;
         }
-        // Comment out the line below if you want to have
-        this.timer = setInterval(() => this.advanceDay(), this.timing);
+        // Comment out the line below if you want to have timer off by default.
+        //this.timer = setInterval(() => this.advanceDay(), this.timing);
 
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/everything/' + this.state.collegeName)
             .then(response => response.json())
@@ -101,7 +101,7 @@ export default class App extends React.Component {
                 this.timing = this.debugDaySpeedRef.current.value;
                 if (this.timing < 2000) {
                     console.log("Timing less than 2000, resetting to 10000");
-                    this.timing = 10000;
+                    this.timing = 5000;
                 }
                 this.timer = setInterval(() => this.advanceDay(), this.timing);
                 console.log(data);
