@@ -46,8 +46,7 @@ export default class Buildings extends React.Component {
     }
 
     purchaseBuilding() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingChoice)
-                            + "/" + encodeURI(this.state.buildingName);
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
@@ -157,26 +156,18 @@ export default class Buildings extends React.Component {
 
         let numStudents = this.props.everything.objectives.studentCount;
         const buildingChoices = [
+            {label: "Dormitory", value: "Dormitory"},
             {label: "Academic Center", value: "Academic Center"},
+            {label: "Baseball Diamond", value: "Baseball Diamond"},
             {label: "Dining Hall", value: "Dining Hall"},
+            {label: "Dormitory", value: "Dormitory"},
+            {label: "Football Stadium", value: "Football Stadium"},
+            {label: "Hockey Rink", value: "Hockey Rink"},
+            {label: "Entertainment Center", value: "Entertainment Center"},
+            {label: "Health Center", value: "Health Center"},
+            {label: "Library", value: "Library"}
         ];
-        /*
-        return (
-            <div className="col-sm-3">
-                <div className="playmode">
-                    <h4>Play Mode</h4>
-                    <div className="form-group">
-                        <Select
-                            options={playModes}
-                            value={{label: this.props.everything.college.mode, value: this.props.everything.college.mode}}
-                            onChange={value => this.handleOnChange(value)}
-                            defaultValue={{label: this.props.everything.college.mode, value: this.props.everything.college.mode}}
-                        />
-                    </div>
-                </div>
-            </div>
 
-        );*/
         return (
             <div>
             <div className="container">
@@ -251,9 +242,7 @@ export default class Buildings extends React.Component {
                     <div className="well well-sm">
                         <div id="purchase">
                             <h3>Purchase Buildings</h3>
-
                             <div className="form-group">
-
                                 <label>Building Type</label>
                                 <Select
                                     options={buildingChoices}
@@ -261,17 +250,6 @@ export default class Buildings extends React.Component {
                                     onChange={value => this.handleSelectBuildingChoice(value)}
                                     defaultValue={{label: this.state.buildingChoice, value: this.state.buildingChoice}}
                                 />
-{/*                                <select className="form-control" id="buildingType" name="buildingType">
-                                    <option value="Academic Center">Academic Center</option>
-                                    <option value="Dining Hall">Dining Hall</option>
-                                    <option value="Dormitory">Dormitory</option>
-                                    <option value="Baseball Diamond">Baseball Diamond</option>
-                                    <option value="Football Stadium">Football Stadium</option>
-                                    <option value="Hockey Rink">Hockey Rink</option>
-                                    <option value="Library">Library</option>
-                                    <option value="Health Center">Health Center</option>
-                                    <option value="Entertainment Center">Entertainment Center</option>
-                                </select>*/}
                             </div>
 {/*                            <div className="form-group">
                                 <label>Size</label>
@@ -284,10 +262,9 @@ export default class Buildings extends React.Component {
                             </div>*/}
                             <div className="form-group">
                                 <label>Name</label>
-                                {/*<input type="text" class="form-control" id="buildingName" name="buildingName" placeholder="Enter Building Name"></input>*/}
-                                <input className="editText" type="text" value={this.state.buildingName} onChange={this.handleNewBuildingChange} placeholder="Building name..."/>
+                                <input className="editText" type="text" value={this.state.buildingName} onChange={this.handleNewBuildingChange} placeholder="Enter Building Name"/>
                             </div>
-                            <button type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($)</button>
+                            <button type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
                         </div>
                     </div>
                 </div>
