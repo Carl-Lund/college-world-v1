@@ -30,7 +30,7 @@ export default class StudentsTable extends React.Component {
                     </select>
                     <div className="well well-sm" style={{height: '100%'}}>
                         <div className="pre-scrollable" style={{height: '94%', maxHeight: 'none'}}>
-                            <div className="studentContainer" style={{overflowY: "hidden"}}>
+                            <div className="studentContainer" style={{overflowY: "hidden", width: "100%"}}>
                                 {this.state.studentTable}
                             </div>
                         </div>
