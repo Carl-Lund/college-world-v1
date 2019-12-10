@@ -17,7 +17,7 @@ export default class StudentsTable extends React.Component {
                             <tbody>
                                 <tr>
                                     <td></td>
-                                    <td style={{textAlign: 'center', veritcalAlign: 'middle'}}><b><i>STUDENT INFORMATION</i></b></td>
+                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b><i>STUDENT INFORMATION</i></b></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -42,7 +42,7 @@ export default class StudentsTable extends React.Component {
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td style={{textAlign: 'center', veritcalAlign: 'middle'}}><b><i>STUDENT STATISTICS</i></b></td>
+                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b><i>STUDENT STATISTICS</i></b></td>
                                     <td></td>
                                 </tr>
 

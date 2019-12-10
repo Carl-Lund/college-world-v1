@@ -9,7 +9,7 @@ export default class StudentsTable extends React.Component {
 
     render() {
         return (
-            <div className="row px-0">
+            <div className="row px-0" style={{marginTop: "10px"}}>
                 <div className="col-md-2">
                     <img className="img-responsive" src="resources/images/student.png"></img>
                 </div>

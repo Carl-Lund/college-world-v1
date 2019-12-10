@@ -28,7 +28,7 @@ export default class App extends React.Component {
         this.setLaunchStatus = this.setLaunchStatus.bind(this)
         this.changeTimeFunction = this.changeTimeFunction.bind(this);
 
-        this.timing = 1000;
+        this.timing = 2000;
         this.debugDaySpeedRef = React.createRef();
     }
 
@@ -49,7 +49,7 @@ export default class App extends React.Component {
         this.timing = this.debugDaySpeedRef.current.value;
         if (this.timing < 1000) {
             console.log("Timing less than 1000");
-            this.timing = 1000;
+            this.timing = 2000;
         }
         if (f === 0) {
             console.log("PLAY");
@@ -78,7 +78,7 @@ export default class App extends React.Component {
         this.timing = this.debugDaySpeedRef.current.value;
         if (this.timing < 1000) {
             console.log("Timing less than 1000");
-            this.timing = 1000;
+            this.timing = 2000;
         }
         // Comment out the line below if you want to have timer off by default.
         //this.timer = setInterval(() => this.advanceDay(), this.timing);
@@ -101,7 +101,7 @@ export default class App extends React.Component {
                 this.timing = this.debugDaySpeedRef.current.value;
                 if (this.timing < 1000) {
                     console.log("Timing less than 1000");
-                    this.timing = 1000;
+                    this.timing = 2000;
                 }
                 this.timer = setInterval(() => this.advanceDay(), this.timing);
                 console.log(data);
@@ -223,7 +223,7 @@ export default class App extends React.Component {
                 </Router>
                 <div className="well well-sm">
                     Refresh Speed (ms)
-                    <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"1000 ms"} defaultValue={"1000"}/>
+                    <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"1000 ms"} defaultValue={"2000"}/>
                 </div>
             </div>
 

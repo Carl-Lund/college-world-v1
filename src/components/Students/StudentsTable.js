@@ -20,6 +20,7 @@ export default class StudentsTable extends React.Component {
      render() {
         return (
                 <div className="col-sm-8" style={{height: '80%'}}>
+                    <h4>{this.props.everything.students.length} Students</h4>
                     <span className={"label label-info"}>Sort: </span>
                     <select ref={this.sort} onChange={this.updateTable}>
                         <option value={"aToZ"}>Alphabetical A-Z</option>
@@ -28,9 +29,8 @@ export default class StudentsTable extends React.Component {
                         <option value={"overallHappinessLToH"}>Overall Happiness Low-High</option>
                     </select>
                     <div className="well well-sm" style={{height: '100%'}}>
-                        <h4>{this.props.everything.students.length} Students</h4>
                         <div className="pre-scrollable" style={{height: '94%', maxHeight: 'none'}}>
-                            <div className="studentContainer">
+                            <div className="studentContainer" style={{overflowY: "hidden"}}>
                                 {this.state.studentTable}
                             </div>
                         </div>

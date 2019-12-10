@@ -19,16 +19,21 @@ export default class Students extends React.Component {
     }
 
     render() {
+        console.log(this.props.everything);
         if (this.props.everything == null) {
             return(<h4>No students.</h4>);
         }
 
         return (
-            <div className="container">
-                <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
-                <div className="row px-0" style={{height: '800px'}}>
-                    <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
-                    <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
+            <div className="container" style={{maxHeight: "90%"}}>
+                <div className="cardDeck">
+                    <div className="card my-3">
+                        <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
+                        <div className="row px-0" style={{height: '800px', marginTop: '20px'}}>
+                            <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
+                            <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
