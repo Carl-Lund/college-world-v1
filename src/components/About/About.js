@@ -6,6 +6,9 @@ export default class About extends React.Component {
             <div className="container">
                 <div className="container">
                     <h2>Fall 2020</h2>
+                    <ul className="list-group">
+                        <li className="list-group-item">Allan</li>
+                    </ul>
                     <h2>Fall 2019</h2>
                     <ul className="list-group">
                         <li className="list-group-item">Timothy Amello</li>
