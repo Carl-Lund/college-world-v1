@@ -9,15 +9,15 @@
 }
 
 /*.jumbotronAddSell {*/
-    /*padding: 30px;*/
-    /*margin-bottom: 30px;*/
-    /*margin-left: 85px;*/
-    /*margin-right: 85px;*/
-    /*font-size: 21px;*/
-    /*font-weight: 200;*/
-    /*line-height: 2.1428571435;*/
-    /*background-color: #eeeeee;*/
-    /*alignment: center;*/
+/*    padding: 30px;*/
+/*    margin-bottom: 30px;*/
+/*    margin-left: 85px;*/
+/*    margin-right: 85px;*/
+/*    font-size: 21px;*/
+/*    font-weight: 200;*/
+/*    line-height: 2.1428571435;*/
+/*    background-color: #eeeeee;*/
+/*    alignment: center;*/
 /*}*/
 
 .jumbotronAdd {
@@ -42,6 +42,10 @@
     line-height: 2.1428571435;
     background-color: #eeeeee;
     alignment: center;
+}
+
+.form-control{
+    width: auto !important;
 }
 
 .tableSports {

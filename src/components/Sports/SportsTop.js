@@ -8,13 +8,14 @@ export default class SportsTop extends React.Component {
         super(props);
 
         this.tipsNum = 1;
-        this.isHide = true
         this.state = {
             tipsText: "Add more sports to make more money!",
             hideShowTipsText : "Show Tips",
+            isHide: true,
         };
 
         this.getSportsTeem = this.getSportsTeem.bind(this);
+        this.hideShowTipsText = this.hideShowTipsText.bind(this);
         // this.afterUpdateCollegeOnServerForSell = this.afterUpdateCollegeOnServerForSell.bind(this);
 
     }
@@ -46,8 +47,7 @@ export default class SportsTop extends React.Component {
                                         <button type="button" onClick={this.nextTip} className="btn btn-primary">Next Tip</button>
                                     </div>
                                     <div className="col-sm-6">
-                                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info" data-toggle="collapse"
-                                                data-target="#hideTips">{this.state.hideShowTipsText}
+                                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}
                                         </button>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ export default class SportsTop extends React.Component {
                                 <div className="row">
                                         <div id="hideTips" className="collapse">
                                             <div className="jumbotronTransp">
-                                                <h3>{this.state.tipsText}</h3>
+                                                <h3>{this.state.tipsText}{console.log(this.state.tipsText)}</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -70,17 +70,23 @@ export default class SportsTop extends React.Component {
     }
 
     setTips() {
+        //Max number of Tips, if you add more tips change numTips number
+        let numTips = 3;
         switch (this.tipsNum) {
             case 0:
                 this.state.tipsText = "Add more sports to make more money!"
                 break
             case  1:
-                this.state.tipsText = "HI1!!!"
+                this.state.tipsText = "Have your Athletes drink plenty of water"
                 break
-
+            case 2:
+                this.state.tipsText = "Buy a volleyball net at the school store for extra practice"
+                break
+            case 3:
+                this.state.tipsText = "The key to a good school is a good Football Team"
+                break
         }
-
-        if (this.tipsNum > 0){
+        if (this.tipsNum >= numTips){
             this.tipsNum = 0;
         }else{
             this.tipsNum++
@@ -94,19 +100,21 @@ export default class SportsTop extends React.Component {
     };
 
     hideShowTipsText = () => {
-        if (this.isHide){
+        let tips = document.getElementById('hideTips');
+        if (this.state.isHide){
             this.state.hideShowTipsText = "Hide tips"
-            this.isHide = false
+            this.setState({isHide: false})
+            tips.style.display = "block";
         }else {
             this.state.hideShowTipsText = "Show tips"
-            this.isHide = true
+            this.setState({isHide: true})
+            tips.style.display = "none";
         }
-
         this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
 
     getSportsTeem() {
-        var feedback = (this.props.sports.length + " sports")
+        let feedback = (this.props.sports.length + " sports")
 
         return feedback
     }
