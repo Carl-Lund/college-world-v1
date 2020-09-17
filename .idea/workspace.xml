@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +83,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,15 +166,11 @@
       <workItem from="1574105535340" duration="4012000" />
       <workItem from="1574269921118" duration="10875000" />
       <workItem from="1575579156355" duration="3055000" />
-      <workItem from="1599236556336" duration="141000" />
-      <workItem from="1599314055418" duration="639000" />
-      <workItem from="1599323419141" duration="638000" />
-      <workItem from="1599334454760" duration="1117000" />
-      <workItem from="1599593712359" duration="229000" />
-      <workItem from="1599594101264" duration="650000" />
-      <workItem from="1599669711453" duration="156000" />
-      <workItem from="1599766336624" duration="985000" />
-      <workItem from="1599772268445" duration="6000" />
+      <workItem from="1599505750204" duration="1844000" />
+      <workItem from="1599593711417" duration="44000" />
+      <workItem from="1599691090686" duration="1977000" />
+      <workItem from="1600108188845" duration="1644000" />
+      <workItem from="1600352218018" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -339,33 +343,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599314158183">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="424" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599314158183" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1599770910390">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910390" />
-    <state width="1871" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695987" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1599770910389">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910389" />
-    <state width="1871" height="290" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695986" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1599770910389">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910389" />
-    <state width="1871" height="290" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695986" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1599770910390">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910390" />
-    <state width="1871" height="290" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695987" />
-    <state x="667" y="306" width="586" height="490" key="find.popup" timestamp="1599767590114">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="667" y="306" width="586" height="490" key="find.popup/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599767590114" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
   </component>
 </project>
