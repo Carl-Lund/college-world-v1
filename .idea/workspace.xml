@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +20,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -52,18 +55,6 @@
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -73,6 +64,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,6 +132,7 @@
       <item itemvalue="npm.npm start" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,6 +158,15 @@
       <workItem from="1574105535340" duration="4012000" />
       <workItem from="1574269921118" duration="10875000" />
       <workItem from="1575579156355" duration="3055000" />
+      <workItem from="1599236556336" duration="141000" />
+      <workItem from="1599314055418" duration="639000" />
+      <workItem from="1599323419141" duration="638000" />
+      <workItem from="1599334454760" duration="1117000" />
+      <workItem from="1599593712359" duration="229000" />
+      <workItem from="1599594101264" duration="650000" />
+      <workItem from="1599669711453" duration="156000" />
+      <workItem from="1599766336624" duration="985000" />
+      <workItem from="1599772268445" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -293,20 +305,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up the basic structure." />
@@ -326,5 +337,35 @@
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
     <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599314158183">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="424" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599314158183" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1599770910390">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910390" />
+    <state width="1871" height="290" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695987" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1599770910389">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910389" />
+    <state width="1871" height="290" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695986" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1599770910389">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910389" />
+    <state width="1871" height="290" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695986" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1599770910390">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599770910390" />
+    <state width="1871" height="290" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1599335695987" />
+    <state x="667" y="306" width="586" height="490" key="find.popup" timestamp="1599767590114">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="667" y="306" width="586" height="490" key="find.popup/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1599767590114" />
   </component>
 </project>
