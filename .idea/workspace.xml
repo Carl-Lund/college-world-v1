@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +39,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -51,18 +73,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration default="true" type="Applet">
@@ -130,6 +140,7 @@
       <item itemvalue="npm.npm start" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,6 +166,11 @@
       <workItem from="1574105535340" duration="4012000" />
       <workItem from="1574269921118" duration="10875000" />
       <workItem from="1575579156355" duration="3055000" />
+      <workItem from="1599505750204" duration="1844000" />
+      <workItem from="1599593711417" duration="44000" />
+      <workItem from="1599691090686" duration="1977000" />
+      <workItem from="1600108188845" duration="1644000" />
+      <workItem from="1600352218018" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -293,20 +309,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up the basic structure." />
@@ -326,5 +341,31 @@
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
     <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
   </component>
 </project>
