@@ -143,8 +143,8 @@ export default class Buildings extends React.Component {
                     <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
                     <td style={tdStyle}><div className="progress">
-                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: this.props.everything.buildings[i].shownQuality}}>
-                            {this.props.everything.buildings[i].shownQuality}%
+                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.floor(120*(this.props.everything.buildings[i].shownQuality/100))}}>
+                            {Math.floor(this.props.everything.buildings[i].shownQuality)}%
                         </div>
                     </div></td>,
                     <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
@@ -165,8 +165,7 @@ export default class Buildings extends React.Component {
             {label: "Hockey Rink", value: "Hockey Rink"},
             {label: "Entertainment Center", value: "Entertainment Center"},
             {label: "Health Center", value: "Health Center"},
-            {label: "Library", value: "Library"}
-        ];
+            {label: "Library", value: "Library"}]
 
         return (
             <div>
@@ -203,16 +202,7 @@ export default class Buildings extends React.Component {
                         <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
                                 style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
-                            <option value="Administrative Building">Administrative Building</option>
-                            <option value="Academic Center">Academic Center</option>
-                            <option value="Baseball Diamond">Baseball Diamond</option>
-                            <option value="Dining Hall">Dining Hall</option>
-                            <option value="Dormitory">Dormitory</option>
-                            <option value="Football Stadium">Football Stadium</option>
-                            <option value="Hockey Rink">Hockey Rink</option>
-                            <option value="Entertainment Center">Entertainment Center</option>
-                            <option value="Health Center">Health Center</option>
-                            <option value="Library">Library</option>
+
                         </select>
                         <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
                                style={{marginTop: '5px'}}>
