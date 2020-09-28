@@ -60,6 +60,9 @@ export default class SportsRecordTable extends React.Component {
         }, {
             Header: 'DIVISION',
             accessor: 'division' // String-based value accessors!
+        }, {
+            Header: 'COACH',
+            accessor: 'coachName'
         }]
 
         return (
@@ -94,7 +97,7 @@ export default class SportsRecordTable extends React.Component {
     }
 
     showTeam(sportTeamName) {
-        var team = [];
+        let team = [];
         for (let i = 0; i <this.props.students.length; i++) {
             if (this.props.students[i].team === sportTeamName){
                 team.push(<h4>{this.props.students[i].name}</h4>)
@@ -104,11 +107,8 @@ export default class SportsRecordTable extends React.Component {
     }
 
     showProgressBar(percentage){
-        var team = [];
+        let team = [];
         team.push(<h4>{percentage}</h4>)
         return team
     }
 }
-
-
-
