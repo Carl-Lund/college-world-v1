@@ -68,7 +68,7 @@ export default class SportNews extends React.Component {
                         </div>
                         <div className="col-sm-11">
                             <h5 className="mb-1">{theMessage.message}</h5>
-                            <small className="text-muted">Day {theMessage.hour / 24}</small>
+                            <small className="text-muted">Day {Math.round(theMessage.hour / 24)}</small>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@ export default class SportNews extends React.Component {
                         </div>
                         <div className="col-sm-11">
                             <h5 className="mb-1">{theMessage.message}</h5>
-                            <small className="text-muted">Day {theMessage.hour / 24}</small>
+                            <small className="text-muted">Day {Math.round(theMessage.hour / 24)}</small>
                         </div>
                     </div>
 
