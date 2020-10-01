@@ -31,7 +31,7 @@ export default class Students extends React.Component {
         return (
             <div className="container" style={{maxHeight: "90%"}}>
                 <div className="cardDeck">
-                    <h1>Student Happiness Summary</h1>
+                    <h1 class="student-happiness-header">Student Happiness Summary</h1>
                     <div className="card-deck my-3">
                         <CollegeHappiness everything={this.props.everything}/>
                         <StudentAcademicHappiness everything={this.props.everything}/>

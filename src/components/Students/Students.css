@@ -61,3 +61,17 @@
     max-height: 64px;
     max-width: 66px;
 }
+
+.student-happiness-header {
+    text-align: center;
+}
+
+.card-deck{
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.collegeHappinessBar{
+    padding-top: 2.1em;
+}
