@@ -64,16 +64,16 @@ function createTable(students, sort, props) {
     }
     else if (sort === "overallHappinessHToL") {
         studentsArray.sort(function(a, b) {
-            var happyA = a.happinessLevel;
-            var happyB = b.happinessLevel;
+            var happyA = a.happiness;
+            var happyB = b.happiness;
             return happyA-happyB;
         });
         studentsArray.reverse();
     }
     else if (sort === "overallHappinessLToH") {
         studentsArray.sort(function(a, b) {
-            var happyA = a.happinessLevel;
-            var happyB = b.happinessLevel;
+            var happyA = a.happiness;
+            var happyB = b.happiness;
             return happyA-happyB;
         });
     } else {
