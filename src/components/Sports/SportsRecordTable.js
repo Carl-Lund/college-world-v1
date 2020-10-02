@@ -79,6 +79,12 @@ export default class SportsRecordTable extends React.Component {
                         <div className="row">
                             <div className="col-sm-12">
                                 <ReactTable
+                                    // user can no longer change table size
+                                    resizable={false}
+                                    // by making the showPageSizeOptions false, it takes away the option of choosing a number of rows
+                                    showPageSizeOptions= {false}
+                                    // by making the showPagination false, it does not allow user to choose next page in the table
+                                    showPagination={false}
                                     data={this.props.sports}
                                     columns={columns}
                                     minRows = {0}

@@ -28,12 +28,12 @@ export default class StudentsTable extends React.Component {
                                 <tr>
                                     <img class="img-responsive panel-image panel-image" src="resources/images/IDicon.png" alt=""/>
                                     <td>ID Number:</td>
-                                    <td>{this.props.student.idNumber}</td>
+                                    <td>{this.props.student.id}</td>
                                 </tr>
                                 <tr>
                                     <img class="img-responsive panel-image panel-image" src="resources/images/gendericon.png" alt=""/>
                                     <td>Gender:</td>
-                                    <td>{this.props.student.gender}</td>
+                                    <td>{this.props.student.gender.personGender}</td>
                                 </tr>
                                 <tr>
                                     <img class="img-responsive panel-image panel-image" src="resources/images/advisoricon.png" alt=""/>
@@ -78,7 +78,7 @@ export default class StudentsTable extends React.Component {
                                 <tr>
                                     <img class="img-responsive panel-image panel-image" src="resources/images/fun.png" alt=""/>
                                     <td><b>Overall Happiness</b></td>
-                                    <td>{this.props.student.happinessLevel}</td>
+                                    <td>{this.props.student.happiness}</td>
                                 </tr>
                                 <tr>
                                     <img className="img-responsive panel-image" src="resources/images/books.png"></img>
