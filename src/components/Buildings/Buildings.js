@@ -86,7 +86,7 @@ export default class Buildings extends React.Component {
         let availableBeds = 0;
         let takenBeds = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
@@ -95,7 +95,7 @@ export default class Buildings extends React.Component {
         let availablePlates = 0;
         let takenPlates = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
                 availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
@@ -104,7 +104,7 @@ export default class Buildings extends React.Component {
         let availableDesks = 0;
         let takenDesks = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
                 availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }
@@ -167,6 +167,13 @@ export default class Buildings extends React.Component {
             {label: "Health Center", value: "Health Center"},
             {label: "Library", value: "Library"}]
 
+        let buildingFiltersOptions = [];
+        for(let i = 0; i < this.props.everything.buildings.length; i++) {
+            if(!buildingFiltersOptions.includes(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>)){
+                buildingFiltersOptions.push(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>);
+            }
+        }
+
         return (
             <div>
             <div className="container">
@@ -199,10 +206,9 @@ export default class Buildings extends React.Component {
                     <div className="col-sm-5">
                         <div className="form-group">
                             <label>Filter by Building Type</label>
-                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
-                                style={{width: '160px'}}>
+                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
-
+                            {buildingFiltersOptions}
                         </select>
                         <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
                                style={{marginTop: '5px'}}>
