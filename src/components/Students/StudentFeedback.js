@@ -11,7 +11,7 @@ export default class StudentsTable extends React.Component {
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>
                 <div className="col-md-2">
-                    <img className="img-responsive" src="resources/images/student.png"></img>
+                    <img className="img-responsive" style={{height: '175px', width: '175px'}} src= {this.props.student.avatarIcon.avatarUrl}></img>
                 </div>
                 <div className="col-md-10" style={{padding: '10px'}}>
                     <h2>{this.props.student.name}</h2>

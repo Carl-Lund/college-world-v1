@@ -21,7 +21,7 @@ export default class StudentsTable extends React.Component {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <img class="img-responsive panel-image panel-image" src="resources/images/student.png" alt=""/>
+                                    <img class="img-responsive panel-image panel-image" src= {this.props.student.avatarIcon.avatarUrl} alt=""/>
                                     <td>Student:</td>
                                     <td>{this.props.student.name}</td>
                                 </tr>

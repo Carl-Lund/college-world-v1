@@ -13,7 +13,7 @@ export default class StudentsTable extends React.Component {
         return (
             <div className="studentElement" id={this.props.student.idNumber} style={{boxShadow: "0 0 5px 3px " + this.bubbleColoring(this.props.student.happiness)}}
                 onClick = {() => this.props.studentSwitch(this.props.studentNumber)}>
-                <img src="resources/images/student.png"></img>
+                <img src= {this.props.student.avatarIcon.avatarUrl}></img>
                 <p>{this.props.student.name.split(" ")[1] + ", " + this.props.student.name.split(" ")[0].charAt(0)}</p>
             </div>
         );
