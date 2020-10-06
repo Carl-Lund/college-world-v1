@@ -1,3 +1,4 @@
+
 .jumbotronTransp {
     padding: 30px;
     margin-bottom: 30px;
@@ -48,6 +49,7 @@
     width: auto !important;
 }
 
+
 .tableSports {
     padding-left: -3000px;
     font-size: 21px;
@@ -60,4 +62,8 @@
     width:30px;
     height: 30px;
     border-radius: 35px;
+}
+
+#nextBtn{
+    display:none;
 }

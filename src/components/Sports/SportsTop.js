@@ -12,10 +12,18 @@ export default class SportsTop extends React.Component {
             tipsText: "Add more sports to make more money!",
             hideShowTipsText : "Show Tips",
             isHide: true,
+            // hideNextTipsText: "Next Tip",
+            showNextTip: true
+
+            //<button type="button" onClick={() => this.hideBtn("showNextTip")}>Next Tip</button>
+            // OG
+            //<button type="button" onClick={this.nextTip} className="btn btn-primary">Next Tip</button>
         };
 
         this.getSportsTeem = this.getSportsTeem.bind(this);
         this.hideShowTipsText = this.hideShowTipsText.bind(this);
+        this.hideBtn = this.hideBtn.bind(this)
+        // this.hideNextTipsText = this.hideNextTipsText.bind(this);
         // this.afterUpdateCollegeOnServerForSell = this.afterUpdateCollegeOnServerForSell.bind(this);
 
     }
@@ -44,7 +52,7 @@ export default class SportsTop extends React.Component {
                             <div className="col-sm-4">
                                 <div className="row">
                                     <div className="col-sm-6">
-                                        <button type="button" onClick={this.nextTip} className="btn btn-primary">Next Tip</button>
+                                        <button type="button" id="nextBtn" onClick={this.nextTip} className="btn btn-primary">Next Tip</button>
                                     </div>
                                     <div className="col-sm-6">
                                         <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}
@@ -101,17 +109,45 @@ export default class SportsTop extends React.Component {
 
     hideShowTipsText = () => {
         let tips = document.getElementById('hideTips');
+        let btn = document.getElementById('nextBtn');
         if (this.state.isHide){
             this.state.hideShowTipsText = "Hide tips"
             this.setState({isHide: false})
             tips.style.display = "block";
+            btn.style.display = "block";
         }else {
             this.state.hideShowTipsText = "Show tips"
             this.setState({isHide: true})
             tips.style.display = "none";
+            btn.style.display = "none";
         }
         this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
+    hideBtn = () => {
+        if(this.state.hideShowTipsText = "Show tips"){
+
+        }
+        // console.log(name);
+        // switch(name){
+        //     case "showNextTip":
+        //         this.setState({ showNextTip: !this.state.showNextTip });
+        //         break;
+        // }
+
+    }
+    // hideNextTipsText = () => {
+    //     let nextTipsbtn = document.getElementById()
+    //     if (this.state.isHide){
+    //         this.state.hideShowTipsText = "Hide tips"
+    //         this.setState({isHide: false})
+    //         tips.style.display = "block";
+    //     }else {
+    //         this.state.hideShowTipsText = "Show tips"
+    //         this.setState({isHide: true})
+    //         tips.style.display = "none";
+    //     }
+    //     this.setState({ hideShowTipsText: this.state.hideShowTipsText});
+    // }
 
     getSportsTeem() {
         let feedback = (this.props.sports.length + " sports")
