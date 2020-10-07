@@ -53,6 +53,8 @@ export default class Buildings extends React.Component {
             });
     }
 
+
+
     render() {
         if (!this.props.everything) {
             return <p>Loading...</p>;
@@ -151,9 +153,16 @@ export default class Buildings extends React.Component {
             table.push(<tr style={trStyle}>{building}</tr>)
         }
 
+        let cashColor = "white";
+        // this.handleSelectBuildingChoice(value)this.state.buildingChoice)
+        if(this.props.everything.college.availableCash < 150000){
+            cashColor = "red";
+        }
+
         let numStudents = this.props.everything.objectives.studentCount;
         const buildingChoices = [
             {label: "Dormitory", value: "Dormitory"},
+            {label: "Administrative Building", value: "Administrative Building"},
             {label: "Academic Center", value: "Academic Center"},
             {label: "Baseball Diamond", value: "Baseball Diamond"},
             {label: "Dining Hall", value: "Dining Hall"},
@@ -250,7 +259,7 @@ export default class Buildings extends React.Component {
                                 <label>Name</label>
                                 <input className="editText" type="text" value={this.state.buildingName} onChange={this.handleNewBuildingChange} placeholder="Enter Building Name"/>
                             </div>
-                            <button type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
+                            <button style={{color:cashColor}} type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
                         </div>
                     </div>
                 </div>
