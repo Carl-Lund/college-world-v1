@@ -27,7 +27,7 @@ export default class CollegeBuildings extends React.Component {
 
         return (
             <div className="col-sm-2">
-                <div>
+                <div className="collegeHappinessBar">
                     <h3 className="text-center">Buildings</h3>
                     <br></br>
                     <CircularProgressbarWithChildren value={this.props.everything.college.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
