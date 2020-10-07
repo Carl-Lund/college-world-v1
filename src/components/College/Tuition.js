@@ -8,6 +8,9 @@ export default class Tuition extends React.Component {
     }
 
     handleOnChange(e) {
+        if(e.target.value > 100000) {
+            e.target.value = 100000;
+        }
         this.props.everything.college.yearlyTuitionCost = e.target.value;
         this.props.replaceEverything(this.props.everything);
         this.updateCollegeOnServer(this.props.everything.college);
