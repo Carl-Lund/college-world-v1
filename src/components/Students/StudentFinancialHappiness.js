@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default class StudentOverallHappiness extends React.Component {
+export default class CollegeFinancialHappiness extends React.Component {
 
     render() {
 
@@ -23,20 +23,20 @@ export default class StudentOverallHappiness extends React.Component {
             return temp;
         }
 
-        let color=getColor(this.props.everything.college.studentBodyHappiness);
+        let color=getColor(this.props.everything.college.studentFinancialHappiness);
 
         return (
             <div className="col-sm-2">
                 <div className="studentHappinessBars">
-                    <h3 className="text-center">Overall</h3>
-                    <CircularProgressbarWithChildren value={this.props.everything.college.studentBodyHappiness} styles={buildStyles({pathColor: color})}>
+                    <h3 className="text-center">Financial</h3>
+                    <CircularProgressbarWithChildren value={this.props.everything.college.studentFinancialHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
-                            style={{ width: 10, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
+                            style={{ width: 30, marginTop: -5 }}
+                            src="https://image.flaticon.com/icons/svg/126/126157.svg"
                         />
                         <div style={{ fontSize: 12}}>
-                            <strong>{this.props.everything.college.studentBodyHappiness}%</strong>
+                            <strong>{this.props.everything.college.studentFinancialHappiness}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
                     <br/>
@@ -44,8 +44,7 @@ export default class StudentOverallHappiness extends React.Component {
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
                     <div id="happinessDetails" className="collapse">
-                        The happiness of the students depends on their health, academic success,
-                        tuition bills, and how much fun they are having.
+                        The financial happiness of the students depends on tuition.
                     </div>
                 </div>
             </div>

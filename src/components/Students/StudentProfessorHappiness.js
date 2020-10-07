@@ -28,8 +28,7 @@ export default class StudentProfessorHappiness extends React.Component {
         return (
             <div className="col-sm-2">
                 <div className="studentHappinessBars">
-                    <h3 className="text-center">Professor Happiness</h3>
-                    <br></br>
+                    <h3 className="text-center">Professors</h3>
                     <CircularProgressbarWithChildren value={this.props.everything.college.studentProfessorHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img

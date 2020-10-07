@@ -8,6 +8,7 @@ import StudentBuildingHappiness from "./StudentBuildingHappiness";
 import StudentProfessorHappiness from "./StudentProfessorHappiness";
 import StudentOverallHappiness from "./StudentOverallHappiness";
 import StudentHealthHappiness from "./StudentHealthHappiness";
+import StudentFinancialHappiness from "./StudentFinancialHappiness";
 
 export default class Students extends React.Component {
     constructor(props) {
@@ -39,6 +40,7 @@ export default class Students extends React.Component {
                         <StudentBuildingHappiness everything={this.props.everything}/>
                         <StudentProfessorHappiness everything={this.props.everything}/>
                         <StudentHealthHappiness everything={this.props.everything}/>
+                        <StudentFinancialHappiness everything={this.props.everything}/>
 
                     </div>
                     <div className="card my-3">
