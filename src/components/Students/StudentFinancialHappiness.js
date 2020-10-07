@@ -32,8 +32,8 @@ export default class CollegeFinancialHappiness extends React.Component {
                     <CircularProgressbarWithChildren value={this.props.everything.college.studentFinancialHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/126/126157.svg"
+                            style={{ width: 10, marginTop: -5 }}
+                            src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.everything.college.studentFinancialHappiness}%</strong>
