@@ -75,5 +75,12 @@
 
 .collegeHappinessBar{
     padding-top: 2.1em;
-    width: 75%;
+}
+
+.studentHappinessBars{
+    width: 70%;
+}
+
+.studentHappinessBars h3{
+    font-size: 120%;
 }

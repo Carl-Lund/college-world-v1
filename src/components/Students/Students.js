@@ -3,10 +3,11 @@ import StudentsTable from "./StudentsTable";
 import StudentsPanel from "./StudentPanel";
 import StudentFeedback from "./StudentFeedback";
 import "./Students.css";
-import CollegeHappiness from "../CollegeDashboard/CollegeHappiness";
 import StudentAcademicHappiness from "./StudentAcademicHappiness";
 import StudentBuildingHappiness from "./StudentBuildingHappiness";
 import StudentProfessorHappiness from "./StudentProfessorHappiness";
+import StudentOverallHappiness from "./StudentOverallHappiness";
+import StudentHealthHappiness from "./StudentHealthHappiness";
 
 export default class Students extends React.Component {
     constructor(props) {
@@ -31,12 +32,14 @@ export default class Students extends React.Component {
         return (
             <div className="container" style={{maxHeight: "90%"}}>
                 <div className="cardDeck">
-                    <h1 class="student-happiness-header">Student Happiness Summary</h1>
+                    <h1 class="student-happiness-header">Student Happiness Statistics</h1>
                     <div className="card-deck my-3">
-                        <CollegeHappiness everything={this.props.everything}/>
+                        <StudentOverallHappiness everything={this.props.everything}/>
                         <StudentAcademicHappiness everything={this.props.everything}/>
                         <StudentBuildingHappiness everything={this.props.everything}/>
                         <StudentProfessorHappiness everything={this.props.everything}/>
+                        <StudentHealthHappiness everything={this.props.everything}/>
+
                     </div>
                     <div className="card my-3">
                         <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
