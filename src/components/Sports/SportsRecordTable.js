@@ -7,19 +7,37 @@ import "react-table/react-table.css";
 export default class SportsRecordTable extends React.Component {
     constructor(props) {
         super(props);
+        // var img = "resources/images/";
+        // var img2 = ".png";
 
         //this.showTeam = showTeam()
 
         // this.sportsTeem = getSportsTeem(this.props.sports);
         this.showTeam = this.showTeam.bind(this);
         this.showProgressBar = this.showProgressBar.bind(this);
+        this.imageMappings={"Women's Basketball": "resources/images/basketball.png",
+                            "Men's Basketball": "resources/images/basketball.png",
+                            "Baseball": "resources/images/baseball.png",
+                            "Softball": "resources/images/softball.png",
+                            "Women's Soccer": "resources/images/soccerball.png",
+                            "Men's Soccer": "resources/images/soccerball.png",
+                            "Men's Football": "resources/images/footballicon.png",
+                            "Women's Volleyball": "resources/images/volleyball.png"}
     }
 
-    render() {
+    render(){
         const columns = [{
+            Header: 'ICON',
+            Cell: (row) => <div id={'sportIcon'}>
+                <img className="sport-icon" src={this.imageMappings[this.props.sports[row.index].sportName]}></img>
+
+            </div>
+            },
+            {
             Header: 'TEAM',
             accessor: 'sportName' // String-based value accessors!
-        }, {
+            },
+            {
             Header: 'DETAILS',
             Cell: (row) => <div>
                 <button type="button" className="btn btn-info" data-toggle="collapse"
@@ -28,7 +46,7 @@ export default class SportsRecordTable extends React.Component {
                 <div className="container">
                     <div id={"show"+row.index} className="collapse">
                         <div className="row">
-                        <div className="jumbotronTransp">{this.showTeam(this.props.sports[row.index].sportName)}</div>
+                            <div className="jumbotronTransp">{this.showTeam(this.props.sports[row.index].sportName)}</div>
                         </div>
                         <div className="row">
                             <h4>Reputation:</h4>
@@ -117,4 +135,6 @@ export default class SportsRecordTable extends React.Component {
         team.push(<h4>{percentage}</h4>)
         return team
     }
+
+
 }
