@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default class CollegeHappiness extends React.Component {
+export default class StudentProfessorHappiness extends React.Component {
 
     render() {
 
@@ -27,13 +27,12 @@ export default class CollegeHappiness extends React.Component {
 
         return (
             <div className="col-sm-2">
-                <div>
-                    <h3 className="text-center">Professor Happiness</h3>
-                    <br></br>
+                <div className="studentHappinessBars">
+                    <h3 className="text-center">Professors</h3>
                     <CircularProgressbarWithChildren value={this.props.everything.college.studentProfessorHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
-                            style={{ width: 30, marginTop: -5 }}
+                            style={{ width: 10, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
                         />
                         <div style={{ fontSize: 12}}>
@@ -45,8 +44,7 @@ export default class CollegeHappiness extends React.Component {
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
                     <div id="happinessDetails" className="collapse">
-                        The happiness of the students depends on their health, academic success,
-                        tuition bills, and how much fun they are having.
+                        The professor happiness of the students depends on the performance of the faculty.
                     </div>
                 </div>
             </div>

@@ -27,10 +27,10 @@ export default class CollegeRetention extends React.Component {
         let color = getColor(this.props.everything.college.retentionRate);
         return (
             <div className="col-sm-2">
-                <div>
+                <div className="collegeHappinessBar">
                     <h3 className="text-center">Retention</h3>
                     <br></br>
-                    <CircularProgressbarWithChildren value={this.props.everything.college.retentionRate} styles={buildStyles({pathColor: color})}>
+                    <CircularProgressbarWithChildren value={this.props.everything.college.retentionRate} styles={ buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             style={{ width: 30, marginTop: -5 }}

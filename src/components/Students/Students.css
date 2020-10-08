@@ -21,8 +21,9 @@
 }
 
 .studentElement img {
-    width:80%;
-    margin: 5px;
+    width: 100%;
+    margin: auto;
+    margin-top: -6px;
 }
 
 .studentElement p {
@@ -69,9 +70,17 @@
 .card-deck{
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .collegeHappinessBar{
     padding-top: 2.1em;
+}
+
+.studentHappinessBars{
+    width: 70%;
+}
+
+.studentHappinessBars h3{
+    font-size: 120%;
 }
