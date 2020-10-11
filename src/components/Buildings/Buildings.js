@@ -53,6 +53,44 @@ export default class Buildings extends React.Component {
             });
     }
 
+    getImage(type){
+        if (type == "DORM"){
+            return ("resources/images/DORM.png");
+        }
+        else if (type == "ACADEMIC"){
+            return ("resources/images/ACADEMIC.png");
+        }
+        else if (type == "ADMIN"){
+            return ("resources/images/ADMIN.png")
+        }
+        else if (type == "DINING"){
+            return ("resources/images/DINING.png");
+        }
+        else if (type == "DORM"){
+            return ("resources/images/DORM.png");
+        }
+        else if (type == "ENTERTAINMENT"){
+            return ("resources/images/ENTERTAINMENT.png");
+        }
+        else if (type == "HEALTH"){
+            return ("resources/images/HEALTH.png");
+        }
+        else if (type == "LIBRARY"){
+            return ("resources/images/LIBRARY.png");
+        }
+        else if (type == "SPORTS"){
+            return ("resources/images/stadium.png");
+        }
+        else if (type == "BASEBALL DIAMOND"){
+            return ("resources/images/BASEBALL DIAMOND.png");
+        }
+        else if (type == "FOOTBALL DIAMOND"){
+            return ("resources/images/FOOTBALL STADIUM.png");
+        }
+        else if (type == "HOCKEY RINK"){
+            return ("resources/images/HOCKEY RINK");
+        }
+    }
 
 
     render() {
@@ -138,7 +176,7 @@ export default class Buildings extends React.Component {
 
             building.push(
                 <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
-                <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
+                <td style={tdStyle}><img className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
                 <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
                 <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
                 <td style={tdStyle}><div className="progress">
