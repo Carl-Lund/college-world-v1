@@ -58,7 +58,7 @@ export default class Sports extends React.Component {
             return (
                 <div>
                     <SportsTop sports = {this.props.everything.sports}/>
-                    {/*<CoachesTable sports = {this.props.everything.sports} collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus} coaches={this.props.everything.coaches}/>*/}
+                    <CoachesTable sports = {this.props.everything.sports} collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus} coaches={this.props.everything.coaches}/>
                     <SportsRecordTable sports = {this.props.everything.sports} students={this.props.everything.students}/>
                     <AddSellSports sports = {this.props.everything.sports} collegeName={this.props.collegeName} everything={this.props.everything} replaceEverything={this.props.replaceEverything} setCollegeName={this.props.setCollegeName}  setLaunchStatus={this.props.setLaunchStatus}/>
                     <SportNews news = {this.props.everything.news} collegeName={this.props.collegeName}/>

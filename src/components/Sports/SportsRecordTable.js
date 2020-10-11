@@ -7,9 +7,6 @@ import "react-table/react-table.css";
 export default class SportsRecordTable extends React.Component {
     constructor(props) {
         super(props);
-        // var img = "resources/images/";
-        // var img2 = ".png";
-
         //this.showTeam = showTeam()
 
         // this.sportsTeem = getSportsTeem(this.props.sports);
@@ -78,10 +75,12 @@ export default class SportsRecordTable extends React.Component {
         }, {
             Header: 'DIVISION',
             accessor: 'division' // String-based value accessors!
-        }, {
-            Header: 'COACH',
-            accessor: 'coachName'
-        }]
+        }
+        //     ,{
+        //     Header: 'COACH',
+        //     accessor: 'coachName'
+        // }
+        ]
 
         return (
             <div>
