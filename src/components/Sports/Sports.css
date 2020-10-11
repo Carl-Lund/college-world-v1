@@ -9,6 +9,13 @@
     background-color: white;
 }
 
+.detailsInfo {
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+
 /*.jumbotronAddSell {*/
 /*    padding: 30px;*/
 /*    margin-bottom: 30px;*/

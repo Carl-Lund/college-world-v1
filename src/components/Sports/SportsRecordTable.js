@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Sports.css"
-
+import ReactDOM from 'react-dom';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
@@ -8,7 +8,7 @@ export default class SportsRecordTable extends React.Component {
     constructor(props) {
         super(props);
         //this.showTeam = showTeam()
-
+        this.showDetails = this.showDetails.bind(this);
         // this.sportsTeem = getSportsTeem(this.props.sports);
         this.showTeam = this.showTeam.bind(this);
         this.showProgressBar = this.showProgressBar.bind(this);
@@ -37,11 +37,9 @@ export default class SportsRecordTable extends React.Component {
             {
             Header: 'DETAILS',
             Cell: (row) => <div>
-                <button type="button" className="btn btn-info" data-toggle="collapse"
-                        data-target={"#show" + row.index}>Details
-                </button>
+                <button type="button" onClick={() => this.showDetails(row)} className="btn btn-info">Details</button>
                 <div className="container">
-                    <div id={"show"+row.index} className="collapse">
+                    <div id={"show"+row.index} className="detailsInfo">
                         <div className="row">
                             <div className="jumbotronTransp">{this.showTeam(this.props.sports[row.index].sportName)}</div>
                         </div>
@@ -127,6 +125,20 @@ export default class SportsRecordTable extends React.Component {
             }
         }
         return team
+    }
+
+    showDetails(row) {
+        let id = 'show' + row.index;
+        let details = ReactDOM.findDOMNode(document.getElementById(id));
+        if(details === null){
+            console.log(row.index);
+        }
+        else if(details.style.display === "block"){
+            details.style.display = "none";
+        }
+        else{
+            details.style.display = "block";
+        }
     }
 
     showProgressBar(percentage){

@@ -53,6 +53,46 @@ export default class Buildings extends React.Component {
             });
     }
 
+    getImage(type){
+        if (type == "DORM"){
+            return ("resources/images/DORM.png");
+        }
+        else if (type == "ACADEMIC"){
+            return ("resources/images/ACADEMIC.png");
+        }
+        else if (type == "ADMIN"){
+            return ("resources/images/ADMIN.png")
+        }
+        else if (type == "DINING"){
+            return ("resources/images/DINING.png");
+        }
+        else if (type == "DORM"){
+            return ("resources/images/DORM.png");
+        }
+        else if (type == "ENTERTAINMENT"){
+            return ("resources/images/ENTERTAINMENT.png");
+        }
+        else if (type == "HEALTH"){
+            return ("resources/images/HEALTH.png");
+        }
+        else if (type == "LIBRARY"){
+            return ("resources/images/LIBRARY.png");
+        }
+        else if (type == "SPORTS"){
+            return ("resources/images/stadium.png");
+        }
+        else if (type == "BASEBALL DIAMOND"){
+            return ("resources/images/BASEBALL DIAMOND.png");
+        }
+        else if (type == "FOOTBALL DIAMOND"){
+            return ("resources/images/FOOTBALL STADIUM.png");
+        }
+        else if (type == "HOCKEY RINK"){
+            return ("resources/images/HOCKEY RINK");
+        }
+    }
+
+
     render() {
         if (!this.props.everything) {
             return <p>Loading...</p>;
@@ -83,80 +123,84 @@ export default class Buildings extends React.Component {
             verticalAlign: 'middle'
         }
 
+        let table = [];
         let availableBeds = 0;
         let takenBeds = 0;
+        let availablePlates = 0;
+        let takenPlates = 0;
+        let availableDesks = 0;
+        let takenDesks = 0;
+        let buildingFiltersOptions = [];
+
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
+            let status = "";
+            let building = [];
+            let upgradeButton = [];
+            let repairButton = [];
+
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
-        }
-
-        let availablePlates = 0;
-        let takenPlates = 0;
-        for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
                 availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
-        }
-
-        let availableDesks = 0;
-        let takenDesks = 0;
-        for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt == true && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
                 availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }
-        }
+            if(!buildingFiltersOptions.includes(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>)){
+                buildingFiltersOptions.push(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>);
+            }
 
-        let table = [];
-        for (let i = 0; i < this.props.everything.buildings.length; i++) {
-            let building = [];
-
-            let status = "";
             if (this.props.everything.buildings[i].hoursToComplete > 0) {
                 status = String((this.props.everything.buildings[i].hoursToComplete/24)) + " days remaining";
             } else {
                 status = "Built";
             }
 
-            let upgradeButton = [];
             if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
-            && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
+                && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
                 )
             }
 
-            let repairButton = [];
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
-            && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
+                && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
                 repairButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
                 )
             }
 
             building.push(
-                    <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].kindOfBuilding}</td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
-                    <td style={tdStyle}><div className="progress">
-                        <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.floor(120*(this.props.everything.buildings[i].shownQuality/100))}}>
-                            {Math.floor(this.props.everything.buildings[i].shownQuality)}%
-                        </div>
-                    </div></td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
-                    <td style={tdStyle}>{status}</td>,
-                    <td style={tdStyle}>{upgradeButton}{repairButton}</td>
+                <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
+                <td style={tdStyle}><img className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
+                <td style={tdStyle}><div className="progress">
+                    <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.floor(120*(this.props.everything.buildings[i].shownQuality/100))}}>
+                        {Math.floor(this.props.everything.buildings[i].shownQuality)}%
+                    </div>
+                </div></td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
+                <td style={tdStyle}>{status}</td>,
+                <td style={tdStyle}>{upgradeButton}{repairButton}</td>
             )
             table.push(<tr style={trStyle}>{building}</tr>)
+        }
+
+        let cashColor = "white";
+        // this.handleSelectBuildingChoice(value)this.state.buildingChoice)
+        if(this.props.everything.college.availableCash < 150000){
+            cashColor = "red";
         }
 
         let numStudents = this.props.everything.objectives.studentCount;
         const buildingChoices = [
             {label: "Dormitory", value: "Dormitory"},
+            {label: "Administrative Building", value: "Administrative Building"},
             {label: "Academic Center", value: "Academic Center"},
             {label: "Baseball Diamond", value: "Baseball Diamond"},
             {label: "Dining Hall", value: "Dining Hall"},
@@ -199,10 +243,9 @@ export default class Buildings extends React.Component {
                     <div className="col-sm-5">
                         <div className="form-group">
                             <label>Filter by Building Type</label>
-                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType"
-                                style={{width: '160px'}}>
+                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
-
+                            {buildingFiltersOptions}
                         </select>
                         <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
                                style={{marginTop: '5px'}}>
@@ -254,7 +297,7 @@ export default class Buildings extends React.Component {
                                 <label>Name</label>
                                 <input className="editText" type="text" value={this.state.buildingName} onChange={this.handleNewBuildingChange} placeholder="Enter Building Name"/>
                             </div>
-                            <button type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
+                            <button style={{color:cashColor}} type="submit" className="btn btn-info" onClick={this.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
                         </div>
                     </div>
                 </div>
