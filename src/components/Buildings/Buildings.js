@@ -9,6 +9,7 @@ import CollegeDashboard from "../CollegeDashboard/CollegeDashboard";
 import PlayMode from "../College/PlayMode";
 import StudentBubble from "../Students/StudentBubble";
 
+
 export default class Buildings extends React.Component {
 
     constructor(props) {
@@ -263,6 +264,7 @@ export default class Buildings extends React.Component {
 
         return (
             <div>
+                <PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 {/*<div className="col-sm-4">*/}
                 {/*    <div className="row">*/}
                 {/*        <div className="col-sm-6">*/}
