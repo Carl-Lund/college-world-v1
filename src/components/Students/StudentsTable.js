@@ -4,14 +4,19 @@ import StudentBubble from './StudentBubble.js';
 import Navigation from "../Navigation/Navigation";
 
 export default class StudentsTable extends React.Component {
+    initial = 0;
+    final = 30;
+    move = 10;
     constructor(props) {
         super(props);
 
         this.state = {
             studentTable: createTable(this.props.everything.students,  null, this.props)
+
         }
         this.sort = React.createRef();
     }
+
 
     updateTable = () => {
         this.setState({studentTable: createTable(this.props.everything.students, this.sort.current.value, this.props)});
@@ -20,7 +25,7 @@ export default class StudentsTable extends React.Component {
      render() {
         return (
                 <div className="col-sm-8" style={{height: '80%', maxWidth: '100%'}}>
-                    <h4>{this.props.everything.students.length} Students</h4>
+                    <h4>{this.props.everything.students.length} Total Students</h4>
                     <span className={"label label-info"}>Sort: </span>
                     <select ref={this.sort} onChange={this.updateTable}>
                         <option value={"aToZ"}>Alphabetical A-Z</option>
@@ -28,6 +33,8 @@ export default class StudentsTable extends React.Component {
                         <option value={"overallHappinessHToL"}>Overall Happiness High-Low</option>
                         <option value={"overallHappinessLToH"}>Overall Happiness Low-High</option>
                     </select>
+                    <button type="button" id="s-nextBtn" className="btn btn-primary" onClick={this.prev} style={{margin:'0.5em'}}>Previous</button>
+                    <button type="button" id="s-prevBtn" className="btn btn-primary" onClick={this.next} style={{margin:'0.5em'}}>Next</button>
                     <div className="well well-sm" style={{height: '100%'}}>
                         <div className="pre-scrollable" style={{height: '94%', maxHeight: 'none'}}>
                             <div className="studentContainer" style={{overflowY: "hidden", width: "100%"}}>
@@ -40,8 +47,34 @@ export default class StudentsTable extends React.Component {
     }
 }
 
-function test() {
-    //move back 10 students, check if there are students earlier in the array (20-40) -> (10-30)
+function next() {
+    let btnnext = document.getElementById('s-nextBtn');
+    let btnprev = document.getElementById('s-prevBtn');
+
+    btnprev.style.display = "block"
+
+    this.initial += this.move;
+    this.final += this.move;
+
+    if(this.final >= this.props.everything.students.length) {
+        this.final = this.props.everything.students.length;
+        btnnext.style.display = "none";
+    }
+}
+
+function prev() {
+    let btnnext = document.getElementById('s-nextBtn');
+    let btnprev = document.getElementById('s-prevBtn');
+
+    btnnext.style.display = "block"
+
+    this.initial -= this.move;
+    this.final -= this.move;
+
+    if(this.initial <= 0){
+        this.initial = 0;
+        btnprev.style.display = "none";
+    }
 }
 
 function createTable(students, sort, props) {
