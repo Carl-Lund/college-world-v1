@@ -32,28 +32,16 @@
     margin-top: 5px;
 }
 
-.speech-bubble {
+.id-card {
+    width: 45%;
+    height: 95%;
+    float: left;
     position: relative;
     background: #5bc0de;
     border-radius: .4em;
     margin: 15px;
     color: white;
     padding: 10px;
-}
-
-.speech-bubble:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 70%;
-    width: 0;
-    height: 0;
-    border: 1.125em solid transparent;
-    border-right-color: #5bc0de;
-    border-left: 0;
-    border-bottom: 0;
-    margin-top: -0.562em;
-    margin-left: -1.125em;
 }
 
 .panel-image {
@@ -64,6 +52,7 @@
 }
 
 .student-happiness-header {
+    margin-top: 1em;
     text-align: center;
 }
 

@@ -10,39 +10,13 @@ export default class StudentsTable extends React.Component {
         const {isAthlete} = this.props.student.athlete;
         const {isSick} = this.props.student.numberHoursLeftBeingSick > 1;
         return (
-            <div className="col-sm-4" style={{height: '80%'}}>
+            <div className="col-sm-4" style={{height: '80%', float: 'right', marginTop: -200, marginRight: '2em'}}>
                 <div className="well well-sm" style={{height: '100%'}}>
-                    <div className="pre-scrollable" style={{height: '100%', maxHeight: 'none'}}>
-                        <table className="table table-hover" style={{tableLayout: 'fixed', marginLeft: 0, marginRight: 0, height: '100%'}}>
+                        <table className="table table-hover" style={{tableLayout: 'fixed', marginLeft: 0, marginRight: 0, height: '100%', float: 'right', display: 'inline-block'}}>
                             <tbody>
                                 <tr>
                                     <td></td>
-                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b><i>STUDENT INFORMATION</i></b></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image panel-image" src= {this.props.student.avatarIcon.avatarUrl} alt=""/>
-                                    <td>Student:</td>
-                                    <td>{this.props.student.name}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image panel-image" src="resources/images/IDicon.png" alt=""/>
-                                    <td>ID Number:</td>
-                                    <td>{this.props.student.id}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image panel-image" src="resources/images/gendericon.png" alt=""/>
-                                    <td>Gender:</td>
-                                    <td>{this.props.student.gender.personGender}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image panel-image" src="resources/images/advisoricon.png" alt=""/>
-                                    <td>Advisor:</td>
-                                    <td>{this.props.student.advisor.facultyName}</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b><i>STUDENT STATISTICS</i></b></td>
+                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b>{this.props.student.name} Statistics</b></td>
                                     <td></td>
                                 </tr>
 
@@ -77,7 +51,7 @@ export default class StudentsTable extends React.Component {
 
                                 <tr>
                                     <img class="img-responsive panel-image panel-image" src="resources/images/fun.png" alt=""/>
-                                    <td><b>Overall Happiness</b></td>
+                                    <td>Overall Happiness</td>
                                     <td>{this.props.student.happiness}</td>
                                 </tr>
                                 <tr>
@@ -132,7 +106,6 @@ export default class StudentsTable extends React.Component {
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
                 </div>
             </div>
         );

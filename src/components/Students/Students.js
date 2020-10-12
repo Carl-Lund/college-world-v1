@@ -33,7 +33,7 @@ export default class Students extends React.Component {
         return (
             <div className="container" style={{maxHeight: "90%"}}>
                 <div className="cardDeck">
-                    <h1 class="student-happiness-header">Student Happiness Statistics</h1>
+                    <h1 class="student-happiness-header">Student Body Happiness Statistics</h1>
                     <div className="card-deck my-3">
                         <StudentOverallHappiness everything={this.props.everything}/>
                         <StudentAcademicHappiness everything={this.props.everything}/>
@@ -43,11 +43,11 @@ export default class Students extends React.Component {
                         <StudentFinancialHappiness everything={this.props.everything}/>
 
                     </div>
-                    <div className="card my-3">
+                    <div className="card my-3"  style={{width: '100%', display: "inline-block"}}>
                         <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
-                        <div className="row px-0" style={{height: '800px', marginTop: '20px'}}>
+                        <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
+                        <div className="row px-0" style={{height: '800px', marginTop: '20px', float: 'left', width: '65%'}}>
                             <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
-                            <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}/>
                         </div>
                     </div>
                 </div>

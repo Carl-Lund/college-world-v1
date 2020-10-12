@@ -19,7 +19,7 @@ export default class StudentsTable extends React.Component {
 
      render() {
         return (
-                <div className="col-sm-8" style={{height: '80%'}}>
+                <div className="col-sm-8" style={{height: '80%', maxWidth: '100%'}}>
                     <h4>{this.props.everything.students.length} Students</h4>
                     <span className={"label label-info"}>Sort: </span>
                     <select ref={this.sort} onChange={this.updateTable}>
@@ -38,6 +38,10 @@ export default class StudentsTable extends React.Component {
                 </div>
         );
     }
+}
+
+function test() {
+    //move back 10 students, check if there are students earlier in the array (20-40) -> (10-30)
 }
 
 function createTable(students, sort, props) {
