@@ -33,12 +33,14 @@
 }
 
 .id-card {
-    width: 45%;
+    width: 48%;
     height: 95%;
     float: left;
     position: relative;
     background: #5bc0de;
-    border-radius: .4em;
+    border-style: solid;
+    border-color: #5c5cf2;
+    border-radius: .9em;
     margin: 15px;
     color: white;
     padding: 10px;
