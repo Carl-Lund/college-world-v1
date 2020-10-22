@@ -3,13 +3,14 @@ import "./Sports.css"
 
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import ReactDOM from "react-dom";
 
 
 export default class CoachesTable extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.showDetails = this.showDetails.bind(this);
         this.getSalary = this.getSalary.bind(this);
         this.showCoachDetails = this.showCoachDetails.bind(this);
         this.loadCollege = this.loadCollege.bind(this);
@@ -21,7 +22,7 @@ export default class CoachesTable extends React.Component {
         {
             Header: 'Icons',
             Cell: (row) =>
-                <div>
+                <div className="icon-col">
                     <img className= "coachIcon" src={this.props.coaches[row.index].avatarIcon.avatarUrl}></img>
                 </div>
         },
@@ -34,9 +35,7 @@ export default class CoachesTable extends React.Component {
                 <div className="container">
                     <div className="row">
                 <div className="col-sm-4">
-                <button type="button" className="btn btn-info" data-toggle="collapse"
-                        data-target={"#showCoach" + row.index}>Details
-                </button>
+                    <button type="button" onClick={() => this.showDetails(row)} className="btn btn-info">Details</button>
 
             </div>
                     <div className="col-sm-8">
@@ -44,7 +43,7 @@ export default class CoachesTable extends React.Component {
                     </div>
                 </div>
                     <div className="row">
-                        <div id={"showCoach"+row.index} className="collapse">
+                        <div id={"showCoach"+row.index} className="detailsInfo">
                             <div className="jumbotronTransp">{this.showCoachDetails(row.index)}</div>
                         </div>
                     </div>
@@ -102,11 +101,11 @@ export default class CoachesTable extends React.Component {
 
 
     getSalary(coachId) {
-        return "$"+this.props.coaches[coachId].salary;
+        return "$"+this.props.coaches[coachId].salary.toLocaleString();
     }
 
     showCoachDetails(coachId) {
-        var team = [];
+        let team = [];
         // team.push(<h4>{this.props.student[0].name}</h4>)
         team.push(<h4>Sport: {this.props.coaches[coachId].sportName}</h4>)
         team.push(<h4>Performance: {this.props.coaches[coachId].performance}</h4>)
@@ -132,6 +131,20 @@ export default class CoachesTable extends React.Component {
                 console.log('Selected: ' + data.ok)
                 console.log('Sesdsdd: ' + data.title)
             });
+    }
+
+    showDetails(row) {
+        let id = 'showCoach' + row.index;
+        let details = ReactDOM.findDOMNode(document.getElementById(id));
+        if(details === null){
+            console.log(row.index);
+        }
+        else if(details.style.display === "block"){
+            details.style.display = "none";
+        }
+        else{
+            details.style.display = "block";
+        }
     }
 
 
