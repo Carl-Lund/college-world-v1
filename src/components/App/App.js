@@ -11,6 +11,7 @@ import Buildings from "../Buildings/Buildings";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
+import Admissions from "../Admissions/Admissions";
 import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 
@@ -155,6 +156,12 @@ export default class App extends React.Component {
                                                 </Link>
                                             </li>
                                             <li className="nav-item">
+                                                <Link to='/admissions'>
+                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
+                                                    Admissions
+                                                </Link>
+                                            </li>
+                                            <li className="nav-item">
                                                 <Link to='/building'>
                                                     <img className="nav-item-icons" src="resources/images/college_world_icons/buildings_information_bar.png"></img>
                                                     Building
@@ -217,6 +224,7 @@ export default class App extends React.Component {
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
                             <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
+                            <Route path="/admissions" render={() => <Admissions everything={everything} replaceEverything={this.replaceEverything} />} />
                         </main>
                     </div>
                 </div>
