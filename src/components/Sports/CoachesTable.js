@@ -17,7 +17,15 @@ export default class CoachesTable extends React.Component {
     }
 
     render() {
-        const columns = [{
+        const columns = [
+        {
+            Header: 'Icons',
+            Cell: (row) =>
+                <div>
+                    <img className= "coachIcon" src={this.props.coaches[row.index].avatarIcon.avatarUrl}></img>
+                </div>
+        },
+        {
             Header: 'Coach name',
             accessor: 'facultyName' // String-based value accessors!
         }, {

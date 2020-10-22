@@ -16,7 +16,7 @@ export default class StudentsTable extends React.Component {
                             <tbody>
                                 <tr>
                                     <td></td>
-                                    <td style={{textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal"}}><b>{this.props.student.name} Statistics</b></td>
+                                    <td style={{padding: 0, paddingBottom: '1em', paddingTop: '1em', textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal",}}><b>{this.props.student.name} Statistics</b></td>
                                     <td></td>
                                 </tr>
 

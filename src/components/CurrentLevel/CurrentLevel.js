@@ -10,13 +10,19 @@ export default class CurrentLevel extends React.Component {
             return <p>Loading...</p>;
         }
         let maxStudents = this.props.everything.objectives.studentCount + this.props.everything.objectives.studentsNeededForNextLevel;
+
+        let cashColor = "black";
+        if(this.props.everything.college.availableCash <= 20000){
+            cashColor = "red";
+        }
+
         return (
             <div className="container">
                 <div className="row m-2">
                     <div className="col-sm text-center topbar navbar navbar-default navbar-fixed-top">
                         <img className="topbar-icon" src="resources/images/college_world_icons/dollar_character.png"></img>
                         <div className="topbar-text">
-                            <h4><strong>{this.props.everything.college.availableCash}</strong></h4>
+                            <h4><strong style={{color:cashColor}}>{this.props.everything.college.availableCash.toLocaleString()}</strong></h4>
                             <h6>Total Balance</h6>
                         </div>
                     </div>
