@@ -19,9 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Adds an addmission class, which will be part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/TopNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/TopNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sports/Sports.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sports/Sports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sports/SportsTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sports/SportsTop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Students/StudentBubble.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/StudentBubble.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/StudentFeedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Students/StudentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Students/StudentsTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +45,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
   <component name="ProjectViewState">
@@ -61,6 +70,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -83,6 +93,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,6 +192,9 @@
       <workItem from="1599691090686" duration="1977000" />
       <workItem from="1600108188845" duration="1644000" />
       <workItem from="1600352218018" duration="638000" />
+      <workItem from="1603734453673" duration="643000" />
+      <workItem from="1603754916638" duration="10000" />
+      <workItem from="1603817975360" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -305,7 +329,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574362307834</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Made the Nav bar their own react components">
+      <created>1603655488690</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1603655488690</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Adds an admission component which will be the UI for new admissions.">
+      <created>1603819068053</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1603819068053</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,32 +378,55 @@
     <MESSAGE value="Added resident news to buildings tab" />
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
+    <MESSAGE value="Made the Nav bar their own react components" />
+    <MESSAGE value="Adds an admission component which will be the UI for new admissions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds an admission component which will be the UI for new admissions." />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="560" y="115" key="CommitChangelistDialog2" timestamp="1603819067858">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="560" y="115" key="CommitChangelistDialog2/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819067858" />
+    <state x="100" y="79" width="1720" height="900" key="DiffContextDialog" timestamp="1603819103383">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="100" y="79" width="1720" height="900" key="DiffContextDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819103383" />
+    <state x="100" y="100" width="1720" height="880" key="DiffContextDialog/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1603656864883" />
+    <state width="1878" height="190" key="GridCell.Tab.0.bottom" timestamp="1603819076570">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1878" height="190" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819076570" />
+    <state width="1878" height="190" key="GridCell.Tab.0.center" timestamp="1603819076568">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1878" height="190" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819076568" />
+    <state width="1878" height="190" key="GridCell.Tab.0.left" timestamp="1603819076566">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1878" height="190" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819076566" />
+    <state width="1878" height="190" key="GridCell.Tab.0.right" timestamp="1603819076569">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1878" height="190" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603819076569" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
+    <state x="633" y="393" key="git4idea.ui.GitUnstashDialog" timestamp="1603657000019">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="633" y="393" key="git4idea.ui.GitUnstashDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603657000019" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1603735339083">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1603735339083" />
   </component>
 </project>
