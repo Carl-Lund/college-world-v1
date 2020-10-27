@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
+import SideNavBar from "../Navigation/SideNavBar";
 import StudentFeedback from "../Students/Students";
 import SportsTop from "./SportsTop";
 import SportsRecordTable from "./SportsRecordTable";
@@ -30,7 +30,7 @@ export default class Sports extends React.Component {
     //         return (
     //             <div>
     //                 <h2>Start of college view...</h2>
-    //                 <Navigation/>
+    //                 <SideNavBar/>
     //                 {this.state.data && (
     //                     <h2>Coach name = {this.state.data[0].coachName}</h2>
     //                 )
@@ -48,7 +48,7 @@ export default class Sports extends React.Component {
     //         // Note - error messages will vary depending on browser
     //     }
     //     /*
-    //     <Navigation />
+    //     <SideNavBar />
     //     return <h2>This is the overall college view.</h2>;
     //     */
     // }

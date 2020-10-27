@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Students.css"
-import Navigation from "../Navigation/Navigation";
+import SideNavBar from "../Navigation/SideNavBar";
 
 export default class StudentsTable extends React.Component {
     constructor(props) {
