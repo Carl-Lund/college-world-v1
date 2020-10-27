@@ -1,4 +1,5 @@
 import React from 'react';
+import App from "../App/App";
 
 export default class Store extends React.Component {
 
@@ -9,7 +10,7 @@ export default class Store extends React.Component {
 
     buyItem(e) {
         console.log("BUYING ITEM")
-        var item = e.target.value;
+        let item = e.target.value;
         //this.props.setLaunchStatus('loadInProgressxxxxxx');
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/store/' +this.props.everything.college.runId + '/' +this.props.everything.store[item].name;
         console.log(address);

@@ -106,7 +106,7 @@ export default class AddSellSports extends React.Component {
 
     showAvailableTeams= () => {
         this.buildTeamsArray()
-        var availableTeams = this.teams;
+        let availableTeams = this.teams;
         for (let i = 0; i < this.props.sports.length ; i++) {
             for (let j = 0; j < this.teams.length; j++) {
                 if (this.props.sports[i].sportName === this.teams[j]){
