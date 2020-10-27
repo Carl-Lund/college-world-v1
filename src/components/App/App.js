@@ -13,13 +13,11 @@ import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import SchoolTraits from "../College/SchoolTraits";
 
 import Nav from 'react-bootstrap/Nav'
 import NavLink from 'react-bootstrap/NavLink'
 import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
-
 
 
 export default class App extends React.Component {
@@ -181,12 +179,6 @@ export default class App extends React.Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/SchoolTraits'>
-                                <img className="nav-item-icons" src="resources/images/college_world_icons/about__information_bar.png"></img>
-                                School Traits
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link to='/students'>
                                 <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
                                 Students
@@ -260,7 +252,6 @@ export default class App extends React.Component {
                         {this.getSideBar()}
                         <main className="col-md-10">
                             <Route path="/launch" render={() => <CollegeOpenCreate collegeName={collegeName} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  setLaunchStatus={this.setLaunchStatus}/>} />
-                            <Route path="/schooltraits" render={() => <SchoolTraits everything={everything} />} />
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
                             <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />

@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="added a column in the coaches table to show icons">
-      <change afterPath="$PROJECT_DIR$/src/components/College/SchoolTraits.js" afterDir="false" />
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/College/Launch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/Launch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +36,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
@@ -51,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -67,7 +61,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -173,16 +166,11 @@
       <workItem from="1574105535340" duration="4012000" />
       <workItem from="1574269921118" duration="10875000" />
       <workItem from="1575579156355" duration="3055000" />
-      <workItem from="1601234879597" duration="671000" />
-      <workItem from="1601311095048" duration="11127000" />
-      <workItem from="1601512970689" duration="10303000" />
-      <workItem from="1601858115986" duration="4028000" />
-      <workItem from="1601946903872" duration="11501000" />
-      <workItem from="1602164864030" duration="16484000" />
-      <workItem from="1602450197584" duration="12262000" />
-      <workItem from="1603149661075" duration="743000" />
-      <workItem from="1603744977683" duration="4688000" />
-      <workItem from="1603805584629" duration="10412000" />
+      <workItem from="1599505750204" duration="1844000" />
+      <workItem from="1599593711417" duration="44000" />
+      <workItem from="1599691090686" duration="1977000" />
+      <workItem from="1600108188845" duration="1644000" />
+      <workItem from="1600352218018" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -317,49 +305,7 @@
       <option name="project" value="LOCAL" />
       <updated>1574362307834</updated>
     </task>
-    <task id="LOCAL-00020" summary="Changed the sports news so the day would no longer be a decimal">
-      <created>1601405785722</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1601405785723</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Took away the row and page options in the table">
-      <created>1601571576501</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1601571576501</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Changed the Next tips button and so it will not appear unless tips are being shown">
-      <created>1601996876226</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1601996876226</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added icons to the sports table">
-      <created>1602183976786</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1602183976786</updated>
-    </task>
-    <task id="LOCAL-00024" summary="re-added the coaches table">
-      <created>1602458578872</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1602458578872</updated>
-    </task>
-    <task id="LOCAL-00025" summary="added a column in the coaches table to show icons">
-      <created>1602611599339</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1602611599340</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,50 +340,32 @@
     <MESSAGE value="Added resident news to buildings tab" />
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
-    <MESSAGE value="Changed the sports news so the day would no longer be a decimal" />
-    <MESSAGE value="Took away the row and page options in the table" />
-    <MESSAGE value="Changed the Next tips button and so it will not appear unless tips are being shown" />
-    <MESSAGE value="added icons to the sports table" />
-    <MESSAGE value="re-added the coaches table" />
-    <MESSAGE value="added a column in the coaches table to show icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a column in the coaches table to show icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="49" key="GridCell.Tab.0.bottom" timestamp="1603817925320">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603817925320" />
-    <state width="1323" height="49" key="GridCell.Tab.0.center" timestamp="1603817925320">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603817925320" />
-    <state width="1323" height="49" key="GridCell.Tab.0.left" timestamp="1603817925319">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603817925319" />
-    <state width="1323" height="49" key="GridCell.Tab.0.right" timestamp="1603817925320">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603817925320" />
-    <state x="129" y="55" key="MergeDialog" timestamp="1602459156894">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1600110241004">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1602459156894" />
-    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1602459156921">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1602459156921" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1602611771638">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602611771638" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603754761445">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1603754761445" />
-    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1601993730521">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601993730521" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
   </component>
 </project>
