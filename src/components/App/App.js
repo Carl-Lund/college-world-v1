@@ -20,6 +20,7 @@ import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 import SideNavBar from "../Navigation/SideNavBar";
 import TopNavBar from "../Navigation/TopNavBar";
+import Admissions from "../Admissions/Admissions";
 
 
 export default class App extends React.Component {
@@ -165,6 +166,7 @@ export default class App extends React.Component {
                             <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
+                            <Route path="/admissions" render={() => <Admissions everything={everything} />} />
                             <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
                         </main>
                     </div>
