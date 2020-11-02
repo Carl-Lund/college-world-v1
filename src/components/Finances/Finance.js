@@ -1,4 +1,5 @@
 import React from 'react';
+import FinancesTable from "../Finances/FinanceTable";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -30,7 +31,8 @@ export default class Finance extends React.Component {
                     <Row>
                         <Col sm={4}><FinanceLog everything={this.props.everything}/></Col>
                         <Col sm={4}><FinanceLoanContract everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
-                        <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
+
+                        <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything}/></Col>
                     </Row>
                 </Container>
             </div>
