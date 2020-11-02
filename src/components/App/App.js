@@ -18,6 +18,7 @@ import Nav from 'react-bootstrap/Nav'
 import NavLink from 'react-bootstrap/NavLink'
 import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
+import Finance from "../Finances/Finance";
 
 
 export default class App extends React.Component {
@@ -202,6 +203,13 @@ export default class App extends React.Component {
                                 Faculty
                             </Link>
                         </li>
+                        {/*Finances needs a different image thats unique*/}
+                        <li className="nav-item">
+                            <Link to='/finances'>
+                                <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
+                                Finances
+                            </Link>
+                        </li>
                         <li className="nav-item">
                             <Link to='/objectives'>
                                 <img className="nav-item-icons" src="resources/images/college_world_icons/objectives_information_bar.png"></img>
@@ -256,6 +264,7 @@ export default class App extends React.Component {
                             <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
                             <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/students" render={() => <Students everything={everything} />} />
+                            <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                             <Route path="/store" render={() => <Store everything={everything} />} />
                             <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />

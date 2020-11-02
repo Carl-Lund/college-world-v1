@@ -1,0 +1,78 @@
+.finance-col1-row1 {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.finance-col1-row1 h5 {
+    margin-left: 1em;
+}
+
+.finance-col1-row1 h3 {
+    text-align: center;
+    padding-top: .25em;
+}
+
+.finance-col1-row2 {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.finance-col1-row2 h3 {
+    text-align: center;
+    padding: .25em 0;
+}
+
+.finance-col2-row2 {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.finance-col2-row2 h3 {
+    text-align: center;
+    padding: .25em 0;
+}
+
+.finance-col2-row2 h6 {
+    padding-left: .5em;
+}
+
+.finance-col3-row1 {
+    background-color: white;
+    border: 2px solid gray;
+    margin-top: -265px;
+}
+
+.finance-col3-row1 h4 {
+    text-align: center;
+}
+
+.loan-form {
+    padding-left: 1em;
+}
+
+.form-button {
+    margin-top: .75em;
+    width: 45%;
+    display: inline-block;
+    margin-left: .25em;
+}
+
+.accept-button {
+    margin: 1em .5em 1em 16em;
+}
+
+.loan-tab {
+    padding-left: 1em;
+}
+
+.list-group {
+    list-style-type: none;
+}
+
+.table {
+    margin-top: -100px;
+}
+
+.loan-form-tab {
+    display: inline-block;
+}
