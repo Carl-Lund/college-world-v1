@@ -3,12 +3,12 @@ import "./finances.css"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default class FinanceTable extends React.Component {
+export default class FinanceLoanContract extends React.Component {
     constructor(props) {
         super(props);
         this.handleOnChange = this.handleOnChange.bind(this);
         this.calculateContract = this.calculateContract.bind(this);
-        this.createContract = this.createContract(this);
+        this.createContract = this.createContract.bind(this);
         this.state = {
             amount: 0
         }
@@ -22,16 +22,18 @@ export default class FinanceTable extends React.Component {
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/college/" + this.props.everything.college.runId + "/calculateContract/" + encodeURI(this.amount)
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
+            .then(data => {
+                this.props.replaceEverything(data);
             });
     }
 
+
     createContract() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/college/" + this.props.everything.college.runId + "/createContract/"
-        fetch(address)
-            .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
-            });
+         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/college/" + this.props.everything.college.runId + "/createContract/" + encodeURI(this.amount)
+         fetch(address)
+             .then(response => response.json())
+             .then(data => {this.props.replaceEverything(data);
+             });
     }
 
     render() {
