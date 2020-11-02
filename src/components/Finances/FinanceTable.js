@@ -14,7 +14,7 @@ export default class FinanceTable extends React.Component {
                 <h5>Daily Income: ${((this.props.everything.college.totalIncome))}</h5>
                 <h5>Daily Expenditure: ${((this.props.everything.college.totalExpenditure))}</h5>
                 <h5>Debt: ${((this.props.everything.college.debt))}</h5>
-                <h5>Credit: ${((this.props.everything.college.credit))}</h5>
+                <h5>Credit: {((this.props.everything.college.credit))}</h5>
             </div>
         );
     }

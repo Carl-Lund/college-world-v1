@@ -7,6 +7,7 @@ export default class FinanceLoanTable extends React.Component {
         super(props);
         this.loanTable = createTable(this.props.everything, this.props.replaceEverything, this.props.everything.college.loans);
     }
+
     render() {
 
         return (

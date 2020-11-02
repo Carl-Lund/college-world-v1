@@ -37,7 +37,6 @@ export default class FinanceLoanContract extends React.Component {
     }
 
     render() {
-
         return (
             <div className="finance-col2-row2">
                 <h3>Take out a Loan</h3>
