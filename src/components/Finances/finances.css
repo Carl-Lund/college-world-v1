@@ -76,3 +76,11 @@
 .loan-form-tab {
     display: inline-block;
 }
+
+.positive {
+    color: limegreen;
+}
+
+.negative {
+    color: red;
+}
