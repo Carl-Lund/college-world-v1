@@ -13,6 +13,7 @@ export default class About extends React.Component {
                         <li className="list-group-item">Justen Koo</li>
                         <li className="list-group-item">Jamyang Tamang</li>
                         <li className="list-group-item">Giana Nekitopoulos</li>
+                        <li className="list-group-item">Tiffany Dang</li>
                     </ul>
                     <h2>Fall 2019</h2>
                     <ul className="list-group">
@@ -53,6 +54,7 @@ export default class About extends React.Component {
                         <li className="list-group-item">Derek Yannone</li>
                     </ul>
                 </div>
+                <div>Icons on school traits page are made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             </div>
         );
     }

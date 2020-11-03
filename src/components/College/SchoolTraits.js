@@ -1,75 +1,30 @@
-import React from 'react';
-import CurrentLevel from "../CurrentLevel/CurrentLevel";
-import CollegeDashboard from "../CollegeDashboard/CollegeDashboard";
-import News from "../News/News";
-import Tuition from "./Tuition";
-import PlayMode from "./PlayMode";
-import PopupEventHandler from "../PopupEvents/PopupEventHandler";
+import React, {Component} from 'react'
+import TraitBox from './TraitBox'
 
 
-
-export default class College extends React.Component {
-
+class SchoolTraits extends Component {
     render() {
-
         return (
             <div>
                 <h1 className="card-title boxcontent">{this.props.everything.college.runId} Traits </h1>
                 <div className="flexbox-container">
-
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/academictrait.png"></img>
-                            <h3> Academics:</h3>
-                            <h4>A</h4>
-                        </div>
-
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/athletictrait.png"></img>
-                            <h3>Athletics:</h3>
-                            <h4>B</h4>
-                        </div>
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/infastructuretrait.png"></img>
-                            <h3>Infastructure:</h3>
-                            <h4>B+</h4>
-                        </div>
-
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/safetytrait.png"></img>
-                            <h3>Safety:</h3>
-                            <h4>D</h4>
-                        </div>
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/costtrait.png"></img>
-                            <h3>Cost:</h3>
-                            <h4>C-</h4>
-                        </div>
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/socialtrait.png"></img>
-                            <h3>Social:</h3>
-                            <h4>B</h4>
-                        </div>
-                    </div>
-                    <div className="traitBox">
-                        <div className="boxcontent">
-                            <img className="traits-icon" src="resources/images/artistictrait.png"></img>
-                            <h3>Arts:</h3>
-                            <h4>D</h4>
-                        </div>
-                    </div>
+                <TraitBox icon={"resources/images/academictrait.png"} label={'Academics:'} rating={this.props.everything.college.academicRating}/>
+                <TraitBox icon={"resources/images/athletictrait.png"} label={'Athletics:'} rating={this.props.everything.college.athleticRating}/>
+                <TraitBox icon={"resources/images/infastructuretrait.png"} label={'Infrastructure:'} rating={this.props.everything.college.infrastructureRating}/>
+                <TraitBox icon={"resources/images/safetytrait.png"} label={'Safety:'} rating={this.props.everything.college.safetyRating}/>
+                <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue}/>
+                <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating}/>
+                    {/*<div className="traitBox">*/}
+                    {/*    <div className="boxcontent">*/}
+                    {/*        <img className="traits-icon" src="resources/images/artistictrait.png"></img>*/}
+                    {/*        <h3>Arts:</h3>*/}
+                    {/*        <h4>D</h4>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
+
         );
     }
 }
+export default SchoolTraits
