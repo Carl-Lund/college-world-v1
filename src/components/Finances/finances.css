@@ -70,6 +70,7 @@
 }
 
 .table {
+    /*Reason for this negative margin is to push up the 2nd row towards the top to act like it was in the first without destroying the layout*/
     margin-top: -100px;
 }
 

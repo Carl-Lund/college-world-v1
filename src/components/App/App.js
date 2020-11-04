@@ -203,10 +203,10 @@ export default class App extends React.Component {
                                 Faculty
                             </Link>
                         </li>
-                        {/*Finances needs a different image thats unique*/}
+
                         <li className="nav-item">
                             <Link to='/finances'>
-                                <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
+                                <img className="nav-item-icons" src="resources/images/college_world_icons/dollar_character.png"></img>
                                 Finances
                             </Link>
                         </li>

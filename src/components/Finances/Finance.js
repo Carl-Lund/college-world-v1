@@ -22,6 +22,7 @@ export default class Finance extends React.Component {
                         <Col sm={4}><FinanceTable everything={this.props.everything}/></Col>
                         <Col sm={4}></Col>
                     </Row>
+                    {/*Following row adds some vertical padding to the page*/}
                     <Row>
                         <Col sm={4}>
                             <br></br><br></br>
