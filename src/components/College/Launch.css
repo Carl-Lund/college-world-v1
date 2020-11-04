@@ -57,3 +57,26 @@ body {background-color: #f3ffff;}
     display:flex;
     align-items:center;
 }
+
+.traits-icon{
+    width: 90px;
+    height: 90px;
+}
+
+.traitBox{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    max-width: 20%;
+    max-height: 20%;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.boxcontent{
+    margin: 10px;
+    text-align: center;
+}
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import News from "../News/News";
-import Navigation from "../Navigation/Navigation";
+import SideNavBar from "../Navigation/SideNavBar";
 import ReactTable from "react-table";
 import Select from "react-select";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";

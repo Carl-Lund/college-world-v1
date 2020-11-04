@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Sports.css"
 
-import Navigation from "../Navigation/Navigation";
+import SideNavBar from "../Navigation/SideNavBar";
 
 export default class SportsTop extends React.Component {
     constructor(props) {
