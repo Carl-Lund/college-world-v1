@@ -8,7 +8,7 @@ export default class FinanceTable extends React.Component {
         super(props);
         this.handleOnChange = this.handleOnChange.bind(this);
         this.calculateContract = this.calculateContract.bind(this);
-        this.createContract = this.createContract(this);
+        this.createContract = this.createContract.bind(this);
         this.state = {
             amount: 0
         }

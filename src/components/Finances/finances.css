@@ -1,4 +1,6 @@
 .finance-col1-row1 {
+    width: 95%;
+    margin-left: .5em;
     background-color: white;
     border: 2px solid gray;
 }
@@ -13,6 +15,8 @@
 }
 
 .finance-col1-row2 {
+    width: 95%;
+    margin-left: .5em;
     background-color: white;
     border: 2px solid gray;
 }
@@ -23,6 +27,8 @@
 }
 
 .finance-col2-row2 {
+    width: 95%;
+    margin-left: .5em;
     background-color: white;
     border: 2px solid gray;
 }
@@ -37,6 +43,8 @@
 }
 
 .finance-col3-row1 {
+    margin-left: .5em;
+    width: 95%;
     background-color: white;
     border: 2px solid gray;
     margin-top: -265px;
@@ -76,4 +84,12 @@
 
 .loan-form-tab {
     display: inline-block;
+}
+
+.positive {
+    color: limegreen;
+}
+
+.negative {
+    color: red;
 }
