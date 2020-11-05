@@ -29,6 +29,12 @@ export default class SideNavBar extends React.Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
+                                <Link to='/schooltraits'>
+                                    <img className="nav-item-icons" src="resources/images/college_world_icons/about__information_bar.png"></img>
+                                    School Traits
+                                </Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to='/students'>
                                     <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
                                     Students
@@ -56,6 +62,12 @@ export default class SideNavBar extends React.Component {
                                 <Link to='/faculty'>
                                     <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
                                     Faculty
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to='/finances'>
+                                    <img className="nav-item-icons" src="resources/images/college_world_icons/dollar_character.png"></img>
+                                    Finances
                                 </Link>
                             </li>
                             <li className="nav-item">
