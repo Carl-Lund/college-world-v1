@@ -7,9 +7,7 @@ import "react-table/react-table.css";
 export default class SportsRecordTable extends React.Component {
     constructor(props) {
         super(props);
-        //this.showTeam = showTeam()
         this.showDetails = this.showDetails.bind(this);
-        // this.sportsTeem = getSportsTeem(this.props.sports);
         this.showTeam = this.showTeam.bind(this);
         this.showProgressBar = this.showProgressBar.bind(this);
         this.imageMappings={"Women's Basketball": "resources/images/basketball.png",
@@ -27,7 +25,6 @@ export default class SportsRecordTable extends React.Component {
             Header: 'ICON',
             Cell: (row) => <div id={'sportIcon'}>
                 <img className="sport-icon" src={this.imageMappings[this.props.sports[row.index].sportName]}></img>
-
             </div>
             },
             {
