@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Added a new section in Buildings for Upgrades along with a button to view upgrades">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buildings/Buildings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
   <component name="ProjectViewState">
@@ -60,6 +63,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
@@ -171,6 +175,15 @@
       <workItem from="1599691090686" duration="1977000" />
       <workItem from="1600108188845" duration="1644000" />
       <workItem from="1600352218018" duration="638000" />
+      <workItem from="1600622197512" duration="602000" />
+      <workItem from="1600901823536" duration="1421000" />
+      <workItem from="1601305534566" duration="2659000" />
+      <workItem from="1601576535842" duration="1607000" />
+      <workItem from="1601922294699" duration="15942000" />
+      <workItem from="1603154644183" duration="989000" />
+      <workItem from="1603216248682" duration="4645000" />
+      <workItem from="1604248700981" duration="10465000" />
+      <workItem from="1604600399866" duration="1738000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -305,7 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574362307834</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added my name to FA2020">
+      <created>1600367547094</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1600367547094</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added a new section in Buildings for Upgrades along with a button to view upgrades">
+      <created>1602537021169</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1602537021169</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,32 +367,73 @@
     <MESSAGE value="Added resident news to buildings tab" />
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing for Allen" />
+    <MESSAGE value="Added my name to FA2020" />
+    <MESSAGE value="Added a new section in Buildings for Upgrades along with a button to view upgrades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new section in Buildings for Upgrades along with a button to view upgrades" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604516252011">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/78.0.1458.864@78.0.1458.864" timestamp="1604516252011" />
+    <state x="217" y="69" key="DiffContextDialog" timestamp="1602536968625">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="217" y="69" key="DiffContextDialog/78.0.1458.864@78.0.1458.864" timestamp="1602536968625" />
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom" timestamp="1604598337093">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1415" height="223" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026093" />
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom/78.0.1458.864@78.0.1458.864" timestamp="1604598337093" />
+    <state width="1415" height="135" key="GridCell.Tab.0.center" timestamp="1604598337093">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1415" height="223" key="GridCell.Tab.0.center/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.center/78.0.1458.864@78.0.1458.864" timestamp="1604598337093" />
+    <state width="1415" height="135" key="GridCell.Tab.0.left" timestamp="1604598337093">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1600110241004">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1415" height="223" key="GridCell.Tab.0.left/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.left/78.0.1458.864@78.0.1458.864" timestamp="1604598337093" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right" timestamp="1604598337093">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1415" height="223" key="GridCell.Tab.0.right/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right/78.0.1458.864@78.0.1458.864" timestamp="1604598337093" />
+    <state x="217" y="68" key="MergeDialog" timestamp="1603154972962">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="217" y="68" key="MergeDialog/78.0.1458.864@78.0.1458.864" timestamp="1603154972962" />
+    <state x="446" y="193" key="MultipleFileMergeDialog" timestamp="1603154960495">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="446" y="193" key="MultipleFileMergeDialog/78.0.1458.864@78.0.1458.864" timestamp="1603154960495" />
+    <state x="543" y="152" key="RollbackChangesDialog" timestamp="1602612956519">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="543" y="152" key="RollbackChangesDialog/78.0.1458.864@78.0.1458.864" timestamp="1602612956519" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1600367554650">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864@78.0.1458.864" timestamp="1600367554650" />
+    <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602613004927">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog/78.0.1458.864@78.0.1458.864" timestamp="1602613004927" />
+    <state x="2607" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604453012043">
+      <screen x="1920" y="6" width="1920" height="1040" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
+    <state x="2607" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604453012043" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@78.0.1458.864" timestamp="1604260280566" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864@78.0.1458.864" timestamp="1603154938949" />
   </component>
 </project>

@@ -1,11 +1,31 @@
 @charset "utf-8";
+.banner{
+    margin-top: 15px;
+}
+
+.achievements{
+    float: right;
+    margin-top: 15px;
+}
+
+.name{
+    float: left;
+    margin-top: 100px;
+}
 
 .Objectives-list ul{
     margin: 15px;
 }
 
-.Objectives-list{
+.curr-obj{
+    float: left;
+}
 
+.opt-obj{
+    float: left;
+}
+
+.Objectives-list{
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -13,6 +33,7 @@
 .Objectives-list h2{
     text-align: center
 }
+
 
 /*.Objectives-list h1 {*/
 /*    font-size: 90%;*/
