@@ -1,0 +1,19 @@
+
+.col-1{
+    background-color: whitesmoke;
+    border: black 5em;
+    max-width: 25%;
+}
+
+.card-title-1 {
+    text-align: center;
+    margin: auto;
+    width: 20%;
+}
+.buttons-2{
+    text-align: center;
+}
+
+#title{
+    text-align: center;
+}
