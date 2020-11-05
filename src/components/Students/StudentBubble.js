@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Students.css"
 import SideNavBar from "../Navigation/SideNavBar";
+import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
     constructor(props) {
@@ -13,7 +14,17 @@ export default class StudentsTable extends React.Component {
         return (
             <div className="studentElement" id={this.props.student.idNumber} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
                 onClick = {() => this.props.studentSwitch(this.props.studentNumber)}>
-                <img src= {this.props.student.avatarIcon.avatarUrl}></img>
+                <Avatar className="avatar" style={{height: '55px', width: '55px'}}
+                    avatarStyle='Circle'
+                    topType={this.props.student.avatar.top}
+                    facialHairType={this.props.student.avatar.facialHair}
+                    facialHairColor={this.props.student.avatar.facialHairColor}
+                    clotheType={this.props.student.avatar.clothes}
+                    eyeType={this.props.student.avatar.eyes}
+                    eyebrowType={this.props.student.avatar.eyebrows}
+                    mouthType={this.props.student.avatar.mouth}
+                    skinColor={this.props.student.avatar.skinColor}
+                />
                 <p>{this.props.student.name.split(" ")[1] + ", " + this.props.student.name.split(" ")[0].charAt(0)}</p>
             </div>
         );

@@ -75,3 +75,13 @@
 .studentHappinessBars h3{
     font-size: 120%;
 }
+
+.avatar {
+    height: 55px;
+    width: 55px;
+}
+.avatar:hover{
+    width: 60px;
+    height: 60px;
+    margin: 7.5px 10px 17.5px 12px;
+}
