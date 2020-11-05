@@ -4,27 +4,29 @@ import Card from 'react-bootstrap/Card';
 
 
 class TraitBox extends Component{
-
     render(){
+        function getColor(value) {
+            let temp;
+            if (value>=70)
+                temp='success';
+            else if (value<=66)
+                temp='danger';
+            else if (value<=33)
+                temp='warning';
+            return temp;
+        }
+        let color=getColor(this.props.rating);
         return(
-            <Card className="traitBox"style={{ width: '15m' }}>
-                <Card.Header>{this.props.label}</Card.Header>
-                <Card.Img variant="top" src={this.props.icon} />
+            <Card className="traitBox" border={color}>
+                <Card.Header className="label">{this.props.label}</Card.Header>
+                <Card.Img className='traits-icon' variant="top" src={this.props.icon} />
                 <Card.Body>
-                    <Card.Title>{this.props.rating}</Card.Title>
-                    <Card.Text>
+                    <Card.Title className="label">{this.props.rating}</Card.Title>
+                    <Card.Text className="boxcontent">
                         Describe what makes up the score for each of these traits.
                     </Card.Text>
-                    {/*<Button variant="primary">Go somewhere</Button>*/}
                 </Card.Body>
             </Card>
-            // <div className="traitBox">
-            //     <div className="boxcontent">
-            //         <img className="traits-icon" src={this.props.icon}></img>
-            //         <h3> {this.props.label}</h3>
-            //         <h4>{this.props.rating}</h4>
-            //     </div>
-            // </div>
             )
     }
 }

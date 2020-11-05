@@ -19,13 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="made a college traits page">
-      <change afterPath="$PROJECT_DIR$/src/components/College/TraitBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="made the trait boxes its own component and making them cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/College/Launch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/Launch.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/College/SchoolTraits.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/SchoolTraits.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/College/TraitBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/College/TraitBox.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,17 +90,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,7 +183,8 @@
       <workItem from="1603149661075" duration="743000" />
       <workItem from="1603744977683" duration="4688000" />
       <workItem from="1603805584629" duration="10412000" />
-      <workItem from="1604266177640" duration="17415000" />
+      <workItem from="1604266177640" duration="19905000" />
+      <workItem from="1604539574920" duration="8912000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -373,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602611599340</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="made the trait boxes its own component and making them cards">
+      <created>1604430373937</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1604430373937</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,29 +409,30 @@
     <MESSAGE value="added icons to the sports table" />
     <MESSAGE value="re-added the coaches table" />
     <MESSAGE value="added a column in the coaches table to show icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a column in the coaches table to show icons" />
+    <MESSAGE value="made the trait boxes its own component and making them cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the trait boxes its own component and making them cards" />
   </component>
   <component name="WindowStateProjectService">
     <state x="551" y="256" key="#ESLint" timestamp="1604268977445">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="551" y="256" key="#ESLint/0.0.1366.728@0.0.1366.728" timestamp="1604268977445" />
-    <state width="1323" height="49" key="GridCell.Tab.0.bottom" timestamp="1604364937873">
+    <state width="1323" height="49" key="GridCell.Tab.0.bottom" timestamp="1604541491776">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604364937873" />
-    <state width="1323" height="49" key="GridCell.Tab.0.center" timestamp="1604364937873">
+    <state width="1323" height="49" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604541491776" />
+    <state width="1323" height="49" key="GridCell.Tab.0.center" timestamp="1604541491775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604364937873" />
-    <state width="1323" height="49" key="GridCell.Tab.0.left" timestamp="1604364937873">
+    <state width="1323" height="49" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604541491775" />
+    <state width="1323" height="49" key="GridCell.Tab.0.left" timestamp="1604541491774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604364937873" />
-    <state width="1323" height="49" key="GridCell.Tab.0.right" timestamp="1604364937873">
+    <state width="1323" height="49" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604541491774" />
+    <state width="1323" height="49" key="GridCell.Tab.0.right" timestamp="1604541491776">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="49" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604364937873" />
+    <state width="1323" height="49" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604541491776" />
     <state x="129" y="55" key="MergeDialog" timestamp="1603832390834">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -445,14 +441,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1603832386951" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1603832684580">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604430418138">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603832684580" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603754761445">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604430418138" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604430389815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1603754761445" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1604430389815" />
     <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1601993730521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
