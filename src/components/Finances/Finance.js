@@ -33,7 +33,7 @@ export default class Finance extends React.Component {
                         <Col sm={4}><FinanceLog everything={this.props.everything}/></Col>
                         <Col sm={4}><FinanceLoanContract everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
 
-                        <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything}/></Col>
+                        <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>
                 </Container>
             </div>
