@@ -5,6 +5,7 @@ import News from "../News/News";
 import Tuition from "./Tuition";
 import PlayMode from "./PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
+import SchoolTraits from "../CollegeDashboard/SchoolTraits";
 
 export default class College extends React.Component {
 
@@ -26,10 +27,13 @@ export default class College extends React.Component {
                     </div>
 
                     <div className="row">
-                        <div className="col-sm-6">
+                        <div className="col-sm-4">
+                            <SchoolTraits />
+                        </div>
+                        <div className="col-sm-4">
                             <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
                         </div>
-                        <div className="col-sm-6">
+                        <div className="col-sm-4">
                             <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
                         </div>
 

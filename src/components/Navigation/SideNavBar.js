@@ -1,29 +1,25 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import Notification from "./NavigationModals/Notifications";
 
 export default class SideNavBar extends React.Component {
 
     render() {
-        return (
-            <aside className="col-md-2">
+
+        let collegeName = this.props.collegeName;
+        let currentBalance = this.props.everything.college.availableCash.toLocaleString();
+        let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
+        let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
+        let totalStudents = this.props.everything.college.numberStudentsAdmitted;
+
+        return(
+            <div className="col-md-2">
                 <nav className="sidebar bg-light col-md-2">
                     <div className="sidebar-sticky">
                         <img id="logo" src="resources/images/college_world_icons/logo.png"></img>
-
-                        {/*<div className="balance">*/}
-                        {/*    <img id="dollar-sign" src="resources/images/college_world_icons/dollar_character.png"></img>*/}
-                        {/*    <h3><strong>420,420</strong></h3>*/}
-                        {/*    <h5>Total Balance</h5>*/}
-                        {/*</div>*/}
-                        {/*<div className="nav flex-column">*/}
-                        {/*    <button type="button" className="navbar-toggle" data-toggle="collapse"*/}
-                        {/*            data-target="#myNavbar">*/}
-                        {/*        <span className="icon-bar"></span>*/}
-                        {/*        <span className="icon-bar"></span>*/}
-                        {/*        <span className="icon-bar"></span>*/}
-                        {/*    </button>*/}
-                        {/*</div>*/}
-                        {/*<div className="collapse navbar-collapse" id="myNavbar">*/}
                         <ul className="nav flex-column">
                             {/*<li className="nav-item"><Link to='/launch'>Launch</Link></li>*/}
                             <li className="nav-item">
@@ -74,8 +70,6 @@ export default class SideNavBar extends React.Component {
                                     Store
                                 </Link>
                             </li>
-                            {/*<li><Link to='/currentBalance'>Balance</Link></li>*/}
-                            {/*<li><Link to='/currentDay'>Current Day</Link></li>*/}
                             <li className="nav-item">
                                 <Link to='/about'>
                                     <img className="nav-item-icons" src="resources/images/college_world_icons/about__information_bar.png"></img>
@@ -90,10 +84,10 @@ export default class SideNavBar extends React.Component {
                             </li>
                         </ul>
                         {/*<button class="btn btn-success playmode">PLAY MODE</button>*/}
-                        {/*</div>*/}
                     </div>
                 </nav>
-            </aside>
+            </div>
+
         );
     }
 }

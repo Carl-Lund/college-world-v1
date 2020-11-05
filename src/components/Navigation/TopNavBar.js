@@ -1,39 +1,80 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-// import Badge from '@material-ui/core/Badge';
-// import MailIcon from '@material-ui/icons/Mail';
+import Button from "react-bootstrap/Button";
+import Notification from "./NavigationModals/Notifications";
+import Calendar from "./NavigationModals/Calendar";
+import Traits from "./NavigationModals/Traits";
 
-export default class SideNavBar extends React.Component {
+export default class TopNavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.fetchData = this.fetchData.bind(this);
+        this.state = {appear : false, calendarAppear : false, traitsAppear : false};
+
+        this.setShow = (value) => {this.setState({appear:value})}
+        this.handleClose = () => this.setShow(false);
+        this.handleShow = () => this.setShow(true);
+
+        this.setCalendarShow = (value) => {this.setState({calendarAppear:value})}
+        this.handleCloseCalendar = () => this.setCalendarShow(false);
+        this.handleShowCalendar = () => this.setCalendarShow(true);
+
+        this.setTraitsShow = (value) => {this.setState({traitsAppear:value})}
+        this.handleCloseTraits = () => this.setTraitsShow(false);
+        this.handleShowTraits = () => this.setTraitsShow(true);
+    }
+
+    fetchData() {
+        const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
+        fetch(address)
+            .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data)});
+    }
 
     render() {
-        let collegeName = "PlaceHolder";
-        // let collegeName = this.props.everything.collegeName;
+        let collegeName = this.props.collegeName;
+        let currentBalance = this.props.everything.college.availableCash.toLocaleString();
+        let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
+        let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
+        let totalStudents = this.props.everything.college.numberStudentsAdmitted;
 
         return (
             <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
-                <Navbar.Brand href="#home">{collegeName}</Navbar.Brand>
+                <Navbar.Brand href="/college">{collegeName}</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>Total Balance</Nav.Link>
-                        <Nav.Link>Seats Occupied</Nav.Link>
-                        <Nav.Link>Student Faculty Ratio</Nav.Link>
-                        <Nav.Link><button type="button" className="btn btn-primary">
-                            Notifications <span className="badge badge-light">4</span>
-                        </button></Nav.Link>
-                        {/*<NavDropdown title="Notifications" id="basic-nav-dropdown">*/}
-                        {/*    <NavDropdown.Item href="#action/3.1">Message 1</NavDropdown.Item>*/}
-                        {/*    <NavDropdown.Item href="#action/3.2">Message 2</NavDropdown.Item>*/}
-                        {/*    <NavDropdown.Item href="#action/3.3">Message 3</NavDropdown.Item>*/}
-                        {/*    <NavDropdown.Divider />*/}
-                        {/*    <NavDropdown.Item href="#action/3.4">*/}
-                            {/*</NavDropdown.Item>*/}
-                        {/*</NavDropdown>*/}
-                        <Nav.Link href="#link">Time Until Next Semester</Nav.Link>
+                        <Nav.Link>Net Balance: <br />
+                            ${currentBalance}</Nav.Link>
+                        <Nav.Link>Seats Occupied: <br />
+                            {totalStudents}</Nav.Link>
+                        <Nav.Link>Student Faculty Ratio:<br />
+                            {studentFacultyRatio}</Nav.Link>
+                        <Nav.Link >
+                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">4</span></Button>
+                            <Notification show={this.state.appear} handleClose={this.handleClose} />
+                        </Nav.Link>
+
                     </Nav>
+                </Navbar.Collapse>
+            <Navbar.Collapse class = "justify-content-end">
+                <Nav>
+                    <Nav.Item>
+                        <Button onClick={this.handleShowTraits} variant="info">Traits</Button>
+                        <Traits show={this.state.traitsAppear} handleClose={this.handleCloseTraits} />
+                    </Nav.Item>
+                    <Nav.Link href="#link">
+                        <Button onClick={this.handleShowCalendar} variant="light">Calendar
+                            <img className="nav-item-icons" src="resources/images/college_world_icons/sports.png"></img>
+                            <span className="badge badge-light">{timeUntilNextSemester}</span>
+                        </Button>
+                        <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
+                    </Nav.Link>
+                    <Nav.Link >
+                        <Button onClick={this.fetchData} variant="success">Jump To Next Day</Button>
+                    </Nav.Link>
+                </Nav>
                 </Navbar.Collapse>
             </Navbar>
         );
