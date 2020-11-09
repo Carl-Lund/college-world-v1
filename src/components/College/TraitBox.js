@@ -22,9 +22,7 @@ class TraitBox extends Component{
                 <Card.Img className='traits-icon' variant="top" src={this.props.icon} />
                 <Card.Body>
                     <Card.Title className="label">{this.props.rating}</Card.Title>
-                    <Card.Text className="boxcontent">
-                        Describe what makes up the score for each of these traits.
-                    </Card.Text>
+                    <Card.Text className="boxcontent">{this.props.description}</Card.Text>
                 </Card.Body>
             </Card>
             )
