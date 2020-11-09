@@ -8,12 +8,20 @@ import Objectives from "../Objectives/Objectives";
 import Store from "../Store/Store";
 import About from "../About/About";
 import Buildings from "../Buildings/Buildings";
+import Admissions from "../Admissions/Admissions";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
-import Admissions from "../Admissions/Admissions";
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+import SideNavBar from '../Navigation/SideNavBar'
+import TopNavBar from '../Navigation/TopNavBar'
+import NavLink from 'react-bootstrap/NavLink'
 import PlayMode from "../College/PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
+import SchoolTraits from "../College/SchoolTraits";
+import Finance from "../Finances/Finance";
 
 
 export default class App extends React.Component {
@@ -28,6 +36,8 @@ export default class App extends React.Component {
         this.setCollegeName = this.setCollegeName.bind(this)
         this.setLaunchStatus = this.setLaunchStatus.bind(this)
         this.changeTimeFunction = this.changeTimeFunction.bind(this);
+        this.getNavBar = this.getNavBar.bind(this);
+        this.getSideBar = this.getSideBar.bind(this);
 
         this.timing = 2000;
         this.debugDaySpeedRef = React.createRef();
@@ -109,114 +119,48 @@ export default class App extends React.Component {
             });
     }
 
+    getNavBar() {
+        const {launchStatus, everything, collegeName} = this.state;
+        if((everything === null) || (everything === "")) {
+            if(window.location.pathname!="/launch")
+                return (<a href="/launch">go to /launch</a>);
+            else
+                return (<div/>);
+        }
+
+        return (<TopNavBar collegeName={collegeName} everything={everything} replaceEverything={this.replaceEverything}/>);
+
+    }
+
+    getSideBar() {
+        const {launchStatus, everything, collegeName} = this.state;
+
+        if((everything === null) || (everything === "")) {
+            return (<div/>);
+        }
+
+        return (<SideNavBar collegeName={collegeName} everything={everything}/>);
+    }
+
     render() {
         const {launchStatus, everything, collegeName} = this.state;
-        // if (launchStatus || !everything ) {
-        //     return (<div><CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} setLaunchStatus={this.setLaunchStatus} /></div>);
-        // }
 
         return (
             <div>
                 <Router>
                     <div className="container-fluid">
-
-                    <div className="row">
-                        <aside className="col-md-2">
-
-                            <nav className="sidebar bg-light col-md-2">
-                                <div className="sidebar-sticky">
-                                    <img id="logo" src="resources/images/college_world_icons/logo.png"></img>
-
-                                    {/*<div className="balance">*/}
-                                    {/*    <img id="dollar-sign" src="resources/images/college_world_icons/dollar_character.png"></img>*/}
-                                    {/*    <h3><strong>420,420</strong></h3>*/}
-                                    {/*    <h5>Total Balance</h5>*/}
-                                    {/*</div>*/}
-                                    {/*<div className="nav flex-column">*/}
-                                    {/*    <button type="button" className="navbar-toggle" data-toggle="collapse"*/}
-                                    {/*            data-target="#myNavbar">*/}
-                                    {/*        <span className="icon-bar"></span>*/}
-                                    {/*        <span className="icon-bar"></span>*/}
-                                    {/*        <span className="icon-bar"></span>*/}
-                                    {/*    </button>*/}
-                                    {/*</div>*/}
-                                    {/*<div className="collapse navbar-collapse" id="myNavbar">*/}
-                                        <ul className="nav flex-column">
-                                            {/*<li className="nav-item"><Link to='/launch'>Launch</Link></li>*/}
-                                            <li className="nav-item">
-                                                <Link to='/college'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/dashboard_information_bar.png"></img>
-                                                    Dashboard
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/students'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
-                                                    Students
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/admissions'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
-                                                    Admissions
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/building'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/buildings_information_bar.png"></img>
-                                                    Building
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/sports'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/sports_information_bar.png"></img>
-                                                    Sports
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/faculty'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
-                                                    Faculty
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/objectives'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/objectives_information_bar.png"></img>
-                                                    Objectives
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/store'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/store_information_bar.png"></img>
-                                                    Store
-                                                </Link>
-                                            </li>
-                                            {/*<li><Link to='/currentBalance'>Balance</Link></li>*/}
-                                            {/*<li><Link to='/currentDay'>Current Day</Link></li>*/}
-                                            <li className="nav-item">
-                                                <Link to='/about'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/about__information_bar.png"></img>
-                                                    About
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link to='/launch'>
-                                                    <img className="nav-item-icons" src="resources/images/college_world_icons/exit_information_bar.png"></img>
-                                                    Exit
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    {/*<button class="btn btn-success playmode">PLAY MODE</button>*/}
-                                    {/*</div>*/}
-                                </div>
-                            </nav>
-                        </aside>
+                        {this.getNavBar()}
+                        <div className="row">
+                        {this.getSideBar()}
                         <main className="col-md-10">
                             <Route path="/launch" render={() => <CollegeOpenCreate collegeName={collegeName} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  setLaunchStatus={this.setLaunchStatus}/>} />
+                            <Route path="/schooltraits" render={() => <SchoolTraits everything={everything} />} />
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
                             <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/students" render={() => <Students everything={everything} />} />
+                            <Route path="/admissions" render={() => <Admissions everything={everything} />} />
+                            <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                             <Route path="/store" render={() => <Store everything={everything} />} />
                             <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />
@@ -224,7 +168,6 @@ export default class App extends React.Component {
                             <Route path="/about" render={() => <About everything={everything} />} />
                             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
                             <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
-                            <Route path="/admissions" render={() => <Admissions everything={everything} replaceEverything={this.replaceEverything} />} />
                         </main>
                     </div>
                 </div>

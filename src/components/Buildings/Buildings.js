@@ -1,14 +1,8 @@
 import React from 'react';
 import News from "../News/News";
-import Navigation from "../Navigation/Navigation";
+import SideNavBar from "../Navigation/SideNavBar";
 import ReactTable from "react-table";
 import Select from "react-select";
-import PopupEventHandler from "../PopupEvents/PopupEventHandler";
-import CurrentLevel from "../CurrentLevel/CurrentLevel";
-import CollegeDashboard from "../CollegeDashboard/CollegeDashboard";
-import PlayMode from "../College/PlayMode";
-import StudentBubble from "../Students/StudentBubble";
-
 
 export default class Buildings extends React.Component {
 
@@ -23,7 +17,6 @@ export default class Buildings extends React.Component {
         this.purchaseBuilding = this.purchaseBuilding.bind(this);
         this.handleSelectBuildingChoice = this.handleSelectBuildingChoice.bind(this);
         this.handleNewBuildingChange = this.handleNewBuildingChange.bind(this);
-        this.filter = React.createRef();
     }
 
     handleSelectBuildingChoice(value) {
@@ -41,29 +34,6 @@ export default class Buildings extends React.Component {
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
-        // return(
-        // <div>
-        //     <PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-        //     <div className="container">
-        //         <div className="row">
-        //             <CurrentLevel everything={this.props.everything} changeTimeFunction={this.props.changeTimeFunction} replaceEverything={this.props.replaceEverything}/>
-        //         </div>
-        //         <div className="row">
-        //             <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-        //         </div>
-        //
-        //         <div className="row">
-        //             <div className="col-sm-6">
-        //                 <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
-        //             </div>
-        //             <div className="col-sm-6">
-        //                 <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
-        //             </div>
-        //
-        //             <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-        //         </div>
-        //     </div>
-        // </div>);
     }
 
     repairBuilding(e) {
@@ -83,45 +53,45 @@ export default class Buildings extends React.Component {
             });
     }
 
-    //returns the image of the specific building type
     getImage(type){
-        if (type === "DORM"){
+        if (type == "DORM"){
             return ("resources/images/DORM.png");
         }
-        else if (type === "ACADEMIC"){
+        else if (type == "ACADEMIC"){
             return ("resources/images/ACADEMIC.png");
         }
-        else if (type === "ADMIN"){
+        else if (type == "ADMIN"){
             return ("resources/images/ADMIN.png")
         }
-        else if (type === "DINING"){
+        else if (type == "DINING"){
             return ("resources/images/DINING.png");
         }
-        else if (type === "DORM"){
+        else if (type == "DORM"){
             return ("resources/images/DORM.png");
         }
-        else if (type === "ENTERTAINMENT"){
+        else if (type == "ENTERTAINMENT"){
             return ("resources/images/ENTERTAINMENT.png");
         }
-        else if (type === "HEALTH"){
+        else if (type == "HEALTH"){
             return ("resources/images/HEALTH.png");
         }
-        else if (type === "LIBRARY"){
+        else if (type == "LIBRARY"){
             return ("resources/images/LIBRARY.png");
         }
-        else if (type === "SPORTS"){
+        else if (type == "SPORTS"){
             return ("resources/images/stadium.png");
         }
-        else if (type === "BASEBALL DIAMOND"){
+        else if (type == "BASEBALL DIAMOND"){
             return ("resources/images/BASEBALL DIAMOND.png");
         }
-        else if (type === "FOOTBALL DIAMOND"){
+        else if (type == "FOOTBALL DIAMOND"){
             return ("resources/images/FOOTBALL STADIUM.png");
         }
-        else if (type === "HOCKEY RINK"){
+        else if (type == "HOCKEY RINK"){
             return ("resources/images/HOCKEY RINK");
         }
     }
+
 
     render() {
         if (!this.props.everything) {
@@ -168,79 +138,58 @@ export default class Buildings extends React.Component {
             let upgradeButton = [];
             let repairButton = [];
 
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DORM") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DINING") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
                 availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "ACADEMIC") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
                 availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }
-            if (!buildingFiltersOptions.includes(<option
-                value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>)) {
-                buildingFiltersOptions.push(<option
-                    value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>);
+            if(!buildingFiltersOptions.includes(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>)){
+                buildingFiltersOptions.push(<option value={this.props.everything.buildings[i].kindOfBuilding}>{this.props.everything.buildings[i].kindOfBuilding}</option>);
             }
 
             if (this.props.everything.buildings[i].hoursToComplete > 0) {
-                status = String((this.props.everything.buildings[i].hoursToComplete / 24)) + " days remaining";
+                status = String((this.props.everything.buildings[i].hoursToComplete/24)) + " days remaining";
             } else {
                 status = "Built";
             }
 
             if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
                 && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
-                upgradeButton.push(
-                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}}
-                            onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade
-                        (${this.props.everything.buildings[i].upgradeCost})</button>
+                upgradeButton.push (
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
                 )
             }
 
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
                 && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
-                repairButton.push(
-                    <button type="submit" className="btn btn-info"
-                            style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}}
-                            onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair
-                        (${this.props.everything.buildings[i].repairCost})</button>
+                repairButton.push (
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
                 )
             }
 
-            // needs to only push to building if filter value is the current building type
-            // if(this.props.everything.filter == this.props.everything.buildings[i].kindOfBuilding || this.props.everything.filter === "All Buildings") {
-            if(this.filter === this.filter) {
-                console.log("test");
-                console.log(this.filter)
-                building.push(
-                    <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
-                    <td style={tdStyle}><img className="img-responsive"
-                                             src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}
-                    </td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
-                    <td style={tdStyle}>
-                        <div className="progress">
-                            <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0}
-                                 aria-valuemax={100} style={{
-                                borderRadius: '5px',
-                                width: Math.floor(120 * (this.props.everything.buildings[i].shownQuality / 100))
-                            }}>
-                                {Math.floor(this.props.everything.buildings[i].shownQuality)}%
-                            </div>
-                        </div>
-                    </td>,
-                    <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
-                    <td style={tdStyle}>{status}</td>,
-                    <td style={tdStyle}>{upgradeButton}{repairButton}</td>
-                )
+            building.push(
+                <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
+                <td style={tdStyle}><img className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
+                <td style={tdStyle}><div className="progress">
+                    <div className="progress-bar progress-bar-info" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{borderRadius: '5px', width: Math.floor(120*(this.props.everything.buildings[i].shownQuality/100))}}>
+                        {Math.floor(this.props.everything.buildings[i].shownQuality)}%
+                    </div>
+                </div></td>,
+                <td style={tdStyle}>{this.props.everything.buildings[i].curDisaster}</td>,
+                <td style={tdStyle}>{status}</td>,
+                <td style={tdStyle}>{upgradeButton}{repairButton}</td>
+            )
             table.push(<tr style={trStyle}>{building}</tr>)
-        }}
-
+        }
 
         let cashColor = "white";
         // this.handleSelectBuildingChoice(value)this.state.buildingChoice)
@@ -264,27 +213,6 @@ export default class Buildings extends React.Component {
 
         return (
             <div>
-                <PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                {/*<div className="col-sm-4">*/}
-                {/*    <div className="row">*/}
-                {/*        <div className="col-sm-6">*/}
-                {/*            <button type="button" onClick={this.nextTip} className="btn btn-primary">Next Tip</button>*/}
-                {/*        </div>*/}
-                {/*        <div className="col-sm-6">*/}
-                {/*            <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}*/}
-                {/*            </button>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="row">*/}
-                {/*        <div id="hideTips" className="collapse">*/}
-                {/*            <div className="jumbotronTransp">*/}
-                {/*                <h3>{this.state.tipsText}{console.log(this.state.tipsText)}</h3>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-
             <div className="container">
                 <div className="jumbotron">
                     <div className="row">
@@ -315,7 +243,7 @@ export default class Buildings extends React.Component {
                     <div className="col-sm-5">
                         <div className="form-group">
                             <label>Filter by Building Type</label>
-                        <select ref={this.filter} onChange={this.updateTable} className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
+                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
                             <option value="All Buildings">All Buildings</option>
                             {buildingFiltersOptions}
                         </select>
