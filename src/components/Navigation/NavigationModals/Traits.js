@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import TraitBox from "../../College/TraitBox";
 
 export default class Traits extends React.Component {
     render() {
@@ -21,10 +22,24 @@ export default class Traits extends React.Component {
                 <Modal.Body className="show-grid">
                     <Container>
                         <Row>
-                            <Col className="col-sm-3">Trait 1</Col>
-                            <Col className="col-sm-3">Trait 2</Col>
-                            <Col className="col-sm-3">Trait 3</Col>
-                            <Col className="col-sm-3">Trait 4</Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/academictrait.png"} label={'Academics:'} rating={this.props.everything.college.academicRating}/>
+                            </Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/athletictrait.png"} label={'Athletics:'} rating={this.props.everything.college.athleticRating}/>
+                            </Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/infastructuretrait.png"} label={'Infrastructure:'} rating={this.props.everything.college.infrastructureRating}/>
+                            </Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/safetytrait.png"} label={'Safety:'} rating={this.props.everything.college.safetyRating}/>
+                            </Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue}/>
+                            </Col>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating}/>
+                            </Col>
                         </Row>
                     </Container>
                 </Modal.Body>
