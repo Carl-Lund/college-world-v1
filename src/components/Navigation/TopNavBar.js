@@ -62,7 +62,7 @@ export default class TopNavBar extends React.Component {
                 <Nav>
                     <Nav.Item>
                         <Button onClick={this.handleShowTraits} variant="info">Traits</Button>
-                        <Traits show={this.state.traitsAppear} handleClose={this.handleCloseTraits} />
+                        <Traits everything={this.props.everything} show={this.state.traitsAppear} handleClose={this.handleCloseTraits} />
                     </Nav.Item>
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">Calendar
