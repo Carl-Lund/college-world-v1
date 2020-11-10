@@ -22,7 +22,7 @@ class TraitBox extends Component{
         // console.log(this.props.rating);
         // console.log(color);
         return(
-            <Card className="traitBox" border={color}>
+            <Card border={color}>
                 <Card.Header className="label">{this.props.label}</Card.Header>
                 <Card.Img className='traits-icon' variant="top" src={this.props.icon} />
                 <Card.Body>
