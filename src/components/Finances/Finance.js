@@ -57,13 +57,13 @@ export default class Finance extends React.Component {
 
                         <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>
-                </Container>
-                <div className="value-tips">
-                    <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
-                    <div id="hideTips">
-                        <TipsBox everything = {this.props.everything} name = {'Value'} tips = {this.props.everything.college.collegeTips.valueTips}/>
+                    <div className="value-tips">
+                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
+                        <div id="hideTips">
+                            <TipsBox everything = {this.props.everything} name = {'Value'} tips = {this.props.everything.college.collegeTips.valueTips}/>
+                        </div>
                     </div>
-                </div>
+                </Container>
             </div>
         );
     }
