@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
+import TipsBox from "../College/TipsBox";
 
 export default class Faculty extends React.Component{
 
@@ -8,9 +9,27 @@ export default class Faculty extends React.Component{
         super(props);
         this.fireFaculty = this.fireFaculty.bind(this);
         this.facultySwitch = this.facultySwitch.bind(this);
+        this.hideShowTipsText = this.hideShowTipsText.bind(this);
         this.state = {
-            selectedFaculty: 0
+            selectedFaculty: 0,
+            hideShowTipsText : "Show Tips",
+            isHide: false,
+            showNextTip: true
         }
+    }
+
+    hideShowTipsText = () => {
+        let tips = document.getElementById('hideTips');
+        if(this.state.isHide){
+            this.state.hideShowTipsText = "Hide tips"
+            this.setState({isHide: false})
+            tips.style.display = "block";
+        }else {
+            this.state.hideShowTipsText = "Show tips"
+            this.setState({isHide: true})
+            tips.style.display = "none";
+        }
+        this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
 
     facultySwitch = (s) => {
@@ -27,17 +46,15 @@ export default class Faculty extends React.Component{
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
-        console.log("UPDATE EVERYTHING DAMMIT " + address);
     }
 
     giveRaise(){
-        console.log("GIVIN SOME FUCKIN CASH");
         const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/raise/" + this.state.selectedFaculty + "/";
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
-        console.log("UPDATE EVERYTHING DAMMIT");
+        console.log("UPDATE EVERYTHING");
     }
 
     getListAsOpts(listOfOptions){
@@ -87,6 +104,12 @@ export default class Faculty extends React.Component{
                     </div>
                     <div className="title">
                         <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>
+                    </div>
+                    <div className="faculty-tips">
+                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
+                        <div id="hideTips">
+                            <TipsBox everything = {this.props.everything} name = {'Academic'} tips = {this.props.everything.college.collegeTips.academicTips}/>
+                        </div>
                     </div>
 
                 </div>

@@ -3,6 +3,8 @@ import News from "../News/News";
 import SideNavBar from "../Navigation/SideNavBar";
 import ReactTable from "react-table";
 import Select from "react-select";
+import "./buildings.css"
+import TipsBox from "../College/TipsBox";
 
 export default class Buildings extends React.Component {
 
@@ -10,13 +12,17 @@ export default class Buildings extends React.Component {
         super(props);
         this.state = {
             buildingChoice: 'Academic Center',
-            buildingName: ''
+            buildingName: '',
+            hideShowTipsText : "Show Tips",
+            isHide: false,
+            showNextTip: true
         };
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
         this.repairBuilding = this.repairBuilding.bind(this);
         this.purchaseBuilding = this.purchaseBuilding.bind(this);
         this.handleSelectBuildingChoice = this.handleSelectBuildingChoice.bind(this);
         this.handleNewBuildingChange = this.handleNewBuildingChange.bind(this);
+        this.hideShowTipsText = this.hideShowTipsText.bind(this);
     }
 
     handleSelectBuildingChoice(value) {
@@ -51,6 +57,20 @@ export default class Buildings extends React.Component {
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
+    }
+
+    hideShowTipsText = () => {
+        let tips = document.getElementById('hideTips');
+        if (this.state.isHide){
+            this.state.hideShowTipsText = "Hide tips"
+            this.setState({isHide: false})
+            tips.style.display = "block";
+        }else {
+            this.state.hideShowTipsText = "Show tips"
+            this.setState({isHide: true})
+            tips.style.display = "none";
+        }
+        this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
 
     getImage(type){
@@ -239,19 +259,30 @@ export default class Buildings extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="tips">
+                    <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
+                    <div id="hideTips">
+                        <div className="building-tips">
+                            <TipsBox everything = {this.props.everything} name = {'Infrastructure'} tips = {this.props.everything.college.collegeTips.infrastructureTips}/>
+                        </div>
+                        <div className="safety-tips">
+                            <TipsBox everything = {this.props.everything} name = {'Safety'} tips = {this.props.everything.college.collegeTips.safetyTips}/>
+                        </div>
+                    </div>
+                </div>
                 <div className="well well-sm" >
                     <div className="col-sm-5">
                         <div className="form-group">
                             <label>Filter by Building Type</label>
-                        <select className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
-                            <option value="All Buildings">All Buildings</option>
-                            {buildingFiltersOptions}
-                        </select>
-                        <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
+                            <select className="form-control" id="sortByBuildingType" name="sortByBuildingType" style={{width: '160px'}}>
+                                <option value="All Buildings">All Buildings</option>
+                                {buildingFiltersOptions}
+                            </select>
+                            <input type="submit" className="btn btn-info" name="startSortByBuildingType" value="Filter"
                                style={{marginTop: '5px'}}>
-                        </input>
+                            </input>
+                        </div>
                     </div>
-                </div>
                 <table className="table table-condensed" style={tableStyle}>
                     <tbody>
                         <tr style={trStyle}>

@@ -14,7 +14,6 @@ export default class LoanTab extends React.Component {
     }
 
     makePayment() {
-        console.log("Made it to the function")
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/college/" + this.props.everything.college.runId + "/makePayment/" + encodeURI(this.amount) + "/" + encodeURI(this.props.num)
         fetch(address)
             .then(response => response.json())

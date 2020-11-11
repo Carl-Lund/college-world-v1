@@ -1,0 +1,19 @@
+.tips-box {
+    width: 95%;
+    border: 3px solid black;
+    background-color: lightseagreen;
+}
+
+.tips-button {
+    margin-left: .5em;
+    margin-bottom: .25em;
+}
+
+.tips-header {
+    padding-top: .25em;
+    text-align: center;
+}
+
+.tips-text {
+    padding: .25em;
+}
