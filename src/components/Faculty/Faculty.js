@@ -40,6 +40,41 @@ export default class Faculty extends React.Component{
         console.log("UPDATE EVERYTHING DAMMIT");
     }
 
+    getListAsOpts(listOfOptions){
+        let results = [];
+        if(listOfOptions != null) {
+            for (let i = 0; i < listOfOptions.length; i++) {
+                results.push(
+                    <option>{listOfOptions[i]}</option>
+                )
+            }
+        }
+        return results;
+    }
+
+    hireFacultyComponent(academics){
+        return (<div className="col-sm-4">
+            <div className="well well-sm">
+                <div className="form-group">
+                    <label id="salaryLabel">Pick an annual salary, a department, and a position
+                        if you would like to add a new faculty member</label>
+                </div>
+                <div className="form-group">
+                    <select className="form-control" id="salaryDropdown" name="salaryDropdown">
+                        {this.getListAsOpts(academics.facultySalaries)}
+                    </select>
+                    <br/>
+                    <select class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
+                        {this.getListAsOpts(academics.schools)}
+                    </select>
+                    <br/>
+                    <input type=" submit" class=" btn btn-info" name=" addFaculty" value=" Add Faculty"/><br/>
+                    <br/>
+                </div>
+            </div>
+        </div>);
+    }
+
     render() {
         this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch);
 
@@ -83,8 +118,9 @@ export default class Faculty extends React.Component{
                     </div>
                 </div>
 
+                {this.hireFacultyComponent(this.props.everything.academics)}
 
-                <div className="clearfix"></div>
+
                 <FacultyRatings everything = {this.props.everything}/>
 
             </div>

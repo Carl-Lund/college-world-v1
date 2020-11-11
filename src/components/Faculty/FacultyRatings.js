@@ -12,11 +12,11 @@ export default class FacultyRatings extends React.Component{
             <div className="text-center">
                 <h3><b>Academic Department Ratings</b></h3>
                 <table className="table table-condensed" id="tableContainer">
-                    <thread>
+                    <thead>
                         <tr>
                             <th>Department names</th>
                         </tr>
-                    </thread>
+                    </thead>
                     <tbody>
                     <tr><td>Nursing: 75</td></tr>
                     <tr><td>Sports Science and Fitness: 75</td></tr>
