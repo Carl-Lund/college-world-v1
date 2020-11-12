@@ -30,11 +30,12 @@ export default class PopupEventHandler extends React.Component {
                 {noEvents ? (
                     <div></div>
                 ) : (
-                    <Modal show={true} id="eventPopUp">
-                        <div className="modal-content" style={{maxHeight: "650px", overflow: "scroll"}}>
+                    // <Modal show={true} id="eventPopUp"> {/*</Modal>*/}
+                    // className="modal-content" style={{maxHeight: "650px", overflow: "scroll"}}
+                        <div >
                             {this.allEvents}
                         </div>
-                    </Modal>
+
                 )}
             </div>
         );

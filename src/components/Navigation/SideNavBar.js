@@ -42,7 +42,7 @@ export default class SideNavBar extends React.Component {
                             </li>
                             <li className="nav-item">
                                 <Link to='/admissions'>
-                                    <img className="nav-item-icons" src="resources/images/college_world_icons/students_information_bar.png"></img>
+                                    <img className="nav-item-icons" src="resources/images/college_world_icons/admission.png"></img>
                                     Admissions
                                 </Link>
                             </li>
