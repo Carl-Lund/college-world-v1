@@ -17,7 +17,7 @@ export default class College extends React.Component {
 
         return (
             <div>
-                <PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                {/*<PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>*/}
                 <div className="container">
                     <div className="row">
                         <CurrentLevel everything={this.props.everything} changeTimeFunction={this.props.changeTimeFunction} replaceEverything={this.props.replaceEverything}/>
