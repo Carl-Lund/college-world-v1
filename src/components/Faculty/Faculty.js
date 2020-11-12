@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
+import StudentFeedback from "../Students/StudentFeedback";
+import Avatar from "avataaars-updated";
 
 export default class Faculty extends React.Component{
 
@@ -60,6 +62,17 @@ export default class Faculty extends React.Component{
                     </div>
 
                 <div className="col-md-4">
+                    {/*<Avatar className="avatar" style={{height: '55px', width: '55px'}}*/}
+                    {/*        avatarStyle='Circle'*/}
+                    {/*        topType={this.props.everything.avatar.top}*/}
+                    {/*        facialHairType={this.props.member.avatar.facialHair}*/}
+                    {/*        facialHairColor={this.props.member.avatar.facialHairColor}*/}
+                    {/*        clotheType={this.props.member.avatar.clothes}*/}
+                    {/*        eyeType={this.props.member.avatar.eyes}*/}
+                    {/*        eyebrowType={this.props.member.avatar.eyebrows}*/}
+                    {/*        mouthType={this.props.member.avatar.mouth}*/}
+                    {/*        skinColor={this.props.member.avatar.skinColor}*/}
+                    {/*/>*/}
                     {this.facultyTable}
                 </div>
 
@@ -68,7 +81,7 @@ export default class Faculty extends React.Component{
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
                         <h3>{this.props.everything.faculty[this.state.selectedFaculty].facultyName}</h3>
-                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].department}</h3>
+                        <h3>Department: {this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
                         <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary}</h3>
                         <h3>ID: {this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
                         <h3>Happiness: {this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
@@ -85,6 +98,9 @@ export default class Faculty extends React.Component{
 
 
                 <div className="clearfix"></div>
+                <br/>
+                <br/>
+                <br/>
                 <FacultyRatings everything = {this.props.everything}/>
 
             </div>
