@@ -72,7 +72,7 @@ export default class TopNavBar extends React.Component {
                         <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
                     <Nav.Link >
-                        <Button onClick={this.fetchData} variant="success">Jump To Next Day</Button>
+                        <Button onClick={this.fetchData} variant="success">Jump To Next Week</Button>
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
