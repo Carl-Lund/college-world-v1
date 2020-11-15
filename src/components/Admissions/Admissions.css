@@ -17,3 +17,9 @@
 #title{
     text-align: center;
 }
+
+.admissions{
+    background-color: gray;
+    border: black 5em;
+    max-width: 100%;
+}

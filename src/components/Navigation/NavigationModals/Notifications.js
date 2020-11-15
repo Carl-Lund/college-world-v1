@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import PopupEventHandler from "../../PopupEvents/PopupEventHandler";
 
 export default class Notifications extends React.Component {
     render() {
@@ -20,17 +21,7 @@ export default class Notifications extends React.Component {
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
-                        <Row>
-                            <Col>
-                                Notification 1
-                            </Col>
-                        </Row>
-
-                        <Row>
-                            <Col>
-                                Notification 2
-                            </Col>
-                        </Row>
+                        <PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
