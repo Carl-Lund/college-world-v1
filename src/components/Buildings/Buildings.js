@@ -20,16 +20,20 @@ export default class Buildings extends React.Component {
         this.state = {
             buildingChoice: 'Academic Center',
             buildingName: '',
-            hideShowTipsText : "Show Tips",
-            isHide: false,
-            showNextTip: true
+            hideShowTipsTextBuilding : "Show Tips",
+            isHideBuilding: false,
+            showNextTipBuilding: true,
+            hideShowTipsTextSafety : "Show Tips",
+            isHideSafety: false,
+            showNextTipSafety: true
         };
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
         this.repairBuilding = this.repairBuilding.bind(this);
         this.purchaseBuilding = this.purchaseBuilding.bind(this);
         this.handleSelectBuildingChoice = this.handleSelectBuildingChoice.bind(this);
         this.handleNewBuildingChange = this.handleNewBuildingChange.bind(this);
-        this.hideShowTipsText = this.hideShowTipsText.bind(this);
+        this.hideShowTipsTextBuilding = this.hideShowTipsTextBuilding.bind(this);
+        this.hideShowTipsTextSafety = this.hideShowTipsTextSafety.bind(this);
     }
 
     handleSelectBuildingChoice(value) {
@@ -66,18 +70,32 @@ export default class Buildings extends React.Component {
             });
     }
 
-    hideShowTipsText = () => {
-        let tips = document.getElementById('hideTips');
-        if (this.state.isHide){
-            this.state.hideShowTipsText = "Hide tips"
-            this.setState({isHide: false})
+    hideShowTipsTextBuilding = () => {
+        let tips = document.getElementById('building-tips');
+        if (this.state.isHideBuilding){
+            this.state.hideShowTipsTextBuilding = "Hide tips"
+            this.setState({isHideBuilding: false})
             tips.style.display = "block";
         }else {
-            this.state.hideShowTipsText = "Show tips"
-            this.setState({isHide: true})
+            this.state.hideShowTipsTextBuilding = "Show tips"
+            this.setState({isHideBuilding: true})
             tips.style.display = "none";
         }
-        this.setState({ hideShowTipsText: this.state.hideShowTipsText});
+        this.setState({ hideShowTipsTextBuilding: this.state.hideShowTipsTextBuilding});
+    }
+
+    hideShowTipsTextSafety = () => {
+        let tips = document.getElementById('safety-tips');
+        if (this.state.isHideSafety){
+            this.state.hideShowTipsTextSafety = "Hide tips"
+            this.setState({isHideSafety: false})
+            tips.style.display = "block";
+        }else {
+            this.state.hideShowTipsTextSafety = "Show tips"
+            this.setState({isHideSafety: true})
+            tips.style.display = "none";
+        }
+        this.setState({ hideShowTipsTextSafety: this.state.hideShowTipsTextSafety});
     }
 
     getImage(type){
