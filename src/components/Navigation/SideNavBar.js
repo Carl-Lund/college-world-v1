@@ -66,7 +66,7 @@ export default class SideNavBar extends React.Component {
                             </li>
                             <li className="nav-item">
                                 <Link to='/finances'>
-                                    <img className="nav-item-icons" src="resources/images/college_world_icons/dollar_character.png"></img>
+                                    <img className="nav-item-icons" src="resources/images/college_world_icons/dollar_character.png" height="27"></img>
                                     Finances
                                 </Link>
                             </li>

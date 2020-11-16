@@ -1,5 +1,6 @@
 import React from "react";
 import TipsBox from "../College/TipsBox";
+import "./buildings.css"
 
 export default class Tips extends React.Component {
 

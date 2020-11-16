@@ -41,28 +41,29 @@ export default class Finance extends React.Component {
                 <h1>College Finances</h1>
                 <Container>
                     <Row>
+                        <Col sm={4}>
+                            <div className="value-tips">
+                                <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
+                                <div id="hideTips">
+                                    <TipsBox everything = {this.props.everything} name = {'Value'} tips = {this.props.everything.college.collegeTips.valueTips}/>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
                         <Col sm={4}><FinanceTable everything={this.props.everything}/></Col>
                         <Col sm={4}></Col>
                     </Row>
                     {/*Following row adds some vertical padding to the page*/}
                     <Row>
-                        <Col sm={4}>
-                            <br></br><br></br>
-                        </Col>
+                        <Col sm={4}><br></br><br></br></Col>
                         <Col sm={4}><br></br><br></br></Col>
                     </Row>
                     <Row>
                         <Col sm={4}><FinanceLog everything={this.props.everything}/></Col>
                         <Col sm={4}><FinanceLoanContract everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
-
                         <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>
-                    <div className="value-tips">
-                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
-                        <div id="hideTips">
-                            <TipsBox everything = {this.props.everything} name = {'Value'} tips = {this.props.everything.college.collegeTips.valueTips}/>
-                        </div>
-                    </div>
                 </Container>
             </div>
         );
