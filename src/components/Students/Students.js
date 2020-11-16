@@ -17,7 +17,7 @@ export default class Students extends React.Component {
         this.hideShowTipsText = this.hideShowTipsText.bind(this);
         this.state = {
             selectedStudent: 0,
-            hideShowTipsText : "Show Tips",
+            hideShowTipsText : "Hide Tips",
             isHide: false,
             showNextTip: true
         };
