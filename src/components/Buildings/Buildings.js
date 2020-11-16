@@ -20,10 +20,10 @@ export default class Buildings extends React.Component {
         this.state = {
             buildingChoice: 'Academic Center',
             buildingName: '',
-            hideShowTipsTextBuilding : "Show Tips",
+            hideShowTipsTextBuilding : "Hide Tips",
             isHideBuilding: false,
             showNextTipBuilding: true,
-            hideShowTipsTextSafety : "Show Tips",
+            hideShowTipsTextSafety : "Hide Tips",
             isHideSafety: false,
             showNextTipSafety: true
         };
@@ -261,7 +261,7 @@ export default class Buildings extends React.Component {
                             takenPlates={takenPlates} availableDesks={availableDesks} takenDesks={takenDesks}
                         />
                     </div>
-                    <Tips hideShowTipsTextSafety={this.hideShowTipsTextSafety} hideShowTipsTextBuilding={this.hideShowTipsTextBuilding} everything={this.props.everything} />
+                    <Tips hideShowTipsTextSafety={this.hideShowTipsTextSafety} hideShowTipsTextSafetyText={this.state.hideShowTipsTextSafety} hideShowTipsTextBuilding={this.hideShowTipsTextBuilding} hideShowTipsTextBuildingText={this.state.hideShowTipsTextBuilding} everything={this.props.everything} />
                     <div className="well well-sm" >
                         <div className="col-sm-5">
                             <BuildingFilterPanel buildingFiltersOptions={buildingFiltersOptions}/>
