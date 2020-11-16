@@ -7,22 +7,24 @@ export default class Tips extends React.Component {
         return (
             <div>
                 <div className="tips">
-                    {/*<div className="hideTips">*/}
-                    {/*    <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>*/}
-                    <div className="building-tips">
-                        <TipsBox everything = {this.props.everything} name = {'Infrastructure'} tips = {this.props.everything.college.collegeTips.infrastructureTips}/>
+                    <div className="hideTips-building">
+                        <button type="button" onClick={this.props.hideShowTipsTextBuilding} className="btn btn-info">{this.props.hideShowTipsTextBuilding}</button>
+                        <div id="building-tips">
+                            <TipsBox everything = {this.props.everything} name = {'Infrastructure'} tips = {this.props.everything.college.collegeTips.infrastructureTips}/>
+                        </div>
                     </div>
-                    {/*</div>*/}
                 </div>
                 <div className="tips-2">
-                    {/*<div className="hideTips">*/}
-                    {/*    <button type="`button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>*/}
-                    <div className="safety-tips">
-                        <TipsBox everything = {this.props.everything} name = {'Safety'} tips = {this.props.everything.college.collegeTips.safetyTips}/>
+                    <div className="hideTips-safety">
+                        <button type="button" onClick={this.props.hideShowTipsTextSafety} className="btn btn-info">{this.props.hideShowTipsTextSafety}</button>
+                        <div id="safety-tips">
+                            <TipsBox everything = {this.props.everything} name = {'Safety'} tips = {this.props.everything.college.collegeTips.safetyTips}/>
+                        </div>
                     </div>
-                    {/*</div>*/}
                 </div>
             </div>
         );
     }
+
+
 }
