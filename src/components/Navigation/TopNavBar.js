@@ -36,7 +36,6 @@ export default class TopNavBar extends React.Component {
         let collegeName = this.props.collegeName;
         let currentBalance = this.props.everything.college.availableCash.toLocaleString();
         let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
-        let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
         let totalStudents = this.props.everything.college.numberStudentsAdmitted;
 
         return (
@@ -67,12 +66,12 @@ export default class TopNavBar extends React.Component {
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">Calendar
                             <img className="nav-item-icons" src="resources/images/calendar.png"></img>
-                            <span className="badge badge-light">{timeUntilNextSemester}</span>
+                            <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s Remain</span>
                         </Button>
                         <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
                     <Nav.Link >
-                        <Button onClick={this.fetchData} variant="success">Jump To Next Week</Button>
+                        <Button onClick={this.fetchData} variant="success">Jump To Next {this.props.everything.college.timeAdvanceBy}</Button>
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
