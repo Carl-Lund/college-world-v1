@@ -5,6 +5,7 @@ import CompletedObjectives from "./CompletedObjectives";
 import "./Objectives.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Achievements from "./Achievements";
+import CompletedAchievements from "./CompletedAchievements";
 /*import OptionalObjectives from "./OptionalObjectives";*/
 
 export default class Objectives extends React.Component {
@@ -24,6 +25,10 @@ export default class Objectives extends React.Component {
                 <div className="achievements">
                     <h3 className="my-3"> Locked Achievements: </h3>
                     <Achievements everything={this.props.everything}/>
+                </div>
+                <div className="completed-achievements">
+                    <h3 className="my-3"> Unlocked Achievements: </h3>
+                    <CompletedAchievements everything={this.props.everything}/>
                 </div>
                 <div className="curr-obj">
                     <h3 className="my-3"> Current Objectives: </h3>
