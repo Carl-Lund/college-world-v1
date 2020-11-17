@@ -18,7 +18,7 @@ class CollegeOpenCreate extends React.Component {
     }
 
     loadCollege(e) {
-        if (this.props.collegeName == "")
+        if (this.props.collegeName === "")
             return;
 
         console.log("Loading college");
@@ -80,7 +80,7 @@ class CollegeOpenCreate extends React.Component {
     }
 
     newCollege(){
-        if (this.props.collegeName == "") {
+        if (this.props.collegeName === "") {
             //On Error- show message
             const Swal = require('sweetalert2')
             Swal.fire("You must enter a college name")
@@ -116,7 +116,7 @@ class CollegeOpenCreate extends React.Component {
     }
 
     deleteCollege(){
-        if (this.props.collegeName == "") {
+        if (this.props.collegeName === "") {
             //On Error- show message
             const Swal = require('sweetalert2')
             Swal.fire("You must enter a college name")

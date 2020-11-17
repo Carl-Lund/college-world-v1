@@ -17,7 +17,7 @@ export default class CurrentDay extends React.Component {
     render() {
         return (
             <div className="container">
-                <h2>Day {((this.props.everything.college.hoursAlive - 1) / 24 + 1)}</h2>
+                <h2>Week {((this.props.everything.college.hoursAlive - 1) / 24 / 7 + 1)}</h2>
             </div>
         );
     }
