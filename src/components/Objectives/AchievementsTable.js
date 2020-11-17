@@ -4,14 +4,13 @@ import "./Objectives.css";
 export default class AchievementsTable extends React.Component {
     constructor(props) {
         super(props);
-        this.achievementsTable = createTable(this.props.everything.objectives.achievements);
     }
 
     render(){
         return(
             <div className="pre-scrollable" style={{maxHeight: '150px'}}>
                 <ul className="list-group">
-                    {this.achievementsTable}
+                    {createTable(this.props.everything.objectives.achievements)}
                 </ul>
             </div>
         );
