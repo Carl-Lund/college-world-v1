@@ -7,6 +7,8 @@ import FinanceTable from "../Finances/FinanceTable";
 import FinanceLog from "./FinanceLog";
 import FinanceLoanContract from "./FinanceLoanContract";
 import FinanceLoanTable from "./FinanceLoanTable";
+import ExpensesGraph from "./ExpensesGraph";
+import FinancesGraph from "./FinancesGraph";
 
 export default class Finance extends React.Component {
     constructor(props) {
@@ -20,7 +22,6 @@ export default class Finance extends React.Component {
                 <Container>
                     <Row>
                         <Col sm={4}><FinanceTable everything={this.props.everything}/></Col>
-                        <Col sm={4}></Col>
                     </Row>
                     {/*Following row adds some vertical padding to the page*/}
                     <Row>
@@ -35,6 +36,18 @@ export default class Finance extends React.Component {
 
                         <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>
+
+                    <Row>
+                        <Col sm={4}>
+                            <br></br><br></br>
+                        </Col>
+                        <Col sm={4}><br></br><br></br></Col>
+                    </Row>
+                    <Row>
+                        <Col sm={4}><ExpensesGraph everything={this.props.everything}/></Col>
+                        <Col sm={4}><FinancesGraph everything={this.props.everything}/></Col>
+                    </Row>
+
                 </Container>
             </div>
         );
