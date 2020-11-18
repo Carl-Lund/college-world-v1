@@ -4,7 +4,6 @@ import NewsItem from "../News/NewsItem";
 export default class CollegeRetention extends React.Component {
     constructor(props) {
         super(props);
-        this.newsTable = createTable(this.props.everything.news, this.props.newsType);
     }
 
     render() {
@@ -14,7 +13,7 @@ export default class CollegeRetention extends React.Component {
                 <h4>{title}</h4>
                 <div className="pre-scrollable">
                     <ul className="list-group">
-                            {this.newsTable}
+                            {createTable(this.props.everything.news, this.props.newsType)}
                     </ul>
                 </div>
             </div>

@@ -36,7 +36,6 @@ export default class TopNavBar extends React.Component {
         let collegeName = this.props.collegeName;
         let currentBalance = this.props.everything.college.availableCash.toLocaleString();
         let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
-        let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
         let totalStudents = this.props.everything.college.numberStudentsAdmitted;
 
         return (
@@ -52,8 +51,8 @@ export default class TopNavBar extends React.Component {
                         <Nav.Link>Student Faculty Ratio:<br />
                             {studentFacultyRatio}</Nav.Link>
                         <Nav.Link >
-                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">4</span></Button>
-                            <Notification show={this.state.appear} handleClose={this.handleClose} />
+                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
+                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                         </Nav.Link>
 
                     </Nav>
@@ -66,13 +65,13 @@ export default class TopNavBar extends React.Component {
                     </Nav.Item>
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">Calendar
-                            <img className="nav-item-icons" src="resources/images/college_world_icons/sports.png"></img>
-                            <span className="badge badge-light">{timeUntilNextSemester}</span>
+                            <img className="nav-item-icons" src="resources/images/calendar.png"></img>
+                            <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s</span>
                         </Button>
                         <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
                     <Nav.Link >
-                        <Button onClick={this.fetchData} variant="success">Jump To Next Day</Button>
+                        <Button onClick={this.fetchData} variant="success">Jump To Next {this.props.everything.college.timeAdvanceBy}</Button>
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

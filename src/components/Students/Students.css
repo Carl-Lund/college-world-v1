@@ -1,7 +1,17 @@
+.social-tips {
+    width: 40%;
+}
+
 .studentContainer {
     display: grid;
     margin-right: 20px;
     grid-template-columns: repeat(10,10%);
+}
+
+.potentialStudentContainer{
+    display: grid;
+    margin-right: 20px;
+    grid-template-columns: repeat(5,20%);
 }
 
 .studentElement {

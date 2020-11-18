@@ -16,29 +16,36 @@ export default class Traits extends React.Component {
                    aria-labelledby="contained-modal-title-vcenter">
                 <Modal.Header closeButton>
                     <Modal.Title  id="contained-modal-title-vcenter">
-                        Traits
+                        School Traits
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
                         <Row>
                             <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/academictrait.png"} label={'Academics:'} rating={this.props.everything.college.academicRating}/>
+                                <TraitBox icon={"resources/images/academictrait.png"} label={'Academics:'} rating={this.props.everything.college.academicRating} description = {'Calculated By:\nStudent-Faculty Ratio, ' +
+                                'Faculty Performance, Faculty Happiness, Academic Building Quality, Student Academic Ability'}/>
                             </Col>
                             <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/athletictrait.png"} label={'Athletics:'} rating={this.props.everything.college.athleticRating}/>
+                                <TraitBox icon={"resources/images/athletictrait.png"} label={'Athletics:'} rating={this.props.everything.college.athleticRating} description = {'Calculated By:\nNumber of Teams, ' +
+                                'Overall Win Ratio, Quality of Athletic Facilities, Student Athletic Ability, Championships Won'}/>
                             </Col>
                             <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/infastructuretrait.png"} label={'Infrastructure:'} rating={this.props.everything.college.infrastructureRating}/>
+                                <TraitBox icon={"resources/images/infastructuretrait.png"} label={'Infrastructure:'} rating={this.props.everything.college.infrastructureRating} description = {'Calculated By:\n Building Quality ' +
+                                'Number of Overcrowded Buildings, Number of Building Upgrades'}/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className={"col-sm-4"}>
+                                <TraitBox icon={"resources/images/safetytrait.png"} label={'Safety:'} rating={this.props.everything.college.safetyRating} description = {'Calculated By:\nStudent Health, Building Quality, Number of ' +
+                                'Overcrowded Buildings, Riots, Deaths'}/>
                             </Col>
                             <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/safetytrait.png"} label={'Safety:'} rating={this.props.everything.college.safetyRating}/>
+                                <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue} description = {'Calculated By:\nAverage of School Traits, Tuition'}/>
                             </Col>
                             <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue}/>
-                            </Col>
-                            <Col className={"col-sm-4"}>
-                                <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating}/>
+                                <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating} description = {'Calculated By:\nStudent and Faculty Happiness, Sporting Events ' +
+                                'Student Social Ability'}/>
                             </Col>
                         </Row>
                     </Container>

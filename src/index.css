@@ -96,3 +96,7 @@ main{
 .card-img-top{
     object-fit: scale-down;
 }
+
+.traitBox {
+    width: 16%;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
+import TipsBox from "../College/TipsBox";
+import StudentFeedback from "../Students/StudentFeedback";
+import Avatar from "avataaars-updated";
 
 export default class Faculty extends React.Component{
 
@@ -8,9 +11,27 @@ export default class Faculty extends React.Component{
         super(props);
         this.fireFaculty = this.fireFaculty.bind(this);
         this.facultySwitch = this.facultySwitch.bind(this);
+        this.hideShowTipsText = this.hideShowTipsText.bind(this);
         this.state = {
-            selectedFaculty: 0
+            selectedFaculty: 0,
+            hideShowTipsText : "Show Tips",
+            isHide: false,
+            showNextTip: true
         }
+    }
+
+    hideShowTipsText = () => {
+        let tips = document.getElementById('hideTips');
+        if(this.state.isHide){
+            this.state.hideShowTipsText = "Hide tips"
+            this.setState({isHide: false})
+            tips.style.display = "block";
+        }else {
+            this.state.hideShowTipsText = "Show tips"
+            this.setState({isHide: true})
+            tips.style.display = "none";
+        }
+        this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
 
     facultySwitch = (s) => {
@@ -21,27 +42,62 @@ export default class Faculty extends React.Component{
     }
 
     fireFaculty(){
-        console.log("IN FIRE FACULTY");
         const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/fire/" + this.state.selectedFaculty + "/";
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
-        console.log("UPDATE EVERYTHING DAMMIT " + address);
+        this.setState({
+            selectedFaculty:0
+        });
     }
 
     giveRaise(){
-        console.log("GIVIN SOME FUCKIN CASH");
         const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/raise/" + this.state.selectedFaculty + "/";
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
-        console.log("UPDATE EVERYTHING DAMMIT");
+        console.log("UPDATE EVERYTHING");
+    }
+
+    getListAsOpts(listOfOptions){
+        let results = [];
+        if(listOfOptions != null) {
+            for (let i = 0; i < listOfOptions.length; i++) {
+                results.push(
+                    <option>{listOfOptions[i]}</option>
+                )
+            }
+        }
+        return results;
+    }
+
+    hireFacultyComponent(academics){
+        return (<div className="col-sm-4">
+            <div className="well well-sm">
+                <div className="form-group">
+                    <label id="salaryLabel">Pick an annual salary, a department, and a position
+                        if you would like to add a new faculty member</label>
+                </div>
+                <div className="form-group">
+                    <select className="form-control" id="salaryDropdown" name="salaryDropdown">
+                        {this.getListAsOpts(academics.facultySalaries)}
+                    </select>
+                    <br/>
+                    <select class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
+                        {this.getListAsOpts(academics.schools)}
+                    </select>
+                    <br/>
+                    <input type=" submit" class=" btn btn-info" name=" addFaculty" value=" Add Faculty"/><br/>
+                    <br/>
+                </div>
+            </div>
+        </div>);
     }
 
     render() {
-        this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch);
+        // this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch, this.props.everything.faculty.departmentName);
 
         return (
             <div class = "container">
@@ -53,6 +109,12 @@ export default class Faculty extends React.Component{
                     <div className="title">
                         <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>
                     </div>
+                    <div className="faculty-tips">
+                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
+                        <div id="hideTips">
+                            <TipsBox everything = {this.props.everything} name = {'Academic'} tips = {this.props.everything.college.collegeTips.academicTips}/>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="row">
@@ -60,15 +122,22 @@ export default class Faculty extends React.Component{
                     </div>
 
                 <div className="col-md-4">
-                    {this.facultyTable}
+                    <h2>School of Arts and Sciences</h2>
+                    {createTable(this.props.everything.faculty, this.facultySwitch, "Arts and Sciences")}
+                    <h2>School of Business</h2>
+                    {createTable(this.props.everything.faculty, this.facultySwitch, "Business")}
+                    <h2>School of Nursing</h2>
+                    {createTable(this.props.everything.faculty, this.facultySwitch, "Nursing")}
+                    <h2>School of Sports Science and Fitness</h2>
+                    {createTable(this.props.everything.faculty, this.facultySwitch, "Sports Science and Fitness")}
                 </div>
 
 
                 <div class = "col-md-4 text-right">
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
-                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].facultyName}</h3>
-                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].department}</h3>
+                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].name}</h3>
+                        <h3>Department: {this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
                         <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary}</h3>
                         <h3>ID: {this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
                         <h3>Happiness: {this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
@@ -83,8 +152,9 @@ export default class Faculty extends React.Component{
                     </div>
                 </div>
 
+                {this.hireFacultyComponent(this.props.everything.academics)}
 
-                <div className="clearfix"></div>
+
                 <FacultyRatings everything = {this.props.everything}/>
 
             </div>
@@ -92,23 +162,38 @@ export default class Faculty extends React.Component{
     }
 }
 
-function createTable(faculty, facultySwitch){
+function createTable(faculty, facultySwitch, department){
     let table = [];
 
     if (faculty === null || faculty === null)
         return table;
 
     for(let i = 0; i < faculty.length; i++){
-        table.push(handleMember(faculty, i, facultySwitch))
+        if(faculty[i].departmentName === department){
+            table.push(handleMember(faculty, i, facultySwitch))
+        }
     }
 
     return table;
 }
 
 function handleMember(facultyArray, index, facultySwitch){
+    let person = facultyArray[index];
     return(
+
         <li class = "list-group-item" onClick = {() => facultySwitch(index)}>
-            <b class = "facultyName">{facultyArray[index].facultyName}</b>
+            <Avatar style={{height: '60px', width: '60px'}}
+                    avatarStyle='Circle'
+                    topType={person.avatar.top}
+                    facialHairType={person.avatar.facialHair}
+                    facialHairColor={person.avatar.facialHairColor}
+                    clotheType={person.avatar.clothes}
+                    eyeType={person.avatar.eyes}
+                    eyebrowType={person.avatar.eyebrows}
+                    mouthType={person.avatar.mouth}
+                    skinColor={person.avatar.skinColor}
+            />
+            <b class = "facultyName">{person.name}</b>
         </li>
     );
 }
