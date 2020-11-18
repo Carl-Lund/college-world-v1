@@ -10,7 +10,7 @@ export default class StudentsTable extends React.Component {
 
     render() {
         return (
-            <div className="studentElement" student={this.props.student}
+            <div className="studentElement" student={this.props.student} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
             onClick={ () =>this.props.showapp(this.props.student)}
             >
                 <Avatar className="avatar" style={{height: '55px', width: '55px'}}

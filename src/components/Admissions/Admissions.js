@@ -38,8 +38,7 @@ export default class Admissions extends React.Component {
                     <CollegeRecreationalHappiness everything={this.props.everything}/>
                     <CollegeFinancialHappiness everything={this.props.everything}/>
                 </div>
-                <div>
-                    <Controls everything={this.props.everything}/>
+                <div>{/*<Controls everything={this.props.everything}/>*/}
                 </div>
                 <Container>
                     <Row>

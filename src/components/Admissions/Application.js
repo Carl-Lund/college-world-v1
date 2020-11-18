@@ -4,7 +4,11 @@ import {Button, Modal} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import Avatar from "avataaars-updated";
+/**
+ * Implemented 11-18-2020 by Matt Cruz
+ * mcruz772@mail.endicott.edu
+ */
 export default class Application extends React.Component {
     render() {
         //Check so things don't blow up
@@ -17,13 +21,27 @@ export default class Application extends React.Component {
                keyboard={false}
                aria-labelledby="contained-modal-title-vcenter">
             <Modal.Header closeButton>
-                <Modal.Title  id="contained-modal-title-vcenter">
+                <Modal.Title  id="contained-modal-title-vcenter" style={{textAlign: "center"}}>
                     Application
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="show-grid">
                 <Container className="Application">
-                    <div>
+                    <div className="row">
+                    <div className="col-md-6">
+                        <Avatar style={{height: '175px', width: '175px'}}
+                            avatarStyle='Circle'
+                            topType={this.props.student.avatar.top}
+                            facialHairType={this.props.student.avatar.facialHair}
+                            facialHairColor={this.props.student.avatar.facialHairColor}
+                            clotheType={this.props.student.avatar.clothes}
+                            eyeType={this.props.student.avatar.eyes}
+                            eyebrowType={this.props.student.avatar.eyebrows}
+                            mouthType={this.props.student.avatar.mouth}
+                            skinColor={this.props.student.avatar.skinColor}
+                        />
+                        </div>
+                        <div className="col-md-6">
                         <div>Name: {this.props.student.name}</div>
                         <div>Nature: {this.props.student.nature}</div>
                         <div>Hobbies: {this.props.student.hobbies[0]}, {this.props.student.hobbies[1]}, {this.props.student.hobbies[2]}</div>
@@ -32,7 +50,8 @@ export default class Application extends React.Component {
                         <div className="buttons-2"><Button variant="success">Accept</Button>
                             <Button variant="danger">Decline</Button>
                         </div>
-                    </div>
+                        </div>
+                        </div>
                 </Container>
             </Modal.Body>
             <Modal.Footer>
