@@ -159,7 +159,7 @@ export default class App extends React.Component {
                             <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
                             <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/students" render={() => <Students everything={everything} />} />
-                            <Route path="/admissions" render={() => <Admissions everything={everything} />} />
+                            <Route path="/admissions" render={() => <Admissions everything={everything} replaceEverything={this.replaceEverything}/>} />
                             <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} />} />
                             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
                             <Route path="/store" render={() => <Store everything={everything} />} />

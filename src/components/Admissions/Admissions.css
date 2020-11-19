@@ -1,3 +1,7 @@
+.header {
+    text-align: center;
+    margin-top: .5em;
+}
 
 .col-1{
     background-color: whitesmoke;
@@ -22,4 +26,25 @@
     background-color: gray;
     border: black 5em;
     max-width: 100%;
+}
+
+#button {
+    margin-bottom: 1em;
+}
+
+#border {
+    padding-bottom: 1em;
+    border: 3px solid black;
+}
+
+#border-selected {
+    border-color: lawngreen;
+}
+
+#selected {
+    background-color: darkgreen;
+}
+
+#not-selected {
+    background-color: indianred;
 }

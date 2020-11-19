@@ -8,7 +8,6 @@ export default class PotentialStudentTable extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             potentialStudentTable: this.createTable(this.props.admissions, null, this.props, this.initial, this.final)
         }
@@ -23,7 +22,7 @@ export default class PotentialStudentTable extends React.Component {
 
     render() {
         return (
-            <div className="col-sm-3" style={{height: '80%', maxWidth: '100%', marginLeft: '.75em'}}>
+            <div className="col-sm-3" style={{maxWidth: '100%'}}>
                 <h3 className="studentGroups">{this.props.label}</h3>
                 <h4>{this.props.admissions.length} Total Students</h4>
                 <br></br>
@@ -86,7 +85,6 @@ export default class PotentialStudentTable extends React.Component {
         }
 
         for (let i = initial; i < studentsArray.length; i++) {
-            console.log(studentsArray[i]);
             table.push(<PotentialStudentBubble showapp={this.props.showapp} student={studentsArray[i]}
                                                studentSwitch={props.studentSwitch}/>)
         }
