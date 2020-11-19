@@ -42,14 +42,12 @@ export default class Application extends React.Component {
                         />
                         </div>
                         <div className="col-md-6">
-                        <div>Name: {this.props.student.name}</div>
-                        <div>Nature: {this.props.student.nature}</div>
-                        <div>Hobbies: {this.props.student.hobbies[0]}, {this.props.student.hobbies[1]}, {this.props.student.hobbies[2]}</div>
-                        <div>GPA: {(this.props.student.quality.academics/25.0 + 2.0).toFixed(2)}</div>
-                        <div>Athletic Ability: {this.props.student.quality.sports}%</div>
-                        <div className="buttons-2"><Button variant="success">Accept</Button>
-                            <Button variant="danger">Decline</Button>
-                        </div>
+                        <div><b>Name</b>: {this.props.student.name}</div>
+                        <div><b>Nature</b>: {this.props.student.nature}</div>
+                        <div><b>Hobbies</b>: {this.props.student.hobbies[0]}, {this.props.student.hobbies[1]}, {this.props.student.hobbies[2]}</div>
+                        <div><b>GPA</b>: {(this.props.student.quality.academics/25.0 + 2.0).toFixed(2)}</div>
+                        <div><b>Athletic Ability</b>: {this.props.student.quality.sports}%</div>
+                            <div><b>Social Rating</b>: {this.props.student.quality.social}%</div>
                         </div>
                         </div>
                 </Container>
