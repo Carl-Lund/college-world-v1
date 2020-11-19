@@ -8,15 +8,20 @@ export default class FinancesGraph extends React.Component {
     constructor(props) {
         super(props);
         this.createList = this.createList.bind(this);
-
-
     }
     createList(data){
         let list = [];
         list.push(['x', 'Tuition']);
-        for (let i = 1; i < data.length; i++) {
-            list.push([i, data[i]])
+
+        for (let i = 0; i < data.length; i++) {
+            if(i === 0){
+                list.push([0,0]);
+            }
+            else{
+                list.push([i, data[i]]);
+            }
         }
+        console.log(data);
         console.log(list);
         return list;
     }
@@ -26,26 +31,11 @@ export default class FinancesGraph extends React.Component {
             <div className="finance-col1-row2">
                 <h3>Finances</h3>
                 <Chart
-                    width={'600px'}
+                    width={'470px'}
                     height={'400px'}
                     chartType="LineChart"
                     loader={<div>Loading Financial Chart</div>}
-                    data={this.createList(this.props.everything.college.financialGraph)}
-                    // data={[
-                    //     ['x', 'Tuition'],
-                    //     [0, this.props.everything.college.yearlyTuitionCost],
-                        // [1, this.props.everything.college.financialGraph[0]],
-                        // [2, this.props.everything.college.financialGraph[1]],
-                        // [3, this.props.everything.college.financialGraph[2]],
-                        // [4, 18],
-                        // [5, 9],
-                        // [6, 11],
-                        // [7, 27],
-                        // [8, 33],
-                        // [9, 40],
-                        // [10, 32],
-                        // [11, 35],
-                    // ]}
+                    data={this.createList(this.props.everything.college.financialGraph.tuitionCosts)}
                     options={{
                         hAxis: {
                             title: 'Weeks',

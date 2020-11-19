@@ -13,7 +13,7 @@ export default class ExpensesGraph extends React.Component {
             <div className="finance-col1-row2">
                 <h3>Expenses</h3>
                 <Chart
-                    width={'300px'}
+                    width={'400px'}
                     height={'300px'}
                     chartType="PieChart"
                     loader={<div>Loading Chart</div>}
