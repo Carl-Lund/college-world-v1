@@ -36,7 +36,7 @@ export default class TopNavBar extends React.Component {
         let collegeName = this.props.collegeName;
         let currentBalance = this.props.everything.college.availableCash.toLocaleString();
         let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
-        let totalStudents = this.props.everything.college.numberStudentsAdmitted;
+        let totalStudents = this.props.everything.objectives.studentCount;
 
         return (
             <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
