@@ -16,13 +16,28 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="This is the react component of the side bar that is drawn on each page.">
-      <change afterPath="$PROJECT_DIR$/public/resources/images/calendar.png" afterDir="false" />
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admissions/Admissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admissions/Admissions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Achievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Achievements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/AchievementsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/AchievementsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievementsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievementsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedObjectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedObjectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CurrentObjectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CurrentObjectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +51,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Pull.Settings">
-    <option name="BRANCH" value="Admissions" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -48,15 +60,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -73,15 +81,16 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/Navigation" />
-      <recent name="$PROJECT_DIR$/src/components/CollegeDashboard" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\college-view" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\assets" />
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\app" />
+      <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\navigation" />
+      <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\students-view" />
@@ -96,19 +105,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -197,10 +193,16 @@
       <workItem from="1599691090686" duration="1977000" />
       <workItem from="1600108188845" duration="1644000" />
       <workItem from="1600352218018" duration="638000" />
-      <workItem from="1604429821485" duration="2458000" />
-      <workItem from="1604529959613" duration="2812000" />
-      <workItem from="1604587791538" duration="1407000" />
-      <workItem from="1604597752874" duration="5614000" />
+      <workItem from="1600622197512" duration="602000" />
+      <workItem from="1600901823536" duration="1421000" />
+      <workItem from="1601305534566" duration="2659000" />
+      <workItem from="1601576535842" duration="1607000" />
+      <workItem from="1601922294699" duration="15942000" />
+      <workItem from="1603154644183" duration="989000" />
+      <workItem from="1603216248682" duration="4645000" />
+      <workItem from="1604248700981" duration="10465000" />
+      <workItem from="1604600399866" duration="1738000" />
+      <workItem from="1605640011185" duration="9860000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -335,105 +337,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574362307834</updated>
     </task>
-    <task id="LOCAL-00020" summary="Created a Traits React Component that will display the School Traits on the Dashboard.">
-      <created>1604530462193</created>
+    <task id="LOCAL-00020" summary="Added my name to FA2020">
+      <created>1600367547094</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1604530462193</updated>
+      <updated>1600367547094</updated>
     </task>
-    <task id="LOCAL-00021" summary="Added a new column in the Dashboard that will display the school traits.">
-      <created>1604530553336</created>
+    <task id="LOCAL-00021" summary="Added a new section in Buildings for Upgrades along with a button to view upgrades">
+      <created>1602537021169</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1604530553336</updated>
+      <updated>1602537021169</updated>
     </task>
-    <task id="LOCAL-00022" summary="Made containers for the 3 sets of incoming freshmen students that the user can choose from. These containers should be filled with the FreshmenPannel component. Made it so that this page calls the react component Controls which provides buttons that SHOULD(not yet implemented) allow user to accept a given set, stall them so the students don't leave or decline their admissions so that a new set takes their place.">
-      <created>1604530843845</created>
+    <task id="LOCAL-00022" summary="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use">
+      <created>1605641442118</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1604530843845</updated>
+      <updated>1605641442118</updated>
     </task>
-    <task id="LOCAL-00023" summary="Creates buttons that will allow users to either accept, deny or stall a set of freshmen students' admissions.">
-      <created>1604530881602</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1604530881602</updated>
-    </task>
-    <task id="LOCAL-00024" summary="This is the pannel that should contain the new batch of incoming students! As of now it's being filled with the same students pannel that exist in the college, but should be populated by a new batch of students.">
-      <created>1604530931383</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1604530931383</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added code that calls the Side and Top nav bar from their respective components, rather than having it as a part of the Apps page. Added routes to Admissions page.">
-      <created>1604531057744</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1604531057744</updated>
-    </task>
-    <task id="LOCAL-00026" summary="This is the react component of the side bar that is drawn on each page. As of now they are in non-bootstrap format, but will eventually be changed to be written in bootstrap.">
-      <created>1604531182136</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1604531182136</updated>
-    </task>
-    <task id="LOCAL-00027" summary="This is the modal that popups up when the notificiation button is clicked on the top nav bar. It is filled with place holders, but should eventually be changed to hold a list of messages/notifications for the user, which are currently being generated as popups.">
-      <created>1604531271255</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1604531271255</updated>
-    </task>
-    <task id="LOCAL-00028" summary="This is the react component of the top bar that is drawn on each page. It currently displays the college name, net balance, seats occupied, student faculty ratio on the left. It has a notification button that pops up the notification modal. On the right it has the number of days left in the semester and a button that jumps to the next day.">
-      <created>1604531443672</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1604531443672</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added a Modal for a Calendar">
-      <created>1604607221780</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1604607221780</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Put newer, more sensible placeholders for Notifications Modal">
-      <created>1604607251895</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1604607251895</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Added a new Modal for School Traits">
-      <created>1604607269262</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1604607269262</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Removed unnecessary lines of code. Side bar still doesn't user react.">
-      <created>1604607353063</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1604607353063</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Added buttons that allow users to access the calendar and traits modal.">
-      <created>1604607396297</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1604607396297</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +369,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -452,7 +389,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Setting up the basic structure." />
+    <MESSAGE value="More restructuring and name changes." />
+    <MESSAGE value="Adds bootstrap" />
+    <MESSAGE value="Added building view" />
+    <MESSAGE value="Partially ported building tab from college world" />
+    <MESSAGE value="Added buildings" />
     <MESSAGE value="Added bed, plate, and desk counts" />
     <MESSAGE value="Started work on table of buildings" />
     <MESSAGE value="Allen check out commented lines near top" />
@@ -463,157 +405,74 @@
     <MESSAGE value="Added resident news to buildings tab" />
     <MESSAGE value="Added progress bars for locked buildings" />
     <MESSAGE value="Testing for Allen" />
-    <MESSAGE value="Created a Traits React Component that will display the School Traits on the Dashboard." />
-    <MESSAGE value="Added a new column in the Dashboard that will display the school traits." />
-    <MESSAGE value="Made containers for the 3 sets of incoming freshmen students that the user can choose from. Added buttons that SHOULD(not yet implemented) allow user to accept a given set, stall them so the students don't leave or decline their admissions so that a new set takes their place." />
-    <MESSAGE value="Made containers for the 3 sets of incoming freshmen students that the user can choose from. These containers should be filled with the FreshmenPannel component. Made it so that this page calls the react component Controls which provides buttons that SHOULD(not yet implemented) allow user to accept a given set, stall them so the students don't leave or decline their admissions so that a new set takes their place." />
-    <MESSAGE value="Creates buttons that will allow users to either accept, deny or stall a set of freshmen students' admissions." />
-    <MESSAGE value="This is the pannel that should contain the new batch of incoming students! As of now it's being filled with the same students pannel that exist in the college, but should be populated by a new batch of students." />
-    <MESSAGE value="Added code that calls the Side and Top nav bar from their respective components, rather than having it as a part of the Apps page. Added routes to Admissions page." />
-    <MESSAGE value="This is the react component of the side bar that is drawn on each page. As of now they are in non-bootstrap format, but will eventually be changed to be written in bootstrap." />
-    <MESSAGE value="This is the modal that popups up when the notificiation button is clicked on the top nav bar. It is filled with place holders, but should eventually be changed to hold a list of messages/notifications for the user, which are currently being generated as popups." />
-    <MESSAGE value="This is the react component of the top bar that is drawn on each page. It currently displays the college name, net balance, seats occupied, student faculty ratio on the left. It has a notification button that pops up the notification modal. On the right it has the number of days left in the semester and a button that jumps to the next day." />
-    <MESSAGE value="Added a Modal for a Calendar" />
-    <MESSAGE value="Put newer, more sensible placeholders for Notifications Modal" />
-    <MESSAGE value="Added a new Modal for School Traits" />
-    <MESSAGE value="Removed unnecessary lines of code. Side bar still doesn't user react." />
-    <MESSAGE value="Added buttons that allow users to access the calendar and traits modal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added buttons that allow users to access the calendar and traits modal." />
+    <MESSAGE value="Added my name to FA2020" />
+    <MESSAGE value="Added a new section in Buildings for Upgrades along with a button to view upgrades" />
+    <MESSAGE value="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="565" y="356" key="#Notifications" timestamp="1604531541419">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="565" y="356" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1604531541419" />
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599506625473" />
-    <state x="467" y="103" key="CommitChangelistDialog2" timestamp="1604607396176">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604516252011">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="409" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1604531443593" />
-    <state x="467" y="103" key="CommitChangelistDialog2/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604607396176" />
-    <state x="192" y="97" width="1536" height="864" key="DiffContextDialog" timestamp="1604607479147">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/78.0.1458.864@78.0.1458.864" timestamp="1604516252011" />
+    <state x="217" y="69" key="DiffContextDialog" timestamp="1602536968625">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="168" y="94" width="1344" height="841" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1604531561823" />
-    <state x="192" y="97" width="1536" height="864" key="DiffContextDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604412755719" />
-    <state x="168" y="94" width="1344" height="841" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1604531600284" />
-    <state x="192" y="97" width="1536" height="864" key="DiffContextDialog/0.23.1920.1057/-1680.555.1680.1027@0.23.1920.1057" timestamp="1604607479147" />
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1604410948368">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604410948368" />
-    <state width="1878" height="189" key="GridCell.Tab.0.bottom" timestamp="1604610023905">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="217" y="69" key="DiffContextDialog/78.0.1458.864@78.0.1458.864" timestamp="1602536968625" />
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom" timestamp="1605821694562">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1638" height="183" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604590932291" />
-    <state width="1878" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023905" />
-    <state width="1878" height="189" key="GridCell.Tab.0.center" timestamp="1604610023903">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1415" height="223" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026093" />
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
+    <state width="1415" height="135" key="GridCell.Tab.0.center" timestamp="1605821694562">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1638" height="183" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604590932290" />
-    <state width="1878" height="189" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023903" />
-    <state width="1878" height="189" key="GridCell.Tab.0.left" timestamp="1604610023902">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1415" height="223" key="GridCell.Tab.0.center/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.center/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
+    <state width="1415" height="135" key="GridCell.Tab.0.left" timestamp="1605821694561">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1638" height="183" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604590932289" />
-    <state width="1878" height="189" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023902" />
-    <state width="1878" height="189" key="GridCell.Tab.0.right" timestamp="1604610023905">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1415" height="223" key="GridCell.Tab.0.left/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.left/78.0.1458.864@78.0.1458.864" timestamp="1605821694561" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right" timestamp="1605821694562">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
-    <state width="1638" height="183" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604590932291" />
-    <state width="1878" height="189" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023905" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1604610023878">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1415" height="223" key="GridCell.Tab.0.right/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
+    <state x="217" y="68" key="MergeDialog" timestamp="1603154972962">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023878" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1604610023877">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="217" y="68" key="MergeDialog/78.0.1458.864@78.0.1458.864" timestamp="1603154972962" />
+    <state x="446" y="193" key="MultipleFileMergeDialog" timestamp="1603154960495">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023877" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1604610023876">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="446" y="193" key="MultipleFileMergeDialog/78.0.1458.864@78.0.1458.864" timestamp="1603154960495" />
+    <state x="543" y="152" key="RollbackChangesDialog" timestamp="1605640369132">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023876" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1604610023878">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="543" y="152" key="RollbackChangesDialog/78.0.1458.864@78.0.1458.864" timestamp="1605640369132" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1605641456193">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023878" />
-    <state width="1878" height="376" key="GridCell.Tab.2.bottom" timestamp="1604610023882">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864@78.0.1458.864" timestamp="1605641456193" />
+    <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602613004927">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.2.bottom/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023882" />
-    <state width="1878" height="376" key="GridCell.Tab.2.center" timestamp="1604610023880">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.2.center/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023880" />
-    <state width="1878" height="376" key="GridCell.Tab.2.left" timestamp="1604610023879">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.2.left/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023879" />
-    <state width="1878" height="376" key="GridCell.Tab.2.right" timestamp="1604610023881">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.2.right/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023881" />
-    <state width="1878" height="376" key="GridCell.Tab.3.bottom" timestamp="1604610023885">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.3.bottom/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023885" />
-    <state width="1878" height="376" key="GridCell.Tab.3.center" timestamp="1604610023884">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.3.center/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023884" />
-    <state width="1878" height="376" key="GridCell.Tab.3.left" timestamp="1604610023883">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.3.left/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023883" />
-    <state width="1878" height="376" key="GridCell.Tab.3.right" timestamp="1604610023884">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.3.right/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604610023884" />
-    <state x="38" y="60" key="MergeDialog" timestamp="1604410839140">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="38" y="60" key="MergeDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604410839140" />
-    <state x="601" y="308" key="MultipleFileMergeDialog" timestamp="1604410841469">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="601" y="308" key="MultipleFileMergeDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604410841469" />
-    <state x="577" y="234" key="RollbackChangesDialog" timestamp="1604589256684">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="577" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1604589256684" />
-    <state x="503" y="273" key="Vcs.Push.Dialog.v2" timestamp="1604607420705">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604531483249" />
-    <state x="503" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604607420705" />
-    <state x="742" y="281" key="VcsDiffUtil.ChangesDialog" timestamp="1604597922788">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="742" y="281" key="VcsDiffUtil.ChangesDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604597922788" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600363905309">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog/78.0.1458.864@78.0.1458.864" timestamp="1602613004927" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605820397764">
+      <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
-    <state x="584" y="287" width="568" height="490" key="find.popup" timestamp="1604588967377">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="584" y="287" width="568" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1604588967377" />
-    <state x="667" y="295" width="586" height="490" key="find.popup/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604411411571" />
-    <state x="626" y="393" key="git4idea.ui.GitUnstashDialog" timestamp="1604410841508">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="626" y="393" key="git4idea.ui.GitUnstashDialog/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604410841508" />
-    <state width="600" height="428" key="javadoc.popup" timestamp="1604603917088">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="600" height="428" key="javadoc.popup/0.0.1920.1080/-1680.532.1680.1050@0.0.1920.1080" timestamp="1604603917088" />
+    <state x="2607" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604453012043" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@78.0.1458.864" timestamp="1604260280566" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864@78.0.1458.864" timestamp="1605820397764" />
   </component>
 </project>

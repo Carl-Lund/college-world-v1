@@ -5,7 +5,6 @@ import "./Objectives.css";
 export default class CurrentObjectives extends React.Component {
 
     render() {
-        console.log(this.props.everything);
         return (
             <div className="well well-sm">
                 <div className="gateList">
