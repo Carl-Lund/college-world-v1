@@ -64,9 +64,9 @@ export default class TopNavBar extends React.Component {
                         <Traits everything={this.props.everything} show={this.state.traitsAppear} handleClose={this.handleCloseTraits} />
                     </Nav.Item>
                     <Nav.Link href="#link">
-                        <Button onClick={this.handleShowCalendar} variant="light">Calendar
+                        <Button onClick={this.handleShowCalendar} variant="light">
                             <img className="nav-item-icons" src="resources/images/calendar.png"></img>
-                            <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s</span>
+                            <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s Left in Semester</span>
                         </Button>
                         <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
