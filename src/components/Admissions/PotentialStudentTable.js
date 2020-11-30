@@ -4,20 +4,57 @@ import PotentialStudentBubble from './PotentialStudentBubble.js';
 
 export default class PotentialStudentTable extends React.Component {
     initial = 0;
-    final = 25;
+    final = 30;
+    move = 30;
 
     constructor(props) {
         super(props);
         this.state = {
             potentialStudentTable: this.createTable(this.props.admissions, null, this.props, this.initial, this.final)
         }
-        this.sort = React.createRef();
+        this.prev = this.prev.bind(this);
+        this.next = this.next.bind(this);
     }
 
+    next = () => {
+        this.initial += this.move;
+        this.final += this.move;
+
+        if(this.final >= this.props.admissions.length) {
+            this.final = this.props.admissions.length;
+            this.initial = this.final-this.move;
+        }
+        this.updateTable();
+    }
+
+    prev = () => {
+        console.log("Moved back");
+        this.initial -= this.move;
+        this.final -= this.move;
+
+        if(this.initial <= 0){
+            this.initial = 0;
+            this.final = this.move;
+        }
+        this.updateTable();
+    }
 
     updateTable = () => {
-        this.setState({potentialStudentTable: this.createTable(this.props.admissions, this.sort.current.value, this.props, this.initial, this.final)});
+        this.setState({potentialStudentTable: this.createTable(this.props.admissions, this.props, this.initial, this.final)});
         this.updateButtons();
+    }
+
+    updateButtons = () => {
+        let btnnext = document.getElementById(this.props.label + '-next');
+        let btnprev = document.getElementById(this.props.label + '-prev');
+        btnnext.disabled = false;
+        btnprev.disabled = false;
+        if(this.initial <= 0) {
+            btnprev.disabled = true;
+        }
+        if(this.final >= this.props.admissions.length) {
+            btnnext.disabled = true;
+        }
     }
 
     render() {
@@ -28,6 +65,8 @@ export default class PotentialStudentTable extends React.Component {
                 <br></br>
                 <h5 style={{display: 'inline-block'}}>Showing students: {this.initial} - {this.final}</h5>
                 <div className="well well-sm" style={{height: '100%'}}>
+                    <button type="button" id={this.props.label + '-prev'} className="btn btn-primary" onClick={this.prev} style={{margin:'0.5em'}}>Previous Page</button>
+                    <button type="button" id={this.props.label + '-next'} className="btn btn-primary" onClick={this.next} style={{margin:'0.5em'}}>Next Page</button>
                     <div className="potentialStudentContainer" style={{width: "100%"}}>
                         {this.state.potentialStudentTable}
                     </div>
@@ -84,7 +123,7 @@ export default class PotentialStudentTable extends React.Component {
             console.log("invalid sort method");
         }
 
-        for (let i = initial; i < studentsArray.length; i++) {
+        for (let i = this.initial; i < this.final; i++) {
             table.push(<PotentialStudentBubble showapp={this.props.showapp} student={studentsArray[i]}
                                                studentSwitch={props.studentSwitch}/>)
         }
