@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Notification from "./NavigationModals/Notifications";
+import './Navigation.css';
 import TopNavBar from "./TopNavBar";
 
 export default class SideNavBar extends React.Component {
@@ -15,7 +16,7 @@ export default class SideNavBar extends React.Component {
         let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
         let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
         let totalStudents = this.props.everything.college.numberStudentsAdmitted;
-
+        let page = this.props.pageActive;
         return(
             <div className="col-md-2">
                 <nav className="sidebar bg-light col-md-2">

@@ -111,8 +111,7 @@ export default class App extends React.Component {
             .then(response => response.json())
             .then(data => {this.setState({ launchStatus:'loadingDone', everything: data });
                 console.log("Fetched college data " + data)
-            })
-            ;
+            });
     }
 
     advanceDay = () => {
