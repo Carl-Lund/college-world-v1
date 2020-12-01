@@ -30,6 +30,7 @@ export default class App extends React.Component {
         this.state = {
             launchStatus: 'collegeNotChosen',
             everything: null,
+            pageActive: 'dashboard',
             collegeName: ""
         };
         this.replaceEverything = this.replaceEverything.bind(this)
@@ -38,6 +39,33 @@ export default class App extends React.Component {
         this.changeTimeFunction = this.changeTimeFunction.bind(this);
         this.getNavBar = this.getNavBar.bind(this);
         this.getSideBar = this.getSideBar.bind(this);
+
+        this.setPage= (value) => {this.setState({pageActive:value})}
+        this.setStudents = () => this.setPage('students');
+        this.setAdmissions = () => this.setPage('admissions');
+        this.setDash = () => this.setPage('dashboard');
+        this.setTraits = () => this.setPage('traits');
+        this.setBuilding = () => this.setPage('buildings');
+        this.setSports = () => this.setPage('sports');
+        this.setFaculty = () => this.setPage('faculty');
+        this.setFinance = () => this.setPage('finance');
+        this.setObjectives = () => this.setPage('objectives');
+        this.setStore = () => this.setPage('store');
+        this.setAbout = () => this.setPage('about');
+        this.setExit = () => this.setPage('exit');
+        this.pages={"dashboard": this.setDash,
+            "students": this.setStudents,
+            "admissions": this.setAdmissions,
+            "traits": this.setTraits,
+            "buildings": this.setBuilding,
+            "sports": this.setSports,
+            "faculty": this.setFaculty,
+            "finance":this.setFinance,
+            "store":this.setStore,
+            "about":this.setAbout,
+            "objectives":this.setObjectives
+    }
+
 
         this.timing = 2000;
         this.debugDaySpeedRef = React.createRef();
@@ -139,9 +167,10 @@ export default class App extends React.Component {
             return (<div/>);
         }
 
-        return (<SideNavBar collegeName={collegeName} everything={everything}/>);
+        return (<SideNavBar collegeName={collegeName} everything={everything} pages={this.pages} pageActive={this.state.pageActive}/>);
+        // return (<SideNavBar collegeName={collegeName} everything={everything} page={currentPage}/>);
     }
-
+    // pageActive={pageActive}
     render() {
         const {launchStatus, everything, collegeName} = this.state;
 
@@ -154,18 +183,18 @@ export default class App extends React.Component {
                         {this.getSideBar()}
                         <main className="col-md-10">
                             <Route path="/launch" render={() => <CollegeOpenCreate collegeName={collegeName} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  setLaunchStatus={this.setLaunchStatus}/>} />
-                            <Route path="/schooltraits" render={() => <SchoolTraits everything={everything} />} />
-                            <Route path="/about" render={() => <About everything={everything} />} />
-                            <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} />}/>
-                            <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} />} />
-                            <Route path="/students" render={() => <Students everything={everything} />} />
-                            <Route path="/admissions" render={() => <Admissions everything={everything} />} />
-                            <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} />} />
-                            <Route path="/objectives" render={() => <Objectives everything={everything} />} />
-                            <Route path="/store" render={() => <Store everything={everything} />} />
-                            <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />
-                            <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
-                            <Route path="/about" render={() => <About everything={everything} />} />
+                            <Route path="/schooltraits" render={() => <SchoolTraits everything={everything} pageActive={this.setTraits}/>} />
+                            <Route path="/about" render={() => <About everything={everything} pageActive={this.setAbout}/>} />
+                            <Route path="/college" render={() => <CollegeLaunchPad collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName} changeTimeFunction={this.changeTimeFunction} pageActive={this.setDash}/>}/>
+                            <Route path="/building" render={() => <Buildings everything={everything} replaceEverything={this.replaceEverything} pageActive={this.setBuilding}/>} />
+                            <Route path="/students" render={() => <Students everything={everything} pageActive={this.setStudents}/>} />
+                            <Route path="/admissions" render={() => <Admissions everything={everything} pageActive={this.setAdmissions}/>} />
+                            <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} pageActive={this.setFinance}/>} />
+                            <Route path="/objectives" render={() => <Objectives everything={everything} pageActive={this.setObjectives}/>} />
+                            <Route path="/store" render={() => <Store everything={everything} pageActive={'store'}/>} />
+                            <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything} pageActive={this.setFaculty}/>} />
+                            <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  pageActive={this.setSports}/>}/>
+                            {/*<Route path="/about" render={() => <About everything={everything} />} />*/}
                             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
                             <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
                         </main>
