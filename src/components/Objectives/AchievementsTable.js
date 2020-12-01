@@ -8,7 +8,7 @@ export default class AchievementsTable extends React.Component {
 
     render(){
         return(
-            <div className="pre-scrollable" style={{maxHeight: '150px'}}>
+            <div className="pre-scrollable" style={{maxHeight: '250px'}}>
                 <ul className="list-group">
                     {createTable(this.props.everything.objectives.achievements)}
                 </ul>
@@ -21,14 +21,13 @@ function createTable(achievements) {
     let table=[];
 
     for(let i =0; i < achievements.length; i++) {
-        if(achievements[i].locked == true) {
+        if(achievements[i].locked == false) continue;
             table.push(<li className="list-group-item">
                     <p>{achievements[i].name}</p>
                     <p>{"Reward: $" + achievements[i].cashReward}</p>
                     <p>{achievements[i].description}</p>
                 </li>
             );
-        }
     }
     return table
 }

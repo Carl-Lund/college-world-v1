@@ -15,6 +15,9 @@ export default class CurrentLevel extends React.Component {
         if(this.props.everything.college.availableCash <= 20000){
             cashColor = "red";
         }
+        let totalPotentialStudents = this.props.everything.admissions.groupA.length +
+            this.props.everything.admissions.groupB.length +
+            this.props.everything.admissions.groupC.length;
 
         return (
             <div className="container">
@@ -50,7 +53,7 @@ export default class CurrentLevel extends React.Component {
                     <div className="col-sm text-center topbar" id="last-bar">
                         <img className="topbar-icon" src="resources/images/college_world_icons/question_mark.png"></img>
                         <div className="topbar-text">
-                            <h4><strong>{this.props.everything.college.numberStudentsAccepted}</strong></h4>
+                            <h4><strong>{totalPotentialStudents}</strong></h4>
                             <h6>Students Considering</h6>
                         </div>
                     </div>

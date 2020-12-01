@@ -13,9 +13,6 @@ export default class Objectives extends React.Component {
     render(){
         return (
             <div class="Objectives-list">
-                <div className="title">
-                    <h1 className="banner">Objectives and Achievements</h1>
-                </div>
                 <div className="name">
                     <h1 className="card-title">{this.props.everything.college.runId}</h1>
                     <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/

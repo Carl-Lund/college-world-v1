@@ -13,7 +13,7 @@ export default class CollegeRetention extends React.Component {
                 <h4>{title}</h4>
                 <div className="pre-scrollable">
                     <ul className="list-group">
-                            {createTable(this.props.everything.news, this.props.newsType)}
+                            {createTable(this.props.everything.college, this.props.everything.news, this.props.newsType)}
                     </ul>
                 </div>
             </div>
@@ -21,12 +21,12 @@ export default class CollegeRetention extends React.Component {
     }
 }
 
-function createTable(news, newsType) {
+function createTable(college, news, newsType) {
     let table = [];
 
     for (let i = news.length-1; i >= 0; i--) {
         if (newsType == news[i].noteType)
-            table.push(<NewsItem newsItem = {news[i]} newsItemNumber={i}/>)
+            table.push(<NewsItem everything = {college} newsItem = {news[i]} newsItemNumber={i}/>)
     }
     return table
 }

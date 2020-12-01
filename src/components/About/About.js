@@ -16,6 +16,7 @@ export default class About extends React.Component {
                         <li className="list-group-item">Matt Cruz</li>
                         <li className="list-group-item">Tiffany Dang</li>
                     </ul>
+                    <div>Icons on Admissions Page made by <a href="https://www.flaticon.com/free-icon/presentation_1064587?term=classroom&page=2&position=6&related_item_id=1064587" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                     <h2>Fall 2019</h2>
                     <ul className="list-group">
                         <li className="list-group-item">Timothy Amello</li>

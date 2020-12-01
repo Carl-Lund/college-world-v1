@@ -5,11 +5,10 @@ import "./Objectives.css";
 export default class Achievements extends React.Component {
 
     render() {
-        console.log(this.props.everything);
         return (
             <div className="well well-sm">
                 <div className="Achievements">
-                    <AchievementsTable everything = {this.props.everything}/>
+                    <AchievementsTable everything = {this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 </div>
             </div>
         );
