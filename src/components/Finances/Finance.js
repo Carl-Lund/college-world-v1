@@ -13,7 +13,7 @@ export default class Finance extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hideShowTipsText: "Show Tips",
+            hideShowTipsText: "Hide Tips",
             isHide: false,
             showNextTip: true
         }
