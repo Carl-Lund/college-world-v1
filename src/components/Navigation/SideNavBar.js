@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Notification from "./NavigationModals/Notifications";
+import TopNavBar from "./TopNavBar";
 
 export default class SideNavBar extends React.Component {
 
@@ -89,7 +90,7 @@ export default class SideNavBar extends React.Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/launch'>
+                                <Link to='/launch' onClick={this.props.doExit}>
                                     <img className="nav-item-icons" src="resources/images/college_world_icons/exit_information_bar.png"></img>
                                     Exit
                                 </Link>

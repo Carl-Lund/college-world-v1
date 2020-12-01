@@ -35,7 +35,7 @@ export default class Tuition extends React.Component {
                 <h4>Tuition</h4>
                     <div className="form-group">
                         <input
-                            class="form-control"
+                            className="form-control"
                             value={tuition}
                             onChange={this.handleOnChange}
                         />

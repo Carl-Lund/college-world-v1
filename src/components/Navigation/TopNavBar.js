@@ -51,13 +51,13 @@ export default class TopNavBar extends React.Component {
                         <Nav.Link>Student Faculty Ratio:<br />
                             {studentFacultyRatio}</Nav.Link>
                         <Nav.Link >
-                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
-                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span>
+                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Button>
                         </Nav.Link>
 
                     </Nav>
                 </Navbar.Collapse>
-            <Navbar.Collapse class = "justify-content-end">
+            <Navbar.Collapse className="justify-content-end">
                 <Nav>
                     <Nav.Item>
                         <Button onClick={this.handleShowTraits} variant="info">Traits</Button>
