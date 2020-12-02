@@ -69,7 +69,7 @@ export default class Admissions extends React.Component {
                         <div className="col-sm text-center topbar">
                             <img className="topbar-icon" src="resources/images/student.png"></img>
                             <div className="topbar-text">
-                                <h4><strong>{this.props.everything.college.numberStudentsAdmitted}</strong></h4>
+                                <h4><strong>{this.props.everything.objectives.studentCount}</strong></h4>
                                 <h6>Total Enrolled Students</h6>
                             </div>
                         </div>

@@ -1,6 +1,10 @@
 import React from 'react';
 import { withRouter} from 'react-router-dom';
 import "./Launch.css"
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class CollegeOpenCreate extends React.Component {
 
@@ -10,7 +14,7 @@ class CollegeOpenCreate extends React.Component {
         this.loadCollege = this.loadCollege.bind(this);
         this.newCollege = this.newCollege.bind(this);
         this.deleteCollege = this.deleteCollege.bind(this);
-
+        this.state = { busy : false }; // status used to 'disable' buttons
     }
 
     handleOnChange(e) {;
@@ -18,16 +22,25 @@ class CollegeOpenCreate extends React.Component {
     }
 
     loadCollege(e) {
-        if (this.props.collegeName === "")
+        const Swal = require('sweetalert2')
+        if (this.props.collegeName === "") {
+            Swal.fire("You must enter a college name")
             return;
-
+        }
+        this.setState({busy:true})
+        this.props.setLaunchStatus('loadingInProgress')
         console.log("Loading college");
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/everything/'+ this.props.collegeName;
         console.log(address);
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
-           });
+            .then(data => {this.props.replaceEverything(data);})
+            .catch(err => {
+                console.log(err);
+                Swal.fire('College named "' + this.props.collegeName + '" could not be loaded.');
+                this.setState({busy:false})
+                this.props.setLaunchStatus('collegeNotChosen')
+            });
 
         const { history } = this.props;
         if (history) history.push('/college');
@@ -36,46 +49,37 @@ class CollegeOpenCreate extends React.Component {
     render() {
         const collegeName = this.props.collegeName;
         return (
-            <div className="container">
-                <div className="row myAuto">
-                    <div className="col-sm-6">
-                        <div className="row">
+            <Container>
+                <Row className="myAuto" md={4}>
+                    <Col md={3} sm={7}>
+                        <Row>
                             <img className="imageLandingPageLogo" src="resources/images/logo_big.png"/>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-12">
+                        </Row>
+                        <Row md="3">
+                            <Col md="3">
                                 <input className="editText" type="text" value={collegeName} onChange={this.handleOnChange} placeholder="College Name.."/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <button className="newButtonBlue" onClick={this.loadCollege}>Load</button>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <button className="newButtonAddCollege" onClick={this.newCollege}>New College</button>
-                            </div>
-                            <div className="col-sm-3">
-                                <button className="newButtonDeleteCollege" onClick={this.deleteCollege}>Delete College</button>
-                            </div>
-                        </div>
-
-                        {/*<div className="row">*/}
-                            {/*<div className="well well-sm">*/}
-                                {/*College*/}
-                                {/*<input type="text" value={collegeName} onChange={this.handleOnChange}/>*/}
-                                {/*<button onClick={this.loadCollege}>Load</button>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-
-                    </div>
-                    <div className="col-sm-6">
-                        <img className="imageLandingPageWallpaper" src="resources/images/landing_page_wallpaper.png"/>
-                    </div>
-                </div>
-            </div>
-
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm="3">
+                                <Button variant="primary" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.loadCollege()}}>{this.state.busy? 'Please wait' : 'Load'}</Button>
+                            </Col>
+                            <Col sm="1"/>
+                            <Col sm="3" >
+                                <Button variant="info" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") :this.newCollege()}}>{this.state.busy? 'Please wait' : 'New College'}</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm="6">
+                                <Button variant="danger" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.deleteCollege()}}>{this.state.busy? 'Please wait' : 'Delete College'}</Button>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col md={1}>
+                        <img className="imageLandingPageWallpaper" src="resources/images/landing_page_wallpaper.png" alt="decorative image"/>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 
@@ -95,6 +99,7 @@ class CollegeOpenCreate extends React.Component {
 
         var responseFromServer
 
+        this.setState({busy:true})
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/createOrDeleteCollege/',
             {
                 method: 'POST',
@@ -106,6 +111,7 @@ class CollegeOpenCreate extends React.Component {
                 responseFromServer = data.title
                 console.log('Selected: ' + data.ok)
                 console.log('Sesdsdd: ' + data.title)
+                this.setState({busy:false})
                 if (responseFromServer === "COLLEGE_EXIST"){
                     const Swal = require('sweetalert2')
                     Swal.fire("The college already exists")
