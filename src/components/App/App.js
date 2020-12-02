@@ -41,31 +41,6 @@ export default class App extends React.Component {
         this.getSideBar = this.getSideBar.bind(this);
 
         this.setPage= (value) => {this.setState({pageActive:value})}
-        this.setStudents = () => this.setPage('students');
-        this.setAdmissions = () => this.setPage('admissions');
-        this.setDash = () => this.setPage('dashboard');
-        this.setTraits = () => this.setPage('traits');
-        this.setBuilding = () => this.setPage('buildings');
-        this.setSports = () => this.setPage('sports');
-        this.setFaculty = () => this.setPage('faculty');
-        this.setFinance = () => this.setPage('finance');
-        this.setObjectives = () => this.setPage('objectives');
-        this.setStore = () => this.setPage('store');
-        this.setAbout = () => this.setPage('about');
-        this.setExit = () => this.setPage('exit');
-        this.pages={"dashboard": this.setDash,
-            "students": this.setStudents,
-            "admissions": this.setAdmissions,
-            "traits": this.setTraits,
-            "buildings": this.setBuilding,
-            "sports": this.setSports,
-            "faculty": this.setFaculty,
-            "finance":this.setFinance,
-            "store":this.setStore,
-            "about":this.setAbout,
-            "objectives":this.setObjectives
-    }
-
 
         this.timing = 2000;
         this.debugDaySpeedRef = React.createRef();
@@ -167,7 +142,7 @@ export default class App extends React.Component {
             return (<div/>);
         }
 
-        return (<SideNavBar collegeName={collegeName} everything={everything} pages={this.pages} pageActive={this.state.pageActive}/>);
+        return (<SideNavBar collegeName={collegeName} everything={everything}/>);
 
     }
 
