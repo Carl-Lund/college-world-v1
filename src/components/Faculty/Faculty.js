@@ -72,7 +72,17 @@ export default class Faculty extends React.Component{
         }
         return results;
     }
-
+    getDeptListAsOpts(listOfOptions){
+        let results = [];
+        if(listOfOptions != null) {
+            for (let i = 0; i < listOfOptions.length; i++) {
+                results.push(
+                    <option>{listOfOptions[i].departmentName}</option>
+                )
+            }
+        }
+        return results;
+    }
     hireFacultyComponent(academics){
         return (<div className="col-sm-4">
             <div className="well well-sm">
@@ -86,7 +96,7 @@ export default class Faculty extends React.Component{
                     </select>
                     <br/>
                     <select class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
-                        {this.getListAsOpts(academics.schools)}
+                        {this.getDeptListAsOpts(academics.unlockedDepts)}
                     </select>
                     <br/>
                     <input type=" submit" class=" btn btn-info" name=" addFaculty" value=" Add Faculty"/><br/>
