@@ -23,21 +23,21 @@ export default class CollegeBuildings extends React.Component {
             return temp;
         }
 
-        let color=getColor(this.props.everything.college.totalBuildingHealth);
+        let color=getColor(this.props.totalBuildingHealth);
 
         return (
             <div className="col-sm-2">
                 <div className="collegeHappinessBar">
                     <h3 className="text-center">Buildings</h3>
                     <br></br>
-                    <CircularProgressbarWithChildren value={this.props.everything.college.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
+                    <CircularProgressbarWithChildren value={this.props.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/188/188379.svg"
                         />
                         <div style={{ fontSize: 12}}>
-                            <strong>{this.props.everything.college.totalBuildingHealth}%</strong>
+                            <strong>{this.props.totalBuildingHealth}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
                     <br/>

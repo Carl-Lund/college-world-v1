@@ -13,12 +13,12 @@ export default class CollegeDashboard extends React.Component {
     render() {
         return (
             <div className="card-deck my-3">
-                <CollegeHappiness everything={this.props.everything}/>
-                <CollegeRetention everything={this.props.everything}/>
-                <CollegeBuildings everything={this.props.everything}/>
-                <CollegeStudentHealth everything={this.props.everything}/>
-                <CollegeRecreationalHappiness everything={this.props.everything}/>
-                <CollegeFinancialHappiness everything={this.props.everything}/>
+                <CollegeHappiness studentBodyHappiness={this.props.everything.college.studentBodyHappiness}/>
+                <CollegeRetention retentionRate={this.props.everything.college.retentionRate}/>
+                <CollegeBuildings totalBuildingHealth={this.props.everything.college.totalBuildingHealth}/>
+                <CollegeStudentHealth studentHealthRating = {this.props.everything.college.studentHealthRating}/>
+                <CollegeRecreationalHappiness studentRecreationalHappiness={this.props.everything.college.studentRecreationalHappiness}/>
+                <CollegeFinancialHappiness studentFinancialHappiness={this.props.everything.college.studentFinancialHappiness}/>
                 </div>
         );
     }
