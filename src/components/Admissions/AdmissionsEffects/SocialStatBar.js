@@ -3,7 +3,7 @@ import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } fr
 import 'react-circular-progressbar/dist/styles.css';
 import StackedProgressbar from "./StackedProgressBar";
 
-export default class Social extends React.Component {
+export default class SocialStatBar extends React.Component {
 
     render() {
 

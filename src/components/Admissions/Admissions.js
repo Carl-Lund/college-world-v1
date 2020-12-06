@@ -14,9 +14,9 @@ import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 import Traits from "../Navigation/NavigationModals/Traits";
 import Application from "./Application";
 import './Admissions.css'
-import Academics from "./AdmissionsEffects/Academics";
-import Athletics from "./AdmissionsEffects/Athletics";
-import Social from "./AdmissionsEffects/Social";
+import AcademicsStatBar from "./AdmissionsEffects/AcademicsStatBar";
+import AthleticsStatBar from "./AdmissionsEffects/AthleticsStatBar";
+import SocialStatBar from "./AdmissionsEffects/SocialStatBar";
 
 export default class Admissions extends React.Component {
     constructor(props) {
@@ -135,9 +135,9 @@ export default class Admissions extends React.Component {
                     <h3>Blue = Potential rating after admitting selected group</h3>
                 </div>
                 <div className="card-deck my-3">
-                    <Academics oldRating={this.props.everything.college.academicRating} impact={this.calculateAcademicImpact()}/>
-                    <Athletics oldRating={this.props.everything.college.athleticRating} impact={this.calculateAthleticImpact()}/>
-                    <Social oldRating={this.props.everything.college.socialRating} impact={this.calculateSocialImpact()}/>
+                    <AcademicsStatBar oldRating={this.props.everything.college.academicRating} impact={this.calculateAcademicImpact()}/>
+                    <AthleticsStatBar oldRating={this.props.everything.college.athleticRating} impact={this.calculateAthleticImpact()}/>
+                    <SocialStatBar oldRating={this.props.everything.college.socialRating} impact={this.calculateSocialImpact()}/>
                 </div>
 
                 <br />
