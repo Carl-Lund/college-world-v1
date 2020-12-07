@@ -30,8 +30,11 @@ export default class TopNavBar extends React.Component {
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data)});
-        this.setState({busy:false})
+            .then(data => {
+                this.props.replaceEverything(data);
+                this.setState({busy:false});
+            });
+
     }
 
     render() {
@@ -53,8 +56,8 @@ export default class TopNavBar extends React.Component {
                         <Nav.Link>Student Faculty Ratio:<br />
                             {studentFacultyRatio}</Nav.Link>
                         <Nav.Link >
-                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span>
-                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Button>
+                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
+                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                         </Nav.Link>
 
                     </Nav>

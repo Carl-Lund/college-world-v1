@@ -100,6 +100,17 @@ export default class Faculty extends React.Component{
         this.department = value.toString()
     }
 
+    getDeptListAsOpts(listOfOptions){
+        let results = [];
+        if(listOfOptions != null) {
+            for (let i = 0; i < listOfOptions.length; i++) {
+                results.push(
+                    <option>{listOfOptions[i].departmentName}</option>
+                )
+            }
+        }
+        return results;
+    }
     hireFacultyComponent(academics){
         return (<div className="col-sm-4">
             <div className="well well-sm">
@@ -113,7 +124,7 @@ export default class Faculty extends React.Component{
                     </select>
                     <br/>
                     <select onChange={e => this.onChangeSelectDepartment(e.target.value)} class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
-                        {this.getListAsOpts(academics.schools)}
+                        {this.getDeptListAsOpts(academics.unlockedDepts)}
 
                     </select>
                     <br/>
@@ -179,7 +190,6 @@ export default class Faculty extends React.Component{
                     <div className="col-md-2">
                     </div>
                 </div>
-
 
                 {this.hireFacultyComponent(this.props.everything.academics)}
 
