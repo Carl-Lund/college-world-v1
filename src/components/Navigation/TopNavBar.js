@@ -30,8 +30,11 @@ export default class TopNavBar extends React.Component {
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data)});
-        this.setState({busy:false})
+            .then(data => {
+                this.props.replaceEverything(data);
+                this.setState({busy:false});
+            });
+
     }
 
     render() {
