@@ -17,7 +17,7 @@ export default class NewsItem extends React.Component {
             <li key={newsItemNumber.toString()} className="list-group-item" >
                 {(newsItem.noteLevel === 'GOOD_NEWS') ? <span className="glyphicon glyphicon-thumbs-up" style={goodNewsStyle}></span> : null}
                 {(newsItem.noteLevel === 'BAD_NEWS') ? <span className="glyphicon glyphicon-thumbs-down" style={badNewsStyle}></span> : null}
-                Week {hoursToWeeks(newsItem.hour)}:  {newsItem.message}
+                Semester: {newsItem.semester} Week {hoursToWeeks(newsItem.hour)}:  {newsItem.message}
                 {(newsItem.amount > 0) ? <span style={goodNewsStyle}> ${newsItem.amount}</span> : null}
                 {(newsItem.amount < 0) ? <span style={badNewsStyle}> ${newsItem.amount}</span> : null}
             </li>
