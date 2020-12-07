@@ -14,9 +14,9 @@ import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 import Traits from "../Navigation/NavigationModals/Traits";
 import Application from "./Application";
 import './Admissions.css'
-import Academics from "./AdmissionsEffects/Academics";
-import Athletics from "./AdmissionsEffects/Athletics";
-import Social from "./AdmissionsEffects/Social";
+import AcademicsStatBar from "./AdmissionsEffects/AcademicsStatBar";
+import AthleticsStatBar from "./AdmissionsEffects/AthleticsStatBar";
+import SocialStatBar from "./AdmissionsEffects/SocialStatBar";
 
 export default class Admissions extends React.Component {
     constructor(props) {
@@ -130,11 +130,31 @@ export default class Admissions extends React.Component {
                         </div>
                     </div>
                 <Application student = {this.state.currentStudent} show={this.state.applicationAppear} handleClose={this.handleCloseApplication} />
+                <div>
+                    <h3>Green = Old rating</h3><br/>
+                    <h3>Blue = Potential rating after admitting selected group</h3>
+                </div>
                 <div className="card-deck my-3">
-                    <Academics impact={this.calculateAcademicImpact()}/>
-                    <Athletics impact={this.calculateAthleticImpact()}/>
-                    <Social impact={this.calculateSocialImpact()}/>
-                   </div>
+                    <AcademicsStatBar oldRating={this.props.everything.college.academicRating} impact={this.calculateAcademicImpact()}/>
+                    <AthleticsStatBar oldRating={this.props.everything.college.athleticRating} impact={this.calculateAthleticImpact()}/>
+                    <SocialStatBar oldRating={this.props.everything.college.socialRating} impact={this.calculateSocialImpact()}/>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br /><br /><br />
+
+
+
+
+
                 <div>
                     <Controls everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 </div>
