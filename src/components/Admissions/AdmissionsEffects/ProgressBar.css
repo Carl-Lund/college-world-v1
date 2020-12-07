@@ -66,12 +66,15 @@ stroke: transparent;
 .red .CircularProgressbar-path {
        stroke: #ff0000;
    }
-.blue .CircularProgressbar-path {
-    stroke: blue;
-}
+
 .green .CircularProgressbar-path {
-    stroke: green;
+    stroke: #37db45;
 }
+
+.gray .CircularProgressbar-path{
+    stroke: gray;
+}
+
 .background .CircularProgressbar-trail {
     stroke: #ddd;
 }
