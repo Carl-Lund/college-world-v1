@@ -130,10 +130,6 @@ export default class Admissions extends React.Component {
                         </div>
                     </div>
                 <Application student = {this.state.currentStudent} show={this.state.applicationAppear} handleClose={this.handleCloseApplication} />
-                <div>
-                    <h3>Green = Old rating</h3><br/>
-                    <h3>Blue = Potential rating after admitting selected group</h3>
-                </div>
                 <div className="card-deck my-3">
                     <AcademicsStatBar oldRating={this.props.everything.college.academicRating} impact={this.calculateAcademicImpact()}/>
                     <AthleticsStatBar oldRating={this.props.everything.college.athleticRating} impact={this.calculateAthleticImpact()}/>
