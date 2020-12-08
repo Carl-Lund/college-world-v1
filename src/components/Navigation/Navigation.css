@@ -1,0 +1,22 @@
+/*a:hover{*/
+/*    color: #10D185;*/
+/*}*/
+/*a:active{*/
+/*    color: #282c34;*/
+/*}*/
+/*a:focus{*/
+/*    color: #282c34;*/
+/*}*/
+h3{
+    font-size: 100%;
+}
+.active {
+    font-size: 100%;
+    color: #282c34 !important;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+}
+li{
+    padding: 0;
+    margin: 0;
+}
