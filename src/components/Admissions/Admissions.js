@@ -14,6 +14,9 @@ import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 import Traits from "../Navigation/NavigationModals/Traits";
 import Application from "./Application";
 import './Admissions.css'
+import Academics from "./AdmissionsEffects/Academics";
+import Athletics from "./AdmissionsEffects/Athletics";
+import Social from "./AdmissionsEffects/Social";
 
 export default class Admissions extends React.Component {
     constructor(props) {
@@ -22,12 +25,50 @@ export default class Admissions extends React.Component {
             applicationAppear : false,
             currentStudent: null
         };
+        this.oldNumStudents = this.props.everything.college.numberStudentsAdmitted;
+        this.newNumStudents = this.props.everything.admissions.openCapacity;
         this.setApplicationShow = (value) => {this.setState({applicationAppear:value})}
         this.handleCloseApplication = () => this.setApplicationShow(false);
 
         this.handleShowApplication = (data) => {
             this.state.currentStudent = data;
             this.setApplicationShow(true);
+        }
+    }
+
+    calculateAcademicImpact(){
+        const oldAcademicRating = this.props.everything.college.academicRating;
+        const newAcademicRating = this.props.everything.admissions.academicRatingImpact;
+
+        if(newAcademicRating > 0){
+            return (((oldAcademicRating*this.oldNumStudents)+(newAcademicRating*this.newNumStudents))/(this.oldNumStudents + this.newNumStudents));
+        }
+        else{
+            return oldAcademicRating;
+        }
+    }
+
+    calculateAthleticImpact(){
+        const oldAthleticRating = this.props.everything.college.athleticRating;
+        const newAthleticRating = this.props.everything.admissions.athleticRatingImpact;
+
+        if(newAthleticRating > 0){
+            return (((oldAthleticRating*this.oldNumStudents)+(newAthleticRating*this.newNumStudents))/(this.oldNumStudents + this.newNumStudents));
+        }
+        else{
+            return oldAthleticRating;
+        }
+    }
+
+    calculateSocialImpact(){
+        const oldSocialRating = this.props.everything.college.socialRating;
+        const newSocialRating = this.props.everything.admissions.socialRatingImpact;
+
+        if(newSocialRating > 0){
+            return (((oldSocialRating*this.oldNumStudents)+(newSocialRating*this.newNumStudents))/(this.oldNumStudents + this.newNumStudents));
+        }
+        else{
+            return oldSocialRating;
         }
     }
 
@@ -90,13 +131,10 @@ export default class Admissions extends React.Component {
                     </div>
                 <Application student = {this.state.currentStudent} show={this.state.applicationAppear} handleClose={this.handleCloseApplication} />
                 <div className="card-deck my-3">
-                    <CollegeHappiness everything={this.props.everything}/>
-                    <CollegeRetention everything={this.props.everything}/>
-                    <CollegeBuildings everything={this.props.everything}/>
-                    <CollegeStudentHealth everything={this.props.everything}/>
-                    <CollegeRecreationalHappiness everything={this.props.everything}/>
-                    <CollegeFinancialHappiness everything={this.props.everything}/>
-                </div>
+                    <Academics impact={this.calculateAcademicImpact()}/>
+                    <Athletics impact={this.calculateAthleticImpact()}/>
+                    <Social impact={this.calculateSocialImpact()}/>
+                   </div>
                 <div>
                     <Controls everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 </div>

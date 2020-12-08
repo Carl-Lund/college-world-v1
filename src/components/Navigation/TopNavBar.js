@@ -10,7 +10,7 @@ export default class TopNavBar extends React.Component {
     constructor(props) {
         super(props);
         this.fetchData = this.fetchData.bind(this);
-        this.state = {appear : false, calendarAppear : false, traitsAppear : false};
+        this.state = {appear : false, calendarAppear : false, traitsAppear : false, busy : false};
 
         this.setShow = (value) => {this.setState({appear:value})}
         this.handleClose = () => this.setShow(false);
@@ -26,10 +26,15 @@ export default class TopNavBar extends React.Component {
     }
 
     fetchData() {
+        this.setState({busy:true})
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
         fetch(address)
             .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data)});
+            .then(data => {
+                this.props.replaceEverything(data);
+                this.setState({busy:false});
+            });
+
     }
 
     render() {
@@ -51,8 +56,8 @@ export default class TopNavBar extends React.Component {
                         <Nav.Link>Student Faculty Ratio:<br />
                             {studentFacultyRatio}</Nav.Link>
                         <Nav.Link >
-                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span>
-                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Button>
+                            <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
+                            <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                         </Nav.Link>
 
                     </Nav>
@@ -71,7 +76,7 @@ export default class TopNavBar extends React.Component {
                         <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
                     <Nav.Link >
-                        <Button onClick={this.fetchData} variant="success">Jump To Next {this.props.everything.college.timeAdvanceBy}</Button>
+                        <Button variant={"success"} disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.fetchData()}}>{this.state.busy? 'Please wait' : 'Jump To Next ' + this.props.everything.college.timeAdvanceBy}</Button>
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

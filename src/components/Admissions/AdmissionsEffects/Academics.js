@@ -1,8 +1,8 @@
 import React from 'react';
-import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default class CollegeRecreationalHappiness extends React.Component {
+export default class Academics extends React.Component {
 
     render() {
 
@@ -23,22 +23,24 @@ export default class CollegeRecreationalHappiness extends React.Component {
             return temp;
         }
 
-        let color=getColor(this.props.studentRecreationalHappiness);
+        let color=getColor(this.props.impact);
 
         return (
             <div className="col-sm-2">
-                <div>
-                    <h3 className="text-center">Recreational Satisfaction</h3>
-                    <CircularProgressbarWithChildren value={this.props.studentRecreationalHappiness} styles={buildStyles({pathColor: color})}>
+                <div className="collegeHappinessBar">
+                    <h3 className="text-center">ACADEMICS</h3>
+                    <br></br>
+                    <CircularProgressbarWithChildren value={this.props.impact} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/992/992604.svg"
+                            style={{ width: 90, marginTop: -5 }}
+                            src="resources/images/academictrait.png"
                         />
                         <div style={{ fontSize: 12}}>
-                            <strong>{this.props.studentRecreationalHappiness}%</strong>
+                            <strong>{Math.round(this.props.impact)}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
+                    <br/>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
