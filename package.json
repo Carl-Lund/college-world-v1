@@ -15,7 +15,9 @@
     "react-select": "^3.0.8",
     "react-table": "^6.10.3",
     "sweetalert2": "^9.3.16",
-    "avataaars-updated": "^1.2.8"
+    "avataaars-updated": "^1.2.8",
+    "react-minimal-pie-chart": "^8.1.0",
+    "react-google-charts": "^3.0.15"
   },
   "scripts": {
     "start": "react-scripts start",

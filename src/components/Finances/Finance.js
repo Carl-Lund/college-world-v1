@@ -8,6 +8,8 @@ import FinanceLog from "./FinanceLog";
 import FinanceLoanContract from "./FinanceLoanContract";
 import FinanceLoanTable from "./FinanceLoanTable";
 import TipsBox from "../College/TipsBox";
+import ExpensesGraph from "./ExpensesGraph";
+import FinancesGraph from "./FinancesGraph";
 
 export default class Finance extends React.Component {
     constructor(props) {
@@ -64,6 +66,18 @@ export default class Finance extends React.Component {
                         <Col sm={4}><FinanceLoanContract everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                         <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>
+
+                    <Row>
+                        <Col sm={4}>
+                            <br></br><br></br>
+                        </Col>
+                        <Col sm={4}><br></br><br></br></Col>
+                    </Row>
+                    <Row>
+                        <Col sm={6}><ExpensesGraph everything={this.props.everything}/></Col>
+                        <Col sm={6}><FinancesGraph everything={this.props.everything}/></Col>
+                    </Row>
+
                 </Container>
             </div>
         );
