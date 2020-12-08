@@ -12,11 +12,19 @@ export default class Faculty extends React.Component{
         this.fireFaculty = this.fireFaculty.bind(this);
         this.facultySwitch = this.facultySwitch.bind(this);
         this.hideShowTipsText = this.hideShowTipsText.bind(this);
+        this.giveRaise = this.giveRaise.bind(this);
+        this.hireFacultyComponent = this.hireFacultyComponent.bind(this);
+        this.hireFaculty = this.hireFaculty.bind(this);
+        this.onChangeSelectDepartment = this.onChangeSelectDepartment.bind(this);
+        this.onChangeSelectSalary = this.onChangeSelectSalary.bind(this);
+
         this.state = {
             selectedFaculty: 0,
             hideShowTipsText: "Hide Tips",
             isHide: false,
-            showNextTip: true
+            showNextTip: true,
+            salary: '6000',
+            department: "Arts and Sciences"
         }
     }
 
@@ -52,6 +60,14 @@ export default class Faculty extends React.Component{
         });
     }
 
+    hireFaculty(){
+        const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/hire/" + this.state.salary + "/" + this.state.department + "/";
+        fetch(address)
+            .then(response => response.json())
+            .then(data => {this.props.replaceEverything(data);
+            });
+    }
+
     giveRaise(){
         const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/raise/" + this.state.selectedFaculty + "/";
         fetch(address)
@@ -72,6 +88,7 @@ export default class Faculty extends React.Component{
         }
         return results;
     }
+
     getDeptListAsOpts(listOfOptions){
         let results = [];
         if(listOfOptions != null) {
@@ -83,6 +100,17 @@ export default class Faculty extends React.Component{
         }
         return results;
     }
+
+    onChangeSelectSalary= (value) => {
+        console.log('The value is: ' + value.toString())
+        this.state.salary = value.toString()
+    }
+
+    onChangeSelectDepartment= (value) => {
+        console.log('The value is: ' + value.toString())
+        this.state.department = value.toString()
+    }
+
     hireFacultyComponent(academics){
         return (<div className="col-sm-4">
             <div className="well well-sm">
@@ -91,15 +119,16 @@ export default class Faculty extends React.Component{
                         if you would like to add a new faculty member</label>
                 </div>
                 <div className="form-group">
-                    <select className="form-control" id="salaryDropdown" name="salaryDropdown">
+                    <select onChange={e => this.onChangeSelectSalary(e.target.value)} className="form-control" id="salaryDropdown" name="salaryDropdown">
                         {this.getListAsOpts(academics.facultySalaries)}
                     </select>
                     <br/>
-                    <select class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
+                    <select onChange={e => this.onChangeSelectDepartment(e.target.value)} class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
                         {this.getDeptListAsOpts(academics.unlockedDepts)}
+
                     </select>
                     <br/>
-                    <input type=" submit" class=" btn btn-info" name=" addFaculty" value=" Add Faculty"/><br/>
+                    <button type="submit" className="btn btn-info" onClick={this.hireFaculty} name="addFaculty">Add Faculty</button>
                     <br/>
                 </div>
             </div>
@@ -161,7 +190,6 @@ export default class Faculty extends React.Component{
                     <div className="col-md-2">
                     </div>
                 </div>
-
                 {this.hireFacultyComponent(this.props.everything.academics)}
 
 

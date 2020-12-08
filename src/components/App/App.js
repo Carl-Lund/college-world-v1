@@ -175,7 +175,7 @@ export default class App extends React.Component {
             <Route path="/admissions" render={() => <Admissions everything={everything} replaceEverything={this.replaceEverything}/>} />
             <Route path="/finances" render={() => <Finance everything={everything} replaceEverything={this.replaceEverything} />} />
             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
-            <Route path="/store" render={() => <Store everything={everything} />} />
+            <Route path="/store" render={() => <Store everything={everything} replaceEverything={this.replaceEverything}/>} />
             <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />
             <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />

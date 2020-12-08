@@ -103,22 +103,15 @@ export default class Admissions extends React.Component {
                         <div className="col-sm text-center topbar navbar navbar-default navbar-fixed-top">
                             <img className="topbar-icon" src="resources/images/college_world_icons/total_students.png"></img>
                             <div className="topbar-text">
-                                <h4><strong>{this.props.everything.college.studentsGraduating}</strong></h4>
-                                <h6>Graduating Students</h6>
-                            </div>
-                        </div>
-                        <div className="col-sm text-center topbar">
-                            <img className="topbar-icon" src="resources/images/student.png"></img>
-                            <div className="topbar-text">
-                                <h4><strong>{this.props.everything.objectives.studentCount}</strong></h4>
-                                <h6>Total Enrolled Students</h6>
+                                <h4><strong>{this.props.everything.college.studentsGraduating} / {this.props.everything.objectives.studentCount}</strong></h4>
+                                <h6>Students Graduating</h6>
                             </div>
                         </div>
                         <div className="col-sm text-center topbar">
                             <img className="topbar-icon" src="resources/images/presentation.png"/>
                             <div className="topbar-text">
                                 <h4><strong>{this.props.everything.admissions.openCapacity}</strong></h4>
-                                <h6>Currently Open Space</h6>
+                                <h6>Open Slots for Next Year</h6>
                             </div>
                         </div>
                         <div className="col-sm text-center topbar" id="last-bar">
