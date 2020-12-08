@@ -1,6 +1,8 @@
 import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import Popover from "react-bootstrap/Popover";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 export default class CollegeStudentHealth extends React.Component {
 
@@ -25,10 +27,20 @@ export default class CollegeStudentHealth extends React.Component {
 
         let color=getColor(this.props.studentHealthRating);
 
+        const popover = (
+            <Popover id="popover-basic">
+                <Popover.Title as="h3">Student Health</Popover.Title>
+                <Popover.Content>
+                    The student health rating is based on the student body's health
+                </Popover.Content>
+            </Popover>
+        );
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3 className="text-center">Student Health</h3>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                        <h3 className="text-center">Student Health</h3>
+                    </OverlayTrigger>
                     <CircularProgressbarWithChildren value={this.props.studentHealthRating} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
@@ -39,13 +51,6 @@ export default class CollegeStudentHealth extends React.Component {
                             <strong>{this.props.studentHealthRating}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
-                    {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
-                    {/*        data-toggle="collapse">Details*/}
-                    {/*</button>*/}
-                    <div id="happinessDetails" className="collapse">
-                        The happiness of the students depends on their health, academic success,
-                        tuition bills, and how much fun they are having.
-                    </div>
                 </div>
             </div>
         );

@@ -10,6 +10,8 @@ export default class PotentialStudentTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            prevButton: true,
+            nextButton: false,
             potentialStudentTable: this.createTable(this.props.admissions, null, this.props, this.initial, this.final)
         }
         this.prev = this.prev.bind(this);
@@ -28,7 +30,6 @@ export default class PotentialStudentTable extends React.Component {
     }
 
     prev = () => {
-        console.log("Moved back");
         this.initial -= this.move;
         this.final -= this.move;
 
@@ -45,15 +46,13 @@ export default class PotentialStudentTable extends React.Component {
     }
 
     updateButtons = () => {
-        let btnnext = document.getElementById(this.props.label + '-next');
-        let btnprev = document.getElementById(this.props.label + '-prev');
-        btnnext.disabled = false;
-        btnprev.disabled = false;
+        this.state.prevButton = false;
+        this.state.nextButton = false;
         if(this.initial <= 0) {
-            btnprev.disabled = true;
+            this.state.prevButton = true;
         }
         if(this.final >= this.props.admissions.length) {
-            btnnext.disabled = true;
+            this.state.nextButton = true;
         }
     }
 
@@ -65,8 +64,8 @@ export default class PotentialStudentTable extends React.Component {
                 <br></br>
                 <h5 style={{display: 'inline-block'}}>Showing students: {this.initial} - {this.final}</h5>
                 <div className="well well-sm" style={{height: '100%'}}>
-                    <button type="button" id={this.props.label + '-prev'} className="btn btn-primary" onClick={this.prev} style={{margin:'0.5em'}}>Previous Page</button>
-                    <button type="button" id={this.props.label + '-next'} className="btn btn-primary" onClick={this.next} style={{margin:'0.5em'}}>Next Page</button>
+                    <button type="button" id={this.props.label + '-prev'} className="btn btn-primary" disabled={this.state.prevButton} onClick={this.prev} style={{margin:'0.5em'}}>Previous Page</button>
+                    <button type="button" id={this.props.label + '-next'} className="btn btn-primary" disabled={this.state.nextButton} onClick={this.next} style={{margin:'0.5em'}}>Next Page</button>
                     <div className="potentialStudentContainer" style={{width: "100%"}}>
                         {this.state.potentialStudentTable}
                     </div>
@@ -127,7 +126,6 @@ export default class PotentialStudentTable extends React.Component {
             table.push(<PotentialStudentBubble showapp={this.props.showapp} student={studentsArray[i]}
                                                studentSwitch={props.studentSwitch}/>)
         }
-
         return table
     }
 }

@@ -19,18 +19,14 @@ export default class College extends React.Component {
                 {/*<PopupEventHandler everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>*/}
                 <div className="container">
                     <div className="row">
+                        <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
+                    </div>
+                    <div className="row">
                         <CurrentLevel everything={this.props.everything} changeTimeFunction={this.props.changeTimeFunction} replaceEverything={this.props.replaceEverything}/>
                     </div>
                     <div className="row">
-                        <CollegeDashboard everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
-                    </div>
-
-                    <div className="row">
                         <div className="col-sm-6">
                             <News everything={this.props.everything} newsType={'COLLEGE_NEWS'} title={'College News'}/>
-                        </div>
-                        <div className="col-sm-6">
-                            <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'} title={'Financial Reports'}/>
                         </div>
 
                         <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
