@@ -1,7 +1,7 @@
 import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
-import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 // import { CircularProgressbar } from 'react-circular-progressbar';
 // import 'react-circular-progressbar/dist/styles.css';
 
@@ -27,18 +27,19 @@ export default class CollegeRetention extends React.Component {
         }
 
         let color = getColor(this.props.retentionRate);
-        const popover = (
-            <Popover id="popover-basic">
-                <Popover.Title as="h3">Retention</Popover.Title>
-                <Popover.Content>
-                    The retention rating is based on the faculty's performance and simply retention
-                </Popover.Content>
-            </Popover>
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The retention rating is based on the faculty's performance and simply retention
+            </Tooltip>
         );
         return (
             <div className="col-sm-2">
                 <div className="collegeHappinessBar">
-                    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 450 }}
+                        overlay={renderTooltip}
+                    >
                         <h3 className="text-center">Retention</h3>
                     </OverlayTrigger>
                     <br></br>

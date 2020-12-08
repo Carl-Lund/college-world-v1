@@ -5,6 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import PlayMode from "../College/PlayMode";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 export default class CurrentLevel extends React.Component {
 
     render() {
@@ -20,13 +21,11 @@ export default class CurrentLevel extends React.Component {
         let totalPotentialStudents = this.props.everything.admissions.groupA.length +
             this.props.everything.admissions.groupB.length +
             this.props.everything.admissions.groupC.length;
-        const popover = (
-            <Popover id="popover-basic">
-                <Popover.Title as="h3">Level Status</Popover.Title>
-                <Popover.Content>
-                    The student population/The number of students neccessary to level up
-                </Popover.Content>
-            </Popover>
+
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The student population/The number of students neccessary to level up
+            </Tooltip>
         );
         return (
             <div className="container">
@@ -35,7 +34,11 @@ export default class CurrentLevel extends React.Component {
                             <h1 className="card-title">{this.props.everything.college.runId}</h1>
                             <h2>Level {this.props.everything.objectives.currentLevel} </h2>
                             <ProgressBar now={this.props.everything.objectives.studentCount} max={this.props.everything.objectives.studentsNeededForLevel[this.props.everything.objectives.currentLevel + 1]}/>
-                            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                            <OverlayTrigger
+                                placement="bottom-left"
+                                delay={{ show: 250, hide: 450 }}
+                                overlay={renderTooltip}
+                            >
                                 <h3>{this.props.everything.objectives.studentCount}/{this.props.everything.objectives.studentsNeededForLevel[this.props.everything.objectives.currentLevel + 1]}</h3>
                             </OverlayTrigger>
                         </div>

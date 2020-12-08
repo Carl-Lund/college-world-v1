@@ -1,8 +1,8 @@
 import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export default class CollegeRecreationalHappiness extends React.Component {
 
@@ -26,18 +26,20 @@ export default class CollegeRecreationalHappiness extends React.Component {
         }
 
         let color=getColor(this.props.studentRecreationalHappiness);
-        const popover = (
-            <Popover id="popover-basic">
-                <Popover.Title as="h3">Recreational Satisfaction</Popover.Title>
-                <Popover.Content>
-                    The recreational satisfaction is based on how well the school's sports teams are doing
-                </Popover.Content>
-            </Popover>
+
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The recreational satisfaction is based on how well the school's sports teams are doing
+            </Tooltip>
         );
         return (
             <div className="col-sm-2">
                 <div>
-                    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 450 }}
+                        overlay={renderTooltip}
+                    >
                         <h3 className="text-center">Recreational Satisfaction</h3>
                     </OverlayTrigger>
                     <CircularProgressbarWithChildren value={this.props.studentRecreationalHappiness} styles={buildStyles({pathColor: color})}>
