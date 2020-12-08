@@ -1,6 +1,8 @@
 import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export default class CollegeRecreationalHappiness extends React.Component {
 
@@ -25,10 +27,21 @@ export default class CollegeRecreationalHappiness extends React.Component {
 
         let color=getColor(this.props.studentRecreationalHappiness);
 
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The recreational satisfaction is based on how well the school's sports teams are doing
+            </Tooltip>
+        );
         return (
             <div className="col-sm-2">
                 <div>
-                    <h3 className="text-center">Recreational Satisfaction</h3>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 450 }}
+                        overlay={renderTooltip}
+                    >
+                        <h3 className="text-center">Recreational Satisfaction</h3>
+                    </OverlayTrigger>
                     <CircularProgressbarWithChildren value={this.props.studentRecreationalHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img

@@ -16,8 +16,7 @@ export default class Store extends React.Component {
         console.log(address);
         fetch(address)
             .then(response => response.json())
-            .then(data => {
-            });
+            .then(data => this.props.replaceEverything(data));
         this.props.everything.store[item].isPurchased = true;
         this.props.replaceEverything(this.props.everything);
     }

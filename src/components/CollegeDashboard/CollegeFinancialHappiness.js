@@ -1,6 +1,8 @@
 import React from 'react';
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export default class CollegeFinancialHappiness extends React.Component {
 
@@ -24,11 +26,21 @@ export default class CollegeFinancialHappiness extends React.Component {
         }
 
         let color=getColor(this.props.studentFinancialHappiness);
-
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The financial satisfaction is based on the tuition satisfaction
+            </Tooltip>
+        );
         return (
             <div className="col-sm-2">
                 <div className="collegeHappinessBar">
-                    <h3 className="text-center">Financial Satisfaction</h3>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 450 }}
+                        overlay={renderTooltip}
+                    >
+                        <h3 className="text-center">Financial Satisfaction</h3>
+                    </OverlayTrigger>
                     <CircularProgressbarWithChildren value={this.props.studentFinancialHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
@@ -40,13 +52,6 @@ export default class CollegeFinancialHappiness extends React.Component {
                         </div>
                     </CircularProgressbarWithChildren>
                     <br/>
-                    {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
-                    {/*        data-toggle="collapse">Details*/}
-                    {/*</button>*/}
-                    <div id="happinessDetails" className="collapse">
-                        The happiness of the students depends on their health, academic success,
-                        tuition bills, and how much fun they are having.
-                    </div>
                 </div>
             </div>
         );

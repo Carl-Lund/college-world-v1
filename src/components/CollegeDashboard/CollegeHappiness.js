@@ -1,7 +1,8 @@
 import React from 'react';
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 export default class CollegeHappiness extends React.Component {
 
     render() {
@@ -25,10 +26,22 @@ export default class CollegeHappiness extends React.Component {
 
         let color=getColor(this.props.studentBodyHappiness);
 
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The happiness of the college is based on the student and faculty happiness
+            </Tooltip>
+        );
+
         return (
                 <div className="col-sm-2">
-                    <div className="collegeHappinessBar">
-                        <h3 className="text-center">Happiness</h3>
+                    <div className="collegeHappinessBar" >
+                        <OverlayTrigger
+                            placement="bottom"
+                            delay={{ show: 250, hide: 450 }}
+                            overlay={renderTooltip}
+                        >
+                            <h3 className="text-center" >Happiness</h3>
+                        </OverlayTrigger>
                         <br></br>
                         <CircularProgressbarWithChildren value={this.props.studentBodyHappiness} styles={buildStyles({pathColor: color})}>
                             {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
@@ -44,10 +57,10 @@ export default class CollegeHappiness extends React.Component {
                         {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                         {/*        data-toggle="collapse">Details*/}
                         {/*</button>*/}
-                        <div id="happinessDetails" className="collapse">
-                            The happiness of the students depends on their health, academic success,
-                            tuition bills, and how much fun they are having.
-                        </div>
+                        {/*<div id="happinessDetails" className="collapse">*/}
+                        {/*    The happiness of the students depends on their health, academic success,*/}
+                        {/*    tuition bills, and how much fun they are having.*/}
+                        {/*</div>*/}
                     </div>
                 </div>
         );

@@ -1,5 +1,7 @@
 import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 // import { CircularProgressbar } from 'react-circular-progressbar';
 // import 'react-circular-progressbar/dist/styles.css';
 
@@ -25,10 +27,21 @@ export default class CollegeRetention extends React.Component {
         }
 
         let color = getColor(this.props.retentionRate);
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                The retention rating is based on the faculty's performance and simply retention
+            </Tooltip>
+        );
         return (
             <div className="col-sm-2">
                 <div className="collegeHappinessBar">
-                    <h3 className="text-center">Retention</h3>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 450 }}
+                        overlay={renderTooltip}
+                    >
+                        <h3 className="text-center">Retention</h3>
+                    </OverlayTrigger>
                     <br></br>
                     <CircularProgressbarWithChildren value={this.props.retentionRate} styles={ buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
