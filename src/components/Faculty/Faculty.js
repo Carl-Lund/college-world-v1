@@ -62,7 +62,6 @@ export default class Faculty extends React.Component{
 
     hireFaculty(){
         const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/hire/" + this.state.salary + "/" + this.state.department + "/";
-        console.log("hire" + address);
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
@@ -90,16 +89,6 @@ export default class Faculty extends React.Component{
         return results;
     }
 
-    onChangeSelectSalary= (value) => {
-        console.log('The value is: ' + value.toString())
-        this.salary = value.toString()
-    }
-
-    onChangeSelectDepartment= (value) => {
-        console.log('The value is: ' + value.toString())
-        this.department = value.toString()
-    }
-
     getDeptListAsOpts(listOfOptions){
         let results = [];
         if(listOfOptions != null) {
@@ -111,6 +100,17 @@ export default class Faculty extends React.Component{
         }
         return results;
     }
+
+    onChangeSelectSalary= (value) => {
+        console.log('The value is: ' + value.toString())
+        this.state.salary = value.toString()
+    }
+
+    onChangeSelectDepartment= (value) => {
+        console.log('The value is: ' + value.toString())
+        this.state.department = value.toString()
+    }
+
     hireFacultyComponent(academics){
         return (<div className="col-sm-4">
             <div className="well well-sm">
@@ -190,7 +190,6 @@ export default class Faculty extends React.Component{
                     <div className="col-md-2">
                     </div>
                 </div>
-
                 {this.hireFacultyComponent(this.props.everything.academics)}
 
 
