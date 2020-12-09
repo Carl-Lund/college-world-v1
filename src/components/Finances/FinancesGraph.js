@@ -15,7 +15,7 @@ export default class FinancesGraph extends React.Component {
 
         for (let i = 0; i < data.length; i++) {
             if(i === 0){
-                list.push([0,0]);
+                list.push([0,40000]);
             }
             else{
                 list.push([i, data[i]]);
