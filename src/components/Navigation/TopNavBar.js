@@ -10,7 +10,7 @@ export default class TopNavBar extends React.Component {
     constructor(props) {
         super(props);
         this.fetchData = this.fetchData.bind(this);
-        this.state = {appear : false, calendarAppear : false, traitsAppear : false, busy : false};
+        this.state = {appear : false, calendarAppear : false, tipsAppear : false, busy : false};
 
         this.setShow = (value) => {this.setState({appear:value})}
         this.handleClose = () => this.setShow(false);
@@ -20,9 +20,9 @@ export default class TopNavBar extends React.Component {
         this.handleCloseCalendar = () => this.setCalendarShow(false);
         this.handleShowCalendar = () => this.setCalendarShow(true);
 
-        this.setTraitsShow = (value) => {this.setState({traitsAppear:value})}
-        this.handleCloseTraits = () => this.setTraitsShow(false);
-        this.handleShowTraits = () => this.setTraitsShow(true);
+        this.setTipsShow = (value) => {this.setState({tipsAppear:value})}
+        this.handleCloseTips = () => this.setTipsShow(false);
+        this.handleShowTips = () => this.setTipsShow(true);
     }
 
     fetchData() {
@@ -40,7 +40,6 @@ export default class TopNavBar extends React.Component {
     render() {
         let collegeName = this.props.collegeName;
         let currentBalance = this.props.everything.college.availableCash.toLocaleString();
-        let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
         let totalStudents = this.props.everything.objectives.studentCount;
 
         return (
@@ -53,8 +52,6 @@ export default class TopNavBar extends React.Component {
                             ${currentBalance}</Nav.Link>
                         <Nav.Link>Seats Occupied: <br />
                             {totalStudents}</Nav.Link>
-                        <Nav.Link>Student Faculty Ratio:<br />
-                            {studentFacultyRatio}</Nav.Link>
                         <Nav.Link >
                             <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
                             <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
@@ -65,8 +62,8 @@ export default class TopNavBar extends React.Component {
             <Navbar.Collapse className="justify-content-end">
                 <Nav>
                     <Nav.Item>
-                        <Button onClick={this.handleShowTraits} variant="info">Traits</Button>
-                        <Traits everything={this.props.everything} show={this.state.traitsAppear} handleClose={this.handleCloseTraits} />
+                        <Button onClick={this.handleShowTips} variant="info">Tips</Button>
+                        <Traits everything={this.props.everything} show={this.state.tipsAppear} handleClose={this.handleCloseTips} />
                     </Nav.Item>
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">
