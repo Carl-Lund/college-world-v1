@@ -36,7 +36,7 @@ export default class PurchaseBuildings extends React.Component{
                             <label>Name</label>
                             <input className="editText" type="text" value={this.props.buildingName} onChange={this.props.handleNewBuildingChange} placeholder="Enter Building Name"/>
                         </div>
-                        <button style={{color:cashColor}} type="submit" className="btn btn-info" onClick={this.props.purchaseBuilding} name="purchaseBuilding">Purchase ($150000)</button>
+                        <button style={{color:cashColor}} type="submit" className="btn btn-info" onClick={this.props.purchaseBuilding} name="purchaseBuilding">Purchase ($150,000)</button>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import CurrentLevel from "../CurrentLevel/CurrentLevel";
 import CollegeDashboard from "../CollegeDashboard/CollegeDashboard";
 import News from "../News/News";
-import Tuition from "./Tuition";
+import Tuition from "../Finances/Tuition";
 import PlayMode from "./PlayMode";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 

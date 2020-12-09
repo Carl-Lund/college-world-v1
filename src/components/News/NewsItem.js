@@ -18,8 +18,8 @@ export default class NewsItem extends React.Component {
                 {(newsItem.noteLevel === 'GOOD_NEWS') ? <span className="glyphicon glyphicon-thumbs-up" style={goodNewsStyle}></span> : null}
                 {(newsItem.noteLevel === 'BAD_NEWS') ? <span className="glyphicon glyphicon-thumbs-down" style={badNewsStyle}></span> : null}
                 Semester: {newsItem.semester} Week {hoursToWeeks(newsItem.hour)}:  {newsItem.message}
-                {(newsItem.amount > 0) ? <span style={goodNewsStyle}> ${newsItem.amount}</span> : null}
-                {(newsItem.amount < 0) ? <span style={badNewsStyle}> ${newsItem.amount}</span> : null}
+                {(newsItem.amount > 0) ? <span style={goodNewsStyle}> ${newsItem.amount.toLocaleString()}</span> : null}
+                {(newsItem.amount < 0) ? <span style={badNewsStyle}> ${newsItem.amount.toLocaleString()}</span> : null}
             </li>
         );
     }

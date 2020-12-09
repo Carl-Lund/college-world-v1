@@ -82,7 +82,7 @@ export default class Faculty extends React.Component{
         if(listOfOptions != null) {
             for (let i = 0; i < listOfOptions.length; i++) {
                 results.push(
-                    <option>{listOfOptions[i]}</option>
+                    <option>${listOfOptions[i].toLocaleString()}</option>
                 )
             }
         }
@@ -125,7 +125,6 @@ export default class Faculty extends React.Component{
                     <br/>
                     <select onChange={e => this.onChangeSelectDepartment(e.target.value)} class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
                         {this.getDeptListAsOpts(academics.unlockedDepts)}
-
                     </select>
                     <br/>
                     <button type="submit" className="btn btn-info" onClick={this.hireFaculty} name="addFaculty">Add Faculty</button>
@@ -177,7 +176,7 @@ export default class Faculty extends React.Component{
                     <div class = "memberInfo">
                         <h3>{this.props.everything.faculty[this.state.selectedFaculty].name}</h3>
                         <h3>Department: {this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
-                        <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary}</h3>
+                        <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
                         <h3>ID: {this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
                         <h3>Happiness: {this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
                         <h3>Performance: {this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>

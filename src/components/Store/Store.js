@@ -28,6 +28,7 @@ export default class Store extends React.Component {
             let aRow = []
             // add button functionality + disable if unable to purchase
             for (let i = 0; i < this.props.everything.store.length; i++) {
+                console.log(this.props.everything.store[i].name);
                 itemTile = []
                 // user cant afford item
                 if (this.props.everything.college.availableCash < this.props.everything.store[i].cost) {
@@ -38,7 +39,7 @@ export default class Store extends React.Component {
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
                                 <p className="card-text">{this.props.everything.store[i].description}</p>
-                                <p className="card-text text-danger">${this.props.everything.store[i].cost}</p>
+                                <p className="card-text text-danger">${this.props.everything.store[i].cost.toLocaleString()}</p>
                             </div>
                             <div className="card-footer">
                                 <input type="submit" className="btn btn-info" name="buyItem" value="Buy" disabled></input>
@@ -56,7 +57,7 @@ export default class Store extends React.Component {
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
                                 <p className="card-text">{this.props.everything.store[i].description}</p>
-                                <p className="card-text text-muted">${this.props.everything.store[i].cost}</p>
+                                <p className="card-text text-muted">${this.props.everything.store[i].cost.toLocaleString()}</p>
                             </div>
                             <div className="card-footer">
                                 <input type="submit" className="btn btn-info" name="buyItem" value={"Locked Until Level " +this.props.everything.store[i].gateNum} disabled></input>
@@ -73,7 +74,7 @@ export default class Store extends React.Component {
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
                                 <p className="card-text">{this.props.everything.store[i].description}</p>
-                                <p className="card-text">${this.props.everything.store[i].cost}</p>
+                                <p className="card-text">${this.props.everything.store[i].cost.toLocaleString()}</p>
                             </div>
                             <div className="card-footer">
                                 <input type="submit" className="btn btn-info" name="buyItem" value="Purchased" disabled></input>
@@ -88,7 +89,7 @@ export default class Store extends React.Component {
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
                                 <p className="card-text">{this.props.everything.store[i].description}</p>
-                                <p className="card-text text-success">${this.props.everything.store[i].cost}</p>
+                                <p className="card-text text-success">${this.props.everything.store[i].cost.toLocaleString()}</p>
                             </div>
                             <div className="card-footer">
                                 <button type="submit" className="btn btn-info" onClick={this.buyItem} name="buyItem" value={i}>Buy</button>

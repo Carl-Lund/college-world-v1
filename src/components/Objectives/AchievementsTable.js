@@ -24,7 +24,7 @@ function createTable(achievements) {
         if(achievements[i].locked == false) continue;
             table.push(<li className="list-group-item">
                     <p>{achievements[i].name}</p>
-                    <p>{"Reward: $" + achievements[i].cashReward}</p>
+                    <p>{"Reward: $" + achievements[i].cashReward.toLocaleString()}</p>
                     <p>{achievements[i].description}</p>
                 </li>
             );
