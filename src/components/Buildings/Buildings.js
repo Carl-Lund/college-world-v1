@@ -139,6 +139,18 @@ export default class Buildings extends React.Component {
 
 
     render() {
+        function getTextColor(value) {
+            if(value < 30){
+                return "#fc3d17";
+            }
+            else if(value < 60){
+                return "#FFFF00";
+            }
+            else{
+                return "#f8f8f8";
+            }
+        }
+
         if (!this.props.everything) {
             return <p>Loading...</p>;
         }
@@ -152,7 +164,6 @@ export default class Buildings extends React.Component {
             tableLayout: 'fixed'
         }
         let trStyle = {
-            background: '#f8f8f8',
             border: '1px solid #ddd',
             padding: '.35em'
         }
@@ -182,6 +193,7 @@ export default class Buildings extends React.Component {
             let building = [];
             let upgradeButton = [];
             let repairButton = [];
+            let trColor = getTextColor((this.props.everything.buildings[i].shownQuality));
 
             if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
@@ -233,7 +245,7 @@ export default class Buildings extends React.Component {
                 <td style={tdStyle}>{status}</td>,
                 <td style={tdStyle}>{upgradeButton}{repairButton}</td>
             )
-            table.push(<tr style={trStyle}>{building}</tr>)
+            table.push(<tr style={{ background: trColor, trStyle}}>{building}</tr>)
         }
 
 
@@ -266,7 +278,7 @@ export default class Buildings extends React.Component {
                         <div className="col-sm-5">
                             <BuildingFilterPanel buildingFiltersOptions={buildingFiltersOptions}/>
                         </div>
-                    <BuildingsTable table={table} />
+                    <BuildingsTable table={table}/>
                 </div>
                     <div className="row">
                         <PurchaseBuildings
