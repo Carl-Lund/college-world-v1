@@ -12,7 +12,7 @@ export default class StudentsTable extends React.Component {
 
     render() {
         return (
-            <div className="studentElement" id={this.props.student.idNumber} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
+            <div className="studentElement" id={this.props.student.id} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
                 onClick = {() => this.props.studentSwitch(this.props.studentNumber)}>
                 <Avatar className="avatar" style={{height: '55px', width: '55px'}}
                     avatarStyle='Circle'
