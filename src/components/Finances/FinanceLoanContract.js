@@ -37,7 +37,7 @@ export default class FinanceTable extends React.Component {
     render() {
 
         return (
-            <div className="finance-col2-row2">
+            <div className="finance-loan-contract-box">
                 <h3>Take out a Loan</h3>
                 <div className="loan-form">
                     <Form>

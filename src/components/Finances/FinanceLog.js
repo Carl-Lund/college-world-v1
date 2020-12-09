@@ -11,7 +11,7 @@ export default class FinanceLog extends React.Component {
     render() {
 
         return (
-            <div className="finance-col1-row2">
+            <div className="finance-log-box">
                 <h3>Financial Log</h3>
                 <News everything={this.props.everything} newsType={'FINANCIAL_NEWS'}/>
             </div>

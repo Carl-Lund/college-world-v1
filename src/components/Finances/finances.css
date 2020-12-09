@@ -1,3 +1,7 @@
+.finance-header {
+    margin-bottom: 1em;
+}
+
 .value-tips {
     margin-top: 1em;
     width: 100%;
@@ -5,59 +9,85 @@
     margin-bottom: 1em;
 }
 
-.finance-col1-row1 {
-    width: 95%;
+.tuition-box {
+    width: 97%;
     margin-left: .5em;
-    background-color: white;
-    border: 2px solid gray;
-}
-
-.finance-col1-row1 h5 {
-    margin-left: 1em;
-}
-
-.finance-col1-row1 h3 {
-    text-align: center;
+    margin-bottom: .5em;
+    padding-left: 1em;
     padding-top: .25em;
 }
 
-.finance-col1-row2 {
+.finance-log-box {
     width: 95%;
     margin-left: .5em;
     background-color: white;
     border: 2px solid gray;
 }
 
-.finance-col1-row2 h3 {
+.finance-log-box h3 {
+    font-size: 125%;
     text-align: center;
-    padding: .25em 0;
+    padding: .25em;
 }
 
-.finance-col2-row2 {
+.finance-statistic-box {
     width: 95%;
     margin-left: .5em;
     background-color: white;
     border: 2px solid gray;
 }
 
-.finance-col2-row2 h3 {
+.finance-statistic-box h5 {
+    margin-left: 1em;
+}
+
+.finance-statistic-box h3 {
+    text-align: center;
+    font-size: 125%;
+    padding-top: .25em;
+}
+
+.tuition-graph-box {
+    width: 90%;
+    margin-left: 1em;
+    margin-bottom: 3em;
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.expense-graph-box {
+    width: 90%;
+    margin-left: 1em;
+    background-color: white;
+    border: 2px solid gray;
+}
+
+
+.finance-loan-contract-box {
+    width: 95%;
+    margin-left: .5em;
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.finance-loan-contract-box h3 {
+    font-size: 125%;
     text-align: center;
     padding: .25em 0;
 }
 
-.finance-col2-row2 h6 {
+.finance-loan-contract-box h6 {
     padding-left: .5em;
 }
 
-.finance-col3-row1 {
+.finance-loan-table-box {
     margin-left: .5em;
     width: 95%;
     background-color: white;
     border: 2px solid gray;
-    margin-top: -265px;
 }
 
-.finance-col3-row1 h4 {
+.finance-loan-table-box h4 {
     text-align: center;
 }
 

@@ -15,7 +15,7 @@ export default class ExpensesGraph extends React.Component {
         }
         else{
            return <Chart
-                width={'400px'}
+                width={'300px'}
                 height={'300px'}
                 chartType="PieChart"
                 loader={<div>Loading Chart</div>}
@@ -28,7 +28,7 @@ export default class ExpensesGraph extends React.Component {
                     ['Store', data.storePercent],
                 ]}
                 options={{
-                    title: '',
+                    title: 'College Expenses',
                 }}
                 rootProps={{ 'data-testid': '1' }}
                 />
@@ -37,8 +37,7 @@ export default class ExpensesGraph extends React.Component {
     render() {
 
         return (
-            <div className="finance-col1-row2">
-                <h3>Expenses</h3>
+            <div className="expense-graph-box">
                 {this.createChart(this.props.everything.college.expensesGraph)}
             </div>
         );

@@ -10,7 +10,7 @@ export default class FinanceLoanTable extends React.Component {
     render() {
 
         return (
-            <div className="finance-col3-row1">
+            <div className="finance-loan-table-box">
                 <h4>Loans</h4>
                 <ul className="list-group">
                     {createTable(this.props.everything, this.props.replaceEverything, this.props.everything.college.loans)}

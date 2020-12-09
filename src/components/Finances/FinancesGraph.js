@@ -28,15 +28,15 @@ export default class FinancesGraph extends React.Component {
     render() {
 
         return (
-            <div className="finance-col1-row2">
-                <h3>Finances</h3>
+            <div className="tuition-graph-box">
                 <Chart
-                    width={'470px'}
-                    height={'400px'}
+                    width={'320px'}
+                    height={'300px'}
                     chartType="LineChart"
                     loader={<div>Loading Financial Chart</div>}
                     data={this.createList(this.props.everything.college.financialGraph.tuitionCosts)}
                     options={{
+                        title: 'Tuition Changes',
                         hAxis: {
                             title: 'Weeks',
                         },
