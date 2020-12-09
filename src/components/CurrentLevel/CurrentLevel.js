@@ -1,6 +1,6 @@
 import React from 'react';
 import Day from "../Day/Day";
-import Tuition from "../College/Tuition";
+import Tuition from "../Finances/Tuition";
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import PlayMode from "../College/PlayMode";
 import Popover from "react-bootstrap/Popover";

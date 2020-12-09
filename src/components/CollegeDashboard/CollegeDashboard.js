@@ -6,7 +6,7 @@ import CollegeFinancialHappiness from "../CollegeDashboard/CollegeFinancialHappi
 import CollegeRecreationalHappiness from "../CollegeDashboard/CollegeRecreationalHappiness";
 import CollegeStudentHealth from "../CollegeDashboard/CollegeStudentHealth";
 import StudentStatistics from "../CollegeDashboard/StudentStatistics";
-import Tuition from "../College/Tuition";
+import Tuition from "../Finances/Tuition";
 import PlayMode from "../College/PlayMode";
 export default class CollegeDashboard extends React.Component {
 
