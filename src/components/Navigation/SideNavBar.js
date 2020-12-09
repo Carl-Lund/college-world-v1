@@ -11,12 +11,6 @@ import TopNavBar from "./TopNavBar";
 export default class SideNavBar extends React.Component {
 
     render() {
-        let collegeName = this.props.collegeName;
-        let currentBalance = this.props.everything.college.availableCash.toLocaleString();
-        let studentFacultyRatio = this.props.everything.college.studentFacultyRatioRating;
-        let timeUntilNextSemester = 75 - Math.round((this.props.everything.college.hoursAlive - 1) / 24 + 1);
-        let totalStudents = this.props.everything.college.numberStudentsAdmitted;
-
         return(
             <div className="col-md-2">
                 <nav className="sidebar bg-light col-md-2">
