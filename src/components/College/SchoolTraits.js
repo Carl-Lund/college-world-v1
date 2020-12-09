@@ -30,7 +30,7 @@ class SchoolTraits extends Component {
                             'Overcrowded Buildings, Riots, Deaths'}/>
                         </Col>
                         <Col className={"col-sm-4"}>
-                            <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue} description = {'Calculated By:\nAverage of School Traits, Tuition'}/>
+                            <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue} description = {'Calculated By:\nAverage of School Tips, Tuition'}/>
                         </Col>
                         <Col className={"col-sm-4"}>
                             <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating} description = {'Calculated By:\nStudent and Faculty Happiness, Sporting Events ' +

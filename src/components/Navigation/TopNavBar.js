@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Notification from "./NavigationModals/Notifications";
 import Calendar from "./NavigationModals/Calendar";
-import Traits from "./NavigationModals/Traits";
+import Tips from "./NavigationModals/Tips";
 
 export default class TopNavBar extends React.Component {
     constructor(props) {
@@ -63,7 +63,7 @@ export default class TopNavBar extends React.Component {
                 <Nav>
                     <Nav.Item>
                         <Button onClick={this.handleShowTips} variant="info">Tips</Button>
-                        <Traits everything={this.props.everything} show={this.state.tipsAppear} handleClose={this.handleCloseTips} />
+                        <Tips everything={this.props.everything} show={this.state.tipsAppear} handleClose={this.handleCloseTips} />
                     </Nav.Item>
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">
