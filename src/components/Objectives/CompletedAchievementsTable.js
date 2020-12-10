@@ -24,7 +24,7 @@ function createTable(achievements) {
         if(achievements[i].locked == true) continue;
             table.push(<li className="list-group-item">
                     <p>{achievements[i].name}</p>
-                    <div className="col-md-2" style={{height: '100px'}}>
+                    <div className="col-md-2" >
                         <img className="img-responsive" src={achievements[i].iconPath}/>
                     </div>
                 </li>

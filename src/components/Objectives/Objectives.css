@@ -1,20 +1,21 @@
 @charset "utf-8";
-.completed-achievements{
-    float: left;
-    margin-top: 15px;
-}
-
-.achievements{
-    float: right;
-    margin-top: 15px;
-}
 
 .name{
     padding-top: 20px;
 }
 
-.Objectives-list ul{
-    margin: 15px;
+.completed-achievements{
+    float: left;
+    margin-top: 15px;
+    width: 500px;
+    height: 300px;
+}
+
+.achievements{
+    float: right;
+    margin-top: 15px;
+    width: 500px;
+    height: 250px;
 }
 
 .curr-obj{
@@ -22,8 +23,8 @@
     padding-left: 125px;
 }
 
-.opt-obj{
-    float: left;
+.Objectives-list ul{
+    margin: 15px;
 }
 
 .Objectives-list{
@@ -31,13 +32,17 @@
     padding-right: 50px;
 }
 
+.Objectives-list img {
+    height: 150px;
+    width: 150px;
+}
+
+.completed-achievements img{
+    height: 100px;
+    width: 100px;
+    align-content: center;
+}
+
 .Objectives-list h2{
     text-align: center
 }
-
-
-/*.Objectives-list h1 {*/
-/*    font-size: 90%;*/
-/*    color: green;*/
-/*    font-weight: bold;*/
-/*}*/
