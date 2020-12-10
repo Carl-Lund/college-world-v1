@@ -35,7 +35,6 @@ export default class TipsBox extends Component{
     render(){
         return (
             <div class="tips-box">
-                <h3 className="tips-header">{this.props.name} Tips</h3>
                 <h5 className="tips-text">{this.state.currentTip}</h5>
                 {this.showButton()}
             </div>

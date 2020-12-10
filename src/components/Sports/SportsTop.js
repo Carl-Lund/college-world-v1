@@ -6,14 +6,7 @@ export default class SportsTop extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            hideShowTipsText : "Show Tips",
-            isHide: true,
-            showNextTip: true
-        };
-
         this.getSportsTeem = this.getSportsTeem.bind(this);
-        this.hideShowTipsText = this.hideShowTipsText.bind(this);
         // this.afterUpdateCollegeOnServerForSell = this.afterUpdateCollegeOnServerForSell.bind(this);
 
     }
@@ -29,34 +22,12 @@ export default class SportsTop extends React.Component {
                                 <img className="img-responsive" src="resources/images/stadium.png"></img>
                             </div>
                             <div className="col-sm-6">
-
                                 <h2>Sports</h2>
-
-
                                 <div>
                                     <strong>{this.getSportsTeem()}</strong>
                                 </div>
 
                             </div>
-
-                            <div className="col-sm-4">
-                                <div className="row">
-                                    <div className="col-sm-6">
-                                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="row">
-                                        <div id="hideTips" className="collapse">
-                                            <div className="jumbotronTransp">
-                                                <TipsBox everything = {this.props.everything} name = {'Athletic'} tips = {this.props.everything.college.collegeTips.athleticTips}/>
-                                                {/*<h3>{this.state.tipsText}{console.log(this.state.tipsText)}</h3>*/}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                         </div>
                     </div>
                 </div>
