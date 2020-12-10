@@ -15,12 +15,12 @@ export default class InsufficientFundPopup extends React.Component {
                    aria-labelledby="contained-modal-title-vcenter">
                 <Modal.Header closeButton>
                     <Modal.Title  id="contained-modal-title-vcenter">
-                        Unable to Continue Purchase
+                        Unable To Make Purchase
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
-                        <h3>You don't have enough money to make this purchase!</h3>
+                        <h3>You don't have sufficient funds to make this purchase!</h3>
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
