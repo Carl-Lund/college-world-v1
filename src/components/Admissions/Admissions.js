@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col";
 import Controls from "../Admissions/Controls";
 import Freshmen from "./FreshmenPanel";
 import PopupEventHandler from "../PopupEvents/PopupEventHandler";
-import Traits from "../Navigation/NavigationModals/Traits";
+import Tips from "../Navigation/NavigationModals/Tips";
 import Application from "./Application";
 import './Admissions.css'
 import AcademicsStatBar from "./AdmissionsEffects/AcademicsStatBar";

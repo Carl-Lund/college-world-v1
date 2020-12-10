@@ -10,7 +10,7 @@ export default class CollegeRetention extends React.Component {
         const title = this.props.title
         return (
             <div className="well">
-                <h4>{title}</h4>
+                <h1>{title}</h1>
                 <div className="pre-scrollable">
                     <ul className="list-group">
                             {createTable(this.props.everything.college, this.props.everything.news, this.props.newsType)}
