@@ -70,11 +70,17 @@ export default class Buildings extends React.Component {
     }
 
     purchaseBuilding() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
-        fetch(address)
-            .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
-            });
+        if(this.props.everything.college.availableCash < 150000){
+            this.handleShow();
+        }
+        else {
+            const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
+            fetch(address)
+                .then(response => response.json())
+                .then(data => {
+                    this.props.replaceEverything(data);
+                });
+        }
     }
 
     hideShowTipsTextBuilding = () => {
