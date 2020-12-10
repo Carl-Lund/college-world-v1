@@ -3,6 +3,7 @@ import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } fr
 import 'react-circular-progressbar/dist/styles.css';
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import "./Ratings.css"
 
 export default class CollegeFinancialHappiness extends React.Component {
 
@@ -39,7 +40,12 @@ export default class CollegeFinancialHappiness extends React.Component {
                         delay={{ show: 250, hide: 450 }}
                         overlay={renderTooltip}
                     >
-                        <h3 className="text-center">Financial Satisfaction</h3>
+                        <h3 className="text-center">Financial Satisfaction
+                            <img
+                                className="info"
+                                src="resources/images/info.png"
+                            />
+                        </h3>
                     </OverlayTrigger>
                     <CircularProgressbarWithChildren value={this.props.studentFinancialHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
