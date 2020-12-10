@@ -261,7 +261,6 @@ export default class Buildings extends React.Component {
                             takenPlates={takenPlates} availableDesks={availableDesks} takenDesks={takenDesks}
                         />
                     </div>
-                    <Tips hideShowTipsTextSafety={this.hideShowTipsTextSafety} hideShowTipsTextSafetyText={this.state.hideShowTipsTextSafety} hideShowTipsTextBuilding={this.hideShowTipsTextBuilding} hideShowTipsTextBuildingText={this.state.hideShowTipsTextBuilding} everything={this.props.everything} />
                     <div className="well well-sm" >
                         <div className="col-sm-5">
                             <BuildingFilterPanel buildingFiltersOptions={buildingFiltersOptions}/>
