@@ -11,6 +11,7 @@ import BuildingsTable from "./BuildingsTable";
 import PurchaseBuildings from "./PurchaseBuildings";
 import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
+import InsufficientFundPopup from "./InsufficientFundPopup";
 
 
 export default class Buildings extends React.Component {
@@ -25,6 +26,7 @@ export default class Buildings extends React.Component {
             showNextTipBuilding: true,
             hideShowTipsTextSafety : "Hide Tips",
             isHideSafety: false,
+            appear: false,
             showNextTipSafety: true
         };
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
@@ -34,6 +36,10 @@ export default class Buildings extends React.Component {
         this.handleNewBuildingChange = this.handleNewBuildingChange.bind(this);
         this.hideShowTipsTextBuilding = this.hideShowTipsTextBuilding.bind(this);
         this.hideShowTipsTextSafety = this.hideShowTipsTextSafety.bind(this);
+
+        this.setShow = (value) => {this.setState({appear:value})}
+        this.handleClose = () => this.setShow(false);
+        this.handleShow = () => this.setShow(true);
     }
 
     handleSelectBuildingChoice(value) {
@@ -47,6 +53,7 @@ export default class Buildings extends React.Component {
     upgradeBuilding(e) {
         var building = e.target.value;
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/upgrade/" + encodeURI(this.props.everything.buildings[building].name);
+
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
@@ -266,6 +273,7 @@ export default class Buildings extends React.Component {
 
         return (
             <div>
+                <InsufficientFundPopup everything={this.props.everything} show={this.state.appear} handleClose={this.handleClose}/>
                 <div className="container">
                     <div className="jumbotron">
                         <BuildingsDashboard
