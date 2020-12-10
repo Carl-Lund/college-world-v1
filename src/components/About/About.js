@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PlayMode from "../College/PlayMode";
 export default class About extends React.Component {
     render() {
         return (
@@ -56,6 +56,7 @@ export default class About extends React.Component {
                         <li className="list-group-item">Derek Yannone</li>
                     </ul>
                 </div>
+                <PlayMode everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 <div>Icons on school traits page are made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             </div>
         );

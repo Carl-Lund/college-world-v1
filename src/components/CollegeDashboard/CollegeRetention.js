@@ -2,8 +2,7 @@ import React from 'react';
 import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-// import { CircularProgressbar } from 'react-circular-progressbar';
-// import 'react-circular-progressbar/dist/styles.css';
+import "./Ratings.css"
 
 export default class CollegeRetention extends React.Component {
 
@@ -40,7 +39,12 @@ export default class CollegeRetention extends React.Component {
                         delay={{ show: 250, hide: 450 }}
                         overlay={renderTooltip}
                     >
-                        <h3 className="text-center">Retention</h3>
+                        <h3 className="text-center">Retention
+                            <img
+                                className="info"
+                                src="resources/images/info.png"
+                            />
+                        </h3>
                     </OverlayTrigger>
                     <br></br>
                     <CircularProgressbarWithChildren value={this.props.retentionRate} styles={ buildStyles({pathColor: color})}>

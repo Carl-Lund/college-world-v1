@@ -22,7 +22,7 @@ function createTable(objectives) {
 
     for(let i =1; i <=5; i++) {
         if (i <= objectives.currentLevel) continue;
-        table.push(<h3>Level {i}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{objectives.studentsNeededForLevel[i]} Students</h3>);
+        table.push(<h2>Level {i}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{objectives.studentsNeededForLevel[i]} Students</h2>);
 
         for(let j =0; j< objectives.gates.length; j++) {
             if (objectives.gates[j].level == i) {
