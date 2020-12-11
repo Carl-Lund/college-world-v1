@@ -3,12 +3,10 @@ import "./Students.css"
 import SideNavBar from "../Navigation/SideNavBar";
 import Avatar from "avataaars-updated";
 
-export default class StudentsTable extends React.Component {
+export default class StudentsBubble extends React.Component {
     constructor(props) {
         super(props);
     }
-
-
 
     render() {
         return (
