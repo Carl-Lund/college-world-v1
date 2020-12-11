@@ -19,7 +19,7 @@ export default class Calendar extends React.Component {
                 <Modal.Header closeButton>
                     <Modal.Title  id="contained-modal-title-vcenter">
                         Calendar
-                        <h3 style={{fontSize: 24}}>Year {this.props.everything.college.year}</h3>
+                        <h3 style={{fontSize: 24}}>Year {this.props.year}</h3>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
