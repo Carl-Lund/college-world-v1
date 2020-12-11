@@ -122,10 +122,12 @@ function createTable(students, sort, props, initial, final) {
     } else {
         console.log("invalid sort method");
     }
-
-    for (let i = initial; i < final; i++) {
-        table.push(<StudentBubble student = {studentsArray[i]} studentNumber = {Object.keys(props.everything.students).find(key => props.everything.students[key] === studentsArray[i])} studentSwitch = {props.studentSwitch}/>)
+    if( studentsArray != null) {
+        for (let i = initial; i < Math.min(final, studentsArray.length); i++) {
+            table.push(<StudentBubble student={studentsArray[i]}
+                                      studentNumber={Object.keys(props.everything.students).find(key => props.everything.students[key] === studentsArray[i])}
+                                      studentSwitch={props.studentSwitch}/>)
+        }
     }
-
     return table
 }

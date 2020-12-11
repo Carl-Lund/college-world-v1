@@ -122,7 +122,7 @@ export default class PotentialStudentTable extends React.Component {
             console.log("invalid sort method");
         }
 
-        for (let i = this.initial; i < this.final; i++) {
+        for (let i = this.initial; i < Math.min(final, studentsArray.length); i++) {
             table.push(<PotentialStudentBubble showapp={this.props.showapp} student={studentsArray[i]}
                                                studentSwitch={props.studentSwitch}/>)
         }
