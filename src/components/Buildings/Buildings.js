@@ -4,7 +4,7 @@ import SideNavBar from "../Navigation/SideNavBar";
 import ReactTable from "react-table";
 import Select from "react-select";
 import "./buildings.css"
-import Tips from "./Tips";
+import Button from "react-bootstrap/cjs/Button";
 import BuildingFilterPanel from "./BuildingFilterPanel";
 import BuildingsDashboard from "./BuildingsDashboard";
 import BuildingsTable from "./BuildingsTable";
@@ -241,6 +241,12 @@ export default class Buildings extends React.Component {
                 && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
                 repairButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
+                )
+            }
+
+            if (this.props.everything.buildings[i].repairCost > this.props.everything.college.availableCash ){
+                repairButton.push (
+                    <Button variant="warning" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.handleShow} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</Button>
                 )
             }
 
