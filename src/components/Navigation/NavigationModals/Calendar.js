@@ -6,8 +6,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default class Calendar extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+    }
 
+    render() {
         return (
             <Modal show={this.props.show} onHide={this.props.handleClose}
                     backdrop="static"
@@ -16,6 +19,7 @@ export default class Calendar extends React.Component {
                 <Modal.Header closeButton>
                     <Modal.Title  id="contained-modal-title-vcenter">
                         Calendar
+                        <h3 style={{fontSize: 24}}>Year {this.props.everything.college.year}</h3>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
