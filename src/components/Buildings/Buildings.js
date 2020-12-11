@@ -153,10 +153,10 @@ export default class Buildings extends React.Component {
 
     render() {
         function getTextColor(value) {
-            if(value < 30){
+            if(value < 45){
                 return "#fc3d17";
             }
-            else if(value < 60){
+            else if(value < 70){
                 return "#FFFF00";
             }
             else{
