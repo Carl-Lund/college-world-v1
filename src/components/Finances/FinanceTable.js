@@ -16,7 +16,7 @@ export default class FinanceTable extends React.Component {
                 <h5 className="positive">Daily Income: ${((this.props.everything.college.totalIncome.toLocaleString()))}</h5>
                 <h5 className="negative">Daily Expenditure: ${((this.props.everything.college.totalExpenditure.toLocaleString()))}</h5>
                 <h5>Debt: ${((this.props.everything.college.debt.toLocaleString()))}</h5>
-                <h5>Credit: ${((this.props.everything.college.credit.toLocaleString()))}</h5>
+                <h5>Credit: {((this.props.everything.college.credit.toLocaleString()))}</h5>
                 <div className="tuition-box">
                     <Tuition everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                 </div>
