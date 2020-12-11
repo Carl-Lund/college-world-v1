@@ -5,21 +5,24 @@ import 'react-circular-progressbar/dist/styles.css';
 export default class StackedProgressBar extends React.Component {
     render(){
         function getTextColor(value1, value2) {
-            if(value1 > value2){
+            if(Math.floor(value1) > Math.floor(value2)){
                 return "#fc3d17";
             }
-            else{
+            else if(Math.floor(value1) < Math.floor(value2)){
                 return "#37db45";
             }
         }
 
         function getBarColor(value1, value2){
             let temp = "gray";
-            if(value1 > value2){
+            if(Math.floor(value1) > Math.floor(value2)){
                 temp="red";
             }
-            else{
+            else if(Math.floor(value1) < Math.floor(value2)){
                 temp="green background";
+            }
+            else{
+                temp="background"
             }
             return temp;
         }
