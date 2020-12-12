@@ -26,16 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Tables for achievements now populate properly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/Achievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Achievements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/AchievementsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/AchievementsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievementsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedAchievementsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CompletedObjectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CompletedObjectives.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Objectives/CurrentObjectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/CurrentObjectives.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Objectives/Objectives.js" afterDir="false" />
     </list>
@@ -202,7 +196,10 @@
       <workItem from="1603216248682" duration="4645000" />
       <workItem from="1604248700981" duration="10465000" />
       <workItem from="1604600399866" duration="1738000" />
-      <workItem from="1605640011185" duration="9860000" />
+      <workItem from="1605640011185" duration="9953000" />
+      <workItem from="1607025470706" duration="209000" />
+      <workItem from="1607278934816" duration="1372000" />
+      <workItem from="1607281922047" duration="4050000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -358,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605641442118</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Tables for achievements now populate properly.">
+      <created>1606095640647</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1606095640647</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +412,8 @@
     <MESSAGE value="Added my name to FA2020" />
     <MESSAGE value="Added a new section in Buildings for Upgrades along with a button to view upgrades" />
     <MESSAGE value="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use" />
+    <MESSAGE value="Tables for achievements now populate properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tables for achievements now populate properly." />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599506625473">
@@ -423,30 +428,30 @@
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="217" y="69" key="DiffContextDialog/78.0.1458.864@78.0.1458.864" timestamp="1602536968625" />
-    <state width="1415" height="135" key="GridCell.Tab.0.bottom" timestamp="1605821694562">
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom" timestamp="1607554281714">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
     <state width="1415" height="223" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026093" />
-    <state width="1415" height="135" key="GridCell.Tab.0.bottom/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
-    <state width="1415" height="135" key="GridCell.Tab.0.center" timestamp="1605821694562">
+    <state width="1415" height="135" key="GridCell.Tab.0.bottom/78.0.1458.864@78.0.1458.864" timestamp="1607554281714" />
+    <state width="1415" height="135" key="GridCell.Tab.0.center" timestamp="1607554281714">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
     <state width="1415" height="223" key="GridCell.Tab.0.center/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
-    <state width="1415" height="135" key="GridCell.Tab.0.center/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
-    <state width="1415" height="135" key="GridCell.Tab.0.left" timestamp="1605821694561">
+    <state width="1415" height="135" key="GridCell.Tab.0.center/78.0.1458.864@78.0.1458.864" timestamp="1607554281714" />
+    <state width="1415" height="135" key="GridCell.Tab.0.left" timestamp="1607554281714">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
     <state width="1415" height="223" key="GridCell.Tab.0.left/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
-    <state width="1415" height="135" key="GridCell.Tab.0.left/78.0.1458.864@78.0.1458.864" timestamp="1605821694561" />
-    <state width="1415" height="135" key="GridCell.Tab.0.right" timestamp="1605821694562">
+    <state width="1415" height="135" key="GridCell.Tab.0.left/78.0.1458.864@78.0.1458.864" timestamp="1607554281714" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right" timestamp="1607554281714">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600110241004" />
     <state width="1415" height="223" key="GridCell.Tab.0.right/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604432026077" />
-    <state width="1415" height="135" key="GridCell.Tab.0.right/78.0.1458.864@78.0.1458.864" timestamp="1605821694562" />
+    <state width="1415" height="135" key="GridCell.Tab.0.right/78.0.1458.864@78.0.1458.864" timestamp="1607554281714" />
     <state x="217" y="68" key="MergeDialog" timestamp="1603154972962">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
@@ -459,20 +464,20 @@
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="543" y="152" key="RollbackChangesDialog/78.0.1458.864@78.0.1458.864" timestamp="1605640369132" />
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1605641456193">
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606095649998">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864@78.0.1458.864" timestamp="1605641456193" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864@78.0.1458.864" timestamp="1606095649998" />
     <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602613004927">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="171" y="93" width="1272" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog/78.0.1458.864@78.0.1458.864" timestamp="1602613004927" />
-    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605820397764">
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607279017690">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1600363905309" />
     <state x="2607" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@1920.6.1920.1040" timestamp="1604453012043" />
     <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864/1920.6.1920.1040@78.0.1458.864" timestamp="1604260280566" />
-    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864@78.0.1458.864" timestamp="1605820397764" />
+    <state x="600" y="323" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/78.0.1458.864@78.0.1458.864" timestamp="1607279017690" />
   </component>
 </project>
