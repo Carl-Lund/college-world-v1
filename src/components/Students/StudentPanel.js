@@ -50,64 +50,57 @@ export default class StudentsTable extends React.Component {
                                 )}
 
                                 <tr>
-                                    <img class="img-responsive panel-image panel-image" src="resources/images/fun.png" alt=""/>
-                                    <td>Overall Happiness</td>
-                                    <td>{this.props.student.happiness}</td>
+                                    <td>Academics</td>
+                                    <td>{determineHappiness(this.props.student.academicRating)}</td>
                                 </tr>
                                 <tr>
-                                    <img className="img-responsive panel-image" src="resources/images/books.png"></img>
-                                    <td>Academic Happiness </td>
-                                    <td>{this.props.student.academicHappinessRating}</td>
+                                    <td>Cost</td>
+                                    <td>{determineHappiness(this.props.student.costRating)}</td>
                                 </tr>
                                 <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/advisor.png"></img>
-                                    <td>Advisor Happiness</td>
-                                    <td>{this.props.student.advisorHappinessRating}</td>
+                                    <td>Infrastructure</td>
+                                    <td>{determineHappiness(this.props.student.infrastructuresRating)}</td>
                                 </tr>
                                 <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/HEALTH.png"></img>
-                                    <td>Health Happiness</td>
-                                    <td>{this.props.student.healthHappinessRating}</td>
+                                    <td>Safety</td>
+                                    <td>{determineHappiness(this.props.student.safetyRating)}</td>
                                 </tr>
                                 <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/money.jpg"></img>
-                                    <td>Money Happiness</td>
-                                    <td>{this.props.student.moneyHappinessRating}</td>
+                                    <td>Social</td>
+                                    <td>{determineHappiness(this.props.student.socialRating)}</td>
                                 </tr>
                                 <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/smile.png"></img>
-                                    <td>Fun Happiness</td>
-                                    <td>{this.props.student.funHappinessRating}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/science_dept.png"></img>
-                                    <td>Professor Happiness</td>
-                                    <td>{this.props.student.professorHappinessRating}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/campus.png"></img>
-                                    <td>Overall Building Happiness</td>
-                                    <td>{this.props.student.overallBuildingHappinessRating}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/DINING.png"></img>
-                                    <td>Dining Hall Happiness</td>
-                                    <td>{this.props.student.diningHallHappinessRating}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/ACADEMIC.png"></img>
-                                    <td>Academic Center Happiness</td>
-                                    <td>{this.props.student.academicCenterHappinessRating}</td>
-                                </tr>
-                                <tr>
-                                    <img class="img-responsive panel-image" src="resources/images/DORM.png"></img>
-                                    <td>Dorm Happiness</td>
-                                    <td>{this.props.student.dormHappinessRating}</td>
+                                    <td>Sports</td>
+                                    <td>{determineHappiness(this.props.student.sportsRating)}</td>
                                 </tr>
                             </tbody>
                         </table>
                 </div>
             </div>
         );
+    }
+}
+
+function determineHappiness(studentRating){
+    if(studentRating >= 25){
+        return "Very Happy";
+    }
+    else if(studentRating < 25 && studentRating >= 10){
+        return "Happy";
+    }
+    else if(studentRating < 10 && studentRating > 0){
+        return "Slightly Happy";
+    }
+    else if(studentRating === 0){
+        return "Neutral";
+    }
+    else if(studentRating < 0 && studentRating >= -10){
+        return "Slightly Unhappy";
+    }
+    else if(studentRating < -10 && studentRating > -25){
+        return "Unhappy";
+    }
+    else if(studentRating <= -25){
+        return "Very Unhappy";
     }
 }

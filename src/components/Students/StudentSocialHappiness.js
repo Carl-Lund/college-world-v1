@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default class CollegeFinancialHappiness extends React.Component {
+export default class StudentSocialHappiness extends React.Component {
 
     render() {
 
@@ -23,29 +23,26 @@ export default class CollegeFinancialHappiness extends React.Component {
             return temp;
         }
 
-        let color=getColor(this.props.everything.college.studentCostHappiness);
+        let color=getColor(this.props.everything.college.studentSocialHappiness);
 
         return (
             <div className="col-sm-2">
                 <div className="studentHappinessBars">
-                    <h3 className="text-center">Cost</h3>
-                    <CircularProgressbarWithChildren value={this.props.everything.college.studentCostHappiness} styles={buildStyles({pathColor: color})}>
+                    <h3 className="text-center">Social</h3>
+                    <CircularProgressbarWithChildren value={this.props.everything.college.studentSocialHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             style={{ width: 10, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
                         />
                         <div style={{ fontSize: 12}}>
-                            <strong>{this.props.everything.college.studentCostHappiness}%</strong>
+                            <strong>{this.props.everything.college.studentSocialHappiness}%</strong>
                         </div>
                     </CircularProgressbarWithChildren>
                     <br/>
                     {/*<button type="button" href="#happinessDetails" className="btn btn-light"*/}
                     {/*        data-toggle="collapse">Details*/}
                     {/*</button>*/}
-                    <div id="happinessDetails" className="collapse">
-                        The financial happiness of the students depends on tuition.
-                    </div>
                 </div>
             </div>
         );
