@@ -5,33 +5,23 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export default class Calendar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+export default class InsufficientFundPopup extends React.Component {
     render() {
+
         return (
             <Modal show={this.props.show} onHide={this.props.handleClose}
-                    backdrop="static"
-                    keyboard={false}
-                    aria-labelledby="contained-modal-title-vcenter">
+                   backdrop="static"
+                   keyboard={false}
+                   aria-labelledby="contained-modal-title-vcenter">
                 <Modal.Header closeButton>
                     <Modal.Title  id="contained-modal-title-vcenter">
-                        Calendar
-                        <h3 style={{fontSize: 24}}>Year {this.props.year}</h3>
+                        Insufficient Funds
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
-                        <Row>
-                            <Col className="col-sm-6">Date</Col>
-                            <Col className="col-sm-6">Some Event</Col>
-                        </Row>
-                        <Row>
-                            <Col className="col-sm-6">Date</Col>
-                            <Col className="col-sm-6">Some Event</Col>
-                        </Row>
+                        <h2>You don't have sufficient funds to make this purchase!</h2>
+                        <h3>You can take out a loan from the Finances page if you need more money.</h3>
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>

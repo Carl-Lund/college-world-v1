@@ -70,7 +70,7 @@ export default class TopNavBar extends React.Component {
                             <img className="nav-item-icons" src="resources/images/calendar.png"></img>
                             <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s Left in Semester</span>
                         </Button>
-                        <Calendar show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
+                        <Calendar year={this.props.everything.college.year} show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
                     </Nav.Link>
                     <Nav.Link >
                         <Button variant={"success"} disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.fetchData()}}>{this.state.busy? 'Please wait' : 'Jump To Next ' + this.props.everything.college.timeAdvanceBy}</Button>

@@ -4,13 +4,14 @@ import SideNavBar from "../Navigation/SideNavBar";
 import ReactTable from "react-table";
 import Select from "react-select";
 import "./buildings.css"
-import Tips from "./Tips";
+import Button from "react-bootstrap/cjs/Button";
 import BuildingFilterPanel from "./BuildingFilterPanel";
 import BuildingsDashboard from "./BuildingsDashboard";
 import BuildingsTable from "./BuildingsTable";
 import PurchaseBuildings from "./PurchaseBuildings";
 import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
+import InsufficientFundPopup from "./InsufficientFundPopup";
 
 
 export default class Buildings extends React.Component {
@@ -25,6 +26,7 @@ export default class Buildings extends React.Component {
             showNextTipBuilding: true,
             hideShowTipsTextSafety : "Hide Tips",
             isHideSafety: false,
+            appear: false,
             showNextTipSafety: true
         };
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
@@ -34,6 +36,10 @@ export default class Buildings extends React.Component {
         this.handleNewBuildingChange = this.handleNewBuildingChange.bind(this);
         this.hideShowTipsTextBuilding = this.hideShowTipsTextBuilding.bind(this);
         this.hideShowTipsTextSafety = this.hideShowTipsTextSafety.bind(this);
+
+        this.setShow = (value) => {this.setState({appear:value})}
+        this.handleClose = () => this.setShow(false);
+        this.handleShow = () => this.setShow(true);
     }
 
     handleSelectBuildingChoice(value) {
@@ -47,6 +53,7 @@ export default class Buildings extends React.Component {
     upgradeBuilding(e) {
         var building = e.target.value;
         const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/upgrade/" + encodeURI(this.props.everything.buildings[building].name);
+
         fetch(address)
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
@@ -63,11 +70,17 @@ export default class Buildings extends React.Component {
     }
 
     purchaseBuilding() {
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
-        fetch(address)
-            .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
-            });
+        if(this.props.everything.college.availableCash < 150000){
+            this.handleShow();
+        }
+        else {
+            const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
+            fetch(address)
+                .then(response => response.json())
+                .then(data => {
+                    this.props.replaceEverything(data);
+                });
+        }
     }
 
     hideShowTipsTextBuilding = () => {
@@ -140,10 +153,10 @@ export default class Buildings extends React.Component {
 
     render() {
         function getTextColor(value) {
-            if(value < 30){
+            if(value < 45){
                 return "#fc3d17";
             }
-            else if(value < 60){
+            else if(value < 70){
                 return "#FFFF00";
             }
             else{
@@ -231,6 +244,12 @@ export default class Buildings extends React.Component {
                 )
             }
 
+            if (this.props.everything.buildings[i].repairCost > this.props.everything.college.availableCash ){
+                repairButton.push (
+                    <Button variant="warning" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.handleShow} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</Button>
+                )
+            }
+
             building.push(
                 <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
                 <td style={tdStyle}><img className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
@@ -266,6 +285,7 @@ export default class Buildings extends React.Component {
 
         return (
             <div>
+                <InsufficientFundPopup everything={this.props.everything} show={this.state.appear} handleClose={this.handleClose}/>
                 <div className="container">
                     <div className="jumbotron">
                         <BuildingsDashboard
@@ -273,7 +293,6 @@ export default class Buildings extends React.Component {
                             takenPlates={takenPlates} availableDesks={availableDesks} takenDesks={takenDesks}
                         />
                     </div>
-                    <Tips hideShowTipsTextSafety={this.hideShowTipsTextSafety} hideShowTipsTextSafetyText={this.state.hideShowTipsTextSafety} hideShowTipsTextBuilding={this.hideShowTipsTextBuilding} hideShowTipsTextBuildingText={this.state.hideShowTipsTextBuilding} everything={this.props.everything} />
                     <div className="well well-sm" >
                         <div className="col-sm-5">
                             <BuildingFilterPanel buildingFiltersOptions={buildingFiltersOptions}/>

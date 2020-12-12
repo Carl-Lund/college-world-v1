@@ -147,13 +147,6 @@ export default class Faculty extends React.Component{
                     <div className="title">
                         <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>
                     </div>
-                    <div className="faculty-tips">
-                        <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
-                        <div id="hideTips">
-                            <TipsBox everything = {this.props.everything} name = {'Academic'} tips = {this.props.everything.college.collegeTips.academicTips}/>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="row">
                     <div className="col-md-2">

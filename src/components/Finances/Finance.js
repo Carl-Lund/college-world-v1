@@ -15,38 +15,12 @@ import Tuition from "./Tuition";
 export default class Finance extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            hideShowTipsText: "Hide Tips",
-            isHide: false,
-            showNextTip: true
-        }
-        this.hideShowTipsText = this.hideShowTipsText.bind(this);
-    }
-
-    hideShowTipsText = () => {
-        let tips = document.getElementById('hideTips');
-        if(this.state.isHide){
-            this.state.hideShowTipsText = "Hide tips"
-            this.setState({isHide: false})
-            tips.style.display = "block";
-        }else {
-            this.state.hideShowTipsText = "Show tips"
-            this.setState({isHide: true})
-            tips.style.display = "none";
-        }
-        this.setState({ hideShowTipsText: this.state.hideShowTipsText});
     }
 
     render() {
 
         return (
             <div className="card-deck my-3">
-                <div className="value-tips">
-                    <button type="button" onClick={this.hideShowTipsText} className="btn btn-info">{this.state.hideShowTipsText}</button>
-                    <div id="hideTips">
-                        <TipsBox everything = {this.props.everything} name = {'Value'} tips = {this.props.everything.college.collegeTips.valueTips}/>
-                    </div>
-                </div>
                 <h1 className="finance-header">College Finances</h1>
                 <Container>
                     <Row>
