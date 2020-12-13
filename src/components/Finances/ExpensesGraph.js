@@ -9,9 +9,10 @@ export default class ExpensesGraph extends React.Component {
     }
 
     createChart(data){
+        //if the user hasn't spent money yet, tell them so they don't just see a blank box
         if(data.loansPercent === 0 && data.sportsPercent === 0 && data.buildingsPercent === 0
             && data.facultyPercent === 0 && data.storePercent === 0){
-            return <p>Theres no data</p>;
+            return <p>Theres no data yet.</p>;
         }
         else{
            return <Chart
