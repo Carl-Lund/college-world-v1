@@ -14,9 +14,10 @@ export default class StudentsTable extends React.Component {
                 <div className="well well-sm" style={{height: '100%'}}>
                         <table className="table table-hover" style={{tableLayout: 'fixed', marginLeft: 0, marginRight: 0, height: '100%', float: 'right', display: 'inline-block'}}>
                             <tbody>
+                            <br></br><br></br>
                                 <tr>
                                     <td></td>
-                                    <td style={{padding: 0, paddingBottom: '1em', paddingTop: '1em', textAlign: 'justify', veritcalAlign: 'middle', wordWrap: "normal",}}><b>{this.props.student.name} Statistics</b></td>
+                                    <td style={{padding: 0, paddingBottom: '1em', paddingTop: '1em', textAlign: 'justify', verticalAlign: 'middle', wordWrap: "normal",}}><b>{this.props.student.name} Statistics</b></td>
                                     <td></td>
                                 </tr>
 
@@ -50,27 +51,32 @@ export default class StudentsTable extends React.Component {
                                 )}
 
                                 <tr>
-                                    <td>Academics</td>
+                                    <td><strong>Overall:</strong></td>
+                                    <td>{determineHappiness(this.props.student.happiness)}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Academics:</strong></td>
                                     <td>{determineHappiness(this.props.student.academicRating)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Cost</td>
+                                    <td><strong>Cost:</strong></td>
                                     <td>{determineHappiness(this.props.student.costRating)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Infrastructure</td>
+                                    <td><strong>Infrastructure:</strong></td>
                                     <td>{determineHappiness(this.props.student.infrastructuresRating)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Safety</td>
+                                    <td><strong>Safety:</strong></td>
                                     <td>{determineHappiness(this.props.student.safetyRating)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Social</td>
+                                    <td><strong>Social:</strong></td>
                                     <td>{determineHappiness(this.props.student.socialRating)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Sports</td>
+                                    <td><strong>Sports:</strong></td>
                                     <td>{determineHappiness(this.props.student.sportsRating)}</td>
                                 </tr>
                             </tbody>
@@ -82,25 +88,25 @@ export default class StudentsTable extends React.Component {
 }
 
 function determineHappiness(studentRating){
-    if(studentRating >= 25){
+    if(studentRating >= 85){
         return "Very Happy";
     }
-    else if(studentRating < 25 && studentRating >= 10){
+    else if(studentRating < 85 && studentRating >= 70){
         return "Happy";
     }
-    else if(studentRating < 10 && studentRating > 0){
+    else if(studentRating < 70 && studentRating > 55){
         return "Slightly Happy";
     }
-    else if(studentRating === 0){
+    else if(studentRating < 55 && studentRating >= 45){
         return "Neutral";
     }
-    else if(studentRating < 0 && studentRating >= -10){
+    else if(studentRating < 45 && studentRating >= 30){
         return "Slightly Unhappy";
     }
-    else if(studentRating < -10 && studentRating > -25){
+    else if(studentRating < 30 && studentRating >= 15){
         return "Unhappy";
     }
-    else if(studentRating <= -25){
+    else if(studentRating < 15){
         return "Very Unhappy";
     }
 }
