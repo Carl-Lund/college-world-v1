@@ -6,7 +6,6 @@ import "./Objectives.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Achievements from "./Achievements";
 import CompletedAchievements from "./CompletedAchievements";
-/*import OptionalObjectives from "./OptionalObjectives";*/
 
 export default class Objectives extends React.Component {
 
@@ -15,8 +14,8 @@ export default class Objectives extends React.Component {
             <div class="Objectives-list">
                 <div className="name">
                     <h1 className="card-title">{this.props.everything.college.runId}</h1>
-                    <h3>Level {this.props.everything.objectives.currentLevel} {this.props.everything.objectives.studentCount}/
-                        {this.props.everything.objectives.studentsNeededForLevel[this.props.everything.objectives.currentLevel + 1]}</h3>
+                    <h3>Level {this.props.everything.objectives.currentLevel}</h3>
+                    <h3>{this.props.everything.objectives.studentCount} Students / {this.props.everything.objectives.studentsNeededForLevel[this.props.everything.objectives.currentLevel + 1]} Students Needed to Level Up</h3>
                     <ProgressBar now={this.props.everything.objectives.studentCount} max={this.props.everything.objectives.studentsNeededForLevel[this.props.everything.objectives.currentLevel + 1]}/>
                 </div>
                 <div className="achievements">
@@ -31,10 +30,6 @@ export default class Objectives extends React.Component {
                     <h3 className="my-3"> Current Objectives: </h3>
                     <CurrentObjectives everything={this.props.everything}/>
                 </div>
-                {/*<div className="opt-obj">
-                    <h3 className="my-3"> Optional Tasks: </h3>
-                    <OptionalObjectives everything={this.props.everything}/>
-                </div>*/}
             </div>
         )
     }
