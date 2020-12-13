@@ -12,6 +12,7 @@ import PurchaseBuildings from "./PurchaseBuildings";
 import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
 import InsufficientFundPopup from "./InsufficientFundPopup";
+import CollegeBuildings from "../CollegeDashboard/CollegeBuildings";
 
 
 export default class Buildings extends React.Component {
@@ -293,12 +294,18 @@ export default class Buildings extends React.Component {
                             takenPlates={takenPlates} availableDesks={availableDesks} takenDesks={takenDesks}
                         />
                     </div>
-                    <div className="well well-sm" >
-                        <div className="col-sm-5">
+                    <div className="row" >
+                        <div className="col-lg-2">
                             <BuildingFilterPanel buildingFiltersOptions={buildingFiltersOptions}/>
                         </div>
+                        <div className="col-lg-3" />
+                        <div className="col-sm-1" />
+                        <div className="col-md-3" >
+                            <h3>Average Building Quality</h3>
+                            <CollegeBuildings totalBuildingHealth={this.props.everything.college.totalBuildingHealth}/>
+                        </div>
                     <BuildingsTable table={table}/>
-                </div>
+                    </div>
                     <div className="row">
                         <PurchaseBuildings
                             handleNewBuildingChange={this.handleNewBuildingChange} handleSelectBuildingChoice={this.handleSelectBuildingChoice} purchaseBuilding={this.purchaseBuilding}

@@ -34,16 +34,8 @@ export default class CollegeBuildings extends React.Component {
         );
 
         return (
-            <div className="col-sm-2">
-                <div className="collegeHappinessBar">
-                    <OverlayTrigger
-                        placement="bottom"
-                        delay={{ show: 250, hide: 450 }}
-                        overlay={renderTooltip}
-                    >
-                        <h3 className="text-center">Buildings</h3>
-                    </OverlayTrigger>
-                    <br></br>
+            <div>
+                <div className="collegeHappinessBar" style={{width: 150}}>
                     <CircularProgressbarWithChildren value={this.props.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
