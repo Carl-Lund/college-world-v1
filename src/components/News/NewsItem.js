@@ -3,7 +3,6 @@ import React from 'react';
 export default class NewsItem extends React.Component {
 
     render() {
-        const collegeModel = this.props.everything
         const newsItem = this.props.newsItem;
         const newsItemNumber  = this.props.newsItemNumber;
         let goodNewsStyle = {
