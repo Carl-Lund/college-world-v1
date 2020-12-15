@@ -100,11 +100,11 @@ export default class Store extends React.Component {
 
                 aRow.push(itemTile)
 
-                if ((i+1)%3 == 0 ){
+                if ((i+1)%3 === 0 ){
                     allItems.push(<div className="card-deck">{aRow}</div>)
                     aRow = []
                 }
-                else if (i+1 == this.props.everything.store.length){
+                else if (i+1 === this.props.everything.store.length){
                     allItems.push(<div className="card-deck">{aRow}</div>)
                 }
             }

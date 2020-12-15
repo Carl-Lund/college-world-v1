@@ -156,7 +156,7 @@ export default class App extends React.Component {
     getRoutes() {
         const {launchStatus, everything, collegeName} = this.state;
         if(((everything === null) || (everything === "") || (collegeName === null) || (collegeName === ""))
-            && (launchStatus == 'collegeNotChosen')){
+            && (launchStatus === 'collegeNotChosen')){
             // return (<a href="/launch">go to /launch</a>);
             console.log("Redirect ensuring launch page is shown.");
             return (

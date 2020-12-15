@@ -21,7 +21,7 @@ function createTable(college, news, newsType) {
     let table = [];
 
     for (let i = news.length-1; i >= 0; i--) {
-        if (newsType == news[i].noteType)
+        if (newsType === news[i].noteType)
             table.push(<NewsItem everything = {college} newsItem = {news[i]} newsItemNumber={i}/>)
     }
     return table

@@ -80,15 +80,15 @@ export default class Admissions extends React.Component {
         let availableDesks = 0;
         let takenDesks = 0;
         for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DINING") {
                 availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "ACADEMIC") {
                 availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }

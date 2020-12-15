@@ -20,7 +20,7 @@ function createTable(objectives) {
         if (i >= objectives.currentLevel) continue;
 
         for(let j =0; j< objectives.gates.length; j++) {
-            if (objectives.gates[j].level == i) {
+            if (objectives.gates[j].level === i) {
                 table.push(<li className="list-group-item">
                         <div className="col-md-2" style={{width: '100px'}}>
                             <img className="img-responsive" src={objectives.gates[j].iconPath}/>

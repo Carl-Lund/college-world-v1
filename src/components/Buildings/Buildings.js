@@ -116,40 +116,40 @@ export default class Buildings extends React.Component {
     }
 
     getImage(type){
-        if (type == "DORM"){
+        if (type === "DORM"){
             return ("resources/images/DORM.png");
         }
-        else if (type == "ACADEMIC"){
+        else if (type === "ACADEMIC"){
             return ("resources/images/ACADEMIC.png");
         }
-        else if (type == "ADMIN"){
+        else if (type === "ADMIN"){
             return ("resources/images/ADMIN.png")
         }
-        else if (type == "DINING"){
+        else if (type === "DINING"){
             return ("resources/images/DINING.png");
         }
-        else if (type == "DORM"){
+        else if (type === "DORM"){
             return ("resources/images/DORM.png");
         }
-        else if (type == "ENTERTAINMENT"){
+        else if (type === "ENTERTAINMENT"){
             return ("resources/images/ENTERTAINMENT.png");
         }
-        else if (type == "HEALTH"){
+        else if (type === "HEALTH"){
             return ("resources/images/HEALTH.png");
         }
-        else if (type == "LIBRARY"){
+        else if (type === "LIBRARY"){
             return ("resources/images/LIBRARY.png");
         }
-        else if (type == "SPORTS"){
+        else if (type === "SPORTS"){
             return ("resources/images/stadium.png");
         }
-        else if (type == "BASEBALL DIAMOND"){
+        else if (type === "BASEBALL DIAMOND"){
             return ("resources/images/BASEBALL DIAMOND.png");
         }
-        else if (type == "FOOTBALL DIAMOND"){
+        else if (type === "FOOTBALL DIAMOND"){
             return ("resources/images/FOOTBALL STADIUM.png");
         }
-        else if (type == "HOCKEY RINK"){
+        else if (type === "HOCKEY RINK"){
             return ("resources/images/HOCKEY RINK");
         }
     }
@@ -212,15 +212,15 @@ export default class Buildings extends React.Component {
             let repairButton = [];
             let trColor = getTextColor((this.props.everything.buildings[i].shownQuality));
 
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DORM") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DORM") {
                 availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenBeds += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "DINING") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DINING") {
                 availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenPlates += this.props.everything.buildings[i].numStudents;
             }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding == "ACADEMIC") {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "ACADEMIC") {
                 availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
                 takenDesks += this.props.everything.buildings[i].numStudents;
             }
@@ -235,14 +235,14 @@ export default class Buildings extends React.Component {
             }
 
             if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
-                && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
+                && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
                 )
             }
 
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
-                && this.props.everything.buildings[i].hoursToComplete == 0 && this.props.everything.buildings[i].isUpgradeComplete == true) {
+                && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].isUpgradeComplete === true) {
                 repairButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
                 )

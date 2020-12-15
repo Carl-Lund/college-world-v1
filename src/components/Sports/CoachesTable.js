@@ -149,7 +149,7 @@ export default class CoachesTable extends React.Component {
 
 
     loadCollege(){
-        if (this.props.collegeName == "")
+        if (this.props.collegeName === "")
             return;
 
         console.log("Loading college");

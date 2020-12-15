@@ -171,7 +171,7 @@ export default class AddSellSports extends React.Component {
     loadCollege(){
         console.log("College Name: "+ this.props.collegeName);
 
-        if (this.props.collegeName == "")
+        if (this.props.collegeName === "")
             return;
 
         console.log("Loading college");
