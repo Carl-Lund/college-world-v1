@@ -24,9 +24,9 @@ export default class StudentsTable extends React.Component {
                         <h3><strong>{this.props.student.name}</strong></h3>
                         <h5><strong>ID: </strong>{this.props.student.id}</h5>
                         <h5><strong>Gender: </strong>{this.props.student.gender.personGender}</h5>
-                        <h5><strong>Advisor: </strong>{this.props.student.advisor.facultyName}</h5>
+                        <h5><strong>Advisor: </strong>{this.props.student.advisor}</h5>
                         <h5><strong>Year: </strong>{this.props.student.classYear}</h5>
-                        <strong>{this.props.student.feedback}</strong>
+                        <strong>"{this.props.student.feedback}"</strong>
                     </div>
                 </div>
             </div>
