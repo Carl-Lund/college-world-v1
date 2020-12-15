@@ -15,10 +15,10 @@ export default class TipsBox extends Component{
 
     nextPage() {
         if(this.state.page < this.props.tips.length - 1) {
-            this.state.page.setState(this.state.page + 1);
+            this.setState({page:(this.state.page + 1)});
         }
         else {
-            this.state.page.setState(0);
+            this.setState({page:0});
         }
         this.setState({ currentTip: this.props.tips[this.state.page]});
     }

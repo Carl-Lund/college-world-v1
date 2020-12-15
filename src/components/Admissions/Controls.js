@@ -51,19 +51,19 @@ export default class Controls extends React.Component {
         let group = this.props.everything.admissions.selectedGroup;
         console.log("CALLED " + group);
         if(group === "GroupA") {
-            this.state.groupA.setState( "selected");
-            this.state.groupB.setState("not-selected");
-            this.state.groupC.setState("not-selected");
+            this.setState( {groupA: "selected"});
+            this.setState( {groupB: "not-selected"});
+            this.setState( {groupC: "not-selected"});
         }
         else if(group === "GroupB") {
-            this.state.groupA.setState("not-selected");
-            this.state.groupB.setState("selected");
-            this.state.groupC.setState("not-selected");
+            this.setState( {groupA: "not-selected"});
+            this.setState( {groupB: "selected"});
+            this.setState( {groupC: "not-selected"});
         }
         else {
-            this.state.groupA.setState("not-selected");
-            this.state.groupB.setState("not-selected");
-            this.state.groupC.setState("selected");
+            this.setState( {groupA: "not-selected"});
+            this.setState( {groupB: "not-selected"});
+            this.setState( {groupC: "selected"});
         }
     }
 
