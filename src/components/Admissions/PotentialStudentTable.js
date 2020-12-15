@@ -41,7 +41,7 @@ export default class PotentialStudentTable extends React.Component {
     }
 
     updateTable = () => {
-        this.setState({potentialStudentTable: this.createTable(this.props.admissions, this.props, this.initial, this.final)});
+        this.setState({potentialStudentTable: this.createTable(this.props.admissions, null, this.props, this.initial, this.final)});
         this.updateButtons();
     }
 
