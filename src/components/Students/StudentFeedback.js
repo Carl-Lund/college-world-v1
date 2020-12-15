@@ -3,9 +3,21 @@ import "./Students.css"
 import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
+    constructor(props) {
+        super(props);
+        // this.checkStudentExists = this.checkStudentExists.bind(this);
+    }
+
+    // checkStudentExists = () => {
+    //     if(this.props.student == null) {
+    //         this.props.student =
+    //     }
+    // }
+
     render() {
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>
+                {/*{this.checkStudentExists()}*/}
                 <div className="col-md-2">
                     <Avatar style={{height: '175px', width: '175px'}}
                         avatarStyle='Circle'

@@ -84,25 +84,25 @@ export default class StudentsTable extends React.Component {
 }
 
 function determineHappiness(studentRating){
-    if(studentRating >= 85){
+    if(studentRating >= 95){
         return "Very Happy";
     }
-    else if(studentRating < 85 && studentRating >= 70){
+    else if(studentRating >= 80){
         return "Happy";
     }
-    else if(studentRating < 70 && studentRating > 55){
+    else if(studentRating > 70){
         return "Slightly Happy";
     }
-    else if(studentRating < 55 && studentRating >= 45){
+    else if(studentRating >= 60){
         return "Neutral";
     }
-    else if(studentRating < 45 && studentRating >= 30){
+    else if(studentRating >= 45){
         return "Slightly Unhappy";
     }
-    else if(studentRating < 30 && studentRating >= 15){
+    else if(studentRating >= 30){
         return "Unhappy";
     }
-    else if(studentRating < 15){
+    else {
         return "Very Unhappy";
     }
 }
