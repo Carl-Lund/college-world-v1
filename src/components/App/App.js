@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { Redirect, Switch } from "react-router-dom";
 import CollegeLaunchPad from "../College/CollegeLaunchPad";
 import Students from "../Students/Students";
@@ -13,14 +13,9 @@ import Admissions from "../Admissions/Admissions";
 import CurrentDay from "../CurrentDay/CurrentDay";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import CollegeOpenCreate from "../College/CollegeOpenCreate";
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import SideNavBar from '../Navigation/SideNavBar'
 import TopNavBar from '../Navigation/TopNavBar'
-import NavLink from 'react-bootstrap/NavLink'
-import PlayMode from "../College/PlayMode";
-import PopupEventHandler from "../PopupEvents/PopupEventHandler";
 import SchoolTraits from "../College/SchoolTraits";
 import Finance from "../Finances/Finance";
 
@@ -134,7 +129,7 @@ export default class App extends React.Component {
     }
 
     getNavBar() {
-        const {launchStatus, everything, collegeName} = this.state;
+        const {everything, collegeName} = this.state;
         if((everything === null) || (everything === "") || (collegeName === null) || (collegeName === "")) {
             return (<div/>);
         }
@@ -144,7 +139,7 @@ export default class App extends React.Component {
     }
 
     getSideBar() {
-        const {launchStatus, everything, collegeName} = this.state;
+        const {everything, collegeName} = this.state;
 
         if((everything === null) || (everything === "")) {
             return (<div/>);
@@ -177,15 +172,13 @@ export default class App extends React.Component {
             <Route path="/objectives" render={() => <Objectives everything={everything} />} />
             <Route path="/store" render={() => <Store everything={everything} replaceEverything={this.replaceEverything}/>} />
             <Route path="/faculty" render={() => <Faculty everything={everything} replaceEverything={this.replaceEverything}/>} />
-            <Route path="/sports" render={() => <Sports collegeName={collegeName} everything={everything} collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
+            <Route path="/sports" render={() => <Sports collegeName={collegeName} launchStatus={launchStatus} everything={everything} replaceEverything={this.replaceEverything} setCollegeName={this.setCollegeName}  />}/>
             <Route path="/currentDay" render={() => <CurrentDay everything={everything} />} />
             <Route path="/currentBalance" render={() => <CurrentBalance everything={everything} />} />
         </Switch>);
     }
 
     render() {
-        const {launchStatus, everything, collegeName} = this.state;
-
         return (
             <div>
                 <Router>

@@ -1,8 +1,4 @@
 import React from 'react';
-import News from "../News/News";
-import SideNavBar from "../Navigation/SideNavBar";
-import ReactTable from "react-table";
-import Select from "react-select";
 import "./buildings.css"
 import Button from "react-bootstrap/cjs/Button";
 import BuildingFilterPanel from "./BuildingFilterPanel";
@@ -12,9 +8,6 @@ import PurchaseBuildings from "./PurchaseBuildings";
 import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
 import InsufficientFundPopup from "./InsufficientFundPopup";
-import CollegeBuildings from "../CollegeDashboard/CollegeBuildings";
-import {buildStyles} from "react-circular-progressbar";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import BuildingQualityBar from "./BuildingQualityBar";
 
 

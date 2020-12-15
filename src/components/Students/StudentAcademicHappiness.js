@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
+import { buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default class StudentAcademicHappiness extends React.Component {
@@ -32,6 +32,7 @@ export default class StudentAcademicHappiness extends React.Component {
                     <CircularProgressbarWithChildren value={this.props.everything.college.studentAcademicHappiness} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
+                            alt="academicIcon"
                             style={{ width: 10, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/1023/1023656.svg"
                         />

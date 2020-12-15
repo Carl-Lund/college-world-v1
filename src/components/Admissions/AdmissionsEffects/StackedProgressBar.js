@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren, } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 // https://codesandbox.io/s/nw1292l93l
 export default class StackedProgressBar extends React.Component {
@@ -38,6 +38,7 @@ export default class StackedProgressBar extends React.Component {
                     <div style={{position: 'absolute'}}>
                         <CircularProgressbarWithChildren value={this.props.oldRating} className="gray background">
                             <img
+                                alt = "icon"
                                 style={{width: 90, marginTop: -5}}
                                 src={this.props.image}
                             />
@@ -68,6 +69,7 @@ export default class StackedProgressBar extends React.Component {
                     <div style={{position: 'absolute'}}>
                         <CircularProgressbarWithChildren value={this.props.oldRating} className="gray">
                             <img
+                                alt="icon"
                                 style={{width: 90, marginTop: -5}}
                                 src={this.props.image}
                             />

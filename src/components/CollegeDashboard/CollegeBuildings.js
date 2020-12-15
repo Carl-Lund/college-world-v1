@@ -1,7 +1,6 @@
 import React from 'react';
-import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 export default class CollegeBuildings extends React.Component {
@@ -27,18 +26,13 @@ export default class CollegeBuildings extends React.Component {
 
         let color=getColor(this.props.totalBuildingHealth);
 
-        const renderTooltip = (props) => (
-            <Tooltip id="button-tooltip" {...props}>
-                The buildings' rating is based off the overall maintenance and conditions
-            </Tooltip>
-        );
-
         return (
             <div>
                 <div className="collegeHappinessBar" style={{width: 150}}>
                     <CircularProgressbarWithChildren value={this.props.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
+                            alt="buildingIcon"
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/188/188379.svg"
                         />
