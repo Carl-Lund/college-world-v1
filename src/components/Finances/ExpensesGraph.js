@@ -1,6 +1,5 @@
 import React from 'react';
 import "./finances.css"
-import { PieChart } from 'react-minimal-pie-chart';
 import { Chart } from "react-google-charts";
 
 export default class ExpensesGraph extends React.Component {

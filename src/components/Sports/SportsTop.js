@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Sports.css"
-import TipsBox from "../College/TipsBox";
 
 export default class SportsTop extends React.Component {
     constructor(props) {
@@ -19,7 +18,7 @@ export default class SportsTop extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-2">
-                                <img className="img-responsive" src="resources/images/stadium.png"></img>
+                                <img alt="stadiumImage" className="img-responsive" src="resources/images/stadium.png"></img>
                             </div>
                             <div className="col-sm-6">
                                 <h2>Sports</h2>
@@ -70,11 +69,11 @@ export default class SportsTop extends React.Component {
     hideShowTipsText = () => {
         let tips = document.getElementById('hideTips');
         if (this.state.isHide){
-            this.state.hideShowTipsText = "Hide tips"
+            this.setState({hideShowTipsText:"Hide tips"})
             this.setState({isHide: false})
             tips.style.display = "block";
         }else {
-            this.state.hideShowTipsText = "Show tips"
+            this.setState({hideShowTipsText:"Show tips"})
             this.setState({isHide: true})
             tips.style.display = "none";
         }

@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Students.css"
 import StudentBubble from './StudentBubble.js';
-import SideNavBar from "../Navigation/SideNavBar";
 
 export default class StudentsTable extends React.Component {
     initial = 0;

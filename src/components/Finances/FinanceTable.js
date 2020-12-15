@@ -1,7 +1,6 @@
 import React from 'react';
 import "./finances.css"
 import Tuition from "./Tuition";
-import Col from "react-bootstrap/Col";
 
 export default class FinanceTable extends React.Component {
     render() {

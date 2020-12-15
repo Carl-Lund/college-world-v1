@@ -1,8 +1,6 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
-import TipsBox from "../College/TipsBox";
-import StudentFeedback from "../Students/StudentFeedback";
 import Avatar from "avataaars-updated";
 
 export default class Faculty extends React.Component{
@@ -31,11 +29,11 @@ export default class Faculty extends React.Component{
     hideShowTipsText = () => {
         let tips = document.getElementById('hideTips');
         if(this.state.isHide){
-            this.state.hideShowTipsText = "Hide tips"
+            this.setState({hideShowTipsText: "Hide tips"})
             this.setState({isHide: false})
             tips.style.display = "block";
         }else {
-            this.state.hideShowTipsText = "Show tips"
+            this.setState({hideShowTipsText: "Show tips"})
             this.setState({isHide: true})
             tips.style.display = "none";
         }
@@ -103,12 +101,12 @@ export default class Faculty extends React.Component{
 
     onChangeSelectSalary= (value) => {
         console.log('The value is: ' + value.toString())
-        this.state.salary = value.toString()
+        this.setState({salary: value.toString()})
     }
 
     onChangeSelectDepartment= (value) => {
         console.log('The value is: ' + value.toString())
-        this.state.department = value.toString()
+        this.setState({department: value.toString()})
     }
 
     hireFacultyComponent(academics){
@@ -142,7 +140,7 @@ export default class Faculty extends React.Component{
 
                 <div class="jumbotron clearfix">
                     <div className="img">
-                        <img className="img-responsive" src="resources/images/student.png"></img>
+                        <img alt="studentImage" className="img-responsive" src="resources/images/student.png"></img>
                     </div>
                     <div className="title">
                         <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>

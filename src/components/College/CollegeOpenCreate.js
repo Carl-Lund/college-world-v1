@@ -53,7 +53,7 @@ class CollegeOpenCreate extends React.Component {
                 <Row className="myAuto" md={4}>
                     <Col md={3} sm={7}>
                         <Row>
-                            <img className="imageLandingPageLogo" src="resources/images/logo_big.png"/>
+                            <img alt="logo_big" className="imageLandingPageLogo" src="resources/images/logo_big.png"/>
                         </Row>
                         <Row md="3">
                             <Col md="3">
@@ -76,7 +76,7 @@ class CollegeOpenCreate extends React.Component {
                         </Row>
                     </Col>
                     <Col md={1}>
-                        <img className="imageLandingPageWallpaper" src="resources/images/landing_page_wallpaper.png" alt="decorative image"/>
+                        <img className="imageLandingPageWallpaper" src="resources/images/landing_page_wallpaper.png" alt="decorative"/>
                     </Col>
                 </Row>
             </Container>

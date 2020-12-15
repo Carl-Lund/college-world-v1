@@ -1,8 +1,6 @@
 import React from 'react';
 import "./finances.css"
-import { PieChart } from 'react-minimal-pie-chart';
 import { Chart } from "react-google-charts";
-import {forEach} from "react-bootstrap/cjs/ElementChildren";
 
 export default class FinancesGraph extends React.Component {
     constructor(props) {

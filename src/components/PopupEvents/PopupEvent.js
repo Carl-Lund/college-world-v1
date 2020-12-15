@@ -51,7 +51,6 @@ export default class StudentsTable extends React.Component {
         return (
             <div>
                 <Modal.Body className="modal-body">
-                    <h3></h3>
                     <div>
                         <img style={{float: "left", marginRight: "1em"}} src={this.props.event.imagePath} alt={this.props.event.altImageText} width="100" height="100"/>
                         {eventType ? (

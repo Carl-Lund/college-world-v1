@@ -46,13 +46,13 @@ export default class PotentialStudentTable extends React.Component {
     }
 
     updateButtons = () => {
-        this.state.prevButton = false;
-        this.state.nextButton = false;
+        this.setState({prevButton:false})
+        this.setState({nextButton:false})
         if(this.initial <= 0) {
-            this.state.prevButton = true;
+            this.setState({prevButton:true})
         }
         if(this.final >= this.props.admissions.length) {
-            this.state.nextButton = true;
+            this.setState({nextButton:true})
         }
     }
 

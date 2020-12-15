@@ -1,5 +1,5 @@
 import React from 'react';
-import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
+import {buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import "./Ratings.css"
@@ -41,6 +41,7 @@ export default class CollegeRetention extends React.Component {
                     >
                         <h3 className="text-center">Retention
                             <img
+                                alt="retentionImage"
                                 className="info"
                                 src="resources/images/info.png"
                             />
@@ -50,6 +51,7 @@ export default class CollegeRetention extends React.Component {
                     <CircularProgressbarWithChildren value={this.props.retentionRate} styles={ buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
+                            alt="retentionImage"
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/538/538900.svg"
                         />

@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Students.css"
-import SideNavBar from "../Navigation/SideNavBar";
 import Avatar from "avataaars-updated";
 
 export default class StudentsBubble extends React.Component {

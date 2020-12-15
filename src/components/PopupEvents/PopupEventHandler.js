@@ -1,6 +1,5 @@
 import React from 'react';
 import PopupEvent from "./PopupEvent";
-import Modal from 'react-bootstrap/Modal';
 import "./PopupEventModal.css";
 
 export default class PopupEventHandler extends React.Component {

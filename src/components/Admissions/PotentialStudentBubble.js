@@ -1,13 +1,8 @@
 import React from 'react';
 import "../Students/Students.css"
-import SideNavBar from "../Navigation/SideNavBar";
 import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="studentElement" student={this.props.student} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}

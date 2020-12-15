@@ -1,5 +1,5 @@
 import React from 'react';
-import {CircularProgressbar, buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
+import {buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -41,6 +41,7 @@ export default class CollegeStudentHealth extends React.Component {
                     >
                         <h3 className="text-center">Student Health
                             <img
+                                alt="healthImage"
                                 className="info"
                                 src="resources/images/info.png"
                             />
@@ -49,6 +50,7 @@ export default class CollegeStudentHealth extends React.Component {
                     <CircularProgressbarWithChildren value={this.props.studentHealthRating} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
+                            alt="healthImage"
                             style={{ width: 30, marginTop: -5 }}
                             src="https://image.flaticon.com/icons/svg/883/883407.svg"
                         />
