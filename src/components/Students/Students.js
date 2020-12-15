@@ -37,12 +37,14 @@ export default class Students extends React.Component {
                     <h1 class="student-happiness-header">Student Body Happiness Statistics</h1>
                     <div className="card-deck my-3">
                         <StudentAcademicHappiness everything={this.props.everything}/>
-                        <StudentFinancialHappiness everything={this.props.everything}/>
+                        <StudentOverallHappiness everything={this.props.everything}/>
+                        <StudentSportsHappiness everything={this.props.everything}/>
+                    </div>
+                    <div className="card-deck my 3">
                         <StudentBuildingHappiness everything={this.props.everything}/>
                         <StudentSafetyHappiness everything={this.props.everything}/>
                         <StudentSocialHappiness everything={this.props.everything}/>
-                        <StudentSportsHappiness everything={this.props.everything}/>
-                        <StudentOverallHappiness everything={this.props.everything}/>
+                        <StudentFinancialHappiness everything={this.props.everything}/>
                     </div>
                     <div className="card my-3"  style={{width: '100%', display: "inline-block"}}>
                         <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>

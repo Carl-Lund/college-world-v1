@@ -12,8 +12,8 @@ export default class CollegeDashboard extends React.Component {
                 <CollegeHappiness studentBodyHappiness={this.props.everything.college.studentBodyHappiness}/>
                 <CollegeRetention retentionRate={this.props.everything.college.retentionRate}/>
                 <CollegeStudentHealth studentHealthRating = {this.props.everything.college.studentHealthRating}/>
-                <CollegeRecreationalHappiness studentRecreationalHappiness={this.props.everything.college.studentRecreationalHappiness}/>
-                <CollegeFinancialHappiness studentFinancialHappiness={this.props.everything.college.studentFinancialHappiness}/>
+                <CollegeRecreationalHappiness studentRecreationalHappiness={this.props.everything.college.studentSocialHappiness}/>
+                <CollegeFinancialHappiness studentFinancialHappiness={this.props.everything.college.studentCostHappiness}/>
                 </div>
         );
     }
