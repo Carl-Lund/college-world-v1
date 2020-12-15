@@ -13,6 +13,9 @@ import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
 import InsufficientFundPopup from "./InsufficientFundPopup";
 import CollegeBuildings from "../CollegeDashboard/CollegeBuildings";
+import {buildStyles} from "react-circular-progressbar";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import BuildingQualityBar from "./BuildingQualityBar";
 
 
 export default class Buildings extends React.Component {
@@ -301,9 +304,9 @@ export default class Buildings extends React.Component {
                         <div className="col-lg-3" />
                         <div className="col-sm-1" />
                         <div className="col-md-3" >
-                            <h3>Average Building Quality</h3>
-                            <CollegeBuildings totalBuildingHealth={this.props.everything.college.totalBuildingHealth}/>
+                            <BuildingQualityBar totalBuildingHealth={this.props.everything.college.totalBuildingHealth} />
                         </div>
+                        <div className="col-md-3"></div>
                     <BuildingsTable table={table}/>
                     </div>
                     <div className="row">
