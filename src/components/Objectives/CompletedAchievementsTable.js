@@ -21,7 +21,7 @@ function createTable(achievements) {
             table.push(<li className="list-group-item">
                     <p>{achievements[i].name}</p>
                     <div className="col-md-2" >
-                        <img className="img-responsive" src={achievements[i].iconPath}/>
+                        <img alt="completedAchievementsIcon" className="img-responsive" src={achievements[i].iconPath}/>
                     </div>
                 </li>
             );

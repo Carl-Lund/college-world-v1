@@ -24,7 +24,7 @@ export default class SportsRecordTable extends React.Component {
         const columns = [{
             Header: 'ICON',
             Cell: (row) => <div id={'sportIcon'}>
-                <img className="sport-icon" src={this.imageMappings[this.props.sports[row.index].sportName]}></img>
+                <img alt="sportsIcon" className="sport-icon" src={this.imageMappings[this.props.sports[row.index].sportName]}></img>
             </div>
             },
             {

@@ -23,11 +23,6 @@ export default class BuildingsTable extends React.Component {
             fontSize: '.85em',
             letterSpacing: '.1em'
         }
-        let tdStyle = {
-            padding: '.625em',
-            textAlign: 'center',
-            verticalAlign: 'middle'
-        }
 
         return(
             <table className="table table-condensed" style={tableStyle}>

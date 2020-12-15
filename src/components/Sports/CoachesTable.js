@@ -23,7 +23,7 @@ export default class CoachesTable extends React.Component {
             Header: 'Icons',
             Cell: (row) =>
                 <div className="icon-col">
-                    <img className= "coachIcon" src={this.props.coaches[row.index].avatarIcon.avatarUrl}></img>
+                    <img alt="coachAvatar" className= "coachIcon" src={this.props.coaches[row.index].avatarIcon.avatarUrl}></img>
                 </div>
         },
         {
