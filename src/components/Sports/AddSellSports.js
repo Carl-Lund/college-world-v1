@@ -1,8 +1,5 @@
 import React from 'react';
 import "./Sports.css"
-import ReactDOM from 'react-dom';
-import Swal from 'sweetalert2'
-import { withAlert } from 'react-alert'
 
 
 
@@ -140,8 +137,6 @@ export default class AddSellSports extends React.Component {
             {sportName: this.addSportSelectOption, collegeId: this.props.collegeName, actionId: "ADD"}
         ];
 
-        var responseFromServer
-
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/'+ this.props.collegeName,
             {
                 method: 'POST',
@@ -150,16 +145,13 @@ export default class AddSellSports extends React.Component {
         )
             .then(response => response.json())
             .then(data => {
-                responseFromServer = data.title
-                console.log('Selected: ' + data.ok)
-                console.log('Sesdsdd: ' + data.title)
                 this.afterUpdateCollegeOnServer(data.title)
             });
     }
 
     afterUpdateCollegeOnServer(response){
         if (response === "successfull"){
-            {this.loadCollege()}
+            this.loadCollege()
             return
         }
 
@@ -216,8 +208,6 @@ export default class AddSellSports extends React.Component {
             {sportName: this.sellSportSelectOption, collegeId: this.props.collegeName, actionId: "SELL"}
         ];
 
-        var responseFromServer
-
         fetch('http://localhost:8080/enccollegeworld_war_exploded/rest/sports/'+ this.props.collegeName,
             {
                 method: 'POST',
@@ -226,16 +216,13 @@ export default class AddSellSports extends React.Component {
         )
             .then(response => response.json())
             .then(data => {
-                responseFromServer = data.title
                 this.afterUpdateCollegeOnServerForSell(data.title)
-                console.log('Selected: ' + data.ok)
-                console.log('Sesdsdd: ' + data.title)
             });
     }
 
     afterUpdateCollegeOnServerForSell(response){
         if (response === "successfull"){
-            {this.loadCollege()}
+            this.loadCollege()
             return
         }
 
