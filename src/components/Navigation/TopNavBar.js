@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
@@ -67,7 +66,7 @@ export default class TopNavBar extends React.Component {
                     </Nav.Item>
                     <Nav.Link href="#link">
                         <Button onClick={this.handleShowCalendar} variant="light">
-                            <img className="nav-item-icons" src="resources/images/calendar.png"></img>
+                            <img alt="calendarImage" className="nav-item-icons" src="resources/images/calendar.png"></img>
                             <span className="badge badge-light">{this.props.everything.college.timeLeftInSemester} {this.props.everything.college.timeAdvanceBy}s Left in Semester</span>
                         </Button>
                         <Calendar year={this.props.everything.college.year} show={this.state.calendarAppear} handleClose={this.handleCloseCalendar} />
