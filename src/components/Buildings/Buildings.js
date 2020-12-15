@@ -83,11 +83,11 @@ export default class Buildings extends React.Component {
     hideShowTipsTextBuilding = () => {
         let tips = document.getElementById('building-tips');
         if (this.state.isHideBuilding){
-            this.state.hideShowTipsTextBuilding = "Hide tips"
+            this.setState({hideShowTipsTextBuilding:"Hide tips"})
             this.setState({isHideBuilding: false})
             tips.style.display = "block";
         }else {
-            this.state.hideShowTipsTextBuilding = "Show tips"
+            this.setState({hideShowTipsTextBuilding:"Show tips"})
             this.setState({isHideBuilding: true})
             tips.style.display = "none";
         }
@@ -97,11 +97,11 @@ export default class Buildings extends React.Component {
     hideShowTipsTextSafety = () => {
         let tips = document.getElementById('safety-tips');
         if (this.state.isHideSafety){
-            this.state.hideShowTipsTextSafety = "Hide tips"
+            this.setState({hideShowTipsTextSafety:"Hide tips"})
             this.setState({isHideSafety: false})
             tips.style.display = "block";
         }else {
-            this.state.hideShowTipsTextSafety = "Show tips"
+            this.setState({hideShowTipsTextSafety:"Show tips"})
             this.setState({isHideSafety: true})
             tips.style.display = "none";
         }
@@ -164,24 +164,9 @@ export default class Buildings extends React.Component {
         if (!this.props.everything) {
             return <p>Loading...</p>;
         }
-
-        let tableStyle = {
-            border: '1px solid #ccc',
-            borderCollapse: 'collapse',
-            margin: '0',
-            padding: '0',
-            width: '100%',
-            tableLayout: 'fixed'
-        }
         let trStyle = {
             border: '1px solid #ddd',
             padding: '.35em'
-        }
-        let thStyle = {
-            padding: '.625em',
-            textAlign: 'center',
-            fontSize: '.85em',
-            letterSpacing: '.1em'
         }
         let tdStyle = {
             padding: '.625em',
@@ -227,7 +212,7 @@ export default class Buildings extends React.Component {
                 status = "Built";
             }
 
-            if (this.props.everything.buildings[i].size != "Extra Large" && this.props.everything.buildings[i].size != "N/A"
+            if (this.props.everything.buildings[i].size !== "Extra Large" && this.props.everything.buildings[i].size !== "N/A"
                 && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
                     <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
@@ -249,7 +234,7 @@ export default class Buildings extends React.Component {
 
             building.push(
                 <td style={tdStyle}>{this.props.everything.buildings[i].name}</td>,
-                <td style={tdStyle}><img className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
+                <td style={tdStyle}><img alt="buildingImage" className="img-responsive" src={this.getImage(this.props.everything.buildings[i].kindOfBuilding)}/> {this.props.everything.buildings[i].kindOfBuilding}</td>,
                 <td style={tdStyle}>{this.props.everything.buildings[i].size} ({this.props.everything.buildings[i].capacity})</td>,
                 <td style={tdStyle}>{this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents}</td>,
                 <td style={tdStyle}><div className="progress">
