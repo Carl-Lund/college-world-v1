@@ -4,6 +4,7 @@ import "./Sports.css"
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import ReactDOM from "react-dom";
+import Avatar from "avataaars-updated";
 
 
 export default class CoachesTable extends React.Component {
@@ -23,12 +24,22 @@ export default class CoachesTable extends React.Component {
             Header: 'Icons',
             Cell: (row) =>
                 <div className="icon-col">
-                    <img alt="coachAvatar" className= "coachIcon" src={this.props.coaches[row.index].avatarIcon.avatarUrl}></img>
+                    <Avatar style={{height: '60px', width: '60px'}}
+                            avatarStyle='Circle'
+                            topType={this.props.coaches[row.index].avatar.top}
+                            facialHairType={this.props.coaches[row.index].avatar.facialHair}
+                            facialHairColor={this.props.coaches[row.index].avatar.facialHairColor}
+                            clotheType={this.props.coaches[row.index].avatar.clothes}
+                            eyeType={this.props.coaches[row.index].avatar.eyes}
+                            eyebrowType={this.props.coaches[row.index].avatar.eyebrows}
+                            mouthType={this.props.coaches[row.index].avatar.mouth}
+                            skinColor={this.props.coaches[row.index].avatar.skinColor}
+                    />
                 </div>
         },
         {
             Header: 'Coach name',
-            accessor: 'facultyName' // String-based value accessors!
+            accessor: 'name' // String-based value accessors!
         }, {
             Header: 'Salary',
             Cell: (row) =>

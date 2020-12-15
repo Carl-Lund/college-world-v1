@@ -18,12 +18,12 @@ export default class Finance extends React.Component {
                 <h1 className="finance-header">College Finances</h1>
                 <Container>
                     <Row>
-                        <Col sm={4}><FinanceTable everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
+                        <Col className= "left" sm={4}><FinanceTable everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                         <Col sm={4}><FinancesGraph everything={this.props.everything}/></Col>
                         <Col sm={4}><ExpensesGraph everything={this.props.everything}/></Col>
                     </Row>
                     <Row>
-                        <Col sm={4}><FinanceLog everything={this.props.everything}/></Col>
+                        <Col className= "left" sm={4}><FinanceLog everything={this.props.everything}/></Col>
                         <Col sm={4}><FinanceLoanContract everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                         <Col sm={4}><FinanceLoanTable className="table" everything={this.props.everything} replaceEverything={this.props.replaceEverything}/></Col>
                     </Row>

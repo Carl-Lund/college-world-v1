@@ -13,7 +13,7 @@ export default class PurchaseBuildings extends React.Component{
             <div className="col-sm-6">
                 <div className="well well-sm">
                     <div id="purchase">
-                        <h3>Purchase Buildings</h3>
+                        <h2>Purchase Buildings</h2>
                         <div className="form-group">
                             <label>Building Type</label>
                             <Select
