@@ -9,12 +9,12 @@ export default class SideNavBar extends React.Component {
             <div className="col-md-2">
                 <nav className="sidebar bg-light col-md-2">
                     <div className="sidebar-sticky">
-                        <img id="logo" src="resources/images/college_world_icons/logo.png"></img>
+                        <img alt="collegeWorldLogo" id="logo" src="resources/images/college_world_icons/logo.png"></img>
                         <ul className="nav flex-column">
                             {/*<li className="nav-item"><Link to='/launch'>Launch</Link></li>*/}
                             <li className="nav-item">
                                 <NavLink to='/college' activeClassName="active">
-                                    <img alt="dashboardInformationBar" className="nav-item-icons" src="resources/images/college_world_icons/dashboard_information_bar.png"></img>
+                                    <img alt="dashboardImage" className="nav-item-icons" src="resources/images/college_world_icons/dashboard_information_bar.png"></img>
                                     Dashboard
                                 </NavLink>
                             </li>
