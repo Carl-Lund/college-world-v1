@@ -3,10 +3,6 @@ import "./finances.css"
 import LoanTab from "./LoanTab";
 
 export default class FinanceLoanTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         return (

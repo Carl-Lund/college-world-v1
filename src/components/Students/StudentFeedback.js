@@ -4,10 +4,6 @@ import SideNavBar from "../Navigation/SideNavBar";
 import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>

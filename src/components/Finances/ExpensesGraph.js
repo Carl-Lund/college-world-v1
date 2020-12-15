@@ -4,9 +4,6 @@ import { PieChart } from 'react-minimal-pie-chart';
 import { Chart } from "react-google-charts";
 
 export default class ExpensesGraph extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     createChart(data){
         //if the user hasn't spent money yet, tell them so they don't just see a blank box

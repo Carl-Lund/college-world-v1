@@ -2,10 +2,6 @@ import React from 'react';
 import "./Students.css"
 
 export default class StudentsTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {isAthlete} = this.props.student.athlete;
         const {isSick} = this.props.student.numberHoursLeftBeingSick > 1;

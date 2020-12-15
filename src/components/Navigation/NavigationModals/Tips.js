@@ -5,10 +5,6 @@ import TipsBox from "../../College/TipsBox";
 import "../../College/tips.css"
 
 export default class Tips extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         this.currentName = "";
         this.currentTips = "";

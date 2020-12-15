@@ -4,9 +4,6 @@ import Tuition from "./Tuition";
 import Col from "react-bootstrap/Col";
 
 export default class FinanceTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
 
         return (

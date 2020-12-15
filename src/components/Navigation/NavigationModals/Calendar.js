@@ -6,10 +6,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default class Calendar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Modal show={this.props.show} onHide={this.props.handleClose}

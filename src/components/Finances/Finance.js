@@ -13,9 +13,6 @@ import FinancesGraph from "./FinancesGraph";
 import Tuition from "./Tuition";
 
 export default class Finance extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 

@@ -2,10 +2,6 @@ import React from 'react';
 import NewsItem from "../News/NewsItem";
 
 export default class CollegeRetention extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const title = this.props.title
         return (

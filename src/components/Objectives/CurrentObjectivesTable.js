@@ -2,10 +2,6 @@ import React from 'react';
 import "./Objectives.css";
 
 export default class CurrentObjectivesTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render(){
         return(
             <div className="pre-scrollable" style={{maxheight: '750px'}}>

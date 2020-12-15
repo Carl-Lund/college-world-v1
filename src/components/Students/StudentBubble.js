@@ -4,10 +4,6 @@ import SideNavBar from "../Navigation/SideNavBar";
 import Avatar from "avataaars-updated";
 
 export default class StudentsBubble extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="studentElement" id={this.props.student.id} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}

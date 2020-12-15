@@ -3,10 +3,6 @@ import './Faculty.css';
 
 
 export default class FacultyRatings extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     render() {
         return(
             <div className="text-center">

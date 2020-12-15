@@ -5,9 +5,6 @@ import { PieChart } from 'react-minimal-pie-chart';
 import { Chart } from "react-google-charts";
 
 export default class FinanceLog extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
 
         return (
