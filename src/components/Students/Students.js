@@ -10,7 +10,6 @@ import StudentSafetyHappiness from "./StudentSafetyHappiness";
 import StudentFinancialHappiness from "./StudentFinancialHappiness";
 import StudentSocialHappiness from "./StudentSocialHappiness";
 import StudentSportsHappiness from "./StudentSportsHappiness";
-import TipsBox from "../College/TipsBox";
 
 export default class Students extends React.Component {
     constructor(props) {
