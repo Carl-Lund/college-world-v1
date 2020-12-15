@@ -2,10 +2,6 @@ import React from 'react';
 import "./Objectives.css";
 
 export default class AchievementsTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render(){
         return(
             <div className="pre-scrollable" style={{maxHeight: '250px'}}>

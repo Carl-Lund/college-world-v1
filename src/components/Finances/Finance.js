@@ -1,5 +1,4 @@
 import React from 'react';
-import FinancesTable from "../Finances/FinanceTable";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,10 +6,8 @@ import FinanceTable from "../Finances/FinanceTable";
 import FinanceLog from "./FinanceLog";
 import FinanceLoanContract from "./FinanceLoanContract";
 import FinanceLoanTable from "./FinanceLoanTable";
-import TipsBox from "../College/TipsBox";
 import ExpensesGraph from "./ExpensesGraph";
 import FinancesGraph from "./FinancesGraph";
-import Tuition from "./Tuition";
 
 export default class Finance extends React.Component {
 

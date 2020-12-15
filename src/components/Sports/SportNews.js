@@ -60,11 +60,11 @@ export default class SportNews extends React.Component {
     setBadNews(theMessage){
         var oneRow =[];
         oneRow.push(
-            <a className="list-group-item list-group-item-action flex-column align-items-start">
+            <div className="list-group-item list-group-item-action flex-column align-items-start">
                 <div className="d-flex w-100 justify-content-between">
                     <div className="row">
                         <div className="col-sm-1">
-                            <img className="imageIcon" src="resources/images/bad_news.png"/>
+                            <img alt="badNews" className="imageIcon" src="resources/images/bad_news.png"/>
                         </div>
                         <div className="col-sm-11">
                             <h5 className="mb-1">{theMessage.message}</h5>
@@ -74,7 +74,7 @@ export default class SportNews extends React.Component {
 
                 </div>
 
-            </a>
+            </div>
         )
 
         return oneRow
@@ -84,11 +84,11 @@ export default class SportNews extends React.Component {
     setGoodNews(theMessage){
         var oneRow =[];
         oneRow.push(
-            <a className="list-group-item list-group-item-action flex-column align-items-start">
+            <div className="list-group-item list-group-item-action flex-column align-items-start">
                 <div className="d-flex w-100 justify-content-between">
                     <div className="row">
                         <div className="col-sm-1">
-                            <img className="imageIcon" src="resources/images/good_news.png"/>
+                            <img alt="goodNews" className="imageIcon" src="resources/images/good_news.png"/>
                         </div>
                         <div className="col-sm-11">
                             <h5 className="mb-1">{theMessage.message}</h5>
@@ -98,7 +98,7 @@ export default class SportNews extends React.Component {
 
                 </div>
 
-            </a>
+            </div>
         )
 
         return oneRow

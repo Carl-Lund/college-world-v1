@@ -1,13 +1,9 @@
 import React from 'react';
-import SideNavBar from "../Navigation/SideNavBar";
-import StudentFeedback from "../Students/Students";
 import SportsTop from "./SportsTop";
 import SportsRecordTable from "./SportsRecordTable";
 import AddSellSports from "./AddSellSports";
-import CollegeOpenCreate from "../College/CollegeLaunchPad";
 import CoachesTable from "./CoachesTable";
 import SportNews from "./SportNews";
-import TipsBox from "../College/TipsBox";
 
 export default class Sports extends React.Component {
     //The json file: http://localhost:8080/enccollegeworld_war_exploded/rest/sports/acorn

@@ -1,17 +1,8 @@
 import React from 'react';
-import CollegeHappiness from "../CollegeDashboard/CollegeHappiness";
-import CollegeRetention from "../CollegeDashboard/CollegeRetention";
-import CollegeBuildings from "../CollegeDashboard/CollegeBuildings";
-import CollegeFinancialHappiness from "../CollegeDashboard/CollegeFinancialHappiness";
-import CollegeRecreationalHappiness from "../CollegeDashboard/CollegeRecreationalHappiness";
-import CollegeStudentHealth from "../CollegeDashboard/CollegeStudentHealth";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Controls from "../Admissions/Controls";
 import Freshmen from "./FreshmenPanel";
-import PopupEventHandler from "../PopupEvents/PopupEventHandler";
-import Tips from "../Navigation/NavigationModals/Tips";
 import Application from "./Application";
 import './Admissions.css'
 import AcademicsStatBar from "./AdmissionsEffects/AcademicsStatBar";
@@ -73,26 +64,6 @@ export default class Admissions extends React.Component {
     }
 
     render() {
-        let availableBeds = 0;
-        let takenBeds = 0;
-        let availablePlates = 0;
-        let takenPlates = 0;
-        let availableDesks = 0;
-        let takenDesks = 0;
-        for(let i = 0; i < this.props.everything.buildings.length; i++) {
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DORM") {
-                availableBeds += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
-                takenBeds += this.props.everything.buildings[i].numStudents;
-            }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DINING") {
-                availablePlates += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
-                takenPlates += this.props.everything.buildings[i].numStudents;
-            }
-            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "ACADEMIC") {
-                availableDesks += this.props.everything.buildings[i].capacity - this.props.everything.buildings[i].numStudents;
-                takenDesks += this.props.everything.buildings[i].numStudents;
-            }
-        }
         let totalPotentialStudents = this.props.everything.admissions.groupA.length +
             this.props.everything.admissions.groupB.length +
             this.props.everything.admissions.groupC.length;
@@ -101,21 +72,21 @@ export default class Admissions extends React.Component {
                 <h2 className="header">Admissions</h2>
                     <div className="row m-2">
                         <div className="col-sm text-center topbar navbar navbar-default navbar-fixed-top">
-                            <img className="topbar-icon" src="resources/images/college_world_icons/total_students.png"></img>
+                            <img alt="questionMark" className="topbar-icon" src="resources/images/college_world_icons/total_students.png"></img>
                             <div className="topbar-text">
                                 <h4><strong>{this.props.everything.college.studentsGraduating} / {this.props.everything.objectives.studentCount}</strong></h4>
                                 <h6>Students Graduating</h6>
                             </div>
                         </div>
                         <div className="col-sm text-center topbar">
-                            <img className="topbar-icon" src="resources/images/presentation.png"/>
+                            <img alt="presentation" className="topbar-icon" src="resources/images/presentation.png"/>
                             <div className="topbar-text">
                                 <h4><strong>{this.props.everything.admissions.openCapacity}</strong></h4>
                                 <h6>Open Slots for Next Year</h6>
                             </div>
                         </div>
                         <div className="col-sm text-center topbar" id="last-bar">
-                            <img className="topbar-icon" src="resources/images/college_world_icons/question_mark.png"></img>
+                            <img alt="questionMark" className="topbar-icon" src="resources/images/college_world_icons/question_mark.png"></img>
                             <div className="topbar-text">
                                 <h4><strong>{totalPotentialStudents}</strong></h4>
                                 <h6>Students Considering</h6>

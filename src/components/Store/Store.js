@@ -1,5 +1,4 @@
 import React from 'react';
-import App from "../App/App";
 
 export default class Store extends React.Component {
 
@@ -34,7 +33,7 @@ export default class Store extends React.Component {
                 if (this.props.everything.college.availableCash < this.props.everything.store[i].cost) {
                     itemTile.push(
                         <div className="card text-center text-muted my-3">
-                            <img className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
+                            <img alt="itemImage" className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
                                  width="50"></img>
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
@@ -52,7 +51,7 @@ export default class Store extends React.Component {
 
                     itemTile.push(
                         <div className="card text-center text-muted my-3">
-                            <img className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
+                            <img alt="itemImage" className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
                                  width="50"></img>
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
@@ -69,7 +68,7 @@ export default class Store extends React.Component {
                 else if(this.props.everything.store[i].isPurchased){
                     itemTile.push(
                         <div className="card text-center text-muted my-3">
-                            <img className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
+                            <img alt="itemImage" className="card-img-top" src={"resources/images/" + this.props.everything.store[i].imageName} height="50"
                                  width="50"></img>
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
@@ -85,7 +84,7 @@ export default class Store extends React.Component {
                 else{
                     itemTile.push(
                         <div className="card text-center my-3">
-                            <img className="card-img-top" src={"resources/images/" +this.props.everything.store[i].imageName} height="50" width="50"></img>
+                            <img alt="itemImage" className="card-img-top" src={"resources/images/" +this.props.everything.store[i].imageName} height="50" width="50"></img>
                             <div className="card-body">
                                 <h4 className="card-title">{this.props.everything.store[i].name}</h4>
                                 <p className="card-text">{this.props.everything.store[i].description}</p>

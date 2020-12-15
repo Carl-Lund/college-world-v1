@@ -1,7 +1,5 @@
 import React from 'react';
-import CurrentLevel from "../CurrentLevel/CurrentLevel";
 import CurrentObjectives from "./CurrentObjectives";
-import CompletedObjectives from "./CompletedObjectives";
 import "./Objectives.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Achievements from "./Achievements";

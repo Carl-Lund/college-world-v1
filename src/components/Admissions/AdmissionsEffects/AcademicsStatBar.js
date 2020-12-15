@@ -1,6 +1,7 @@
 import React from 'react';
 import StackedProgressbar from './StackedProgressBar';
 import 'react-circular-progressbar/dist/styles.css';
+import styles from "./ProgressBar.css";
 export default class AcademicsStatBar extends React.Component {
 
     render() {

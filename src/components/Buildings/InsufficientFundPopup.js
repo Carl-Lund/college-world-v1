@@ -2,8 +2,6 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 export default class InsufficientFundPopup extends React.Component {
     render() {

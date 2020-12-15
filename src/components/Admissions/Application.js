@@ -2,8 +2,6 @@ import React from 'react';
 import './Admissions.css';
 import {Button, Modal} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Avatar from "avataaars-updated";
 /**
  * Implemented 11-18-2020 by Matt Cruz

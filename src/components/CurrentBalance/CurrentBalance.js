@@ -1,5 +1,4 @@
 import React from 'react';
-import Select from "react-select";
 
 export default class CurrentBalance extends React.Component {
     constructor(props) {
