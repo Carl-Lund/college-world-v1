@@ -41,6 +41,24 @@ export default class TopNavBar extends React.Component {
         let collegeName = this.props.collegeName;
         let currentBalance = this.props.everything.college.availableCash.toLocaleString();
         let totalStudents = this.props.everything.objectives.studentCount;
+        let availableBeds = 0;
+        let availablePlates = 0;
+        let availableDesks = 0;
+        let capacity = this.props.everything.admissions.openCapacity;
+
+        for(let i = 0; i < this.props.everything.buildings.length; i++) {
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DORM") {
+                availableBeds += this.props.everything.buildings[i].capacity;
+            }
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "DINING") {
+                availablePlates += this.props.everything.buildings[i].capacity;
+            }
+            if (this.props.everything.buildings[i].isBuilt && this.props.everything.buildings[i].kindOfBuilding === "ACADEMIC") {
+                availableDesks += this.props.everything.buildings[i].capacity;
+            }
+            capacity = Math.min(availableBeds, availableDesks);
+            capacity = Math.min(capacity, availablePlates);
+        }
 
         return (
             <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
@@ -51,7 +69,7 @@ export default class TopNavBar extends React.Component {
                         <Nav.Link>Net Balance: <br />
                             ${currentBalance}</Nav.Link>
                         <Nav.Link>Seats Occupied: <br />
-                            {totalStudents}</Nav.Link>
+                            {totalStudents + " / " + capacity}</Nav.Link>
                         <Nav.Link >
                             <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
                             <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
