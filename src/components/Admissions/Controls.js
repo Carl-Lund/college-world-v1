@@ -11,7 +11,7 @@ export default class Controls extends React.Component {
                 groupB: "not-selected",
                 groupC: "not-selected"
             }
-            {this.setSelections()}
+            this.setSelections()
             this.changeGroupSelectionA = this.changeGroupSelectionA.bind(this);
             this.changeGroupSelectionB = this.changeGroupSelectionB.bind(this);
             this.changeGroupSelectionC = this.changeGroupSelectionC.bind(this);
@@ -51,19 +51,19 @@ export default class Controls extends React.Component {
         let group = this.props.everything.admissions.selectedGroup;
         console.log("CALLED " + group);
         if(group === "GroupA") {
-            this.state.groupA = "selected"
-            this.state.groupB = "not-selected"
-            this.state.groupC = "not-selected"
+            this.state.groupA.setState( "selected");
+            this.state.groupB.setState("not-selected");
+            this.state.groupC.setState("not-selected");
         }
         else if(group === "GroupB") {
-            this.state.groupA = "not-selected"
-            this.state.groupB = "selected"
-            this.state.groupC = "not-selected"
+            this.state.groupA.setState("not-selected");
+            this.state.groupB.setState("selected");
+            this.state.groupC.setState("not-selected");
         }
         else {
-            this.state.groupA = "not-selected"
-            this.state.groupB = "not-selected"
-            this.state.groupC = "selected"
+            this.state.groupA.setState("not-selected");
+            this.state.groupB.setState("not-selected");
+            this.state.groupC.setState("selected");
         }
     }
 
