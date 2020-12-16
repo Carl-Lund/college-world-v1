@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {Jumbotron} from "react-bootstrap";
 
 class CollegeOpenCreate extends React.Component {
 
@@ -43,42 +44,44 @@ class CollegeOpenCreate extends React.Component {
             });
 
         const { history } = this.props;
-        if (history) history.push('/college');
+        if (history) {
+            history.push('/college');
+        }
     }
 
     render() {
         const collegeName = this.props.collegeName;
         return (
             <Container>
-                <Row className="myAuto" md={4}>
-                    <Col md={3} sm={7}>
-                        <Row>
-                            <img alt="logo_big" className="imageLandingPageLogo" src="resources/images/logo_big.png"/>
-                        </Row>
-                        <Row md="3">
-                            <Col md="3">
-                                <input className="editText" type="text" value={collegeName} onChange={this.handleOnChange} placeholder="College Name.."/>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col sm="3">
-                                <Button variant="primary" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.loadCollege()}}>{this.state.busy? 'Please wait' : 'Load'}</Button>
-                            </Col>
-                            <Col sm="1"/>
-                            <Col sm="3" >
-                                <Button variant="info" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") :this.newCollege()}}>{this.state.busy? 'Please wait' : 'New College'}</Button>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col sm="6">
-                                <Button variant="danger" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.deleteCollege()}}>{this.state.busy? 'Please wait' : 'Delete College'}</Button>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col md={1}>
-                        <img className="imageLandingPageWallpaper" src="resources/images/landing_page_wallpaper.png" alt="decorative"/>
-                    </Col>
-                </Row>
+
+                <Jumbotron>
+                    <Row>
+                        <h1>Endicott College World 2.0</h1>
+                    </Row>
+                    <Row>
+                        <p>A simulation of college life: students, buildings, sporting events, financials, unexpected events and more.</p>
+                    </Row>
+                    <Row md="3">
+                        <Col md="6">
+                            <input className="editText" type="text" value={collegeName} onChange={this.handleOnChange} placeholder="College Name.."/>
+                        </Col>
+                    </Row>
+                    <br/>
+                    <Row>
+                        <Col sm="3"/>
+                        <Col sm="2">
+                            <Button variant="primary" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.loadCollege()}}>{this.state.busy? 'Please wait' : 'Load College'}</Button>
+                        </Col>
+
+                        <Col sm="2">
+                            <Button variant="info" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") :this.newCollege()}}>{this.state.busy? 'Please wait' : 'Create College'}</Button>
+                        </Col>
+                        <Col sm="2">
+                            <Button variant="danger" disabled={this.state.busy} onClick={() => {this.state.busy? console.log("stop it") : this.deleteCollege()}}>{this.state.busy? 'Please wait' : 'Delete College'}</Button>
+                        </Col>
+                        <Col sm="3"/>
+                    </Row>
+                </Jumbotron>
             </Container>
         );
     }

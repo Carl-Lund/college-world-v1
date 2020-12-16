@@ -89,6 +89,8 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
+        document.title = "EC College World"
+        document.fav = "favicon"
         if((this.state.collegeName === null) || (this.state.collegeName === ""))
             return;
 
@@ -142,7 +144,9 @@ export default class App extends React.Component {
         const {everything, collegeName} = this.state;
 
         if((everything === null) || (everything === "")) {
-            return (<div/>);
+            return (
+                <img className="imageLandingPageWallpaper" src="resources/images/largecampus.png" alt="decorative"/>
+                );
         }
 
         return (<SideNavBar collegeName={collegeName} everything={everything} setLaunchStatus={this.setLaunchStatus}  doExit={this.doExit}/>);
@@ -179,6 +183,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        // <img className="imageLandingPageWallpaper" src="resources/images/largecampus.png" alt="decorative"/>
         return (
             <div>
                 <Router>
