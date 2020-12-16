@@ -54,7 +54,7 @@ class CollegeOpenCreate extends React.Component {
         return (
             <Container>
 
-                <Jumbotron>
+                <Jumbotron className="launchJumboTron">
                     <Row>
                         <h1>Endicott College World 2.0</h1>
                     </Row>
