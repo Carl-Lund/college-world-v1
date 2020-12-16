@@ -26,7 +26,7 @@ export default class Students extends React.Component {
     }
 
     render() {
-        if (this.props.everything == null) {
+        if (this.props.everything === undefined) {
             return(<h4>No students.</h4>);
         }
 
@@ -52,6 +52,7 @@ export default class Students extends React.Component {
                     <div className="card my-3"  style={{width: '100%', display: "inline-block"}}>
                         <StudentFeedback student = {this.props.everything.students[this.state.selectedStudent]}/>
                         <StudentsPanel student = {this.props.everything.students[this.state.selectedStudent]}everything = {this.props.everything}/>
+                        {/*Z was here*/}
                         <div className="row px-0" style={{height: '800px', marginTop: '20px', float: 'left', width: '65%'}}>
                             <StudentsTable everything = {this.props.everything} studentSwitch = {this.studentSwitch}/>
                         </div>

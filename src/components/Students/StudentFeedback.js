@@ -5,7 +5,7 @@ import Avatar from "avataaars-updated";
 export default class StudentsTable extends React.Component {
 
     render() {
-        if(this.props.student === null)
+        if(this.props.student === undefined)
             return (<div />);
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>
