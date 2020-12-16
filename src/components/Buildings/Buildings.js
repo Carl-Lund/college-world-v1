@@ -215,20 +215,20 @@ export default class Buildings extends React.Component {
             if (this.props.everything.buildings[i].size !== "Extra Large" && this.props.everything.buildings[i].size !== "N/A"
                 && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
-                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost})</button>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost.toLocaleString()})</button>
                 )
             }
 
             if (this.props.everything.buildings[i].repairCost <= this.props.everything.college.availableCash && this.props.everything.buildings[i].repairCost > 0
                 && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].isUpgradeComplete === true) {
                 repairButton.push (
-                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</button>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.repairBuilding} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost.toLocaleString()})</button>
                 )
             }
 
             if (this.props.everything.buildings[i].repairCost > this.props.everything.college.availableCash ){
                 repairButton.push (
-                    <Button variant="warning" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.handleShow} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost})</Button>
+                    <Button variant="warning" style={{horizAlign: "left", fontSize: "75%", marginTop: "5px"}} onClick={this.handleShow} name="repairBuilding" value={i}>Repair (${this.props.everything.buildings[i].repairCost.toLocaleString()})</Button>
                 )
             }
 
