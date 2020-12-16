@@ -209,7 +209,7 @@ function handleMember(facultyArray, index, facultySwitch){
     let person = facultyArray[index];
     return(
 
-        <li class = "list-group-item" onClick = {() => facultySwitch(index)}>
+        <li className = "list-group-item2 list-group-item"  onClick = {() => facultySwitch(index)}>
             <Avatar style={{height: '60px', width: '60px'}}
                     avatarStyle='Circle'
                     topType={person.avatar.top}
