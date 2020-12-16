@@ -3,16 +3,6 @@ import "./Students.css"
 import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
-    constructor(props) {
-        super(props);
-        // this.checkStudentExists = this.checkStudentExists.bind(this);
-    }
-
-    // checkStudentExists = () => {
-    //     if(this.props.student == null) {
-    //         this.props.student =
-    //     }
-    // }
 
     render() {
         return (
