@@ -192,10 +192,10 @@ export default class App extends React.Component {
                     </div>
                 </div>
                 </Router>
-                <div className="well well-sm">
-                    Refresh Speed (ms)
-                    <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"1000 ms"} defaultValue={"2000"}/>
-                </div>
+                {/*<div className="well well-sm">*/}
+                {/*    Refresh Speed (ms)*/}
+                {/*    <input id="debugDaySpeed" ref={this.debugDaySpeedRef} type={"number"} placeholder={"1000 ms"} defaultValue={"2000"}/>*/}
+                {/*</div>*/}
             </div>
 
         );
