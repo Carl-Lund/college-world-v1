@@ -19,16 +19,19 @@ export default class Students extends React.Component {
         };
     }
 
-    studentSwitch = (s) => {
+    studentSwitch = (i) => {
         this.setState({
-            selectedStudent: s
+            selectedStudent: i
         });
     }
 
     render() {
-        console.log(this.props.everything);
         if (this.props.everything == null) {
             return(<h4>No students.</h4>);
+        }
+
+        if((this.state.selectedStudent === null) || (this.state.selectedStudent >= this.props.everything.students.length)){
+            this.studentSwitch(0);
         }
 
         return (

@@ -5,9 +5,10 @@ import Avatar from "avataaars-updated";
 export default class StudentsTable extends React.Component {
 
     render() {
+        if(this.props.student === null)
+            return (<div />);
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>
-                {/*{this.checkStudentExists()}*/}
                 <div className="col-md-2">
                     <Avatar style={{height: '175px', width: '175px'}}
                         avatarStyle='Circle'

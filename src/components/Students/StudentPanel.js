@@ -3,6 +3,8 @@ import "./Students.css"
 
 export default class StudentsTable extends React.Component {
     render() {
+        if(this.props.student === null)
+            return (<div />);
         const {isAthlete} = this.props.student.athlete;
         const {isSick} = this.props.student.numberHoursLeftBeingSick > 1;
         return (
