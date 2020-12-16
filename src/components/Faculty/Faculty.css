@@ -82,3 +82,34 @@
 #hideTips {
     margin-top: .4em;
 }
+
+.memberInfoTitle{
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 75px !important;
+}
+
+.memberInfo{
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 125px !important;
+    text-align: left;
+    padding-left: 2em;
+    margin: 1em;
+    width: 100%;
+    background-color: white;
+    border: 1px solid lightgrey;
+    padding: 1em 1em 1em 1em;
+}
+
+.memberName{
+    font-size: x-large;
+}
+
+#fireButton{
+    margin: .5em .5em .5em .5em;
+}
+
+#raiseButton{
+    margin: .5em .5em .5em .5em;
+}

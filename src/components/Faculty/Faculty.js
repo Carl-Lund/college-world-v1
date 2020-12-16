@@ -151,13 +151,16 @@ export default class Faculty extends React.Component{
                     </div>
 
                 <div className="col-md-4">
-                    <h2>School of Arts and Sciences</h2>
+                    <h2 style={{textAlign: "center"}}>School of Arts and Sciences</h2>
                     {createTable(this.props.everything.faculty, this.facultySwitch, "Arts and Sciences")}
-                    <h2>School of Business</h2>
+                    <br></br>
+                    <h2 style={{textAlign: "center"}}>School of Business</h2>
                     {createTable(this.props.everything.faculty, this.facultySwitch, "Business")}
-                    <h2>School of Nursing</h2>
+                    <br></br>
+                    <h2 style={{textAlign: "center"}}>School of Nursing</h2>
                     {createTable(this.props.everything.faculty, this.facultySwitch, "Nursing")}
-                    <h2>School of Sports Science and Fitness</h2>
+                    <br></br>
+                    <h2 style={{textAlign: "center"}}>School of Sports Science and Fitness</h2>
                     {createTable(this.props.everything.faculty, this.facultySwitch, "Sports Science and Fitness")}
                 </div>
 
@@ -165,17 +168,21 @@ export default class Faculty extends React.Component{
                 <div class = "col-md-4 text-right">
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
-                        <h3>{this.props.everything.faculty[this.state.selectedFaculty].name}</h3>
-                        <h3>Department: {this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
-                        <h3>Salary: ${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
-                        <h3>ID: {this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
-                        <h3>Happiness: {this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
-                        <h3>Performance: {this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>
-                    </div>
-                    <div class = "facultyButtons">
-                        <button type="submit" className="btn btn-info" onClick={this.fireFaculty} name="fireFaculty">Fire Faculty</button>
-                        <button type="submit" className="btn btn-info" onClick={this.giveRaise} name="giveRaise">Give Raise</button>
+                        <h3 class = "memberName"><strong>{this.props.everything.faculty[this.state.selectedFaculty].name}</strong></h3>
+                        <h3><strong>Department: </strong>{this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
+                        <h3><strong>Salary: </strong>${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
+                        <h3><strong>ID: </strong>{this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
+                        <h3><strong>Happiness: </strong>{this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
+                        <h3><strong>Performance: </strong>{this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>
+                        <br></br>
+                        <div className="facultyButtons">
+                            <button type="submit" className="btn btn-info" id="fireButton" onClick={this.fireFaculty} name="fireFaculty">Fire Faculty</button>
+                            <button type="submit" className="btn btn-info" id="raiseButton" onClick={this.giveRaise} name="giveRaise">Give Raise</button>
                         </div>
+                    </div>
+
+
+
                     </div>
                     <div className="col-md-2">
                     </div>
