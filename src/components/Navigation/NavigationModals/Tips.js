@@ -8,64 +8,53 @@ export default class Tips extends React.Component {
     render() {
         this.currentName = "";
         this.currentTips = "";
-        let dashboard = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]college$/;
-        let traits = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]schooltraits$/;
-        let students = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]students$/;
-        let admissions = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]admissions$/;
-        let buildings = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]building$/;
-        let sports = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]sports$/;
-        let faculty = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]faculty$/;
-        let finances = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]finances$/;
-        let objectives = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]objectives$/;
-        let store = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]store$/;
-        let about = /^http:[/][/]localhost:[0-9][0-9][0-9][0-9][/]about$/;
-
-        if(dashboard.test(window.location.href) === true){
+        let currentUrl = window.location.href;
+        if(currentUrl.endsWith("college")){
             this.currentName = "General Tips";
             this.currentTips = this.props.everything.college.collegeTips.generalTips;
         }
-        else if(traits.test(window.location.href) === true){
+        else if(currentUrl.endsWith("schooltraits")){
             this.currentName = "Student Trait Tips";
             //This should be changed to Student Trait Tips Later once they are made
             //on the backend
             this.currentTips = this.props.everything.college.collegeTips.generalTips;
         }
-        else if(students.test(window.location.href) === true){
+        else if(currentUrl.endsWith("students")){
             this.currentName = "Social Tips";
             this.currentTips = this.props.everything.college.collegeTips.socialTips;
         }
-        else if(admissions.test(window.location.href) === true){
+        else if(currentUrl.endsWith("admissions")){
             this.currentName = "Admissions Tips";
             this.currentTips = this.props.everything.college.collegeTips.admissionsTips;;
         }
-        else if(buildings.test(window.location.href) === true){
+        else if(currentUrl.endsWith("building")){
             this.currentName = "Building Tips";
             let buildingTips = this.props.everything.college.collegeTips.safetyTips.concat(this.props.everything.college.collegeTips.infrastructureTips);
             this.currentTips = buildingTips;
         }
-        else if(sports.test(window.location.href) === true){
+        else if(currentUrl.endsWith("sports")){
             this.currentName = "Sports Tips";
             this.currentTips = this.props.everything.college.collegeTips.athleticTips;
         }
-        else if(faculty.test(window.location.href) === true){
+        else if(currentUrl.endsWith("faculty")){
             this.currentName = 'Academic Tips';
             this.currentTips = this.props.everything.college.collegeTips.academicTips;
         }
-        else if(finances.test(window.location.href) === true){
+        else if(currentUrl.endsWith("finances")){
             this.currentName = "Value Tips";
             this.currentTips = this.props.everything.college.collegeTips.valueTips;
         }
-        else if(objectives.test(window.location.href) === true){
+        else if(currentUrl.endsWith("objectives")){
             this.currentName = "Objectives Tips";
             //This should be changed to Objective Tips Later once they are made
             //on the backend
             this.currentTips = this.props.everything.college.collegeTips.generalTips;
         }
-        else if(store.test(window.location.href) === true){
+        else if(currentUrl.endsWith("store")){
             this.currentName = "General Tips";
             this.currentTips = this.props.everything.college.collegeTips.generalTips;
         }
-        else if(about.test(window.location.href) === true){
+        else if(currentUrl.endsWith("about")){
             this.currentName = "General Tips";
             this.currentTips = this.props.everything.college.collegeTips.generalTips;
         }
