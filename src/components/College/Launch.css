@@ -1,6 +1,5 @@
 body {
     background-color: #f3ffff;
-    /*background-image: url("largecampus.png");*/
 }
 
 .launchJumboTron {
@@ -28,3 +27,45 @@ body {
     display: flex;
     justify-content: center;
 }
+
+
+.myAuto{
+    display:flex;
+    align-items:center;
+}
+
+.traits-icon{
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    height: 115px;
+}
+
+.traitBox{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: #fff;
+    max-width: 20%;
+    max-height: 20%;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.boxcontent{
+    margin: 10px;
+    text-align: center;
+}
+
+.label{
+    text-align: center;
+    font-size: 22px;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
