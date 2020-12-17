@@ -20,6 +20,7 @@ export default class Notifications extends React.Component {
             .then(response => response.json())
             .then(data => {this.props.replaceEverything(data);
             });
+        this.props.handleClose();
     }
 
     render() {
