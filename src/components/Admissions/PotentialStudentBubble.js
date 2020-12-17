@@ -4,6 +4,9 @@ import Avatar from "avataaars-updated";
 
 export default class StudentsTable extends React.Component {
     render() {
+        if(this.props.student === undefined)
+            return (<div />);
+
         return (
             <div className="studentElement" student={this.props.student} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
             onClick={ () =>this.props.showapp(this.props.student)}
