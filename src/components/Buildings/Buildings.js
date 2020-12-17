@@ -9,6 +9,7 @@ import ResidentNews from "./ResidentNews";
 import BuildingProgressPannel from "./BuildingProgressPannel";
 import InsufficientFundPopup from "./InsufficientFundPopup";
 import BuildingQualityBar from "./BuildingQualityBar";
+import Upgrades from "./BuildingsPopup/Upgrades";
 
 
 export default class Buildings extends React.Component {
@@ -24,7 +25,8 @@ export default class Buildings extends React.Component {
             hideShowTipsTextSafety : "Hide Tips",
             isHideSafety: false,
             appear: false,
-            showNextTipSafety: true
+            showNextTipSafety: true,
+            showUpgrades: false
         };
         this.upgradeBuilding = this.upgradeBuilding.bind(this);
         this.repairBuilding = this.repairBuilding.bind(this);
@@ -37,6 +39,10 @@ export default class Buildings extends React.Component {
         this.setShow = (value) => {this.setState({appear:value})}
         this.handleClose = () => this.setShow(false);
         this.handleShow = () => this.setShow(true);
+
+        this.setUpgradesShow = (value) => {this.setState({showUpgrades:value})}
+        this.handleUpgradeClose = () => this.setUpgradesShow(false);
+        this.handleUpgradeShow = () => this.setUpgradesShow(true);
     }
 
     handleSelectBuildingChoice(value) {
@@ -215,7 +221,7 @@ export default class Buildings extends React.Component {
             if (this.props.everything.buildings[i].size !== "Extra Large" && this.props.everything.buildings[i].size !== "N/A"
                 && this.props.everything.buildings[i].hoursToComplete === 0 && this.props.everything.buildings[i].upgradeCost <= this.props.everything.college.availableCash) {
                 upgradeButton.push (
-                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.upgradeBuilding} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost.toLocaleString()})</button>
+                    <button type="submit" className="btn btn-info" style={{horizAlign: "left", fontSize: "75%"}} onClick={this.handleUpgradeShow} name="upgradeBuilding" value={i}>Upgrade (${this.props.everything.buildings[i].upgradeCost.toLocaleString()})</button>
                 )
             }
 
@@ -267,6 +273,7 @@ export default class Buildings extends React.Component {
 
         return (
             <div>
+                <Upgrades everything={this.props.everything} show={this.state.showUpgrades} handleClose={this.handleUpgradeClose}/>
                 <InsufficientFundPopup everything={this.props.everything} show={this.state.appear} handleClose={this.handleClose}/>
                 <div className="container">
                     <div className="jumbotron">
