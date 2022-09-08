@@ -9,6 +9,7 @@ export default class About extends React.Component {
                     <ul className="list-group">
                         <li className="list-group-item">Michael Ocean</li>
                         <li className="list-group-item">Ryan Kent</li>
+                        <li className="list-group-item">Eric Buczala</li>
                     </ul>
 
                     <h2>Fall 2020</h2>
