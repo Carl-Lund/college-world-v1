@@ -143,7 +143,6 @@ export default class App extends React.Component {
     getSideBar() {
         const {everything, collegeName} = this.state;
 
-        // TODO: Move launch page background code outside of getSideBar?
         if((everything === null) || (everything === "")) {
             return (
                 <img className="imageLandingPageWallpaper" src="resources/images/largecampus.png" alt="decorative" style={{height: '100vh', width: '100vw'}} />
