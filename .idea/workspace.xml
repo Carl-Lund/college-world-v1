@@ -26,9 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Added Name to About page">
+    <list default="true" id="e4eeb62d-87e2-493a-84b4-aa893487cd58" name="Default Changelist" comment="Added myself to the 2022 About pages">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,24 +50,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectId" id="1RcJK14Xri7yLgUW42kGbWwnpJm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dot_Dash/IdeaProjects/enccollegeworld&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\abrocken\IdeaProjects\college_world_react\src\components\college-view" />
@@ -138,7 +130,6 @@
         <script value="start" />
       </scripts>
       <node-interpreter value="project" />
-      <package-manager value="C:\Program Files\nodejs\node_modules\npm" />
       <envs />
       <method v="2" />
     </configuration>
@@ -191,10 +182,6 @@
       <workItem from="1607025470706" duration="209000" />
       <workItem from="1607278934816" duration="1372000" />
       <workItem from="1607281922047" duration="4050000" />
-      <workItem from="1662409788600" duration="1404000" />
-      <workItem from="1662607722710" duration="553000" />
-      <workItem from="1662656599301" duration="662000" />
-      <workItem from="1662657323774" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the basic structure.">
       <created>1569932568873</created>
@@ -357,18 +344,22 @@
       <option name="project" value="LOCAL" />
       <updated>1606095640647</updated>
     </task>
-    <task id="LOCAL-00024" summary="Added Name to About page">
-      <created>1662657197732</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1662657197732</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -414,7 +405,6 @@
     <MESSAGE value="Added a new section in Buildings for Upgrades along with a button to view upgrades" />
     <MESSAGE value="Minor changes to Objectives.css and .js, added CompletedAchievements.js and CompletedAchievementsTable.js for Objectives.js to use" />
     <MESSAGE value="Tables for achievements now populate properly." />
-    <MESSAGE value="Added Name to About page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Name to About page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tables for achievements now populate properly." />
   </component>
 </project>
