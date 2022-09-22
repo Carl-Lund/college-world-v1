@@ -2,6 +2,11 @@
     width: 40%;
 }
 
+.circular-progress-indicator{
+    width: 32px;
+    margin-top: -5px;
+}
+
 .studentContainer {
     display: grid;
     margin-right: 20px;
