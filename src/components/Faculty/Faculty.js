@@ -132,6 +132,34 @@ export default class Faculty extends React.Component{
         </div>);
     }
 
+    // Returns a string describing a faculty member's relative happiness
+    // Adapted from determineHappiness() in StudentPanel.js
+    determineHappiness(facultyMember){
+        let facultyHappiness = this.props.everything.faculty[facultyMember].happiness;
+
+        if(facultyHappiness >= 95){
+            return "Very Happy";
+        }
+        else if(facultyHappiness >= 80){
+            return "Happy";
+        }
+        else if(facultyHappiness > 70){
+            return "Slightly Happy";
+        }
+        else if(facultyHappiness >= 60){
+            return "Neutral";
+        }
+        else if(facultyHappiness >= 45){
+            return "Slightly Unhappy";
+        }
+        else if(facultyHappiness >= 30){
+            return "Unhappy";
+        }
+        else {
+            return "Very Unhappy";
+        }
+    }
+
     render() {
         // this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch, this.props.everything.faculty.departmentName);
 
@@ -172,7 +200,7 @@ export default class Faculty extends React.Component{
                         <h3><strong>Department: </strong>{this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
                         <h3><strong>Salary: </strong>${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
                         <h3><strong>ID: </strong>{this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
-                        <h3><strong>Happiness: </strong>{this.props.everything.faculty[this.state.selectedFaculty].happiness} </h3>
+                        <h3><strong>Happiness: </strong>{this.determineHappiness(this.state.selectedFaculty)} </h3>
                         <h3><strong>Performance: </strong>{this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>
                         <br></br>
                         <div className="facultyButtons">
