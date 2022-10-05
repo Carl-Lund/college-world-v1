@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
+import {NavLink} from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Notification from "./NavigationModals/Notifications";
@@ -66,15 +67,14 @@ export default class TopNavBar extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>Net Balance: <br />
-                            ${currentBalance}</Nav.Link>
-                        <Nav.Link>Seats Occupied: <br />
-                            {totalStudents + " / " + capacity}</Nav.Link>
-                        <Nav.Link >
+                        <NavLink to='/finances' className="nav" activeClassName="active">Net Balance: <br />
+                            ${currentBalance}</NavLink>
+                        <NavLink to='/students' className="nav" activeClassName="active">Seats Occupied: <br />
+                            {totalStudents + " / " + capacity}</NavLink>
+                        <Nav.Link>
                             <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
                             <Notification show={this.state.appear} handleClose={this.handleClose} everything={this.props.everything} replaceEverything={this.props.replaceEverything}/>
                         </Nav.Link>
-
                     </Nav>
                 </Navbar.Collapse>
             <Navbar.Collapse className="justify-content-end">

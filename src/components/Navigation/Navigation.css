@@ -24,3 +24,7 @@ li{
 .clearAll {
     float:right !important;
 }
+
+.nav {
+    padding: .5em;
+}
