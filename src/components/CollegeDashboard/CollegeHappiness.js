@@ -53,7 +53,7 @@ export default class CollegeHappiness extends React.Component {
                             {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                             <img
                                 alt="studentBodyHappinessIcon"
-                                className="circular-progress-indicator"
+                                className="circular-progress-indicator-large"
                                 src="/resources/images/progress_icons/affection.png"
                             />
                             <div style={{ fontSize: 12}}>
