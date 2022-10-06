@@ -117,7 +117,7 @@ export default class App extends React.Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({isLoading: false, everything: data});
-                this.setState({isLoading: false, everything: data});
+                //this.setState({isLoading: false, everything: data});
                 clearInterval(this.timer);
                 // debug
                 this.timing = this.debugDaySpeedRef.current.value;
