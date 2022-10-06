@@ -7,42 +7,39 @@ import Container from "react-bootstrap/Container";
 
 class SchoolTraits extends Component {
     render() {
+
+        const colStyle = {display: 'flex'}; // Makes the columns all the same height.
+
         return (
             <div>
                 <Container>
-                    <Row>
-                        <Col className={"col-sm-1"} />
-                        <Col className={"col-sm-1"} />
-                        <Col className={"col-sm-3"}>
+                    <Row style={{padding: '1em 0'}}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/academictrait.png"} label={'Academics:'} rating={this.props.everything.college.academicRating} description = {'Calculated By:\nStudent-Faculty Ratio, ' +
                             'Faculty Performance, Faculty Happiness, Academic Building Quality, Student Academic Ability'}/>
                         </Col>
-                        <Col className={"col-sm-3"}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/athletictrait.png"} label={'Athletics:'} rating={this.props.everything.college.athleticRating} description = {'Calculated By:\nNumber of Teams, ' +
                             'Overall Win Ratio, Quality of Athletic Facilities, Student Athletic Ability, Championships Won'}/>
                         </Col>
-                        <Col className={"col-sm-3"}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/infastructuretrait.png"} label={'Infrastructure:'} rating={this.props.everything.college.infrastructureRating} description = {'Calculated By:\n Building Quality ' +
                             'Number of Overcrowded Buildings, Number of Building Upgrades'}/>
                         </Col>
-                        <Col className={"col-sm-1"} />
                     </Row>
 
-                    <Row>
-                        <Col className={"col-sm-1"} />
-                        <Col className={"col-sm-1"} />
-                        <Col className={"col-sm-3"}>
+                    <Row style={{paddingBottom: '1em'}}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/safetytrait.png"} label={'Safety:'} rating={this.props.everything.college.safetyRating} description = {'Calculated By:\nStudent Health, Building Quality, Number of ' +
                             'Overcrowded Buildings, Riots, Deaths'}/>
                         </Col>
-                        <Col className={"col-sm-3"}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/costtrait.png"} label={'Value:'} rating={this.props.everything.college.schoolValue} description = {'Calculated By:\nAverage of School Tips, Tuition'}/>
                         </Col>
-                        <Col className={"col-sm-3"}>
+                        <Col className={"col-sm-3"} style={colStyle}>
                             <TraitBox icon={"resources/images/socialtrait.png"} label={'Social:'} rating={this.props.everything.college.socialRating} description = {'Calculated By:\nStudent and Faculty Happiness, Sporting Events ' +
                             'Student Social Ability'}/>
                         </Col>
-                        <Col className={"col-sm-1"} />
                     </Row>
                 </Container>
             </div>
