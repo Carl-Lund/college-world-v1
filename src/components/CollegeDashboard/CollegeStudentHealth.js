@@ -51,8 +51,8 @@ export default class CollegeStudentHealth extends React.Component {
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             alt="healthImage"
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/883/883407.svg"
+                            className="circular-progress-indicator-large"
+                            src="/resources/images/progress_icons/healthcare.png"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.studentHealthRating}%</strong>

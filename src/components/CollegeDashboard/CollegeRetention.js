@@ -47,13 +47,12 @@ export default class CollegeRetention extends React.Component {
                             />
                         </h3>
                     </OverlayTrigger>
-                    <br></br>
                     <CircularProgressbarWithChildren value={this.props.retentionRate} styles={ buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             alt="retentionImage"
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/538/538900.svg"
+                            className="circular-progress-indicator-large"
+                            src="/resources/images/progress_icons/customer.png"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.retentionRate}%</strong>

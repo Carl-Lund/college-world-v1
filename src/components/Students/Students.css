@@ -7,6 +7,11 @@
     margin-top: -5px;
 }
 
+.circular-progress-indicator-large{
+    width: 32px;
+    margin-top: -5px;
+}
+
 .studentContainer {
     display: grid;
     margin-right: 20px;

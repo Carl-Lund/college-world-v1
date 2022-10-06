@@ -49,13 +49,12 @@ export default class CollegeBuildings extends React.Component {
                             />
                         </h3>
                     </OverlayTrigger>
-                    <br></br>
                     <CircularProgressbarWithChildren value={this.props.totalBuildingHealth} styles={buildStyles({pathColor: color})}>
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             alt="buildingIcon"
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/188/188379.svg"
+                            className="circular-progress-indicator-large"
+                            src="/resources/images/progress_icons/cityscape.png"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.totalBuildingHealth}%</strong>

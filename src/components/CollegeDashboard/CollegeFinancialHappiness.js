@@ -52,8 +52,8 @@ export default class CollegeFinancialHappiness extends React.Component {
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             alt="financialIcon"
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/126/126157.svg"
+                            className="circular-progress-indicator-large"
+                            src="/resources/images/progress_icons/money.png"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.studentFinancialHappiness}%</strong>

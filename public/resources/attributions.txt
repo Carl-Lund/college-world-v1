@@ -4,3 +4,5 @@
 <a href="https://www.flaticon.com/free-icons/retention" title="retention icons">Retention icons created by Eucalyp - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/relax" title="relax icons">Relax icons created by Eucalyp - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/winner" title="winner icons">Winner icons created by Eucalyp - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/tutor" title="tutor icons">Tutor icons created by Eucalyp - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/venue" title="venue icons">Venue icons created by Eucalyp - Flaticon</a>

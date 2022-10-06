@@ -52,8 +52,8 @@ export default class CollegeRecreationalHappiness extends React.Component {
                         {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                         <img
                             alt="recreationalImage"
-                            style={{ width: 30, marginTop: -5 }}
-                            src="https://image.flaticon.com/icons/svg/992/992604.svg"
+                            className="circular-progress-indicator-large"
+                            src="/resources/images/progress_icons/relax.png"
                         />
                         <div style={{ fontSize: 12}}>
                             <strong>{this.props.studentRecreationalHappiness}%</strong>
