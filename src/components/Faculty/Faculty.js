@@ -160,6 +160,39 @@ export default class Faculty extends React.Component{
         }
     }
 
+    // Returns a string describing a faculty member's relative happiness followed by the numerical value in parentheses
+    determinePerformance(facultyMember){
+        let facultyPerformance = this.props.everything.faculty[facultyMember].performance;
+        let performanceDescriptor = "";
+
+        if(facultyPerformance >= 95){
+            performanceDescriptor = "Exceptional";
+        }
+        else if(facultyPerformance >= 80){
+            performanceDescriptor = "Impressive";
+        }
+        else if(facultyPerformance > 70){
+            performanceDescriptor = "High";
+        }
+        else if(facultyPerformance >= 60){
+            performanceDescriptor = "Competent";
+        }
+        else if(facultyPerformance >= 45){
+            performanceDescriptor = "Acceptable";
+        }
+        else if(facultyPerformance >= 30){
+            performanceDescriptor = "Disappointing";
+        }
+        else if (facultyPerformance > 0) {
+            performanceDescriptor = "Poor";
+        }
+        else {
+            performanceDescriptor = "Unacceptable";
+        }
+
+        return `${performanceDescriptor} (${facultyPerformance})`;
+    }
+
     render() {
         // this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch, this.props.everything.faculty.departmentName);
 
@@ -201,7 +234,7 @@ export default class Faculty extends React.Component{
                         <h3><strong>Salary: </strong>${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
                         <h3><strong>ID: </strong>{this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
                         <h3><strong>Happiness: </strong>{this.determineHappiness(this.state.selectedFaculty)} </h3>
-                        <h3><strong>Performance: </strong>{this.props.everything.faculty[this.state.selectedFaculty].performance}</h3>
+                        <h3><strong>Performance: </strong>{this.determinePerformance(this.state.selectedFaculty)}</h3>
                         <br></br>
                         <div className="facultyButtons">
                             <button type="submit" className="btn btn-info" id="fireButton" onClick={this.fireFaculty} name="fireFaculty">Fire Faculty</button>
