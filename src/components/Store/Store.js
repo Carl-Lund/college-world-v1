@@ -5,6 +5,10 @@ export default class Store extends React.Component {
     constructor(props) {
         super(props);
         this.buyItem = this.buyItem.bind(this);
+        // the following is considered a bad approach as
+        // updates to 'everything' will eventually be ignored.
+        // see: https://reactjs.org/docs/react-component.html#constructor
+        //  this.state = {store: this.props.everything.store}
     }
 
     buyItem(e) {
@@ -15,13 +19,29 @@ export default class Store extends React.Component {
         console.log(address);
         fetch(address)
             .then(response => response.json())
-            .then(data => this.props.replaceEverything(data));
-        this.props.everything.store[item].isPurchased = true;
-        this.props.replaceEverything(this.props.everything);
+            .then(data => {
+                // continuing the set-state version, this version reflects when the
+                // REST endpoint for /store/ was sending back only the updated state of
+                // the items owned by the college and then we patched the changes into
+                // the props.  as shown below:
+                // ------
+                // this.setState({store: data});
+                // this.props.everything.store = data;
+                // this.props.replaceEverything(this.props.everything);
+                // ------
+                // this DOES NOT WORK for 2 reasons:
+                //    1. we wind up ignoring further prop changes from outside this component
+                //       (e.g., if the backended gifted an item)
+                //    2. and more importantly: we don't have the new college balance as a result
+                //       of buying the item because it exists elsewhere in 'everything'
+                // now the server just sends back 'everything' ...
+                // so the appropriate 'then' is:
+                this.props.replaceEverything(data);
+            });
     }
 
     render() {
-        try{
+        // try{
             let allItems = []
             let itemTile = []
             let aRow = []
@@ -113,14 +133,15 @@ export default class Store extends React.Component {
                 </div>
             );
 
-    }catch(error)
-       {
-            return(
-               <div class="store-main">
-                    IM BROKEN.
-                </div>
-            );
-        }
+    // }catch(error)
+    //    {
+    //         return(
+    //            <div class="store-main">
+    //                 IM BROKEN:
+    //                {error}
+    //             </div>
+    //         );
+    //     }
 
     }
 }
