@@ -26,6 +26,7 @@ export default class TopNavBar extends React.Component {
         this.handleShowTips = () => this.setTipsShow(true);
     }
 
+
     fetchData() {
         this.setState({busy:true})
         const address = 'http://localhost:8080/enccollegeworld_war_exploded/rest/college/' + this.props.everything.college.runId + '/nextDay';
@@ -67,9 +68,9 @@ export default class TopNavBar extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <NavLink to='/finances' className="nav" activeClassName="active">Net Balance: <br />
+                        <NavLink to='/finances' className="nav" activeClassName="resetColor">Net Balance: <br />
                             ${currentBalance}</NavLink>
-                        <NavLink to='/students' className="nav" activeClassName="active">Seats Occupied: <br />
+                        <NavLink to='/students' className="nav" activeClassName="resetColor">Seats Occupied: <br />
                             {totalStudents + " / " + capacity}</NavLink>
                         <Nav.Link>
                             <Button onClick={this.handleShow} variant="primary">Notifications <span className="badge badge-light">{this.props.everything.popupEvent.length}</span></Button>
