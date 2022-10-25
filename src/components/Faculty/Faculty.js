@@ -21,7 +21,7 @@ export default class Faculty extends React.Component{
             hideShowTipsText: "Hide Tips",
             isHide: false,
             showNextTip: true,
-            salary: '6000',
+            salary: 100000,
             department: "Arts and Sciences"
         }
     }
@@ -80,7 +80,7 @@ export default class Faculty extends React.Component{
         if(listOfOptions != null) {
             for (let i = 0; i < listOfOptions.length; i++) {
                 results.push(
-                    <option>${listOfOptions[i].toLocaleString()}</option>
+                    <option value={listOfOptions[i]}>${listOfOptions[i].toLocaleString()}</option>
                 )
             }
         }
@@ -107,29 +107,6 @@ export default class Faculty extends React.Component{
     onChangeSelectDepartment= (value) => {
         console.log('The value is: ' + value.toString())
         this.setState({department: value.toString()})
-    }
-
-    hireFacultyComponent(academics){
-        return (<div className="col-sm-4">
-            <div className="well well-sm">
-                <div className="form-group">
-                    <label id="salaryLabel">Pick an annual salary, a department, and a position
-                        if you would like to add a new faculty member</label>
-                </div>
-                <div className="form-group">
-                    <select onChange={e => this.onChangeSelectSalary(e.target.value)} className="form-control" id="salaryDropdown" name="salaryDropdown">
-                        {this.getListAsOpts(academics.facultySalaries)}
-                    </select>
-                    <br/>
-                    <select onChange={e => this.onChangeSelectDepartment(e.target.value)} class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
-                        {this.getDeptListAsOpts(academics.unlockedDepts)}
-                    </select>
-                    <br/>
-                    <button type="submit" className="btn btn-info" onClick={this.hireFaculty} name="addFaculty">Add Faculty</button>
-                    <br/>
-                </div>
-            </div>
-        </div>);
     }
 
     // Returns a string describing a faculty member's relative happiness
@@ -191,6 +168,29 @@ export default class Faculty extends React.Component{
         }
 
         return `${performanceDescriptor} (${facultyPerformance})`;
+    }
+
+    hireFacultyComponent(academics){
+        return (<div className="col-sm-4">
+            <div className="well well-sm">
+                <div className="form-group">
+                    <label id="salaryLabel">Pick an annual salary, a department, and a position
+                        if you would like to add a new faculty member</label>
+                </div>
+                <div className="form-group">
+                    <select onChange={e => this.onChangeSelectSalary(e.target.value)} className="form-control" id="salaryDropdown" name="salaryDropdown">
+                        {this.getListAsOpts(academics.facultySalaries)}
+                    </select>
+                    <br/>
+                    <select onChange={e => this.onChangeSelectDepartment(e.target.value)} class=" form-control" id=" departmentDropdown" name=" departmentDropdown">
+                        {this.getDeptListAsOpts(academics.unlockedDepts)}
+                    </select>
+                    <br/>
+                    <button type="submit" className="btn btn-info" onClick={this.hireFaculty} name="addFaculty">Add Faculty</button>
+                    <br/>
+                </div>
+            </div>
+        </div>);
     }
 
     render() {
