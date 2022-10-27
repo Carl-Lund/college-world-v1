@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
-import Avatar from "avataaars-updated";
+import Avatar from "../Avatar";
 
 export default class Faculty extends React.Component{
 
@@ -229,7 +229,7 @@ export default class Faculty extends React.Component{
                 <div class = "col-md-4 text-right">
                     <h2 class = "memberInfoTitle">Faculty Member Details</h2>
                     <div class = "memberInfo">
-                        <h3 class = "memberName"><strong>{this.props.everything.faculty[this.state.selectedFaculty].name}</strong></h3>
+                        <h3 class = "memberName"><strong>{this.props.everything.faculty[this.state.selectedFaculty].fullName}</strong></h3>
                         <h3><strong>Department: </strong>{this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
                         <h3><strong>Salary: </strong>${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
                         <h3><strong>ID: </strong>{this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
@@ -278,17 +278,7 @@ function handleMember(facultyArray, index, facultySwitch){
     return(
 
         <li className = "list-group-item2 list-group-item"  onClick = {() => facultySwitch(index)}>
-            <Avatar style={{height: '60px', width: '60px'}}
-                    avatarStyle='Circle'
-                    topType={person.avatar.top}
-                    facialHairType={person.avatar.facialHair}
-                    facialHairColor={person.avatar.facialHairColor}
-                    clotheType={person.avatar.clothes}
-                    eyeType={person.avatar.eyes}
-                    eyebrowType={person.avatar.eyebrows}
-                    mouthType={person.avatar.mouth}
-                    skinColor={person.avatar.skinColor}
-            />
+            <Avatar style={{height: '60px', width: '60px'}} code={person.avatarCode}/>
             <b class = "facultyName">{person.name}</b>
         </li>
     );

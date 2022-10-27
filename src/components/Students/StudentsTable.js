@@ -88,8 +88,8 @@ function createTable(students, sort, props, initial, final) {
 
     if (sort === "aToZ" || typeof sort === typeof null) {
         studentsArray.sort(function(a, b) {
-            var nameA = a.name.toUpperCase().split(' ')[1];
-            var nameB = b.name.toUpperCase().split(' ')[1];
+            var nameA = a.fullName.toUpperCase().split(' ')[1];
+            var nameB = b.fullName.toUpperCase().split(' ')[1];
             if(nameA < nameB) { return -1; }
             if(nameA > nameB) { return 1; }
             return 0;
@@ -97,8 +97,8 @@ function createTable(students, sort, props, initial, final) {
     }
     else if (sort === "zToA") {
         studentsArray.sort(function(a, b) {
-            var nameA = a.name.toUpperCase().split(' ')[1];
-            var nameB = b.name.toUpperCase().split(' ')[1];
+            var nameA = a.fullName.toUpperCase().split(' ')[1];
+            var nameB = b.fullName.toUpperCase().split(' ')[1];
             if(nameA > nameB) { return -1; }
             if(nameA < nameB) { return 1; }
             return 0;

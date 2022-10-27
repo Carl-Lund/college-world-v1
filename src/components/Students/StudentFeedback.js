@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Students.css"
-import Avatar from "avataaars-updated";
+import Avatar from "../Avatar";
 
 export default class StudentsTable extends React.Component {
 
@@ -10,17 +10,7 @@ export default class StudentsTable extends React.Component {
         return (
             <div className="row px-0" style={{marginTop: "10px"}}>
                 <div className="col-md-2">
-                    <Avatar style={{height: '175px', width: '175px'}}
-                        avatarStyle='Circle'
-                        topType={this.props.student.avatar.top}
-                        facialHairType={this.props.student.avatar.facialHair}
-                        facialHairColor={this.props.student.avatar.facialHairColor}
-                        clotheType={this.props.student.avatar.clothes}
-                        eyeType={this.props.student.avatar.eyes}
-                        eyebrowType={this.props.student.avatar.eyebrows}
-                        mouthType={this.props.student.avatar.mouth}
-                        skinColor={this.props.student.avatar.skinColor}
-                    />
+                    <Avatar style={{height: '175px', width: '175px'}} code={this.props.student.avatarCode}/>
                 </div>
                 <div className="col-md-10" style={{padding: '10px'}}>
                     <div className="id-card">
