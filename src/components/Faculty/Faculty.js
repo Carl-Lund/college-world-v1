@@ -2,6 +2,7 @@ import React from 'react';
 import '../Faculty/Faculty.css';
 import FacultyRatings from "./FacultyRatings";
 import Avatar from "../Avatar";
+import Form from "react-bootstrap/Form";
 
 export default class Faculty extends React.Component{
 
@@ -15,6 +16,7 @@ export default class Faculty extends React.Component{
         this.hireFaculty = this.hireFaculty.bind(this);
         this.onChangeSelectDepartment = this.onChangeSelectDepartment.bind(this);
         this.onChangeSelectSalary = this.onChangeSelectSalary.bind(this);
+        this.onChangeRaiseField = this.onChangeRaiseField.bind(this);
 
         this.state = {
             selectedFaculty: 0,
@@ -22,7 +24,8 @@ export default class Faculty extends React.Component{
             isHide: false,
             showNextTip: true,
             salary: 100000,
-            department: "Arts and Sciences"
+            department: "Arts and Sciences",
+            raiseValue: 0
         }
     }
 
@@ -67,12 +70,21 @@ export default class Faculty extends React.Component{
     }
 
     giveRaise(){
-        const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/raise/" + this.state.selectedFaculty + "/";
-        fetch(address)
-            .then(response => response.json())
-            .then(data => {this.props.replaceEverything(data);
-            });
-        console.log("UPDATE EVERYTHING");
+        let raiseValue = Number(this.state.raiseValue);
+        document.getElementById("raiseAmountField").value = "";
+        if (!isNaN(raiseValue) && raiseValue > 0) {
+            raiseValue = Math.floor(raiseValue);
+            const address = "http://localhost:8080/enccollegeworld_war_exploded/faculty/" + this.props.everything.college.runId + "/raise/" + this.state.selectedFaculty + "/" + raiseValue + "/";
+            fetch(address)
+                .then(response => response.json())
+                .then(data => {
+                    this.props.replaceEverything(data);
+                });
+            console.log("UPDATE EVERYTHING");
+        }
+        else {
+            console.log(`"${raiseValue}" is not a valid raise amount.`);
+        }
     }
 
     getListAsOpts(listOfOptions){
@@ -107,6 +119,10 @@ export default class Faculty extends React.Component{
     onChangeSelectDepartment= (value) => {
         console.log('The value is: ' + value.toString())
         this.setState({department: value.toString()})
+    }
+
+    onChangeRaiseField= (value) => {
+        this.setState({raiseValue: value.toString()});
     }
 
     // Returns a string describing a faculty member's relative happiness
@@ -197,9 +213,9 @@ export default class Faculty extends React.Component{
         // this.facultyTable = createTable(this.props.everything.faculty, this.facultySwitch, this.props.everything.faculty.departmentName);
 
         return (
-            <div class = "container">
+            <div className = "container">
 
-                <div class="jumbotron clearfix">
+                <div className="jumbotron clearfix">
                     <div className="img">
                         <img alt="studentImage" className="img-responsive" src="resources/images/student.png"></img>
                     </div>
@@ -207,7 +223,7 @@ export default class Faculty extends React.Component{
                         <h1><b>Faculty</b> <small>{this.props.everything.faculty.length} members</small></h1>
                     </div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <div className="col-md-2">
                     </div>
 
@@ -226,19 +242,22 @@ export default class Faculty extends React.Component{
                 </div>
 
 
-                <div class = "col-md-4 text-right">
-                    <h2 class = "memberInfoTitle">Faculty Member Details</h2>
-                    <div class = "memberInfo">
-                        <h3 class = "memberName"><strong>{this.props.everything.faculty[this.state.selectedFaculty].fullName}</strong></h3>
+                <div className = "col-md-4 text-right">
+                    <h2 className = "memberInfoTitle">Faculty Member Details</h2>
+                    <div className = "memberInfo">
+                        <h3 className = "memberName"><strong>{this.props.everything.faculty[this.state.selectedFaculty].fullName}</strong></h3>
                         <h3><strong>Department: </strong>{this.props.everything.faculty[this.state.selectedFaculty].departmentName}</h3>
                         <h3><strong>Salary: </strong>${this.props.everything.faculty[this.state.selectedFaculty].salary.toLocaleString()}</h3>
                         <h3><strong>ID: </strong>{this.props.everything.faculty[this.state.selectedFaculty].facultyID}</h3>
                         <h3><strong>Happiness: </strong>{this.determineHappiness(this.state.selectedFaculty)} </h3>
                         <h3><strong>Performance: </strong>{this.determinePerformance(this.state.selectedFaculty)}</h3>
-                        <br></br>
+                        <br />
                         <div className="facultyButtons">
+                            <div id="giveRaiseInput">
+                                <Form.Control type="number" min="0" placeholder="Raise amount" id="raiseAmountField" onChange={e => this.onChangeRaiseField(e.target.value)}></Form.Control>
+                                <button type="submit" className="btn btn-info" id="raiseButton" onClick={this.giveRaise} name="giveRaise">Give Raise</button>
+                            </div>
                             <button type="submit" className="btn btn-info" id="fireButton" onClick={this.fireFaculty} name="fireFaculty">Fire Faculty</button>
-                            <button type="submit" className="btn btn-info" id="raiseButton" onClick={this.giveRaise} name="giveRaise">Give Raise</button>
                         </div>
                     </div>
 
@@ -278,8 +297,8 @@ function handleMember(facultyArray, index, facultySwitch){
     return(
 
         <li className = "list-group-item2 list-group-item"  onClick = {() => facultySwitch(index)}>
-            <Avatar style={{height: '60px', width: '60px'}} code={person.avatarCode}/>
-            <b class = "facultyName">{person.name}</b>
+            <Avatar className = "facultyAvatar" style={{height: '60px', width: '60px'}} code={person.avatarCode}/>
+            <p className = "facultyName">{person.fullName}</p>
         </li>
     );
 }

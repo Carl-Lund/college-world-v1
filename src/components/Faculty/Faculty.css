@@ -39,13 +39,13 @@
     font-weight: bold;
 }
 
-/*#facultyName{*/
-/*    font-weight: bold;*/
-/*    font-size: 1em;*/
-/*    margin-left: 10em;*/
-/*    margin-right: 20em;*/
-/*    text-align: center;*/
-/*}*/
+.facultyName{
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+    vertical-align: middle;
+    line-height: 1em;
+}
 
 #salary{
     margin-left: 5em;
@@ -113,3 +113,11 @@
 #raiseButton{
     margin: .5em .5em .5em .5em;
 }
+
+#raiseAmountField{
+    margin: .5em .5em .5em .5em;
+}
+
+/*#giveRaiseLabel {*/
+/*    margin: .5em .5em .5em .5em;*/
+/*}*/
