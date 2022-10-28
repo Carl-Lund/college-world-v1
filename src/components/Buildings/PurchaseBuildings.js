@@ -9,6 +9,14 @@ export default class PurchaseBuildings extends React.Component{
             cashColor = "red";
         }
 
+        // Only shows the purchasable buildings for the level the user is at.
+        let purchaseChoices = [];
+        for (let i = 0; i < this.props.everything.objectives.currentLevel; ++i) {
+            for (let j = 0; j < this.props.buildingChoices[i].length; ++j) {
+                purchaseChoices.push(this.props.buildingChoices[i][j]);
+            }
+        }
+
         return(
             <div className="col-sm-6">
                 <div className="well well-sm">
@@ -17,7 +25,7 @@ export default class PurchaseBuildings extends React.Component{
                         <div className="form-group">
                             <label>Building Type</label>
                             <Select
-                                options={this.props.buildingChoices}
+                                options={purchaseChoices}
                                 value={{label: this.props.buildingChoice, value: this.props.buildingChoice}}
                                 onChange={value => this.props.handleSelectBuildingChoice(value)}
                                 defaultValue={{label: this.props.buildingChoice, value: this.props.buildingChoice}}

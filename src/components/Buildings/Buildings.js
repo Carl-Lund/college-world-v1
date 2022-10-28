@@ -16,7 +16,7 @@ export default class Buildings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            buildingChoice: 'Academic Center',
+            buildingChoice: 'Administrative Building',
             buildingName: '',
             hideShowTipsTextBuilding : "Hide Tips",
             isHideBuilding: false,
@@ -69,8 +69,7 @@ export default class Buildings extends React.Component {
     purchaseBuilding() {
         if(this.props.everything.college.availableCash < 150000){
             this.handleShow();
-        }
-        else {
+        } else {
             const address = "http://localhost:8080/enccollegeworld_war_exploded/rest/building/" + this.props.everything.college.runId + "/purchase/" + encodeURI(this.state.buildingName) + "/" + encodeURI(this.state.buildingChoice)
             fetch(address)
                 .then(response => response.json())
@@ -109,42 +108,7 @@ export default class Buildings extends React.Component {
     }
 
     getImage(type){
-        if (type === "DORM"){
-            return ("resources/images/DORM.png");
-        }
-        else if (type === "ACADEMIC"){
-            return ("resources/images/ACADEMIC.png");
-        }
-        else if (type === "ADMIN"){
-            return ("resources/images/ADMIN.png")
-        }
-        else if (type === "DINING"){
-            return ("resources/images/DINING.png");
-        }
-        else if (type === "DORM"){
-            return ("resources/images/DORM.png");
-        }
-        else if (type === "ENTERTAINMENT"){
-            return ("resources/images/ENTERTAINMENT.png");
-        }
-        else if (type === "HEALTH"){
-            return ("resources/images/HEALTH.png");
-        }
-        else if (type === "LIBRARY"){
-            return ("resources/images/LIBRARY.png");
-        }
-        else if (type === "SPORTS"){
-            return ("resources/images/stadium.png");
-        }
-        else if (type === "BASEBALL DIAMOND"){
-            return ("resources/images/BASEBALL DIAMOND.png");
-        }
-        else if (type === "FOOTBALL DIAMOND"){
-            return ("resources/images/FOOTBALL STADIUM.png");
-        }
-        else if (type === "HOCKEY RINK"){
-            return ("resources/images/HOCKEY RINK");
-        }
+        return ("resources/images/" + type + ".png");
     }
 
 
@@ -253,17 +217,34 @@ export default class Buildings extends React.Component {
         // this.handleSelectBuildingChoice(value)this.state.buildingChoice)
 
         let numStudents = this.props.everything.objectives.studentCount;
-        const buildingChoices = [
+
+        // The code below handles creating an array of building choices which itself holds arrays of
+        // purchasable building types for each level. This allows for easy additions for any
+        // new building type and the distinct separation between level and purchasable buildings.
+        const buildingChoicesLvl1 = [
             {label: "Administrative Building", value: "Administrative Building"},
             {label: "Academic Center", value: "Academic Center"},
-            {label: "Baseball Diamond", value: "Baseball Diamond"},
             {label: "Dining Hall", value: "Dining Hall"},
-            {label: "Dormitory", value: "Dormitory"},
-            {label: "Football Stadium", value: "Football Stadium"},
-            {label: "Hockey Rink", value: "Hockey Rink"},
-            {label: "Entertainment Center", value: "Entertainment Center"},
+            {label: "Dormitory", value: "Dormitory"}
+        ];
+        const buildingChoicesLvl2 = [
+            {label: "Football Stadium", value: "Football Stadium"}
+        ];
+        const buildingChoicesLvl3 = [
+            {label: "Baseball Diamond", value: "Baseball Diamond"},
+            {label: "Library", value: "Library"}
+        ];
+        const buildingChoicesLvl4 = [
             {label: "Health Center", value: "Health Center"},
-            {label: "Library", value: "Library"}]
+            {label: "Hockey Rink", value: "Hockey Rink"}
+        ];
+        const buildingChoicesLvl5 = [
+            {label: "Entertainment Center", value: "Entertainment Center"}
+        ];
+
+        const buildingChoices = [buildingChoicesLvl1, buildingChoicesLvl2,
+            buildingChoicesLvl3, buildingChoicesLvl4, buildingChoicesLvl5];
+
 
         return (
             <div>
