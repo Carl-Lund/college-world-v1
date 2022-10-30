@@ -1,6 +1,6 @@
 import React from 'react';
 import "../Students/Students.css"
-import Avatar from "avataaars-updated";
+import Avatar from "../Avatar";
 
 export default class StudentsTable extends React.Component {
     render() {
@@ -11,18 +11,9 @@ export default class StudentsTable extends React.Component {
             <div className="studentElement" student={this.props.student} style={{boxShadow: "0 0 3px 3px " + this.bubbleColoring(this.props.student.happiness)}}
             onClick={ () =>this.props.showapp(this.props.student)}
             >
-                <Avatar className="avatar" style={{height: '55px', width: '55px'}}
-                        avatarStyle='Circle'
-                        topType={this.props.student.avatar.top}
-                        facialHairType={this.props.student.avatar.facialHair}
-                        facialHairColor={this.props.student.avatar.facialHairColor}
-                        clotheType={this.props.student.avatar.clothes}
-                        eyeType={this.props.student.avatar.eyes}
-                        eyebrowType={this.props.student.avatar.eyebrows}
-                        mouthType={this.props.student.avatar.mouth}
-                        skinColor={this.props.student.avatar.skinColor}
-                />
-                <p>{this.props.student.name.split(" ")[1] + ", " + this.props.student.name.split(" ")[0].charAt(0)}</p>
+                <Avatar style={{height: '60px', width: '60px'}} code={this.props.student.avatarCode}/>
+                <p>{this.props.student.firstName + ", " + this.props.student.lastName.charAt(0)}</p>
+                {/*<p>{this.props.student.name.split(" ")[1] + ", " + this.props.student.name.split(" ")[0].charAt(0)}</p>*/}
             </div>
         );
     }

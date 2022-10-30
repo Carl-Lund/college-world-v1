@@ -83,8 +83,8 @@ export default class PotentialStudentTable extends React.Component {
 
         if (sort === "aToZ" || typeof sort === typeof null) {
             studentsArray.sort(function (a, b) {
-                var nameA = a.name.toUpperCase().split(' ')[1];
-                var nameB = b.name.toUpperCase().split(' ')[1];
+                var nameA = a.fullName.toUpperCase().split(' ')[1];
+                var nameB = b.fullName.toUpperCase().split(' ')[1];
                 if (nameA < nameB) {
                     return -1;
                 }
@@ -95,8 +95,8 @@ export default class PotentialStudentTable extends React.Component {
             });
         } else if (sort === "zToA") {
             studentsArray.sort(function (a, b) {
-                let nameA = a.name.toUpperCase().split(' ')[1];
-                let nameB = b.name.toUpperCase().split(' ')[1];
+                let nameA = a.fullName.toUpperCase().split(' ')[1];
+                let nameB = b.fullName.toUpperCase().split(' ')[1];
                 if (nameA > nameB) {
                     return -1;
                 }
